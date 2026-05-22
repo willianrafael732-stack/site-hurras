@@ -1,0 +1,112 @@
+<?php
+
+include_once('config.php'); // conexão com banco
+
+$msg = "";
+
+if(isset($_POST['usuario']) && isset($_POST['email']) && isset($_POST['senha'])){
+
+    $usuario = trim($_POST['usuario']);
+    $email = trim($_POST['email']);
+    $senhaRaw = $_POST['senha'];
+
+    // validação básica
+    if(empty($usuario) || empty($email) || empty($senhaRaw)){
+        $msg = "❌ Preencha todos os campos!";
+    } else {
+
+        // criptografar senha
+        $senha = password_hash($senhaRaw, PASSWORD_DEFAULT);
+
+        // verificar se email já existe
+        $check = $conexao->prepare("SELECT id FROM usuarios WHERE email = ?");
+        $check->bind_param("s", $email);
+        $check->execute();
+        $result = $check->get_result();
+
+        if($result->num_rows > 0){
+            $msg = "❌ E-mail já cadastrado!";
+        } else {
+
+            // inserir no banco
+            $stmt = $conexao->prepare("INSERT INTO usuarios (usuario, email, senha) VALUES (?, ?, ?)");
+            $stmt->bind_param("sss", $usuario, $email, $senha);
+
+            if ($stmt->execute()) {
+                $msg = "✨ Cadastro realizado com sucesso!";
+            } else {
+                $msg = "Erro ao cadastrar.";
+            }
+        }
+    }
+}
+
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro RPG</title>
+
+<style>
+body{
+    background:#0a0a0f;
+    color:#fff;
+    font-family:Arial;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.box{
+    background:#111;
+    padding:30px;
+    border-radius:10px;
+    width:300px;
+    text-align:center;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:5px;
+    border:none;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:gold;
+    border:none;
+    cursor:pointer;
+}
+
+.msg{
+    color:#ff6b6b;
+    margin-bottom:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2>📜 Cadastro</h2>
+
+    <?php if(!empty($msg)): ?>
+        <div class="msg"><?php echo $msg; ?></div>
+    <?php endif; ?>
+
+    <form method="POST">
+        <input type="text" name="usuario" placeholder="Usuário" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="password" name="senha" placeholder="Senha" required>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</div>
+
+</body>
+</html>

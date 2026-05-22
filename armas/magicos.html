@@ -1,0 +1,211 @@
+<style>
+    /* ========================= */
+/* RODAPÉ RPG */
+/* ========================= */
+.rodape{
+margin-top:60px;
+padding:50px 20px 20px;
+background:linear-gradient(to top,#050508,#0a0a12);
+border-top:1px solid #333;
+box-shadow:0 -10px 30px rgba(0,0,0,0.8);
+position:relative;
+overflow:hidden;
+}
+
+/* LINHA MÁGICA */
+.rodape::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:2px;
+background:linear-gradient(90deg,transparent,#ffd700,transparent);
+animation:linhaMagica 3s infinite linear;
+}
+
+body{
+background: radial-gradient(circle at top, #1a1a2e, #0a0a12 70%, #050508);
+color:#e0e0e0;
+font-family:'Cinzel', serif;
+}
+
+@keyframes linhaMagica{
+0%{opacity:0.2;}
+50%{opacity:1;}
+100%{opacity:0.2;}
+}
+
+/* GRID */
+.rodape-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+margin-bottom:30px;
+}
+
+/* COLUNAS */
+.rodape-col h2{
+color:#ffd700;
+text-shadow:0 0 12px rgba(255,215,0,0.8);
+}
+
+.rodape-col h3{
+color:#cfa14a;
+margin-bottom:10px;
+}
+
+/* LINKS */
+.links{
+display:flex;
+flex-direction:column;
+gap:8px;
+}
+
+.links a{
+color:#aaa;
+text-decoration:none;
+transition:0.3s;
+padding:5px;
+border-radius:6px;
+}
+
+.links a:hover{
+color:#fff;
+background:rgba(255,255,255,0.05);
+padding-left:10px;
+box-shadow:0 0 10px rgba(255,255,255,0.2);
+}
+
+/* TEXTO */
+.lore{
+font-size:13px;
+color:#888;
+margin-top:10px;
+font-style:italic;
+}
+
+/* FINAL */
+.rodape-bottom{
+border-top:1px solid #222;
+padding-top:15px;
+text-align:center;
+font-size:12px;
+color:#666;
+}
+
+/* ========================= */
+/* ARMAS */
+/* ========================= */
+.classe-armas{
+margin-top:40px;
+}
+
+.arma{
+background:rgba(0,0,0,0.7);
+border:1px solid #333;
+padding:15px;
+border-radius:12px;
+margin-bottom:15px;
+transition:0.3s;
+}
+
+
+.arma:hover{
+transform:scale(1.02);
+box-shadow:0 0 15px rgba(255,255,255,0.2);
+}
+</style>
+
+<!-- ========================= -->
+<!-- RODAPÉ -->
+<!-- ========================= -->
+<footer class="rodape">
+
+    <div class="rodape-container">
+
+        <div class="rodape-grid">
+
+            <!-- LOGO -->
+            <div class="rodape-col">
+                <h2>⚔️ Nexalis RPG</h2>
+                <p class="lore">
+                "O poder não vem da força… mas do domínio das runas."
+                </p>
+            </div>
+
+            <!-- NAVEGAÇÃO -->
+            <div class="rodape-col">
+                <h3>📜 Navegação</h3>
+                <div class="links">
+                    <a href="../funcoes/inicio.html">História</a>
+                    <a href="../funcoes/racaeclasses.html">Raças e Classes</a>
+                    <a href="armas.html">Armas</a>
+                    <a href="../funcoes/sistema.html">Sistema</a>
+                    <a href="../funcoes/inimigo.html">Inimigos</a>
+                  <a href="../funcoes/criaçãodeficha.html">Mistura de elementos</a>
+                    <a href="../funcoes/magia.html">Magias</a>
+                </div>
+            </div>
+
+            <!-- ARMAS -->
+            <div class="rodape-col">
+                <h3>🗡️ Tipos de Armas</h3>
+                <div class="links">
+                    <a href="armaduras.html">Armaduras</a>
+                    <a href="curtoalacance.html">Curto Alcance</a>
+                    <a href="medioalcance.html">Médio Alcance</a>
+                    <a href="medioalcance2M.html">Médio Alcance 2M</a>
+                    <a href="longo.html">Longo Alcance</a>
+                    <a href="escudo.html">Escudos</a>
+                    <a href="Instrumentais.html">Instrumentais</a>
+                    <a href="magicos.html">Mágicos</a>
+                    <a href="encantos.html">Encantos</a>
+                    <a href="Runas.html">Runas</a>
+                </div>
+            </div>
+
+        </div>
+
+<!-- ========================= -->
+<!-- ARMAS MÁGICAS -->
+<!-- ========================= -->
+<div class="classe-armas">
+<h1>🔮 Armas Mágicas</h1>
+<div class="arma">
+<p><h2>Varinha</h2><br>
++1 INT
+ <p><b>+1 Reg. Mana</b> </p>
+  <p><b>-1 Bloqueio</p></b>
+   <p><b>-1 Vigor</p></b>
+</div>
+
+<div class="arma">
+<h2>🔮 Cajado</h2>
+<p><b>Tipo:</b> 2 Mãos</p>
+<p><b>Vantagem:</b> +3 INT, +3 Reg. Mana</p>
+<p><b>Desvantagem:</b> -2 Bloqueio, -2 Vigor</p>
+</div>
+
+<div class="arma">
+<h2>📖 Grimório</h2>
+<p><b>Vantagem:</b> +2 INT</p>
+<p><b>Desvantagem:</b> -2 Bloqueio</p>
+</div>
+
+<div class="arma">
+<h2>🔵 Orb</h2>
+<p><b>Vantagem:</b> +2 Reg. Mana</p>
+<p><b>Desvantagem:</b> -2 Vigor</p>
+</div>
+
+</div>
+
+<!-- QUALIDADE -->
+<div id="qualidade" class="tab">
+<h1>Qualidade & Proficiência</h1>
+
+<p><b>Básica</b> — Sem bônus extras</p>
+<p><b>Épica</b> — Vantagens +2</p>
+<p><b>Lendária</b> — Vantagens +3</p>
+<p><b>Mitológica</b> — Vantagens +4</p>

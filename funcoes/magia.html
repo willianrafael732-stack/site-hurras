@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grimório Elemental</title>
+    <style>
+        /* ===== TEMA RPG DARK ===== */
+        :root {
+            --bg-body: #05050a;
+            --bg-grimorio: rgba(15, 15, 25, 0.95);
+            --gold: #d4af37;
+            --gold-bright: #ffdf00;
+            --border-color: #3a3a5c;
+            --text-color: #e0e0e0;
+            --accent: #6b5cff;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Georgia', serif;
+            background: var(--bg-body);
+            background-image: radial-gradient(circle at top, #1a1a3a 0%, #05050a 100%);
+            color: var(--text-color);
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            max-width: 1100px;
+            margin: 0 auto 20px auto;
+            background: rgba(20, 20, 40, 0.8);
+            border: 1px solid var(--border-color);
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar a {
+            color: var(--gold);
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            color: var(--gold-bright);
+            text-shadow: 0 0 10px var(--gold-bright);
+        }
+
+        /* ===== CONTAINER PRINCIPAL ===== */
+        .grimorio {
+            max-width: 1100px;
+            margin: auto;
+            background: var(--bg-grimorio);
+            border: 2px solid var(--gold);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        /* ===== SISTEMA DE ABAS ===== */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 30px;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .tabs button {
+            background: linear-gradient(145deg, #1e1e35, #121225);
+            color: #aaa;
+            border: 1px solid var(--border-color);
+            padding: 12px 18px;
+            cursor: pointer;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-transform: capitalize;
+        }
+
+        .tabs button:hover {
+            border-color: var(--gold);
+            color: #fff;
+        }
+
+        .tabs button.active {
+            background: var(--accent);
+            color: white;
+            border-color: var(--gold-bright);
+            box-shadow: 0 0 15px rgba(107, 92, 255, 0.5);
+            transform: translateY(-2px);
+        }
+
+        /* ===== CONTEÚDO ===== */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        h1 {
+            color: var(--gold-bright);
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px #000;
+        }
+
+        .scaling-info {
+            text-align: center;
+            font-style: italic;
+            color: #888;
+            margin-bottom: 30px;
+            display: block;
+        }
+
+        /* CARDS DE MAGIA */
+        .magia-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 5px solid var(--accent);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 0 10px 10px 0;
+            transition: 0.3s;
+        }
+
+        .magia-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-left-color: var(--gold-bright);
+        }
+
+        h3 {
+            margin: 0 0 10px 0;
+            color: var(--gold-bright);
+            font-size: 1.5em;
+            letter-spacing: 0.5px;
+        }
+
+        .magia-card p {
+            margin: 5px 0;
+            line-height: 1.5;
+        }
+
+        .magia-card strong {
+            color: #4db8ff;
+            /* Cor para os níveis de aprendizado */
+        }
+
+        /* Seção específica para Magias Sombrias/Sagradas com Ícones */
+        .info-row {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #bbb;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    < <nav class="navbar">
+        <div class="container-nav">
+            <div class="links">
+                <a href="../funcoes/inicio.html">historia </a>
+                <a href="racaeclasses.html">Raças e Classes</a>
+                <a href="/armas/armas.html">Armas</a>
+                <a href="../funcoes/sistema.html">sistema</a>
+                <a href="../funcoes/inimigo.html">inimigos</a>
+                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
+                <a href="..//funcoes/magia.html">magias</a>
+                <a href="..//funcoes/porção.html">porção</a>
+                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <div class="grimorio">
+        <div class="tabs">
+            <button class="active" onclick="openTab(event, 'fogo')">🔥 Fogo</button>
+            <button onclick="openTab(event, 'agua')">💧 Água</button>
+            <button onclick="openTab(event, 'vento')">🌪️ Vento</button>
+            <button onclick="openTab(event, 'terra')">🌿 Terra</button>
+            <button onclick="openTab(event, 'raio')">⚡ Raio</button>
+            <button onclick="openTab(event, 'veneno')">☠️ Veneno</button>
+            <button onclick="openTab(event, 'mental')">🧠 Mental</button>
+            <button onclick="openTab(event, 'sombra')">🌑 Sombra</button>
+            <button onclick="openTab(event, 'sagrado')">✨ Sagrado</button>
+        </div>
+
+        <div id="fogo" class="tab-content active">
+            <h1>Fogo</h1>
+            <span class="scaling-info">(Inteligência + Nível Magico de Fogo)</span>
+
+            <div class="magia-card">
+                <h3>Bola de Fogo</h3>
+                <p>Uma bola de fogo poderosa que causa dano a um inimigo.</p>
+                <p><strong>- Nível Aprendiz:</strong> +50% do dano base.</p>
+                <div class="mana-cost">⚡ 5 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Chuva de Fogo</h3>
+                <p>Lança 3 projéteis pequenos de fogo mais fracos.</p>
+                <p><strong>- Nível Aprendiz:</strong> Cada projétil causa dano base.</p>
+                <div class="mana-cost">⚡ 8 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Bafo do Dragão</h3>
+                <p>Torrente de fogo em área frontal (2 turnos).</p>
+                <p><strong>- Nível Profissional:</strong> +100% dano e +6 queimadura.</p>
+                <div class="mana-cost">⚡ 15 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Chama de Helios</h3>
+                <p>Chama direta no alvo, impossível de esquivar.</p>
+                <p><strong>- Nível Profissional:</strong> 6 de dano contínuo por 3 turnos.</p>
+                <div class="mana-cost">⚡ 12 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Inferno de Ifrit</h3>
+                <p>Meteoro colossal que queima tudo na área.</p>
+                <p><strong>- Nível Mestre:</strong> +200% dano base e área de 5 turnos.</p>
+                <div class="mana-cost">⚡ 30 Mana</div>
+            </div>
+        </div>
+
+        <div id="agua" class="tab-content">
+            <h1>Água</h1>
+            <span class="scaling-info">(Inteligência + Nível Magico de Água)</span>
+
+            <div class="magia-card">
+                <h3>Jato de Água</h3>
+                <p>Causa dano e empurra o inimigo.</p>
+                <div class="mana-cost">⚡ 4 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Nevasca</h3>
+                <p>Tempestade de neve que dificulta as ações (Área 3 turnos).</p>
+                <div class="mana-cost">⚡ 10 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Barreira de Água</h3>
+                <p>Protege contra ataques com vigor igual ao do lançador.</p>
+                <div class="mana-cost">⚡ 12 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Explosão de Gelo</h3>
+                <p>Dano ao redor do usuário e congela por 1 turno.</p>
+                <div class="mana-cost">⚡ 18 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Maremoto</h3>
+                <p>Dano +150% e derruba inimigos em área imensa (10 turnos).</p>
+                <div class="mana-cost">⚡ 35 Mana</div>
+            </div>
+        </div>
+
+
+        <div id="vento" class="tab-content">
+            <h1>Vento</h1>
+            <span class="scaling-info">(Inteligência + Nível Magico de Vento)</span>
+
+            <div class="magia-card">
+                <h3>Lâmina de Vento</h3>
+                <p>Corte de ar afiado (+50% dano).</p>
+                <div class="mana-cost">⚡ 5 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Rajada de Vento</h3>
+                <p>Empurra e derruba o alvo.</p>
+                <div class="mana-cost">⚡ 6 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Velocidade do Vento</h3>
+                <p>Aumenta Reação e Investida em 100%.</p>
+                <div class="mana-cost">⚡ 14 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Tornado</h3>
+                <p>Lança inimigos ao ar (+100% dano na queda).</p>
+                <div class="mana-cost">⚡ 22 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Vácuo</h3>
+                <p>Drena 5 de vigor por turno em área de 4 turnos.</p>
+                <div class="mana-cost">⚡ 28 Mana</div>
+            </div>
+        </div>
+
+        <div id="terra" class="tab-content">
+            <h1>Terra / Natureza</h1>
+            <span class="scaling-info">(Inteligência + Nível Magico de Terra)</span>
+
+            <div class="magia-card">
+                <h3>Lança de Pedra</h3>
+                <p>Dano físico perfurante (+50% dano base).</p>
+                <div class="mana-cost">⚡ 5 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Vinha Aprisionadora</h3>
+                <p>Enraíza o inimigo por 1 turno.</p>
+                <div class="mana-cost">⚡ 7 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Corpo de Rocha</h3>
+                <p>Reduz dano recebido em 100% por 2 turnos.</p>
+                <div class="mana-cost">⚡ 20 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Terremoto</h3>
+                <p>Derruba e causa +200% dano em área de 10 turnos.</p>
+                <div class="mana-cost">⚡ 32 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Campo Florido</h3>
+                <p>Cura 200% do contador e +3 de vigor.</p>
+                <div class="mana-cost">⚡ 35 Mana</div>
+            </div>
+        </div>
+
+        <div id="raio" class="tab-content">
+            <h1>Raio – Ira de Zeus</h1>
+            <span class="scaling-info">(Inteligência + Nível Magico de Raio)</span>
+
+            <div class="magia-card">
+                <h3>Relâmpago</h3>
+                <p>Um poderoso raio que atinge um único inimigo.</p>
+                <p><strong>- Nível Aprendiz:</strong> Dano elétrico +50% do dano base.</p>
+                <div class="mana-cost">⚡ 6 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Campo Eletrostático</h3>
+                <p>Cria um campo de energia que eletrocuta e paralisa inimigos próximos.</p>
+                <p><strong>- Nível Aprendiz:</strong> Dano base e paralisa por 1 turno.</p>
+                <div class="mana-cost">⚡ 9 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Energia de Hermes</h3>
+                <p>Concede ao usuário um surto de velocidade extrema.</p>
+                <p><strong>- Nível Profissional:</strong> Concede uma ação extra imediata por 2 turnos.</p>
+                <div class="mana-cost">⚡ 16 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Teletransporte</h3>
+                <p>O usuário se teletransporta instantaneamente em forma de raio.</p>
+                <p><strong>- Nível Mestre:</strong> Teleporta até 10 turnos de distância no campo de visão.</p>
+                <div class="mana-cost">⚡ 18 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Tempestade Elétrica</h3>
+                <p>Invoca uma tempestade elétrica que atinge a todos em uma área ampla.</p>
+                <p><strong>- Nível Mestre:</strong> +200% dano em área de 5 turnos e paralisa os atingidos.</p>
+                <div class="mana-cost">⚡ 32 Mana</div>
+            </div>
+        </div>
+
+        <div id="veneno" class="tab-content">
+            <h1>Veneno – Agonia Prolongada</h1>
+            <span class="scaling-info">(Inteligência + Nível Magico de Veneno)</span>
+
+            <div class="magia-card">
+                <h3>Toque Envenenado</h3>
+                <p>Envenena o alvo com um toque mortal.</p>
+                <p><strong>- Nível Aprendiz:</strong> 2 de dano venenoso e -1 vigor por 2 turnos.</p>
+                <div class="mana-cost">⚡ 5 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Névoa Tóxica</h3>
+                <p>Cria uma névoa venenosa que inflige dano a todos os inimigos em uma área.</p>
+                <p><strong>- Nível Aprendiz:</strong> +1 Dano venenoso em área por 2 turnos.</p>
+                <div class="mana-cost">⚡ 8 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Maldição Toxina</h3>
+                <p>Lança uma maldição venenosa sobre o alvo, causando dano contínuo.</p>
+                <p><strong>- Nível Profissional:</strong> +6 Dano contínuo por 4 turnos e reduz cura recebida.</p>
+                <div class="mana-cost">⚡ 14 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Pústula Sonífera</h3>
+                <p>Explosão de pústulas que causa sono em área.</p>
+                <p><strong>- Nível Profissional:</strong> Causa sono em uma área de 2 turnos.</p>
+                <div class="mana-cost">⚡ 16 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Mácula</h3>
+                <p>Drena o vigor do inimigo em uma área ampla.</p>
+                <p><strong>- Nível Mestre:</strong> Drena 5 de vigor por 2 turnos e causa +12 de dano venenoso.</p>
+                <div class="mana-cost">⚡ 28 Mana</div>
+            </div>
+        </div>
+
+        <div id="mental" class="tab-content">
+            <h1>Mental</h1>
+            <span class="scaling-info">(Inteligência + Nível Magico de Mental)</span>
+
+            <div class="magia-card">
+                <h3>Lança Psíquica</h3>
+                <p>Perfura a mente de um inimigo, causando dano psíquico direto.</p>
+                <p><strong>- Nível Aprendiz:</strong> Dano base do contador.</p>
+                <div class="mana-cost">⚡ 5 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Barreira Mental</h3>
+                <p>Protege o usuário de ataques psíquicos.</p>
+                <p><strong>- Nível Aprendiz:</strong> Reduz dano psíquico recebido em 100% por 2 turnos.</p>
+                <div class="mana-cost">⚡ 8 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Controle Mental</h3>
+                <p>Força o inimigo a agir conforme a sua vontade.</ p>
+                <p><strong>- Nível Profissional:</strong> Controla um inimigo por 1 turno.</p>
+                <div class="mana-cost">⚡ 22 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Explosão Psíquica</h3>
+                <p>Libera uma explosão de energia mental em área.</p>
+                <p><strong>- Nível Mestre:</strong> +100% dano em um raio de 5 turnos.</p>
+                <div class="mana-cost">⚡ 26 Mana</div>
+            </div>
+
+            <div class="magia-card">
+                <h3>Telecinesia</h3>
+                <p>Move objetos ou inimigos com o poder da mente.</p>
+                <p><strong>- Nível Mestre:</strong> Move 200kg ou empurra três inimigos.</p>
+                <div class="mana-cost">⚡ 30 Mana</div>
+            </div>
+        </div>
+
+        <div id="sombra" class="tab-content">
+            <h1>Sombrio</h1>
+
+            <h3>Nível 1 – Escuridão</h3>
+            <div class="magia-card">
+                <h3>Sombra rasteira</h3>
+                <p>Uma sombra se arrasta pelo chão e prende o alvo.</p>
+                <div class="info-row">🎲 1d6 | 💀 -50% velocidade (2 turnos) | 📏 6m | ⚡ 5 mana</div>
+            </div>
+            <div class="magia-card">
+                <h3>Escuridão leve</h3>
+                <p>Cria um campo escuro que dificulta visão.</p>
+                <div class="info-row">💀 -2 acerto | 📏 Área 3m | ⚡ 4 mana</div>
+            </div>
+
+            <h3>Nível 3 – Domínio Sombrio</h3>
+            <div class="magia-card">
+                <h3>Prisão das sombras</h3>
+                <p>Sombras prendem completamente o alvo.</p>
+                <div class="info-row">🎲 2d10 | 💀 Imobiliza (2 turnos) | 📏 6m | ⚡ 12 mana</div>
+            </div>
+
+            <h3>Nível 5 – Senhor das Trevas</h3>
+            <div class="magia-card">
+                <h3>Eclipse total</h3>
+                <p>Cobre o campo em trevas absolutas.</p>
+                <div class="info-row">🎲 4d10 | 💀 -3 atributos | ⚡ 30 mana</div>
+            </div>
+        </div>
+
+        <div id="sagrado" class="tab-content">
+            <h1>Magias Sagradas</h1>
+
+            <h3>Nível 1 – Luz Inicial</h3>
+            <div class="magia-card">
+                <h3>Luz purificadora</h3>
+                <p>Luz que queima criaturas sombrias.</p>
+                <div class="info-row">🎲 1d8 (+1d6 vs sombras) | 📏 6m | ⚡ 5 mana</div>
+            </div>
+            <div class="magia-card">
+                <h3>Cura leve</h3>
+                <p>Recupera ferimentos básicos.</p>
+                <div class="info-row">🎲 Cura 1d8 | ⚡ 4 mana</div>
+            </div>
+
+            <h3>Nível 3 – Fé</h3>
+            <div class="magia-card">
+                <h3>Cura em área</h3>
+                <p>Cura aliados próximos.</p>
+                <div class="info-row">🎲 2d6 (todos) | ⚡ 12 mana</div>
+            </div>
+
+            <h3>Nível 5 – Divindade</h3>
+            <div class="magia-card">
+                <h3>Ressurreição total</h3>
+                <p>Revive completamente um aliado.</p>
+                <div class="info-row">💀 Cura total | ⚡ 35 mana</div>
+            </div>
+            <div class="magia-card">
+                <h3>Exorcismo supremo</h3>
+                <p>Destrói entidades sombrias.</p>
+                <div class="info-row">🎲 6d10 | 💀 chance de eliminar | ⚡ 32 mana</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabId) {
+            // Esconder todos os conteúdos
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remover a classe 'active' de todos os botões
+            const buttons = document.querySelectorAll('.tabs button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Mostrar o conteúdo atual e marcar o botão clicado como ativo
+            document.getElementById(tabId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

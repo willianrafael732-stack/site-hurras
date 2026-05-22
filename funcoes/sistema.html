@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexalis - Sistema de Regras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #050508;
+            --surface: #0f101a;
+            --primary: #6366f1;
+            --secondary: #ccff00;
+            --attr-color: #00ff88;
+            --bad-color: #ff4757;
+            --text-main: #e2e8f0;
+            --text-dim: #94a3b8;
+            --border: #1e293b;
+            --glass: rgba(15, 16, 26, 0.95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background: var(--bg);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            background-image: radial-gradient(circle at 50% 0%, #111827 0%, transparent 50%);
+        }
+
+        h1, h2, h3 { font-family: 'Cinzel', serif; }
+
+        header {
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            color: var(--secondary);
+            text-shadow: 0 0 20px rgba(204, 255, 0, 0.2);
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: var(--glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            padding: 15px;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover { color: var(--secondary); }
+
+        .container {
+            max-width: 950px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 40px;
+            white-space: pre-line;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        h2 {
+            color: var(--secondary);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            white-space: normal;
+        }
+
+        h3 {
+            color: var(--attr-color);
+            margin: 20px 0 10px;
+        }
+
+        .arma { color: var(--secondary); font-weight: 700; text-transform: uppercase; }
+        .attr { color: var(--attr-color); font-weight: 700; }
+        .vantagem { color: var(--attr-color); font-weight: 700; text-transform: uppercase; }
+        .desvantagem { color: var(--bad-color); font-weight: 700; text-transform: uppercase; }
+
+        .highlight-box {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: rgba(0,0,0,0.25);
+        }
+
+        th, td {
+            border: 1px solid var(--border);
+            padding: 12px;
+        }
+
+        th {
+            background: var(--border);
+            color: var(--secondary);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-dim);
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+
+        <link rel="stylesheet" href="/funcoes/css/sistema.css">
+
+      
+      <nav class="navbar">
+        <div class="container-nav">
+            <div class="links">
+                <a href="../funcoes/inicio.html">historia </a>
+                <a href="racaeclasses.html">Raças e Classes</a>
+                <a href="/armas/armas.html">Armas</a>
+                <a href="../funcoes/sistema.html">sistema</a>
+                <a href="../funcoes/inimigo.html">inimigos</a>
+                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
+                <a href="..//funcoes/magia.html">magias</a>
+                <a href="..//funcoes/porção.html">porção</a>
+                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
+                
+            </div>
+        </div>
+    </nav>
+
+<header>
+    <h1>Sistema</h1>
+    <p>Manual de Combate e Atributos</p>
+</header>
+
+<nav>
+    <a href="#proficiencia">Proficiência</a>
+    <a href="#vontade">Recursos</a>
+    <a href="#vitalidade">Vitalidade</a>
+    <a href="#sistema">Sistema & XP</a>
+    <a href="#combate">Combate</a>
+</nav>
+
+<div class="container">
+
+<section id="proficiencia">
+    <h2>Proficiência</h2>
+    A <span class="attr">Proficiência</span> define o limite de habilidades e <span class="arma">equipamentos</span>.
+
+    <table>
+        <tr><th>Nível</th><th>Status Máximo</th></tr>
+        <tr><td>1</td><td>1 – Aprendiz</td></tr>
+        <tr><td>3</td><td>3 – Profissional</td></tr>
+        <tr><td>6</td><td>6 – Mestre</td></tr>
+        <tr><td>7</td><td>7 – Evolução Racial</td></tr>
+        <tr><td>12</td><td>10 – Mestre 2ª Classe</td></tr>
+    </table>
+</section>
+
+<section id="vontade">
+    <h2>Recursos Vitalis</h2>
+
+    <h3>Força de Vontade</h3>
+    Recurso raro para reverter falhas, reduzir dificuldade ou re-rolar dados.
+
+    <h3>Mana / Fúria / Chí</h3>
+    Energia usada para habilidades e magias.
+
+    <h3>Benções & Maldições</h3>
+    <span class="vantagem">Benção:</span> Sucesso automático ou recuperação.
+    <br>
+    <span class="desvantagem">Maldição:</span> Penalidades prolongadas.
+</section>
+
+<section id="vitalidade">
+    <h2>Vitalidade e Dor</h2>
+
+    <table>
+        <tr><th>Estado</th><th>Penalidade</th></tr>
+        <tr><td>Saudável</td><td>+0</td></tr>
+        <tr><td>Ferido</td><td>+2</td></tr>
+        <tr><td>Aleijado</td><td>+5</td></tr>
+        <tr><td>Caído</td><td>+7</td></tr>
+        <tr><td style="color:var(--bad-color)">MORTE</td><td>Definitiva</td></tr>
+    </table>
+</section>
+
+<section id="sistema">
+    <h2>Sistema de Evolução (XP)</h2>
+
+    <div class="highlight-box">
+        <strong>Custos de XP:</strong><br>
+        Atributos: nível x4<br>
+        Habilidades: nível x2<br>
+        Proficiência: nível x10
+    </div>
+
+    <h3>Dificuldade e Testes</h3>
+    Dificuldade base: <strong>5</strong> | Sucessos necessários: <strong>3</strong>
+
+    <div class="highlight-box">
+        <h3>Ataque & Ação Conjunta</h3>
+
+        Uma <span class="attr">Ação Conjunta</span> acontece quando dois ou mais personagens cooperam no mesmo turno.
+
+        <h3>Ataque Conjunto</h3>
+        • Um personagem é o <span class="vantagem">Atacante Principal</span><br>
+        • Cada aliado concede <span class="vantagem">+1 dado</span> OU <span class="vantagem">-1 dificuldade</span><br>
+        • O dano base vem apenas do atacante principal<br>
+        <span class="desvantagem">Limite:</span> Máx. +3 dados ou -3 dificuldade
+
+        <h3>Ação Conjunta Não Ofensiva</h3>
+        • Todos rolam normalmente<br>
+        • Cada sucesso extra reduz a dificuldade ou acelera a ação<br>
+        <span class="desvantagem">Falha Crítica:</span> +1 dificuldade ao grupo
+    </div>
+</section>
+
+<section id="combate">
+    <h2>Movimento e Turnos</h2>
+
+    <strong>Movimento Básico:</strong> 5 metros por turno<br>
+    <span class="desvantagem">Regra:</span> Não é possível mover e agir no mesmo turno sem habilidade especial.
+</section>
+
+</div>
+
+<footer>
+    NEXALIS © 2026 — Manual de Regras RPG
+</footer>
+
+</body>
+</html>

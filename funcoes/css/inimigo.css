@@ -1,0 +1,175 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:'Segoe UI',Tahoma,sans-serif;
+    background:#0b0b12;
+    color:#e6e6e6;
+}
+
+/* NAVBAR */
+.navbar{
+    background:#111827;
+    border-bottom:1px solid #1f2933;
+}
+
+.container-nav{
+    max-width:1300px;
+    margin:auto;
+    padding:10px 20px;
+}
+
+.links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+}
+
+.links a{
+    color:#cbd5e1;
+    text-decoration:none;
+    font-size:14px;
+}
+
+.links a:hover{
+    color:#38bdf8;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:25px 15px;
+    background:radial-gradient(circle at top,#1e293b,#020617);
+}
+
+header h1{
+    margin:0;
+    font-size:32px;
+    color:#facc15;
+}
+
+/* SECTIONS */
+.pdf-section{
+    max-width:1300px;
+    margin:35px auto;
+    padding:0 20px;
+}
+
+.pdf-section h2{
+    margin-bottom:15px;
+    padding-bottom:6px;
+    border-bottom:2px solid #1e293b;
+    color:#38bdf8;
+    cursor:pointer;
+}
+
+/* GRID */
+.grid-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+    margin-bottom:20px;
+}
+
+/* PDF CARD */
+.pdf-card{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+    background:#020617;
+    border:1px solid #1e293b;
+    border-radius:8px;
+    color:#e5e7eb;
+    text-decoration:none;
+    font-weight:500;
+    text-align:center;
+    transition:.2s;
+}
+
+.pdf-card:hover{
+    background:#020617;
+    border-color:#38bdf8;
+    color:#38bdf8;
+    transform:translateY(-3px);
+}
+
+/* ANIMAL BOX */
+.animal-box{
+    background:#020617;
+    border:1px solid #1e293b;
+    border-radius:10px;
+    padding:15px;
+}
+
+.animal-box h3{
+    margin-top:0;
+    color:#facc15;
+}
+
+.animal-box ul{
+    padding-left:18px;
+    margin-bottom:12px;
+}
+
+.animal-box li{
+    font-size:14px;
+    margin-bottom:6px;
+}
+
+/* LINKS DENTRO DO BOX */
+.animal-box .pdf-card{
+    margin-top:8px;
+}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+    header h1{
+        font-size:24px;
+    }
+    .links{
+        gap:8px;
+    }
+}
+
+header {
+    text-align: center;
+}
+
+/* Centraliza as barras de navegação */
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+/* Centraliza os links dentro da nav */
+.container-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* Opcional: deixa o h1 mais alinhado visualmente */
+header h1 {
+    margin-bottom: 20px;
+}
+
+.navbar-secundaria {
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* garante centralização */
+.navbar-secundaria .container-nav,
+.navbar-secundaria .links {
+    display: flex;
+    justify-content: center;
+}

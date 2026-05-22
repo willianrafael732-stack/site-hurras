@@ -1,0 +1,145 @@
+/* ===== RESET ===== */
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+/* ===== BASE ===== */
+body{
+    font-family:"Georgia", serif;
+    background:radial-gradient(circle at top, #1a1a2e, #0a0a12 70%);
+    color:#e0e0e0;
+    padding:20px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    background:#0d0d16;
+    border-bottom:1px solid #2e2e44;
+    margin-bottom:20px;
+}
+
+.container-nav{
+    max-width:1200px;
+    margin:auto;
+    padding:10px 20px;
+}
+
+.navbar .links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+}
+
+.navbar .links a{
+    color:#cfcfe6;
+    text-decoration:none;
+    font-weight:600;
+    transition:.2s;
+}
+
+.navbar .links a:hover{
+    color:#f2c94c;
+}
+
+/* ===== GRIMÓRIO ===== */
+.grimorio{
+    max-width:1000px;
+    margin:auto;
+    background:rgba(10,10,18,.85);
+    border:2px solid #3a3a5c;
+    border-radius:12px;
+    padding:20px;
+    box-shadow:0 0 30px rgba(0,0,0,.8);
+}
+
+/* ===== ABAS ===== */
+.tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-bottom:20px;
+}
+
+.tabs button{
+    background:linear-gradient(145deg,#2a2a3d,#141424);
+    color:#ddd;
+    border:1px solid #444;
+    padding:10px 16px;
+    cursor:pointer;
+    font-weight:bold;
+    border-radius:6px;
+    transition:.2s;
+}
+
+.tabs button:hover{
+    background:#3b3b5f;
+    color:#fff;
+}
+
+.tabs button.active{
+    background:linear-gradient(145deg,#6b5cff,#3a2ca0);
+    color:#fff;
+    box-shadow:0 0 10px rgba(120,100,255,.6);
+}
+
+/* ===== CONTEÚDO DAS ABAS ===== */
+.tab-content{
+    display:none;
+    animation:fadeIn .35s ease;
+}
+
+.tab-content.active{
+    display:block;
+}
+
+/* ===== TÍTULOS ===== */
+h1{
+    font-size:32px;
+    color:#f2c94c;
+    border-bottom:2px solid #3a3a5c;
+    padding-bottom:6px;
+    margin-bottom:10px;
+}
+
+h3{
+    margin-top:20px;
+    color:#9bd3ff;
+}
+
+/* ===== TEXTO ===== */
+p{
+    margin:4px 0;
+    line-height:1.55;
+}
+
+/* ===== SEPARADOR ===== */
+hr{
+    border:none;
+    height:1px;
+    background:linear-gradient(to right, transparent, #555, transparent);
+    margin:14px 0;
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(6px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+/* ===== RESPONSIVO ===== */
+@media(max-width:768px){
+    .navbar .links{
+        justify-content:center;
+    }
+
+    h1{
+        font-size:26px;
+    }
+
+    .tabs button{
+        padding:8px 12px;
+        font-size:.9em;
+    }
+}
