@@ -211,12 +211,34 @@
             font-size: 0.85em;
             color: #ffbaba;
         }
+
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #searchInput {
+            width: 80%;
+            max-width: 500px;
+            padding: 12px;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
+            background: var(--panel-bg);
+            color: white;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        #searchInput:focus {
+            box-shadow: 0 0 10px var(--gold);
+        }
     </style>
 </head>
 
 <body>
 
-   <nav class="navbar">
+    <nav class="navbar">
         <div class="container-nav">
             <div class="links">
                 <a href="../funcoes/inicio.html">historia </a>
@@ -228,10 +250,33 @@
                 <a href="..//funcoes/magia.html">magias</a>
                 <a href="..//funcoes/porção.html">porção</a>
                 <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
-                
+
             </div>
         </div>
     </nav>
+
+    <script>
+        function searchPotions() {
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toLowerCase();
+            const cards = document.querySelectorAll(".potion-card");
+
+            cards.forEach(card => {
+                const name = card.querySelector(".potion-name").textContent.toLowerCase();
+
+                if (name.includes(filter)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="🔍 Pesquisar poção..." onkeyup="searchPotions()">
+    </div>
 
     <div class="container">
         <header>
@@ -304,272 +349,272 @@
 
 
 
-        
-            <div class="potion-card cat-utilidade" data-type="utilidade" data-element="terra">
-                <h3 class="potion-name">Seiva Ancestral</h3>
-                <p class="potion-desc">Xarope verde com cheiro de floresta viva.</p>
-                <div class="potion-effect">
-                    <strong>Efeito (1h):</strong> Vantagem em Percepção e Regeneração na água.
-                </div>
-                <div class="potion-debuff">
-                    <strong>Desvantagem:</strong> Enraizamento (Lentidão ao ficar parado).
-                </div>
-            </div>
 
-            <div class="potion-card cat-social" data-type="social" data-element="mental">
-                <h3 class="potion-name">Poção do Mal Entendido</h3>
-                <p class="potion-desc">Líquido acinzentado que ondula sozinho. Sons ficam distorcidos.</p>
-                <div class="potion-effect">
-                    <strong>Efeito (1h):</strong> Todas as ações sociais soam ofensivas para você.
-                </div>
-                <div class="potion-debuff">
-                    <strong>Desvantagem:</strong> Penalidade em testes sociais e agressividade.
-                </div>
+        <div class="potion-card cat-utilidade" data-type="utilidade" data-element="terra">
+            <h3 class="potion-name">Seiva Ancestral</h3>
+            <p class="potion-desc">Xarope verde com cheiro de floresta viva.</p>
+            <div class="potion-effect">
+                <strong>Efeito (1h):</strong> Vantagem em Percepção e Regeneração na água.
             </div>
-
-            <div class="potion-card cat-social" data-type="social" data-element="mental">
-                <h3 class="potion-name">Língua Solta</h3>
-                <p class="potion-desc">Verde efervescente. A respiração fica leve e embriagada.</p>
-                <div class="potion-effect">
-                    <strong>Efeito (1h):</strong> Interpreta ações sociais com total honestidade.
-                </div>
-                <div class="potion-debuff">
-                    <strong>Desvantagem:</strong> Tendência a falar apenas a verdade absoluta.
-                </div>
+            <div class="potion-debuff">
+                <strong>Desvantagem:</strong> Enraizamento (Lentidão ao ficar parado).
             </div>
-
-            <div class="potion-card cat-combate" data-type="combate" data-element="fogo">
-                <h3 class="potion-name">Sangue Fervente</h3>
-                <p class="potion-desc">Carmesim espesso que pulsa como um coração.</p>
-                <div class="potion-effect">
-                    <strong>Efeito (30m):</strong> +2 em Força. Ignores cansaço e ferimentos leves.
-                </div>
-                <div class="potion-debuff">
-                    <strong>Desvantagem:</strong> -2 em Inteligência. Proibido ações de calma.
-                </div>
-            </div>
-
-            <div class="potion-card cat-sombria" data-type="sombria" data-element="sombra">
-                <h3 class="potion-name">Essência da Sombra</h3>
-                <p class="potion-desc">Óleo negro que absorve a luz. Frio como gelo.</p>
-                <div class="potion-effect">
-                    <strong>Efeito (1h):</strong> Translúcido. Vantagem em Furtividade e Ocultação.
-                </div>
-                <div class="potion-debuff">
-                    <strong>Desvantagem:</strong> Percepção reduzida pela metade sob luz solar.
-                </div>
-            </div>
-
-            <div class="potion-card cat-utilidade" data-type="utilidade" data-element="mental">
-                <h3 class="potion-name">Lágrima de Afrodite (Andakah)</h3>
-                <p class="potion-desc">Um líquido furta-cor que parece pesado como mercúrio. Encontrado apenas nas
-                    Terras de
-                    Andakah.</p>
-                <div class="potion-effect">
-                    <strong>Efeito (30m):</strong> O usuário emana uma aura de tragédia. +3 em testes de Intimidação ou
-                    Persuasão baseada em pena.
-                </div>
-                <div class="potion-debuff">
-                    <strong>Desvantagem:</strong> Maldição de Andakah: Impossibilidade de receber curas mágicas de
-                    aliados.
-                </div>
-            </div>
-
-            <div class="potion-card cat-sombria" data-type="sombria" data-element="sombra">
-                <h3 class="potion-name">Essência de Shadowfen</h3>
-                <p class="potion-desc">Criada pelos alquimistas sombrios do vilarejo de Shadowfen. É um gás denso
-                    engarrafado.
-                </p>
-                <div class="potion-effect">
-                    <strong>Efeito (1h):</strong> Fusão parcial a sombras. +4 em Furtividade e atravessa frestas
-                    pequenas.
-                </div>
-                <div class="potion-debuff">
-                    <strong>Desvantagem:</strong> Apatia de Andakah: Perda de 1 ponto temporário de Força de Vontade ao
-                    fim.
-                </div>
-            </div>
-
-            <div class="potion-card cat-combate" data-type="combate" data-element="agua">
-                <h3 class="potion-name">Elixir do Sangue de Ymir</h3>
-                <p class="potion-desc">Um licor azul gélido que nunca congela, vindo das montanhas de Skallgard.</p>
-                <div class="potion-effect">
-                    <strong>Efeito (30m):</strong> +2 em Vigor e imunidade a frio. Ataques causam lentidão.
-                </div>
-                <div class="potion-debuff">
-                    <strong>Desvantagem:</strong> Calor Insuportável: -2 em ações se estiver em climas quentes.
-                </div>
-            </div>
-
-            <div class="potion-card cat-social" data-type="social" data-element="mental">
-                <h3 class="potion-name">Néctar de Athenopolis</h3>
-                <p class="potion-desc">Um mel dourado filtrado nas academias de Helios. Cheira a pergaminho novo.</p>
-                <div class="potion-effect">
-                    <strong>Efeito (1h):</strong> +3 em Conhecimentos Acadêmicos e poliglota (Nexalis).
-                </div>
-                <div class="potion-debuff">
-                    <strong>Desvantagem:</strong> Arrogância de Filósofo: Risco de corrigir aliados rudemente.
-                </div>
-            </div>
-
-            <div class="potion-card cat-utilidade" data-type="utilidade" data-element="raio">
-                <h3 class="potion-name">Sopro de Vidro</h3>
-                <p class="potion-desc">Azul cristalino. Revela padrões geométricos ao agitar.</p>
-                <div class="potion-effect">
-                    <strong>Efeito (15m):</strong> +3 em Percepção e Reação. Ouve batimentos e vê fios.
-                </div>
-                <div class="potion-debuff">
-                    <strong>Desvantagem:</strong> Atordoamento fácil com excesso de sons ou luzes.
-                </div>
-            </div>
-
-            <div class="potion-card cat-social" data-type="social" data-element="mental">
-                <h3 class="potion-name">Elixir do Falso Testemunho</h3>
-                <p class="potion-desc">Dourado brilhante com cheiro de mel.</p>
-                <div class="potion-effect">
-                    <strong>Efeito (1h):</strong> +2 em Manipulação e Lábia. Mentiras indetectáveis.
-                </div>
-                <div class="potion-debuff">
-                    <strong>Desvantagem:</strong> Ressaca da Verdade: Após o efeito, impossibilidade de falar a verdade
-                    por 1h.
-                </div>
-            </div>
-            <div class="potion-card cat-combate" data-type="combate" data-element="terra">
-                <h3 class="potion-name">Couraça de Pedra</h3>
-                <p class="potion-desc">Cinza denso com gosto de terra úmida.</p>
-                <div class="potion-effect"><strong>Efeito (1h):</strong> +2 Resistência Física e +1 Vigor.</div>
-                <div class="potion-debuff"><strong>Desvantagem:</strong> -2 em Destreza e Esquiva. Movimentos pesados.
-                </div>
-            </div>
-
-            <div class="potion-card cat-utilidade" data-type="utilidade" data-element="mental">
-                <h3 class="potion-name">Visão de Éter</h3>
-                <p class="potion-desc">Roxo cintilante com cheiro de ozônio.</p>
-                <div class="potion-effect"><strong>Efeito (30m):</strong> Vê fluxos de Mana e magias. +2 Percepção p/
-                    invisíveis.</div>
-                <div class="potion-debuff"><strong>Desvantagem:</strong> Olhos brilham (Impossível usar Furtividade).
-                </div>
-            </div>
-
-            <div class="potion-card cat-utilidade" data-type="utilidade" data-element="raio">
-                <h3 class="potion-name">Orvalho do Pensamento</h3>
-                <p class="potion-desc">Amarelo elétrico que vibra constantemente.</p>
-                <div class="potion-effect"><strong>Efeito (15m):</strong> +2 Reação e +1 Ação Mental por turno.</div>
-                <div class="potion-debuff"><strong>Desvantagem:</strong> Inteligência cai para o mínimo por 1h após o
-                    fim.</div>
-            </div>
-
-            <div class="potion-card cat-combate" data-type="combate" data-element="fogo">
-                <h3 class="potion-name">Fúria Elemental</h3>
-                <p class="potion-desc">Alterna entre o calor do fogo e o frio do gelo.</p>
-                <div class="potion-effect"><strong>Efeito (1h):</strong> Ataques de Briga/Magia causam dano Fogo/Raio
-                    extra.
-                </div>
-                <div class="potion-debuff"><strong>Desvantagem:</strong> Se levar Crítico, a poção explode (-1
-                    Vitalidade).
-                </div>
-            </div>
-
-            <div class="potion-card cat-sombria" data-type="sombria" data-element="sombra">
-                <h3 class="potion-name">Pele de Ébano</h3>
-                <p class="potion-desc">Negro absoluto, textura similar às sombras dos rituais.</p>
-                <div class="potion-effect"><strong>Efeito (1h):</strong> +2 Resistência Física. Vantagem em Ocultação no
-                    escuro.
-                </div>
-                <div class="potion-debuff"><strong>Desvantagem:</strong> Dano dobrado contra magias do elemento Sagrado.
-                </div>
-            </div>
-
-            <div class="potion-card cat-utilidade" data-type="utilidade" data-element="sombra">
-                <h3 class="potion-name">Silêncio Mortal</h3>
-                <p class="potion-desc">Líquido mudo, não faz som no frasco.</p>
-                <div class="potion-effect"><strong>Efeito (1h):</strong> +4 em Furtividade. Movimentos totalmente mudos.
-                </div>
-                <div class="potion-debuff"><strong>Desvantagem:</strong> O usuário fica surdo enquanto durar o efeito.
-                </div>
-            </div>
-
-            <div class="potion-card cat-social" data-type="social" data-element="mental">
-                <h3 class="potion-name">Toque da Morte</h3>
-                <p class="potion-desc">Transparente com reflexos dourados. Desfoca o redor.</p>
-                <div class="potion-effect"><strong>Efeito:</strong> Apaga a memória (última 1h) de uma interação
-                    emocional.
-                </div>
-            </div>
-
-            <div class="potion-card cat-utilidade" data-type="utilidade" data-element="mental">
-                <h3 class="potion-name">Tônico da Mente Blindada</h3>
-                <p class="potion-desc">Rosa neon que brilha como um pulso cerebral.</p>
-                <div class="potion-effect"><strong>Efeito (1h):</strong> +3 Resistência Mágica: Mental. Barreira contra
-                    controle.</div>
-                <div class="potion-debuff"><strong>Desvantagem:</strong> Apatia total. -2 em Carisma e Persuasão.</div>
-            </div>
-
-            <div class="potion-card cat-utilidade" data-type="utilidade" data-element="veneno">
-                <h3 class="potion-name">Olhar de Basilisco</h3>
-                <p class="potion-desc">Verde-esmeralda denso com cheiro mineral.</p>
-                <div class="potion-effect"><strong>Efeito (15m):</strong> +3 em Intimidação. Chance de paralisar
-                    inimigos.</div>
-                <div class="potion-debuff"><strong>Desvantagem:</strong> -3 em Percepção (Perda de visão periférica).
-                </div>
-            </div>
-
-            <div class="potion-card cat-combate" data-type="combate" data-element="vento">
-                <h3 class="potion-name">Agilidade de Mercúrio</h3>
-                <p class="potion-desc">Prateado brilhante que flui como metal vivo.</p>
-                <div class="potion-effect"><strong>Efeito (30m):</strong> +3 em Destreza e +2 em Esquiva. Saltos
-                    duplicados.
-                </div>
-                <div class="potion-debuff"><strong>Desvantagem:</strong> Recebe +2 de dano extra de ataques de impacto.
-                </div>
-            </div>
-
-            <div class="potion-card cat-combate" data-type="combate" data-element="fogo">
-                <h3 class="potion-name">Núcleo Ígneo</h3>
-                <p class="potion-desc">Líquido laranja fervente. O frasco queima a mão.</p>
-                <div class="potion-effect"><strong>Efeito (15m):</strong> +3 Dano de Fogo e Resistência a Calor.</div>
-                <div class="potion-debuff"><strong>Desvantagem:</strong> Desidratação extrema (-2 Vigor após o uso).
-                </div>
-            </div>
-
-            <div class="potion-card cat-utilidade" data-type="utilidade" data-element="raio">
-                <h3 class="potion-name">Sopro de Tempestade</h3>
-                <p class="potion-desc">Amarelo faíscante com cheiro a ozono.</p>
-                <div class="potion-effect"><strong>Efeito (10m):</strong> +3 em Reação e Movimento Adicional.</div>
-                <div class="potion-debuff"><strong>Desvantagem:</strong> Sobrecarga Nervosa (-3 em Atributos Físicos).
-                </div>
-            </div>
-
-            <div class="potion-card cat-combate" data-type="combate" data-element="terra">
-                <h3 class="potion-name">Rocha Viva</h3>
-                <p class="potion-desc">Castanho denso e pesado como chumbo.</p>
-                <div class="potion-effect"><strong>Efeito (30m):</strong> +3 Resistência Física. Imune a empurrões.
-                </div>
-                <div class="potion-debuff"><strong>Desvantagem:</strong> Inércia (Impossível correr, -2 em Esquiva).
-                </div>
-            </div>
-
         </div>
-        <script>
-            function filterPotions(category, btn) {
-                const cards = document.querySelectorAll('.potion-card');
-                const buttons = document.querySelectorAll('.filter-btn');
 
-                buttons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
+        <div class="potion-card cat-social" data-type="social" data-element="mental">
+            <h3 class="potion-name">Poção do Mal Entendido</h3>
+            <p class="potion-desc">Líquido acinzentado que ondula sozinho. Sons ficam distorcidos.</p>
+            <div class="potion-effect">
+                <strong>Efeito (1h):</strong> Todas as ações sociais soam ofensivas para você.
+            </div>
+            <div class="potion-debuff">
+                <strong>Desvantagem:</strong> Penalidade em testes sociais e agressividade.
+            </div>
+        </div>
 
-                cards.forEach(card => {
-                    const type = card.getAttribute('data-type');
-                    const element = card.getAttribute('data-element');
+        <div class="potion-card cat-social" data-type="social" data-element="mental">
+            <h3 class="potion-name">Língua Solta</h3>
+            <p class="potion-desc">Verde efervescente. A respiração fica leve e embriagada.</p>
+            <div class="potion-effect">
+                <strong>Efeito (1h):</strong> Interpreta ações sociais com total honestidade.
+            </div>
+            <div class="potion-debuff">
+                <strong>Desvantagem:</strong> Tendência a falar apenas a verdade absoluta.
+            </div>
+        </div>
 
-                    if (category === 'all' || type === category || element === category) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            }
-        </script>
+        <div class="potion-card cat-combate" data-type="combate" data-element="fogo">
+            <h3 class="potion-name">Sangue Fervente</h3>
+            <p class="potion-desc">Carmesim espesso que pulsa como um coração.</p>
+            <div class="potion-effect">
+                <strong>Efeito (30m):</strong> +2 em Força. Ignores cansaço e ferimentos leves.
+            </div>
+            <div class="potion-debuff">
+                <strong>Desvantagem:</strong> -2 em Inteligência. Proibido ações de calma.
+            </div>
+        </div>
+
+        <div class="potion-card cat-sombria" data-type="sombria" data-element="sombra">
+            <h3 class="potion-name">Essência da Sombra</h3>
+            <p class="potion-desc">Óleo negro que absorve a luz. Frio como gelo.</p>
+            <div class="potion-effect">
+                <strong>Efeito (1h):</strong> Translúcido. Vantagem em Furtividade e Ocultação.
+            </div>
+            <div class="potion-debuff">
+                <strong>Desvantagem:</strong> Percepção reduzida pela metade sob luz solar.
+            </div>
+        </div>
+
+        <div class="potion-card cat-utilidade" data-type="utilidade" data-element="mental">
+            <h3 class="potion-name">Lágrima de Afrodite (Andakah)</h3>
+            <p class="potion-desc">Um líquido furta-cor que parece pesado como mercúrio. Encontrado apenas nas
+                Terras de
+                Andakah.</p>
+            <div class="potion-effect">
+                <strong>Efeito (30m):</strong> O usuário emana uma aura de tragédia. +3 em testes de Intimidação ou
+                Persuasão baseada em pena.
+            </div>
+            <div class="potion-debuff">
+                <strong>Desvantagem:</strong> Maldição de Andakah: Impossibilidade de receber curas mágicas de
+                aliados.
+            </div>
+        </div>
+
+        <div class="potion-card cat-sombria" data-type="sombria" data-element="sombra">
+            <h3 class="potion-name">Essência de Shadowfen</h3>
+            <p class="potion-desc">Criada pelos alquimistas sombrios do vilarejo de Shadowfen. É um gás denso
+                engarrafado.
+            </p>
+            <div class="potion-effect">
+                <strong>Efeito (1h):</strong> Fusão parcial a sombras. +4 em Furtividade e atravessa frestas
+                pequenas.
+            </div>
+            <div class="potion-debuff">
+                <strong>Desvantagem:</strong> Apatia de Andakah: Perda de 1 ponto temporário de Força de Vontade ao
+                fim.
+            </div>
+        </div>
+
+        <div class="potion-card cat-combate" data-type="combate" data-element="agua">
+            <h3 class="potion-name">Elixir do Sangue de Ymir</h3>
+            <p class="potion-desc">Um licor azul gélido que nunca congela, vindo das montanhas de Skallgard.</p>
+            <div class="potion-effect">
+                <strong>Efeito (30m):</strong> +2 em Vigor e imunidade a frio. Ataques causam lentidão.
+            </div>
+            <div class="potion-debuff">
+                <strong>Desvantagem:</strong> Calor Insuportável: -2 em ações se estiver em climas quentes.
+            </div>
+        </div>
+
+        <div class="potion-card cat-social" data-type="social" data-element="mental">
+            <h3 class="potion-name">Néctar de Athenopolis</h3>
+            <p class="potion-desc">Um mel dourado filtrado nas academias de Helios. Cheira a pergaminho novo.</p>
+            <div class="potion-effect">
+                <strong>Efeito (1h):</strong> +3 em Conhecimentos Acadêmicos e poliglota (Nexalis).
+            </div>
+            <div class="potion-debuff">
+                <strong>Desvantagem:</strong> Arrogância de Filósofo: Risco de corrigir aliados rudemente.
+            </div>
+        </div>
+
+        <div class="potion-card cat-utilidade" data-type="utilidade" data-element="raio">
+            <h3 class="potion-name">Sopro de Vidro</h3>
+            <p class="potion-desc">Azul cristalino. Revela padrões geométricos ao agitar.</p>
+            <div class="potion-effect">
+                <strong>Efeito (15m):</strong> +3 em Percepção e Reação. Ouve batimentos e vê fios.
+            </div>
+            <div class="potion-debuff">
+                <strong>Desvantagem:</strong> Atordoamento fácil com excesso de sons ou luzes.
+            </div>
+        </div>
+
+        <div class="potion-card cat-social" data-type="social" data-element="mental">
+            <h3 class="potion-name">Elixir do Falso Testemunho</h3>
+            <p class="potion-desc">Dourado brilhante com cheiro de mel.</p>
+            <div class="potion-effect">
+                <strong>Efeito (1h):</strong> +2 em Manipulação e Lábia. Mentiras indetectáveis.
+            </div>
+            <div class="potion-debuff">
+                <strong>Desvantagem:</strong> Ressaca da Verdade: Após o efeito, impossibilidade de falar a verdade
+                por 1h.
+            </div>
+        </div>
+        <div class="potion-card cat-combate" data-type="combate" data-element="terra">
+            <h3 class="potion-name">Couraça de Pedra</h3>
+            <p class="potion-desc">Cinza denso com gosto de terra úmida.</p>
+            <div class="potion-effect"><strong>Efeito (1h):</strong> +2 Resistência Física e +1 Vigor.</div>
+            <div class="potion-debuff"><strong>Desvantagem:</strong> -2 em Destreza e Esquiva. Movimentos pesados.
+            </div>
+        </div>
+
+        <div class="potion-card cat-utilidade" data-type="utilidade" data-element="mental">
+            <h3 class="potion-name">Visão de Éter</h3>
+            <p class="potion-desc">Roxo cintilante com cheiro de ozônio.</p>
+            <div class="potion-effect"><strong>Efeito (30m):</strong> Vê fluxos de Mana e magias. +2 Percepção p/
+                invisíveis.</div>
+            <div class="potion-debuff"><strong>Desvantagem:</strong> Olhos brilham (Impossível usar Furtividade).
+            </div>
+        </div>
+
+        <div class="potion-card cat-utilidade" data-type="utilidade" data-element="raio">
+            <h3 class="potion-name">Orvalho do Pensamento</h3>
+            <p class="potion-desc">Amarelo elétrico que vibra constantemente.</p>
+            <div class="potion-effect"><strong>Efeito (15m):</strong> +2 Reação e +1 Ação Mental por turno.</div>
+            <div class="potion-debuff"><strong>Desvantagem:</strong> Inteligência cai para o mínimo por 1h após o
+                fim.</div>
+        </div>
+
+        <div class="potion-card cat-combate" data-type="combate" data-element="fogo">
+            <h3 class="potion-name">Fúria Elemental</h3>
+            <p class="potion-desc">Alterna entre o calor do fogo e o frio do gelo.</p>
+            <div class="potion-effect"><strong>Efeito (1h):</strong> Ataques de Briga/Magia causam dano Fogo/Raio
+                extra.
+            </div>
+            <div class="potion-debuff"><strong>Desvantagem:</strong> Se levar Crítico, a poção explode (-1
+                Vitalidade).
+            </div>
+        </div>
+
+        <div class="potion-card cat-sombria" data-type="sombria" data-element="sombra">
+            <h3 class="potion-name">Pele de Ébano</h3>
+            <p class="potion-desc">Negro absoluto, textura similar às sombras dos rituais.</p>
+            <div class="potion-effect"><strong>Efeito (1h):</strong> +2 Resistência Física. Vantagem em Ocultação no
+                escuro.
+            </div>
+            <div class="potion-debuff"><strong>Desvantagem:</strong> Dano dobrado contra magias do elemento Sagrado.
+            </div>
+        </div>
+
+        <div class="potion-card cat-utilidade" data-type="utilidade" data-element="sombra">
+            <h3 class="potion-name">Silêncio Mortal</h3>
+            <p class="potion-desc">Líquido mudo, não faz som no frasco.</p>
+            <div class="potion-effect"><strong>Efeito (1h):</strong> +4 em Furtividade. Movimentos totalmente mudos.
+            </div>
+            <div class="potion-debuff"><strong>Desvantagem:</strong> O usuário fica surdo enquanto durar o efeito.
+            </div>
+        </div>
+
+        <div class="potion-card cat-social" data-type="social" data-element="mental">
+            <h3 class="potion-name">Toque da Morte</h3>
+            <p class="potion-desc">Transparente com reflexos dourados. Desfoca o redor.</p>
+            <div class="potion-effect"><strong>Efeito:</strong> Apaga a memória (última 1h) de uma interação
+                emocional.
+            </div>
+        </div>
+
+        <div class="potion-card cat-utilidade" data-type="utilidade" data-element="mental">
+            <h3 class="potion-name">Tônico da Mente Blindada</h3>
+            <p class="potion-desc">Rosa neon que brilha como um pulso cerebral.</p>
+            <div class="potion-effect"><strong>Efeito (1h):</strong> +3 Resistência Mágica: Mental. Barreira contra
+                controle.</div>
+            <div class="potion-debuff"><strong>Desvantagem:</strong> Apatia total. -2 em Carisma e Persuasão.</div>
+        </div>
+
+        <div class="potion-card cat-utilidade" data-type="utilidade" data-element="veneno">
+            <h3 class="potion-name">Olhar de Basilisco</h3>
+            <p class="potion-desc">Verde-esmeralda denso com cheiro mineral.</p>
+            <div class="potion-effect"><strong>Efeito (15m):</strong> +3 em Intimidação. Chance de paralisar
+                inimigos.</div>
+            <div class="potion-debuff"><strong>Desvantagem:</strong> -3 em Percepção (Perda de visão periférica).
+            </div>
+        </div>
+
+        <div class="potion-card cat-combate" data-type="combate" data-element="vento">
+            <h3 class="potion-name">Agilidade de Mercúrio</h3>
+            <p class="potion-desc">Prateado brilhante que flui como metal vivo.</p>
+            <div class="potion-effect"><strong>Efeito (30m):</strong> +3 em Destreza e +2 em Esquiva. Saltos
+                duplicados.
+            </div>
+            <div class="potion-debuff"><strong>Desvantagem:</strong> Recebe +2 de dano extra de ataques de impacto.
+            </div>
+        </div>
+
+        <div class="potion-card cat-combate" data-type="combate" data-element="fogo">
+            <h3 class="potion-name">Núcleo Ígneo</h3>
+            <p class="potion-desc">Líquido laranja fervente. O frasco queima a mão.</p>
+            <div class="potion-effect"><strong>Efeito (15m):</strong> +3 Dano de Fogo e Resistência a Calor.</div>
+            <div class="potion-debuff"><strong>Desvantagem:</strong> Desidratação extrema (-2 Vigor após o uso).
+            </div>
+        </div>
+
+        <div class="potion-card cat-utilidade" data-type="utilidade" data-element="raio">
+            <h3 class="potion-name">Sopro de Tempestade</h3>
+            <p class="potion-desc">Amarelo faíscante com cheiro a ozono.</p>
+            <div class="potion-effect"><strong>Efeito (10m):</strong> +3 em Reação e Movimento Adicional.</div>
+            <div class="potion-debuff"><strong>Desvantagem:</strong> Sobrecarga Nervosa (-3 em Atributos Físicos).
+            </div>
+        </div>
+
+        <div class="potion-card cat-combate" data-type="combate" data-element="terra">
+            <h3 class="potion-name">Rocha Viva</h3>
+            <p class="potion-desc">Castanho denso e pesado como chumbo.</p>
+            <div class="potion-effect"><strong>Efeito (30m):</strong> +3 Resistência Física. Imune a empurrões.
+            </div>
+            <div class="potion-debuff"><strong>Desvantagem:</strong> Inércia (Impossível correr, -2 em Esquiva).
+            </div>
+        </div>
+
+    </div>
+    <script>
+        function filterPotions(category, btn) {
+            const cards = document.querySelectorAll('.potion-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            cards.forEach(card => {
+                const type = card.getAttribute('data-type');
+                const element = card.getAttribute('data-element');
+
+                if (category === 'all' || type === category || element === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
 
 </body>
 

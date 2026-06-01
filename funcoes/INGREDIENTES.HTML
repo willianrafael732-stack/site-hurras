@@ -1,14 +1,260 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<body>
-    
-    <link rel="stylesheet" href="../css/estilo.css">
-      <nav class="navbar">
+<Style>/* ===== GERAL ===== */
+
+body {
+    background: #1a1a1a;
+    color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* ===== TÍTULOS DAS CATEGORIAS ===== */
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    background: linear-gradient(90deg, #111, #252525);
+    border-left: 5px solid #ffd700;
+    border-radius: 8px;
+    color: #ffd700;
+    font-size: 1.4rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+/* ===== TABELA ===== */
+
+.tabela-alquimia {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background: #252525;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.tabela-alquimia thead {
+    background: #111;
+}
+
+.tabela-alquimia th {
+    color: #ffd700;
+    padding: 14px;
+    text-align: left;
+    font-size: 1rem;
+    border-bottom: 2px solid #ffd700;
+}
+
+.tabela-alquimia td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #444;
+    color: #f5f5f5;
+}
+
+.tabela-alquimia tbody tr {
+    transition: all 0.3s ease;
+}
+
+.tabela-alquimia tbody tr:hover {
+    background: #333;
+}
+
+.tabela-alquimia tbody tr:nth-child(even) {
+    background: #2b2b2b;
+}
+
+.tabela-alquimia tbody tr:nth-child(even):hover {
+    background: #383838;
+}
+
+/* ===== CAMPO DE PESQUISA ===== */
+
+#filtroIngrediente {
+    width: 100%;
+    max-width: 450px;
+    padding: 12px;
+    margin: 20px 0;
+    border: 2px solid #ffd700;
+    border-radius: 8px;
+    background: #252525;
+    color: white;
+    font-size: 16px;
+}
+
+#filtroIngrediente:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255,215,0,0.5);
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+    background: linear-gradient(90deg, #111, #1f1f1f);
+    border-bottom: 3px solid #ffd700;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.container-nav {
+    max-width: 1400px;
+    margin: auto;
+    padding: 12px 20px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    background: #252525;
+    border: 1px solid #444;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.links a:hover {
+    background: #ffd700;
+    color: #111;
+    border-color: #ffd700;
+    transform: translateY(-2px);
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media (max-width: 768px) {
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .links a {
+        width: 90%;
+        max-width: 300px;
+        text-align: center;
+    }
+
+    .tabela-alquimia {
+        font-size: 0.9rem;
+    }
+
+    .tabela-alquimia th,
+    .tabela-alquimia td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .tabela-alquimia,
+    .tabela-alquimia thead,
+    .tabela-alquimia tbody,
+    .tabela-alquimia th,
+    .tabela-alquimia td,
+    .tabela-alquimia tr {
+        display: block;
+    }
+
+    .tabela-alquimia thead {
+        display: none;
+    }
+
+    .tabela-alquimia tr {
+        margin-bottom: 15px;
+        border: 1px solid #444;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #252525;
+    }
+
+    .tabela-alquimia td {
+        border: none;
+        padding: 12px;
+    }
+
+    .tabela-alquimia td:first-child {
+        background: #111;
+        color: #ffd700;
+        font-weight: bold;
+    }
+    .navbar {
+    background: linear-gradient(90deg, #111, #1f1f1f);
+    border-bottom: 3px solid #ffd700;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container-nav {
+    max-width: 1400px;
+    margin: auto;
+    padding: 12px 20px;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.links a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 16px;
+    background: #252525;
+    border: 1px solid #444;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.links a:hover {
+    background: #ffd700;
+    color: #111;
+    border-color: #ffd700;
+    transform: translateY(-2px);
+}
+
+.links a:active {
+    transform: scale(0.95);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .links {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .links a {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+}
+</Style>
+
+
+ <nav class="navbar">
         <div class="container-nav">
             <div class="links">
                 <a href="../funcoes/inicio.html">historia </a>
@@ -25,206 +271,177 @@
         </div>
     </nav>
 
+<h2>❤️ Amor e Emoções</h2>
 
-<div class="potion-card cat-social" data-type="social" data-element="mental">
-    <h3 class="potion-name">Poção do Vínculo</h3>
+<table class="tabela-alquimia">
+    <thead>
+        <tr>
+            <th>Poção</th>
+            <th>Ingredientes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🌸 Poção do Vínculo</td>
+            <td>Rosa, Mel, Erva dos Sonhos</td>
+        </tr>
+        <tr>
+            <td>💔 Lágrima de Afrodite</td>
+            <td>Rosa Negra, Lágrima Encantada, Cristal Trágico</td>
+        </tr>
+    </tbody>
+</table>
 
-    <p class="potion-desc">
-        Um líquido rosa suave que emite um calor leve.
-    </p>
+<h2>⚔️ Combate</h2>
 
-    <div class="potion-effect">
-        <strong>Efeito:</strong>
-        +2 em Carisma e vantagem em empatia.
-    </div>
+<table class="tabela-alquimia">
+    <thead>
+        <tr>
+            <th>Poção</th>
+            <th>Ingredientes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🔥 Sangue Fervente</td>
+            <td>Cinzas, Pimenta de Fogo, Sangue de Fera</td>
+        </tr>
+        <tr>
+            <td>⚔️ Fúria Elemental</td>
+            <td>Cinzas, Cristal de Raio, Essência de Gelo</td>
+        </tr>
+        <tr>
+            <td>☠️ Toque da Morte</td>
+            <td>Flor Murcha, Veneno Fraco, Cinzas Antigas</td>
+        </tr>
+    </tbody>
+</table>
 
-    <div class="potion-debuff">
-        <strong>Ingredientes:</strong><br>
-        🌸 Pétalas de Rosa Lunar<br>
-        🧠 Essência de Sonho<br>
-        🍯 Mel Élfico
-    </div>
-</div>
+<h2>🛡️ Defesa</h2>
 
-<div class="potion-card cat-utilidade" data-type="utilidade" data-element="vento">
-    <h3 class="potion-name">Vento Cortante</h3>
+<table class="tabela-alquimia">
+    <thead>
+        <tr>
+            <th>Poção</th>
+            <th>Ingredientes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🪨 Couraça de Pedra</td>
+            <td>Pedra, Musgo Petrificado, Terra Encantada</td>
+        </tr>
+        <tr>
+            <td>🛡️ Tônico da Mente Blindada</td>
+            <td>Cristal Mental, Raiz Serena, Água Purificada</td>
+        </tr>
+        <tr>
+            <td>⚫ Pele de Ébano</td>
+            <td>Carvão Negro, Óleo Sombrio, Pedra Obscura</td>
+        </tr>
+    </tbody>
+</table>
 
-    <p class="potion-desc">
-        Névoa branca em movimento perpétuo.
-    </p>
+<h2>🧠 Mental</h2>
 
-    <div class="potion-effect">
-        <strong>Efeito:</strong>
-        +3 Esquiva.
-    </div>
+<table class="tabela-alquimia">
+    <thead>
+        <tr>
+            <th>Poção</th>
+            <th>Ingredientes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🧠 Orvalho do Pensamento</td>
+            <td>Orvalho, Erva Mental, Faísca Elétrica</td>
+        </tr>
+        <tr>
+            <td>👁️ Visão de Éter</td>
+            <td>Cristal Arcano, Poeira Estelar, Essência Mágica</td>
+        </tr>
+        <tr>
+            <td>📚 Néctar de Athenopolis</td>
+            <td>Mel Dourado, Folha Sábia, Tinta Arcana</td>
+        </tr>
+    </tbody>
+</table>
 
-    <div class="potion-debuff">
-        <strong>Ingredientes:</strong><br>
-        🌪️ Poeira de Fada<br>
-        🪶 Pena de Harpia<br>
-        ❄️ Cristal do Norte
-    </div>
-</div>
+<h2>🌑 Sombras e Ilusão</h2>
 
-<div class="potion-card cat-combate" data-type="combate" data-element="veneno">
-    <h3 class="potion-name">Corrosão Púrpura</h3>
+<table class="tabela-alquimia">
+    <thead>
+        <tr>
+            <th>Poção</th>
+            <th>Ingredientes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🌑 Essência da Sombra</td>
+            <td>Névoa Negra, Olho de Aranha, Pedra Escura</td>
+        </tr>
+        <tr>
+            <td>🌫️ Essência de Shadowfen</td>
+            <td>Fumaça Sombria, Musgo Negro, Água Estagnada</td>
+        </tr>
+        <tr>
+            <td>🎭 Elixir do Falso Testemunho</td>
+            <td>Mel Dourado, Flor Mentirosa, Névoa Ilusória</td>
+        </tr>
+        <tr>
+            <td>🤫 Silêncio Mortal</td>
+            <td>Algodão Sombrio, Névoa Silenciosa, Pena Negra</td>
+        </tr>
+    </tbody>
+</table>
 
-    <p class="potion-desc">
-        Líquido violeta altamente corrosivo.
-    </p>
+<h2>❄️ Elementais</h2>
 
-    <div class="potion-effect">
-        <strong>Efeito:</strong>
-        Ignora armadura.
-    </div>
+<table class="tabela-alquimia">
+    <thead>
+        <tr>
+            <th>Poção</th>
+            <th>Ingredientes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🌪️ Vento Cortante</td>
+            <td>Pena, Poeira Mágica, Gelo</td>
+        </tr>
+        <tr>
+            <td>❄️ Elixir do Sangue de Ymir</td>
+            <td>Gelo, Água Glacial, Óleo de Leviatã</td>
+        </tr>
+        <tr>
+            <td>🔥 Núcleo Ígneo</td>
+            <td>Carvão Ardente, Cristal de Fogo, Cinzas Vulcânicas</td>
+        </tr>
+        <tr>
+            <td>⚡ Sopro de Tempestade</td>
+            <td>Pedra Elétrica, Faísca Engarrafada, Cristal de Raio</td>
+        </tr>
+    </tbody>
+</table>
 
-    <div class="potion-debuff">
-        <strong>Ingredientes:</strong><br>
-        ☠️ Veneno de Basilisco<br>
-        🍄 Cogumelo Sombrio<br>
-        🩸 Sangue de Escorpião Gigante
-    </div>
-</div>
+<h2>🪨 Terra e Natureza</h2>
 
-<div class="potion-card cat-combate" data-type="combate" data-element="sagrado">
-    <h3 class="potion-name">Brilho Estelar</h3>
-
-    <p class="potion-desc">
-        Líquido branco radiante.
-    </p>
-
-    <div class="potion-effect">
-        <strong>Efeito:</strong>
-        Revela invisíveis.
-    </div>
-
-    <div class="potion-debuff">
-        <strong>Ingredientes:</strong><br>
-        ✨ Pó Estelar<br>
-        ☀️ Lágrima Solar<br>
-        🕊️ Pena Celestial
-    </div>
-</div>
-
-<div class="potion-card cat-combate" data-type="combate" data-element="fogo">
-    <h3 class="potion-name">Sangue Fervente</h3>
-
-    <p class="potion-desc">
-        Carmesim espesso que pulsa.
-    </p>
-
-    <div class="potion-effect">
-        <strong>Efeito:</strong>
-        +2 Força.
-    </div>
-
-    <div class="potion-debuff">
-        <strong>Ingredientes:</strong><br>
-        🔥 Coração de Salamandra<br>
-        🌋 Cinzas Vulcânicas<br>
-        🩸 Sangue de Dragão
-    </div>
-</div>
-
-<div class="potion-card cat-sombria" data-type="sombria" data-element="sombra">
-    <h3 class="potion-name">Essência da Sombra</h3>
-
-    <p class="potion-desc">
-        Óleo negro que absorve luz.
-    </p>
-
-    <div class="potion-effect">
-        <strong>Efeito:</strong>
-        Invisibilidade parcial.
-    </div>
-
-    <div class="potion-debuff">
-        <strong>Ingredientes:</strong><br>
-        🌑 Névoa Sombria<br>
-        🕷️ Olho de Aranha Negra<br>
-        ⚫ Cristal Obscuro
-    </div>
-</div>
-
-<div class="potion-card cat-utilidade" data-type="utilidade" data-element="terra">
-    <h3 class="potion-name">Seiva Ancestral</h3>
-
-    <p class="potion-desc">
-        Xarope verde da floresta viva.
-    </p>
-
-    <div class="potion-effect">
-        <strong>Efeito:</strong>
-        Regeneração natural.
-    </div>
-
-    <div class="potion-debuff">
-        <strong>Ingredientes:</strong><br>
-        🌿 Raiz Antiga<br>
-        🍃 Folha Élfica<br>
-        🌳 Seiva de Ent
-    </div>
-</div>
-
-<div class="potion-card cat-utilidade" data-type="utilidade" data-element="raio">
-    <h3 class="potion-name">Sopro de Tempestade</h3>
-
-    <p class="potion-desc">
-        Líquido amarelo eletrizante.
-    </p>
-
-    <div class="potion-effect">
-        <strong>Efeito:</strong>
-        +3 Reação.
-    </div>
-
-    <div class="potion-debuff">
-        <strong>Ingredientes:</strong><br>
-        ⚡ Núcleo de Tempestade<br>
-        🌩️ Fragmento de Trovão<br>
-        🔋 Pedra Energizada
-    </div>
-</div>
-
-<div class="potion-card cat-combate" data-type="combate" data-element="agua">
-    <h3 class="potion-name">Elixir do Sangue de Ymir</h3>
-
-    <p class="potion-desc">
-        Licor azul congelante.
-    </p>
-
-    <div class="potion-effect">
-        <strong>Efeito:</strong>
-        Resistência ao frio.
-    </div>
-
-    <div class="potion-debuff">
-        <strong>Ingredientes:</strong><br>
-        ❄️ Gelo Eterno<br>
-        🐋 Óleo de Leviatã<br>
-        💧 Água Glacial
-    </div>
-</div>
-
-<div class="potion-card cat-combate" data-type="combate" data-element="terra">
-    <h3 class="potion-name">Rocha Viva</h3>
-
-    <p class="potion-desc">
-        Mistura pesada como pedra.
-    </p>
-
-    <div class="potion-effect">
-        <strong>Efeito:</strong>
-        +3 Resistência Física.
-    </div>
-
-    <div class="potion-debuff">
-        <strong>Ingredientes:</strong><br>
-        🪨 Pedra Rúnica<br>
-        🌋 Núcleo de Golem<br>
-        🌿 Musgo Petrificado
-    </div>
-</div>
-
-</body>
-</html>
+<table class="tabela-alquimia">
+    <thead>
+        <tr>
+            <th>Poção</th>
+            <th>Ingredientes</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>🌿 Seiva Ancestral</td>
+            <td>Raiz, Folha Élfica, Seiva</td>
+        </tr>
+        <tr>
+            <td>🪨 Rocha Viva</td>
+            <td>Pedra Rúnica, Musgo Petrificado, Núcleo de Golem</td>
+        </tr>
+    </tbody>
+</table>
