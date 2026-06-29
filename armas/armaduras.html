@@ -1,10 +1,15 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arsenal do Reino | RPG</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap" rel="stylesheet">
+    <title>Arsenal do Aventureiro | Nexalis RPG</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap"
+        rel="stylesheet">
+
     <style>
         /* ========================= */
         /* CONFIGURAÇÕES GERAIS */
@@ -42,7 +47,7 @@
         }
 
         /* ========================= */
-        /* CARDS DE ARMAS E ARMADURAS */
+        /* CARDS */
         /* ========================= */
         .grid-armas {
             display: grid;
@@ -64,9 +69,12 @@
         .item-card::before {
             content: "";
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: linear-gradient(135deg, rgba(255,215,0,0.05) 0%, transparent 100%);
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 215, 0, 0.05) 0%,
+                transparent 100%
+            );
             pointer-events: none;
         }
 
@@ -97,8 +105,13 @@
             color: #4dff88;
         }
 
+        .lore {
+            color: #b8b8b8;
+            font-style: italic;
+        }
+
         /* ========================= */
-        /* RODAPÉ (SEU CÓDIGO) */
+        /* RODAPÉ */
         /* ========================= */
         .rodape {
             margin-top: 80px;
@@ -112,13 +125,23 @@
         .rodape::before {
             content: "";
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 2px;
-            background: linear-gradient(90deg, transparent, #ffd700, transparent);
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                #ffd700,
+                transparent
+            );
             animation: linhaMagica 3s infinite linear;
         }
 
-        @keyframes linhaMagica { 0%, 100% { opacity: 0.2; } 50% { opacity: 1; } }
+        @keyframes linhaMagica {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
 
         .rodape-grid {
             display: grid;
@@ -128,9 +151,21 @@
             margin: 0 auto 30px;
         }
 
-        .rodape-col h3 { color: #cfa14a; margin-bottom: 15px; }
+        .rodape-col h2 {
+            color: #ffd700;
+            text-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+        }
 
-        .links { display: flex; flex-direction: column; gap: 8px; }
+        .rodape-col h3 {
+            color: #cfa14a;
+            margin-bottom: 15px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
         .links a {
             color: #aaa;
@@ -156,84 +191,33 @@
         }
     </style>
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>⚔️ Arsenal do Aventureiro</h1>
+     <p style="font-size:13px; color:#888; font-style:italic;">
+                    "Dos metais comuns surgem armas; das lendas surgem relíquias."
+                </p>
+            </div>
 
-        <section id="armaduras">
-            <h2>🛡️ Defesa e Proteção</h2>
-            <div class="grid-armas">
-                <div class="item-card">
-                    <h3>Armadura Leve</h3>
-                    <p><span class="status">+1 Armadura</span></p>
-                    <p class="lore">Ideal para ladinos e arqueiros que prezam pela agilidade.</p>
-                    <p><i>Sem penalidades aplicadas.</i></p>
-                </div>
+            <div class="rodape-col">
+                <h3>📖 Navegação</h3>
 
-                <div class="item-card">
-                    <h3>Armadura Média</h3>
-                    <p><span class="status">+4 Armadura</span></p>
-                    <p class="penalidade">⚠️ -2 Esquiva, -1 Reação</p>
-                    <p class="lore">O equilíbrio entre o aço e a mobilidade do guerreiro.</p>
-                </div>
-
-                <div class="item-card">
-                    <h3>Armadura Pesada</h3>
-                    <p><span class="status">Alta Defesa</span></p>
-                    <p class="penalidade">⚠️ +2 Dificuldade Mobilidade</p>
-                    <p class="penalidade">⚠️ -2 Reação, -2 Res. Fogo/Raio</p>
-                    <p class="lore">Um tanque de metal ambulante, quase impenetrável.</p>
+                <div class="links">
+                    <a href="../funcoes/inicio.html">História</a>
+                    <a href="racaeclasses.html">Raças e Classes</a>
+                    <a href="/armas/armas.html">Armas</a>
+                    <a href="../funcoes/sistema.html">Sistema</a>
+                    <a href="../funcoes/inimigo.html">Inimigos</a>
+                    <a href="../funcoes/criaçãodeficha.html">Função Elemental</a>
+                    <a href="../funcoes/magia.html">Magias</a>
+                    <a href="../funcoes/porção.html">Poções</a>
+                    <a href="../funcoes/INGREDIENTES.HTML">Ingredientes</a>
                 </div>
             </div>
-        </section>
-
-        <section id="qualidade">
-            <h2>✨ Qualidade & Proficiência</h2>
-            <div class="grid-armas">
-                <div class="item-card">
-                    <h3>Ferro Básico</h3>
-                    <p>Equipamento comum encontrado em qualquer ferraria.</p>
-                    <p><i>Sem bônus extras.</i></p>
-                </div>
-                <div class="item-card" style="border-color: #4a90e2;">
-                    <h3>Épica</h3>
-                    <p class="vantagem">⭐ Vantagem +2</p>
-                    <p class="lore">Forjada por mestres artesãos com materiais raros.</p>
-                </div>
-                <div class="item-card" style="border-color: #a335ee;">
-                    <h3>Lendária</h3>
-                    <p class="vantagem">🌟 Vantagem +3</p>
-                    <p class="lore">Contém fragmentos de essência mística.</p>
-                </div>
-                <div class="item-card" style="border-color: #ffd700;">
-                    <h3>Mitológica</h3>
-                    <p class="vantagem">🔱 Vantagem +4</p>
-                    <p class="lore">Dizem ter sido empunhada pelos próprios Deuses.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-     <nav class="navbar">
-        <div class="container-nav">
-            <div class="links">
-                <a href="../funcoes/inicio.html">historia </a>
-                <a href="racaeclasses.html">Raças e Classes</a>
-                <a href="/armas/armas.html">Armas</a>
-                <a href="../funcoes/sistema.html">sistema</a>
-                <a href="../funcoes/inimigo.html">inimigos</a>
-                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
-                <a href="..//funcoes/magia.html">magias</a>
-                <a href="..//funcoes/porção.html">porção</a>
-                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
-                
-            </div>
-        </div>
-    </nav>
 
             <div class="rodape-col">
                 <h3>🗡️ Tipos de Armas</h3>
+
                 <div class="links">
                     <a href="armaduras.html">Armaduras</a>
                     <a href="curtoalacance.html">Curto Alcance</a>
@@ -243,12 +227,104 @@
                     <a href="Runas.html">Runas</a>
                 </div>
             </div>
+
         </div>
-        
+
+    <div class="container">
+
+        <h1>⚔️ Arsenal do Aventureiro</h1>
+
+        <section id="armaduras">
+            <h2>🛡️ Defesa e Proteção</h2>
+
+            <div class="grid-armas">
+
+                <div class="item-card">
+                    <h3>Armadura Leve</h3>
+                    <p><span class="status">+1 Armadura</span></p>
+                    <p class="lore">
+                        Ideal para ladinos e arqueiros que prezam pela agilidade.
+                    </p>
+                    <p><i>Sem penalidades aplicadas.</i></p>
+                </div>
+
+                <div class="item-card">
+                    <h3>Armadura Média</h3>
+                    <p><span class="status">+4 Armadura</span></p>
+                    <p class="penalidade">⚠️ -2 Esquiva, -1 Reação</p>
+                    <p class="lore">
+                        O equilíbrio entre o aço e a mobilidade do guerreiro.
+                    </p>
+                </div>
+
+                <div class="item-card">
+                    <h3>Armadura Pesada</h3>
+                    <p><span class="status">Alta Defesa</span></p>
+                    <p class="penalidade">⚠️ +2 Dificuldade Mobilidade</p>
+                    <p class="penalidade">⚠️ -2 Reação, -2 Res. Fogo/Raio</p>
+                    <p class="lore">
+                        Um tanque de metal ambulante, quase impenetrável.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="qualidade">
+            <h2>✨ Qualidade & Proficiência</h2>
+
+            <div class="grid-armas">
+
+                <div class="item-card">
+                    <h3>Ferro Básico</h3>
+                    <p>Equipamento comum encontrado em qualquer ferraria.</p>
+                    <p><i>Sem bônus extras.</i></p>
+                </div>
+
+                <div class="item-card" style="border-color:#4a90e2;">
+                    <h3>Épica</h3>
+                    <p class="vantagem">⭐ Vantagem +2</p>
+                    <p class="lore">
+                        Forjada por mestres artesãos com materiais raros.
+                    </p>
+                </div>
+
+                <div class="item-card" style="border-color:#a335ee;">
+                    <h3>Lendária</h3>
+                    <p class="vantagem">🌟 Vantagem +3</p>
+                    <p class="lore">
+                        Contém fragmentos de essência mística.
+                    </p>
+                </div>
+
+                <div class="item-card" style="border-color:#ffd700;">
+                    <h3>Mitológica</h3>
+                    <p class="vantagem">🔱 Vantagem +4</p>
+                    <p class="lore">
+                        Dizem ter sido empunhada pelos próprios Deuses.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="rodape">
+
+        <div class="rodape-grid">
+
+            <div class="rodape-col">
+                <h2>⚔️ Nexalis RPG</h2>
+
+               
+
         <div class="rodape-bottom">
-            &copy; 2026 - Crônicas do Reino Esquecido. Todos os direitos reservados aos mestres.
+            &copy; 2026 - Nexalis RPG. Todos os direitos reservados aos mestres.
         </div>
+
     </footer>
 
 </body>
+
 </html>

@@ -1,447 +1,230 @@
-<Style>/* ===== GERAL ===== */
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Grimório Infernal de Alquimia</title>
+
+<style>
+/* =========================
+   BASE DIABLO INFERNAL
+========================= */
 
 body {
-    background: #1a1a1a;
-    color: #f5f5f5;
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #e6d6b8;
+
+    background:
+        radial-gradient(circle at top, #2a0000, #05050a 70%),
+        radial-gradient(circle at bottom, #120010, #000000);
 }
 
-/* ===== TÍTULOS DAS CATEGORIAS ===== */
+/* brasas */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255,0,0,0.08), transparent 60%),
+        radial-gradient(circle at 70% 80%, rgba(120,0,0,0.08), transparent 60%);
+    opacity: 0.25;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background: linear-gradient(180deg, #1a0000, #000);
+    border-bottom: 2px solid #5a0000;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container-nav {
+    max-width: 1400px;
+    margin: auto;
+    padding: 12px 20px;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.links a {
+    text-decoration: none;
+    padding: 10px 14px;
+    background: rgba(20,0,0,0.6);
+    border: 1px solid #3a0000;
+    color: #d6b98c;
+    border-radius: 6px;
+    transition: .2s;
+    font-weight: bold;
+}
+
+.links a:hover {
+    background: #8b0000;
+    color: #fff;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
 
 h2 {
     margin-top: 40px;
-    margin-bottom: 15px;
-    padding: 12px 15px;
-    background: linear-gradient(90deg, #111, #252525);
-    border-left: 5px solid #ffd700;
+    padding: 12px;
+    background: linear-gradient(90deg,#1a0000,#0a0a12);
+    border-left: 5px solid #8b0000;
+    color: #ffcc66;
     border-radius: 8px;
-    color: #ffd700;
-    font-size: 1.4rem;
-    box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
-/* ===== TABELA ===== */
+/* =========================
+   TABELAS
+========================= */
 
-.tabela-alquimia {
+table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 30px;
-    background: #252525;
-    border-radius: 12px;
+    background: rgba(10,0,0,0.75);
+    border: 1px solid #3a0000;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
-.tabela-alquimia thead {
-    background: #111;
+thead {
+    background: #120000;
 }
 
-.tabela-alquimia th {
-    color: #ffd700;
-    padding: 14px;
-    text-align: left;
-    font-size: 1rem;
-    border-bottom: 2px solid #ffd700;
-}
-
-.tabela-alquimia td {
-    padding: 12px 14px;
-    border-bottom: 1px solid #444;
-    color: #f5f5f5;
-}
-
-.tabela-alquimia tbody tr {
-    transition: all 0.3s ease;
-}
-
-.tabela-alquimia tbody tr:hover {
-    background: #333;
-}
-
-.tabela-alquimia tbody tr:nth-child(even) {
-    background: #2b2b2b;
-}
-
-.tabela-alquimia tbody tr:nth-child(even):hover {
-    background: #383838;
-}
-
-/* ===== CAMPO DE PESQUISA ===== */
-
-#filtroIngrediente {
-    width: 100%;
-    max-width: 450px;
+th {
     padding: 12px;
-    margin: 20px 0;
-    border: 2px solid #ffd700;
-    border-radius: 8px;
-    background: #252525;
-    color: white;
-    font-size: 16px;
+    color: #ff4d4d;
+    text-transform: uppercase;
+    border-bottom: 2px solid #5a0000;
+    font-size: 0.85rem;
 }
 
-#filtroIngrediente:focus {
-    outline: none;
-    box-shadow: 0 0 10px rgba(255,215,0,0.5);
+td {
+    padding: 12px;
+    border-bottom: 1px solid #3a0000;
 }
 
-/* ===== NAVBAR ===== */
-
-.navbar {
-    background: linear-gradient(90deg, #111, #1f1f1f);
-    border-bottom: 3px solid #ffd700;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+tr:nth-child(even) {
+    background: rgba(255,0,0,0.03);
 }
 
-.container-nav {
-    max-width: 1400px;
-    margin: auto;
-    padding: 12px 20px;
+tr:hover {
+    background: rgba(255,0,0,0.06);
 }
 
-.links {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.links a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 16px;
-    background: #252525;
-    border: 1px solid #444;
-    border-radius: 8px;
-    transition: 0.3s;
-    font-weight: bold;
-}
-
-.links a:hover {
-    background: #ffd700;
-    color: #111;
-    border-color: #ffd700;
-    transform: translateY(-2px);
-}
-
-/* ===== RESPONSIVO ===== */
-
+/* responsivo */
 @media (max-width: 768px) {
-
-    h2 {
-        font-size: 1.2rem;
-    }
-
-    .links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .links a {
-        width: 90%;
-        max-width: 300px;
-        text-align: center;
-    }
-
-    .tabela-alquimia {
-        font-size: 0.9rem;
-    }
-
-    .tabela-alquimia th,
-    .tabela-alquimia td {
-        padding: 10px;
-    }
+    .links { flex-direction: column; }
+    table { font-size: 0.9rem; }
 }
+</style>
 
-@media (max-width: 600px) {
+</head>
 
-    .tabela-alquimia,
-    .tabela-alquimia thead,
-    .tabela-alquimia tbody,
-    .tabela-alquimia th,
-    .tabela-alquimia td,
-    .tabela-alquimia tr {
-        display: block;
-    }
+<body>
 
-    .tabela-alquimia thead {
-        display: none;
-    }
-
-    .tabela-alquimia tr {
-        margin-bottom: 15px;
-        border: 1px solid #444;
-        border-radius: 10px;
-        overflow: hidden;
-        background: #252525;
-    }
-
-    .tabela-alquimia td {
-        border: none;
-        padding: 12px;
-    }
-
-    .tabela-alquimia td:first-child {
-        background: #111;
-        color: #ffd700;
-        font-weight: bold;
-    }
-    .navbar {
-    background: linear-gradient(90deg, #111, #1f1f1f);
-    border-bottom: 3px solid #ffd700;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.container-nav {
-    max-width: 1400px;
-    margin: auto;
-    padding: 12px 20px;
-}
-
-.links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.links a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 16px;
-    background: #252525;
-    border: 1px solid #444;
-    border-radius: 8px;
-    transition: 0.3s ease;
-    font-weight: bold;
-    text-transform: capitalize;
-}
-
-.links a:hover {
-    background: #ffd700;
-    color: #111;
-    border-color: #ffd700;
-    transform: translateY(-2px);
-}
-
-.links a:active {
-    transform: scale(0.95);
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .links {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .links a {
-        width: 100%;
-        max-width: 300px;
-        text-align: center;
-    }
-}
-}
-</Style>
-
-
- <nav class="navbar">
-        <div class="container-nav">
-            <div class="links">
-                <a href="../funcoes/inicio.html">historia </a>
-                <a href="racaeclasses.html">Raças e Classes</a>
-                <a href="/armas/armas.html">Armas</a>
-                <a href="../funcoes/sistema.html">sistema</a>
-                <a href="../funcoes/inimigo.html">inimigos</a>
-                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
-                <a href="..//funcoes/magia.html">magias</a>
-                <a href="..//funcoes/porção.html">porção</a>
-                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
-                
-            </div>
+<nav class="navbar">
+    <div class="container-nav">
+        <div class="links">
+            <a href="../funcoes/inicio.html">historia</a>
+            <a href="racaeclasses.html">Raças e Classes</a>
+            <a href="/armas/armas.html">Armas</a>
+            <a href="../funcoes/sistema.html">sistema</a>
+            <a href="../funcoes/inimigo.html">inimigos</a>
+            <a href="../funcoes/criaçãodeficha.html">função elemental</a>
+            <a href="../funcoes/magia.html">magias</a>
+            <a href="../funcoes/porção.html">poções</a>
+            <a href="../funcoes/INGREDIENTES.HTML">ingredientes</a>
         </div>
-    </nav>
+    </div>
+</nav>
+
+<!-- =========================
+   TODAS AS POÇÕES
+========================= -->
 
 <h2>❤️ Amor e Emoções</h2>
-
-<table class="tabela-alquimia">
-    <thead>
-        <tr>
-            <th>Poção</th>
-            <th>Ingredientes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>🌸 Poção do Vínculo</td>
-            <td>Rosa, Mel, Erva dos Sonhos</td>
-        </tr>
-        <tr>
-            <td>💔 Lágrima de Afrodite</td>
-            <td>Rosa Negra, Lágrima Encantada, Cristal Trágico</td>
-        </tr>
-    </tbody>
+<table>
+<thead><tr><th>Poção</th><th>Ingredientes</th></tr></thead>
+<tbody>
+<tr><td>🌸 Poção do Vínculo</td><td>Rosa, Mel, Erva dos Sonhos</td></tr>
+<tr><td>💔 Lágrima de Afrodite</td><td>Rosa Negra, Lágrima Encantada, Cristal Trágico</td></tr>
+</tbody>
 </table>
 
 <h2>⚔️ Combate</h2>
-
-<table class="tabela-alquimia">
-    <thead>
-        <tr>
-            <th>Poção</th>
-            <th>Ingredientes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>🔥 Sangue Fervente</td>
-            <td>Cinzas, Pimenta de Fogo, Sangue de Fera</td>
-        </tr>
-        <tr>
-            <td>⚔️ Fúria Elemental</td>
-            <td>Cinzas, Cristal de Raio, Essência de Gelo</td>
-        </tr>
-        <tr>
-            <td>☠️ Toque da Morte</td>
-            <td>Flor Murcha, Veneno Fraco, Cinzas Antigas</td>
-        </tr>
-    </tbody>
+<table>
+<thead><tr><th>Poção</th><th>Ingredientes</th></tr></thead>
+<tbody>
+<tr><td>🔥 Sangue Fervente</td><td>Cinzas, Pimenta de Fogo, Sangue de Fera</td></tr>
+<tr><td>⚔️ Fúria Elemental</td><td>Cinzas, Cristal de Raio, Essência de Gelo</td></tr>
+<tr><td>☠️ Toque da Morte</td><td>Flor Murcha, Veneno Fraco, Cinzas Antigas</td></tr>
+</tbody>
 </table>
 
 <h2>🛡️ Defesa</h2>
-
-<table class="tabela-alquimia">
-    <thead>
-        <tr>
-            <th>Poção</th>
-            <th>Ingredientes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>🪨 Couraça de Pedra</td>
-            <td>Pedra, Musgo Petrificado, Terra Encantada</td>
-        </tr>
-        <tr>
-            <td>🛡️ Tônico da Mente Blindada</td>
-            <td>Cristal Mental, Raiz Serena, Água Purificada</td>
-        </tr>
-        <tr>
-            <td>⚫ Pele de Ébano</td>
-            <td>Carvão Negro, Óleo Sombrio, Pedra Obscura</td>
-        </tr>
-    </tbody>
+<table>
+<thead><tr><th>Poção</th><th>Ingredientes</th></tr></thead>
+<tbody>
+<tr><td>🪨 Couraça de Pedra</td><td>Pedra, Musgo Petrificado, Terra Encantada</td></tr>
+<tr><td>🛡️ Tônico da Mente Blindada</td><td>Cristal Mental, Raiz Serena, Água Purificada</td></tr>
+<tr><td>⚫ Pele de Ébano</td><td>Carvão Negro, Óleo Sombrio, Pedra Obscura</td></tr>
+</tbody>
 </table>
 
 <h2>🧠 Mental</h2>
-
-<table class="tabela-alquimia">
-    <thead>
-        <tr>
-            <th>Poção</th>
-            <th>Ingredientes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>🧠 Orvalho do Pensamento</td>
-            <td>Orvalho, Erva Mental, Faísca Elétrica</td>
-        </tr>
-        <tr>
-            <td>👁️ Visão de Éter</td>
-            <td>Cristal Arcano, Poeira Estelar, Essência Mágica</td>
-        </tr>
-        <tr>
-            <td>📚 Néctar de Athenopolis</td>
-            <td>Mel Dourado, Folha Sábia, Tinta Arcana</td>
-        </tr>
-    </tbody>
+<table>
+<thead><tr><th>Poção</th><th>Ingredientes</th></tr></thead>
+<tbody>
+<tr><td>🧠 Orvalho do Pensamento</td><td>Orvalho, Erva Mental, Faísca Elétrica</td></tr>
+<tr><td>👁️ Visão de Éter</td><td>Cristal Arcano, Poeira Estelar, Essência Mágica</td></tr>
+<tr><td>📚 Néctar de Athenopolis</td><td>Mel Dourado, Folha Sábia, Tinta Arcana</td></tr>
+</tbody>
 </table>
 
 <h2>🌑 Sombras e Ilusão</h2>
-
-<table class="tabela-alquimia">
-    <thead>
-        <tr>
-            <th>Poção</th>
-            <th>Ingredientes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>🌑 Essência da Sombra</td>
-            <td>Névoa Negra, Olho de Aranha, Pedra Escura</td>
-        </tr>
-        <tr>
-            <td>🌫️ Essência de Shadowfen</td>
-            <td>Fumaça Sombria, Musgo Negro, Água Estagnada</td>
-        </tr>
-        <tr>
-            <td>🎭 Elixir do Falso Testemunho</td>
-            <td>Mel Dourado, Flor Mentirosa, Névoa Ilusória</td>
-        </tr>
-        <tr>
-            <td>🤫 Silêncio Mortal</td>
-            <td>Algodão Sombrio, Névoa Silenciosa, Pena Negra</td>
-        </tr>
-    </tbody>
+<table>
+<thead><tr><th>Poção</th><th>Ingredientes</th></tr></thead>
+<tbody>
+<tr><td>🌑 Essência da Sombra</td><td>Névoa Negra, Olho de Aranha, Pedra Escura</td></tr>
+<tr><td>🌫️ Essência de Shadowfen</td><td>Fumaça Sombria, Musgo Negro, Água Estagnada</td></tr>
+<tr><td>🎭 Elixir do Falso Testemunho</td><td>Mel Dourado, Flor Mentirosa, Névoa Ilusória</td></tr>
+<tr><td>🤫 Silêncio Mortal</td><td>Algodão Sombrio, Névoa Silenciosa, Pena Negra</td></tr>
+</tbody>
 </table>
 
 <h2>❄️ Elementais</h2>
-
-<table class="tabela-alquimia">
-    <thead>
-        <tr>
-            <th>Poção</th>
-            <th>Ingredientes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>🌪️ Vento Cortante</td>
-            <td>Pena, Poeira Mágica, Gelo</td>
-        </tr>
-        <tr>
-            <td>❄️ Elixir do Sangue de Ymir</td>
-            <td>Gelo, Água Glacial, Óleo de Leviatã</td>
-        </tr>
-        <tr>
-            <td>🔥 Núcleo Ígneo</td>
-            <td>Carvão Ardente, Cristal de Fogo, Cinzas Vulcânicas</td>
-        </tr>
-        <tr>
-            <td>⚡ Sopro de Tempestade</td>
-            <td>Pedra Elétrica, Faísca Engarrafada, Cristal de Raio</td>
-        </tr>
-    </tbody>
+<table>
+<thead><tr><th>Poção</th><th>Ingredientes</th></tr></thead>
+<tbody>
+<tr><td>🌪️ Vento Cortante</td><td>Pena, Poeira Mágica, Gelo</td></tr>
+<tr><td>❄️ Sangue de Ymir</td><td>Gelo, Água Glacial, Óleo de Leviatã</td></tr>
+<tr><td>🔥 Núcleo Ígneo</td><td>Carvão Ardente, Cristal de Fogo, Cinzas Vulcânicas</td></tr>
+<tr><td>⚡ Sopro de Tempestade</td><td>Pedra Elétrica, Faísca Engarrafada, Cristal de Raio</td></tr>
+</tbody>
 </table>
 
 <h2>🪨 Terra e Natureza</h2>
-
-<table class="tabela-alquimia">
-    <thead>
-        <tr>
-            <th>Poção</th>
-            <th>Ingredientes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>🌿 Seiva Ancestral</td>
-            <td>Raiz, Folha Élfica, Seiva</td>
-        </tr>
-        <tr>
-            <td>🪨 Rocha Viva</td>
-            <td>Pedra Rúnica, Musgo Petrificado, Núcleo de Golem</td>
-        </tr>
-    </tbody>
+<table>
+<thead><tr><th>Poção</th><th>Ingredientes</th></tr></thead>
+<tbody>
+<tr><td>🌿 Seiva Ancestral</td><td>Raiz, Folha Élfica, Seiva</td></tr>
+<tr><td>🪨 Rocha Viva</td><td>Pedra Rúnica, Musgo Petrificado, Núcleo de Golem</td></tr>
+</tbody>
 </table>
+
+</body>
+</html>

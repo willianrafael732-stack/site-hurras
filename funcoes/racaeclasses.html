@@ -1,39 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexalis - Menu de Seleção</title>
+
     <link rel="stylesheet" href="racaeclasses.css">
+    <link rel="stylesheet" href="/funcoes/css/racaeclasses.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
 
-        <link rel="stylesheet" href="/funcoes/css/racaeclasses.css">
- 
-
-     <nav class="navbar">
+    <!-- NAVBAR GLOBAL -->
+    <nav class="navbar">
         <div class="container-nav">
             <div class="links">
-                <a href="../funcoes/inicio.html">historia </a>
+                <a href="../funcoes/inicio.html">História</a>
                 <a href="racaeclasses.html">Raças e Classes</a>
                 <a href="/armas/armas.html">Armas</a>
-                <a href="../funcoes/sistema.html">sistema</a>
-                <a href="../funcoes/inimigo.html">inimigos</a>
-                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
-                <a href="..//funcoes/magia.html">magias</a>
-                <a href="..//funcoes/porção.html">porção</a>
-                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
-                
+                <a href="../funcoes/sistema.html">Sistema</a>
+                <a href="../funcoes/inimigo.html">Inimigos</a>
+                <a href="../funcoes/criaçãodeficha.html">Ficha Elemental</a>
+                <a href="../funcoes/magia.html">Magias</a>
+                <a href="../funcoes/porção.html">Poções</a>
+                <a href="../funcoes/INGREDIENTES.HTML">Ingredientes</a>
             </div>
         </div>
     </nav>
 
-    <nav class="menu-navegacao">
+    <!-- MENU PRINCIPAL RPG -->
+    <main class="menu-navegacao">
+
         <div class="menu-container">
-            
-            <div class="menu-section">
+
+            <!-- RAÇAS -->
+            <section class="menu-section" data-category="racas">
                 <h3><i class="fas fa-dragon"></i> Raças</h3>
+
                 <ul class="link-grid">
                     <li><a href="../classes/anjo.html">Anjo</a></li>
                     <li><a href="../classes/anao.html">Anão</a></li>
@@ -60,12 +66,14 @@
                     <li><a href="../classes/vampiro.html">Vampiro</a></li>
                     <li><a href="../classes/zumbi.html">Zumbi</a></li>
                 </ul>
-            </div>
+            </section>
 
             <hr class="divisor-menu">
 
-            <div class="menu-section">
+            <!-- CLASSES -->
+            <section class="menu-section" data-category="classes">
                 <h3><i class="fas fa-khanda"></i> Classes</h3>
+
                 <ul class="link-grid">
                     <li><a href="../raca/arqueiro.html">Arqueiro</a></li>
                     <li><a href="../raca/bardo.html">Bardo</a></li>
@@ -83,9 +91,11 @@
                     <li><a href="../raca/tecnomancer.html">Tecnomancer</a></li>
                     <li><a href="../raca/transmutador.html">Transmutador</a></li>
                 </ul>
-            </div>
+            </section>
+
         </div>
-    </nav>
+
+    </main>
 
 </body>
 </html>

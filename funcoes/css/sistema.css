@@ -1,15 +1,25 @@
 /* =========================
-   NAVBAR GLOBAL (TOPO)
+   NAVBAR GLOBAL (INFERNAL / DIABLO STYLE)
 ========================= */
 
 .navbar {
     position: sticky;
     top: 0;
     z-index: 1200;
-    background: rgba(10, 10, 18, 0.92);
+
+    background: linear-gradient(
+        180deg,
+        rgba(20, 0, 0, 0.95),
+        rgba(0, 0, 0, 0.95)
+    );
+
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 6px 25px rgba(0,0,0,0.6);
+
+    border-bottom: 2px solid #5a0000;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.8),
+        0 0 20px rgba(255,0,0,0.12);
 }
 
 .container-nav {
@@ -25,18 +35,24 @@
     justify-content: center;
 }
 
+/* LINKS INFERNAIS */
 .navbar .links a {
     font-family: 'Cinzel', serif;
     font-size: 0.75rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--text-dim);
+
+    color: #d6b98c;
+
     position: relative;
     padding: 6px 4px;
+
     transition: all .25s ease;
+    text-shadow: 0 0 4px rgba(0,0,0,0.6);
 }
 
+/* linha infernal */
 .navbar .links a::after {
     content: "";
     position: absolute;
@@ -44,13 +60,17 @@
     bottom: -4px;
     width: 0%;
     height: 2px;
-    background: var(--secondary);
+
+    background: linear-gradient(90deg, #ff0000, #8b0000);
+
     transition: .25s ease;
     transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(255,0,0,0.4);
 }
 
 .navbar .links a:hover {
-    color: var(--secondary);
+    color: #ff2a2a;
+    text-shadow: 0 0 10px #ff0000;
 }
 
 .navbar .links a:hover::after {
@@ -58,49 +78,79 @@
 }
 
 /* =========================
-   NAV INTERNA DO SISTEMA
-   (âncoras Proficiência etc.)
+   NAV INTERNA DO SISTEMA (GRIMÓRIO SECUNDÁRIO)
 ========================= */
 
 body > nav:not(.navbar) {
-    background: rgba(15, 16, 26, 0.9);
-    border-bottom: 1px solid var(--border);
-    box-shadow: inset 0 -1px 0 rgba(255,255,255,0.03);
+    background: linear-gradient(
+        180deg,
+        rgba(20,0,0,0.85),
+        rgba(0,0,0,0.95)
+    );
+
+    border-bottom: 1px solid #3a0000;
+
+    box-shadow:
+        inset 0 -1px 0 rgba(255,0,0,0.05),
+        0 5px 20px rgba(0,0,0,0.6);
 }
 
 body > nav:not(.navbar) a {
     font-family: 'Inter', sans-serif;
     font-size: 0.7rem;
-    color: var(--text-dim);
+
+    color: #b8a88a;
+
+    transition: .2s ease;
 }
 
 body > nav:not(.navbar) a:hover {
-    color: var(--secondary);
+    color: #ff4d4d;
+    text-shadow: 0 0 8px rgba(255,0,0,0.5);
 }
 
 /* =========================
-   SECTIONS – AJUSTE FINO
+   SECTIONS – GRIMÓRIO VIVO
 ========================= */
 
 section {
     transition: transform .25s ease, box-shadow .25s ease;
+
+    background: rgba(10,0,0,0.75);
+
+    border: 1px solid #3a0000;
+
+    box-shadow: 0 0 20px rgba(0,0,0,0.8);
 }
 
+/* sensação de “página viva / amaldiçoada” */
 section:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.9),
+        0 0 25px rgba(255,0,0,0.15);
 }
 
 /* =========================
-   TABELAS – MAIS RPG
+   TABELAS – ESTILO RPG SOMBRIO
 ========================= */
 
 table tr:hover {
-    background: rgba(255,255,255,0.03);
+    background: rgba(255,0,0,0.04);
 }
 
 td {
-    color: var(--text-main);
+    color: #e6d6b8;
+}
+
+/* borda infernal opcional para tabelas */
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    border-bottom: 1px solid rgba(90,0,0,0.4);
 }
 
 /* =========================
@@ -110,6 +160,7 @@ td {
 @media (max-width: 768px) {
     header h1 {
         font-size: 2.4rem;
+        text-shadow: 0 0 10px rgba(255,0,0,0.3);
     }
 
     .navbar .links {

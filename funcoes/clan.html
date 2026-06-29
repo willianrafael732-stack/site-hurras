@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HURRAS FANTASY - Criação Infernal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(#0a0000, #1f0000, #0a0000);
+            color: #ffdddd;
+            font-family: 'Cinzel', serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar Diablo */
+        .container-nav {
+            background: #110000;
+            border-bottom: 5px solid #b30000;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 6px 20px rgba(179, 0, 0, 0.7);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .links a {
+            color: #ff9999;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+            font-size: 1.05rem;
+        }
+
+        .links a:hover {
+            color: #ff5555;
+            text-shadow: 0 0 12px #ff0000;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4444;
+            font-family: 'Creepster', cursive;
+            text-shadow: 0 0 20px #ff0000;
+            margin: 30px 0 10px;
+            font-size: 3.2rem;
+        }
+
+        h2 {
+            color: #ff6666;
+            text-shadow: 0 0 10px #ff0000;
+            border-left: 6px solid #b30000;
+            padding-left: 18px;
+            margin: 40px 0 20px;
+        }
+
+        .ficha {
+            background: rgba(15, 0, 0, 0.95);
+            padding: 40px;
+            border: 4px solid #b30000;
+            border-radius: 8px;
+            box-shadow: 0 0 50px #330000;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .linha {
+            display: flex;
+            align-items: center;
+            margin: 16px 0;
+            padding: 10px 0;
+            border-bottom: 1px solid #440000;
+        }
+
+        .nome-atributo {
+            width: 260px;
+            font-weight: bold;
+            color: #ffaa77;
+        }
+
+        .valor {
+            color: #ff5555;
+            font-size: 28px;
+            font-weight: bold;
+            min-width: 70px;
+        }
+
+        .bonus {
+            color: #ffdd77;
+            margin-left: 20px;
+        }
+
+        button {
+            padding: 14px 32px;
+            background: #440000;
+            color: #ffeeee;
+            border: 3px solid #b30000;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin: 12px 10px;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background: #770000;
+            box-shadow: 0 0 25px #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="container-nav">
+        <div class="links">
+            <a href="../funcoes/inicio.html">História</a>
+            <a href="racaeclasses.html">Raças e Classes</a>
+            <a href="/armas/armas.html">Armas</a>
+            <a href="../funcoes/sistema.html">Sistema</a>
+            <a href="../funcoes/inimigo.html">Inimigos</a>
+            <a href="../funcoes/magia.html">Magias</a>
+            <a href="../funcoes/criaçãodeficha.html">Criação</a>
+        </div>
+    </nav>
+
+   <h1>HURRAS FANTASY</h1>
+<h2>✦ FICHA INFERNAL ✦</h2>
+
+<label>Nome</label>
+<input type="text" id="nome" placeholder="Nome do personagem"><br>
+
+<label>Nível</label>
+<select id="nivel" onchange="criarFicha()">
+    <option value="1">Nível 1</option>
+    <option value="2">Nível 2</option>
+    <option value="3">Nível 3</option>
+    <option value="4">Nível 4</option>
+    <option value="5">Nível 5</option>
+    <option value="6">Nível 6</option>
+    <option value="7">Nível 7</option>
+    <option value="8">Nível 8</option>
+    <option value="9">Nível 9</option>
+    <option value="10">Nível 10</option>
+</select><br>
+
+<label>Raça</label>
+<select id="raca" onchange="criarFicha()">
+    <option value="Humano">Humano</option>
+    <option value="Elfo">Elfo</option>
+    <option value="Anão">Anão</option>
+    <option value="Draconato">Draconato</option>
+    <option value="Vampiro">Vampiro</option>
+    <option value="Demônio">Demônio</option>
+    <option value="Kitsune">Kitsune</option>
+    <option value="Licantropo">Licantropo</option>
+    <option value="Autômato">Autômato</option>
+</select><br>
+
+<label>Classe</label>
+<select id="classe" onchange="criarFicha()">
+    <option value="Guerreiro">Guerreiro</option>
+    <option value="Arqueiro">Arqueiro</option>
+    <option value="Mago">Mago</option>
+    <option value="Ladino">Ladino</option>
+    <option value="Bruxo">Bruxo</option>
+    <option value="Necromante">Necromante</option>
+    <option value="Bardo">Bardo</option>
+    <option value="Ninja">Ninja</option>
+    <option value="Kitsune">Kitsune</option>
+    <option value="Licantropo">Licantropo</option>
+</select><br><br>
+
+<button onclick="criarFicha()">Gerar Ficha</button>
+<button onclick="criarAleatorio()">🎲 Aleatório Completo</button>
+
+<div id="ficha" class="ficha"></div>
+
+    <script>
+    const racas = {
+        Humano: { nome: "Humano", bonus: { Qualquer: "+1" } },
+        Elfo: { nome: "Elfo", bonus: { Destreza: "+2", Inteligência: "+1" } },
+        Anão: { nome: "Anão", bonus: { Vigor: "+2", Força: "+1" } },
+        Draconato: { nome: "Draconato", bonus: { Força: "+2", Vigor: "+1" } },
+        Vampiro: { nome: "Vampiro", bonus: { Destreza: "+1", Manipulação: "+1" } },
+        Demônio: { nome: "Demônio", bonus: { "Magia Sombria": "+2" } },
+        Kitsune: { nome: "Kitsune", bonus: { Manipulação: "+2", Carisma: "+1", Ilusão: "+1" } },
+        Licantropo: { nome: "Licantropo", bonus: { Força: "+2", Vigor: "+2", Rastreamento: "+1" } },
+        Autômato: { nome: "Autômato", bonus: { Tecnologia: "+2", Vigor: "+1" } }
+    };
+
+    const classes = {
+        Guerreiro: { nome: "Guerreiro", bonus: { Força: "+2", Vigor: "+2" } },
+        Arqueiro: { nome: "Arqueiro", bonus: { Destreza: "+2" } },
+        Mago: { nome: "Mago", bonus: { Inteligência: "+2" } },
+        Ladino: { nome: "Ladino", bonus: { Furtividade: "+2", Crítico: "+1" } },
+        Bruxo: { nome: "Bruxo", bonus: { "Magia Sombria": "+2" } },
+        Necromante: { nome: "Necromante", bonus: { Inteligência: "+1", "Magia Sombria": "+2" } },
+        Bardo: { nome: "Bardo", bonus: { Carisma: "+2", Persuasão: "+1" } },
+        Ninja: { nome: "Ninja", bonus: { Furtividade: "+2", Esquiva: "+1" } },
+        Kitsune: { nome: "Kitsune", bonus: { Manipulação: "+2", Ilusão: "+2", Carisma: "+1" } },
+        Licantropo: { nome: "Licantropo", bonus: { Força: "+2", Vigor: "+2", Rastreamento: "+1" } }
+    };
+
+    function randomValue(level) {
+        const max = parseInt(level);
+        return Math.floor(Math.random() * (max + 1));
+    }
+
+    function getBonusText(atributo) {
+        const racaKey = document.getElementById("raca").value;
+        const classeKey = document.getElementById("classe").value;
+        const r = racas[racaKey]?.bonus[atributo] || "";
+        const c = classes[classeKey]?.bonus[atributo] || "";
+        return (r || c) ? `(${r} ${c})`.trim() : "";
+    }
+
+    const elementos = ["Fogo", "Água", "Vento", "Terra", "Raio", "Veneno", "Mental", "Sagrado", "Sombrio"];
+
+    function gerarNivelMagico(level) {
+        let html = '';
+        elementos.forEach(el => {
+            const valor = randomValue(level);
+            html += `<div class="linha"><span class="nome-atributo">${el}</span> <span class="valor">${valor}</span></div>`;
+        });
+        return html;
+    }
+
+    function gerarResistenciaMagica(level) {
+        let html = '';
+        elementos.forEach(el => {
+            const valor = randomValue(level);
+            html += `<div class="linha"><span class="nome-atributo">${el}</span> <span class="valor">${valor}</span></div>`;
+        });
+        return html;
+    }
+
+    function criarAleatorio() {
+        const rKeys = Object.keys(racas);
+        const cKeys = Object.keys(classes);
+        document.getElementById("nome").value = ["Draven","Lilith","Azrael","Morgana","Ragnar","Kael"][Math.floor(Math.random()*6)];
+        document.getElementById("nivel").value = Math.floor(Math.random() * 10) + 1;
+        document.getElementById("raca").value = rKeys[Math.floor(Math.random() * rKeys.length)];
+        document.getElementById("classe").value = cKeys[Math.floor(Math.random() * cKeys.length)];
+        criarFicha();
+    }
+
+    function criarFicha() {
+        const nome = document.getElementById("nome").value.trim() || "Alma Perdida";
+        const nivel = parseInt(document.getElementById("nivel").value);
+        const racaKey = document.getElementById("raca").value;
+        const classeKey = document.getElementById("classe").value;
+
+        const raca = racas[racaKey] || { nome: racaKey };
+        const classe = classes[classeKey] || { nome: classeKey };
+
+        const vida =  (nivel * 10);
+        const mana =  (nivel * 5);
+
+        const fichaHTML = `
+            <h1>${nome}</h1>
+            <p><strong>Raça:</strong> ${raca.nome} | <strong>Classe:</strong> ${classe.nome} | <strong>Nível:</strong> ${nivel}</p>
+            <hr>
+
+            <h1>FÍSICOS</h1>
+            <div class="linha"><span class="nome-atributo">Força</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Força")}</span></div>
+            <div class="linha"><span class="nome-atributo">Destreza</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Destreza")}</span></div>
+            <div class="linha"><span class="nome-atributo">Vigor</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Vigor")}</span></div>
+
+            <h1>TALENTOS</h1>
+            <div class="linha"><span class="nome-atributo">Intimidação</span> <span class="valor">${randomValue(nivel)}</span></div>
+            <div class="linha"><span class="nome-atributo">Esquiva</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Esquiva")}</span></div>
+            <div class="linha"><span class="nome-atributo">Crítico</span> <span class="valor">${randomValue(nivel)}</span></div>
+            <div class="linha"><span class="nome-atributo">Furtividade</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Furtividade")}</span></div>
+
+            <h1>SOCIAIS</h1>
+            <div class="linha"><span class="nome-atributo">Carisma</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Carisma")}</span></div>
+            <div class="linha"><span class="nome-atributo">Manipulação</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Manipulação")}</span></div>
+            <div class="linha"><span class="nome-atributo">Persuasão</span> <span class="valor">${randomValue(nivel)}</span></div>
+
+            <h1>MENTAL</h1>
+            <div class="linha"><span class="nome-atributo">Inteligência</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Inteligência")}</span></div>
+            <div class="linha"><span class="nome-atributo">Percepção</span> <span class="valor">${randomValue(nivel)}</span></div>
+
+            <h1>NIVEL MÁGICO</h1>
+            ${gerarNivelMagico(nivel)}
+
+            <h1>RESISTÊNCIA MÁGICA</h1>
+            ${gerarResistenciaMagica(nivel)}
+
+            <h1>VITALIDADE</h1>
+            <p><strong>${vida} pontos</strong></p>
+
+            <h1>MANA</h1>
+            <p><strong>${mana} pontos</strong></p>
+        `;
+
+        document.getElementById("ficha").innerHTML = fichaHTML;
+    }
+</script>
+</body>
+</html>

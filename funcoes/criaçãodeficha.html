@@ -1,157 +1,283 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Sistema Elemental Organizado</title>
-    <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #0f0f0f; color: #f0f0f0; padding: 30px; }
-        h2 { color: #00d4ff; text-align: center; border-bottom: 2px solid #333; padding-bottom: 10px; }
-        
-        /* Estilo das Seções */
-        .secao-header { 
-            background: #222; 
-            color: #ffcc00; 
-            padding: 10px 20px; 
-            margin-top: 30px; 
-            border-left: 5px solid #ffcc00;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
+<meta charset="UTF-8">
+<title>Grimório Elemental Infernal</title>
 
-        table { width: 100%; border-collapse: collapse; margin-bottom: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
-        th, td { padding: 12px 15px; border: 1px solid #333; text-align: left; }
-        th { background: #1a1a1a; color: #00d4ff; text-transform: uppercase; font-size: 0.8em; }
-        tr:nth-child(even) { background: #161616; }
-        
-        /* Cores específicas */
-        .tipo-base { color: #00ff88; } 
-        .tipo-fusao { color: #f0f0f0; } 
-        .proibida { background: #330000 !important; color: #ff4444 !important; font-weight: bold; }
-        .dado { font-family: 'Courier New', monospace; color: #00ffcc; font-weight: bold; }
-        .ano { color: #888; font-size: 0.85em; }
-    </style>
-</head>
-<body>
+<style>
+/* =========================
+   BASE INFERNAL (DIABLO STYLE)
+========================= */
+body {
+    font-family: 'Georgia', serif;
+    background:
+        radial-gradient(circle at top, #2a0000, #05050a 70%),
+        radial-gradient(circle at bottom, #120010, #000000);
+    color: #e6d6b8;
+    padding: 30px;
+}
 
-    <link rel="stylesheet" href="./css/criaçãodeficha.css">
+/* brasas no fundo */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(255,0,0,0.08), transparent 60%),
+        radial-gradient(circle at 70% 80%, rgba(120,0,0,0.08), transparent 60%);
+    opacity: 0.2;
+    animation: embers 12s linear infinite;
+}
 
-    
-      <nav class="navbar">
-        <div class="container-nav">
-            <div class="links">
-                <a href="../funcoes/inicio.html">historia </a>
-                <a href="racaeclasses.html">Raças e Classes</a>
-                <a href="/armas/armas.html">Armas</a>
-                <a href="../funcoes/sistema.html">sistema</a>
-                <a href="../funcoes/inimigo.html">inimigos</a>
-                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
-                <a href="..//funcoes/magia.html">magias</a>
-                <a href="..//funcoes/porção.html">porção</a>
-                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a> 
-            </div>
-        </div>
-    </nav>
+@keyframes embers {
+    from { transform: translateY(0); }
+    to { transform: translateY(-200px); }
+}
 
+/* ===== NAVBAR ===== */
+.navbar {
+    background: linear-gradient(180deg, rgba(20,0,0,0.95), rgba(0,0,0,0.95));
+    border-bottom: 2px solid #5a0000;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 25px rgba(255,0,0,0.12);
+}
 
+.container-nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 14px 20px;
+}
 
-    <h2>📜 Grimório Elemental Organizado</h2>
+.navbar .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+}
 
-    <div id="container-elemental">
-        </div>
+.navbar .links a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #d6b98c;
+    text-decoration: none;
+    transition: .25s;
+}
 
-    <script>
-    // Dados organizados por Categoria/Tópico
-    const categorias = {
-        "✨ Elementos Primordiais": [
-            { nome: "Fogo", elementos: "🔥 Primordial", dano: "1d8 Ígneo", efeitos: "Queimadura leve", ano: "Pré-História", classe: "tipo-base" },
-            { nome: "Água", elementos: "💧 Primordial", dano: "1d6 Impacto", efeitos: "Lentidão por umidade", ano: "Pré-História", classe: "tipo-base" },
-            { nome: "Vento", elementos: "🌪️ Primordial", dano: "1d6 Cortante", efeitos: "Repulsão", ano: "Pré-História", classe: "tipo-base" },
-            { nome: "Terra", elementos: "🌿 Primordial", dano: "1d10 Esmag.", efeitos: "Esturpor", ano: "Pré-História", classe: "tipo-base" },
-            { nome: "Raio", elementos: "⚡ Primordial", dano: "1d12 Elétrico", efeitos: "Choque breve", ano: "Era dos Mitos", classe: "tipo-base" },
-            { nome: "Veneno", elementos: "☠️ Primordial", dano: "1d4 Tóxico", efeitos: "Dano por turno", ano: "Era dos Mitos", classe: "tipo-base" },
-            { nome: "Mental", elementos: "🧠 Primordial", dano: "1d8 Psíquico", efeitos: "Confusão", ano: "Civilização", classe: "tipo-base" }
-        ],
-        "🔥 Alquimia do Fogo": [
-            { nome: "Vapor", elementos: "🔥 + 💧", dano: "2d6 Térmico", efeitos: "Cegueira e Sufocamento", ano: "1250 d.C.", classe: "tipo-fusao" },
-            { nome: "Tempestade Ígnea", elementos: "🔥 + 🌪️", dano: "3d8 Ígneo/Cort.", efeitos: "Incêndio em Área", ano: "1312 d.C.", classe: "tipo-fusao" },
-            { nome: "Lava", elementos: "🔥 + 🌿", dano: "4d10 Ígneo/Esmag.", efeitos: "Terreno Mortal", ano: "0840 d.C.", classe: "tipo-fusao" },
-            { nome: "Plasma", elementos: "🔥 + ⚡", dano: "5d6 Elétrico/Fogo", efeitos: "Desintegração", ano: "Era Moderna", classe: "tipo-fusao" },
-            { nome: "Gás Ácido", elementos: "🔥 + ☠️", dano: "2d8 Tóxico/Fogo", efeitos: "Corrosão Contínua", ano: "1480 d.C.", classe: "tipo-fusao" },
-            { nome: "Iluminação", elementos: "🔥 + 🧠", dano: "2d10 Psíquico", efeitos: "Revelação", ano: "Antiguidade", classe: "tipo-fusao" }
-        ],
-        "💧 Fluidez da Água": [
-            { nome: "Névoa", elementos: "💧 + 🌪️", dano: "1d4 Frio", efeitos: "Ocultamento", ano: "Desconhecido", classe: "tipo-fusao" },
-            { nome: "Lama / Pântano", elementos: "💧 + 🌿", dano: "2d6 Esmag.", efeitos: "Enraizamento", ano: "Pré-História", classe: "tipo-fusao" },
-            { nome: "Eletrofluxo", elementos: "💧 + ⚡", dano: "3d6 Elétrico", efeitos: "Paralisação em Cadeia", ano: "1590 d.C.", classe: "tipo-fusao" },
-            { nome: "Ácido Líquido", elementos: "💧 + ☠️", dano: "3d4 Tóxico", efeitos: "Corrosão de Armadura", ano: "1120 d.C.", classe: "tipo-fusao" },
-            { nome: "Tranquilidade", elementos: "💧 + 🧠", dano: "(Cura) 2d8", efeitos: "Limpeza Mental", ano: "Antiguidade", classe: "tipo-fusao" }
-        ],
-        "🌪️ Domínio do Vento e Terra": [
-            { nome: "Poeira / Areia", elementos: "🌪️ + 🌿", dano: "2d4 Cortante", efeitos: "Cegueira", ano: "Antiguidade", classe: "tipo-fusao" },
-            { nome: "Tempestade Viva", elementos: "🌪️ + ⚡", dano: "4d6 Elétrico/Cort.", efeitos: "Ataques Aleatórios", ano: "1622 d.C.", classe: "tipo-fusao" },
-            { nome: "Miasma", elementos: "🌪️ + ☠️", dano: "2d10 Tóxico", efeitos: "Contaminação Aérea", ano: "Idade Média", classe: "tipo-fusao" },
-            { nome: "Magnetismo", elementos: "🌿 + ⚡", dano: "3d8 Esmag.", efeitos: "Atração de Metais", ano: "1800 d.C.", classe: "tipo-fusao" },
-            { nome: "Esporos Mortais", elementos: "🌿 + ☠️", dano: "2d12 Tóxico", efeitos: "Infestação", ano: "1100 d.C.", classe: "tipo-fusao" }
-        ],
-        "🧠 Essência da Mente e Outros": [
-            { nome: "Euforia", elementos: "🌪️ + 🧠", dano: "1d12 Psíquico", efeitos: "Confusão/Velocidade", ano: "Desconhecido", classe: "tipo-fusao" },
-            { nome: "Golems Mentais", elementos: "🌿 + 🧠", dano: "4d8 Esmag.", efeitos: "Sentinelas", ano: "Era dos Mitos", classe: "tipo-fusao" },
-            { nome: "Neurotoxina", elementos: "⚡ + ☠️", dano: "3d6 Elétrico/Tox.", efeitos: "Falha Motora", ano: "Moderno", classe: "tipo-fusao" },
-            { nome: "Alucinação", elementos: "☠️ + 🧠", dano: "3d4 Psíquico", efeitos: "Fogo Amigo", ano: "Antiguidade", classe: "tipo-fusao" }
-        ],
-        "🌌 Fusões Proibidas": [
-            { nome: "Eclipse", elementos: "✨ + 🌑", dano: "6d8 Rad./Necr.", efeitos: "Risco extremo", ano: "0001 d.C.", classe: "tipo-fusao" },
-            { nome: "Fusão Proibida", elementos: "🌌 + ✨ + 🌑", dano: "∞ Absoluto", efeitos: "Apagamento da realidade", ano: "Era Primordial", classe: "proibida" }
-        ]
-    };
-    
-    
+.navbar .links a:hover {
+    color: #ff2a2a;
+    text-shadow: 0 0 10px #ff0000;
+}
 
-    const container = document.querySelector("#container-elemental");
+/* ===== TÍTULO ===== */
+h2 {
+    color: #ffcc66;
+    text-align: center;
+    border-bottom: 2px solid #5a0000;
+    padding-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255,0,0,0.3);
+}
 
-    // Loop através das categorias para criar as tabelas
-    for (let titulo in categorias) {
-        // Criar Título da Seção
-        const divHeader = document.createElement("div");
-        divHeader.className = "secao-header";
-        divHeader.innerText = titulo;
-        container.appendChild(divHeader);
+/* ===== SEÇÕES ===== */
+.secao-header {
+    background: linear-gradient(90deg, #1a0000, #0a0a12);
+    color: #ffcc66;
+    padding: 12px 20px;
+    margin-top: 30px;
+    border-left: 5px solid #8b0000;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(255,0,0,0.1);
+}
 
-        // Criar Tabela
-        const tabela = document.createElement("table");
-        tabela.innerHTML = `
-            <thead>
-                <tr>
-                    <th width="20%">Nome</th>
-                    <th width="15%">Composição</th>
-                    <th width="15%">Dano</th>
-                    <th width="35%">Efeitos</th>
-                    <th width="15%">Era</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        `;
+/* ===== TABELAS ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.8);
+    background: rgba(10,0,0,0.75);
+    border: 1px solid #3a0000;
+}
 
-        const tbody = tabela.querySelector("tbody");
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #3a0000;
+    text-align: left;
+}
 
-        // Preencher a tabela com os itens da categoria
-        categorias[titulo].forEach(item => {
-            const tr = document.createElement("tr");
-            if (item.classe) tr.className = item.classe;
-            tr.innerHTML = `
-                <td><b>${item.nome}</b></td>
-                <td>${item.elementos}</td>
-                <td class="dado">${item.dano}</td>
-                <td>${item.efeitos}</td>
-                <td class="ano">${item.ano}</td>
-            `;
-            tbody.appendChild(tr);
-        });
+th {
+    background: #120000;
+    color: #ff4d4d;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+}
 
-        container.appendChild(tabela);
+tr:nth-child(even) {
+    background: rgba(255,0,0,0.03);
+}
+
+/* hover infernal */
+tr:hover {
+    background: rgba(255,0,0,0.06);
+}
+
+/* ===== TIPOS ===== */
+.tipo-base {
+    color: #7CFFB2;
+}
+
+.tipo-fusao {
+    color: #e6d6b8;
+}
+
+.proibida {
+    background: #2a0000 !important;
+    color: #ff4444 !important;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+.dado {
+    font-family: 'Courier New', monospace;
+    color: #ffcc66;
+    font-weight: bold;
+}
+
+.ano {
+    color: #a88;
+    font-size: 0.85em;
+}
+
+/* ===== ANIMAÇÃO SUAVE ===== */
+table, .secao-header {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+        filter: blur(2px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    .navbar .links {
+        justify-content: center;
+        gap: 12px;
     }
 
-    
-    </script>
+    h2 {
+        font-size: 20px;
+    }
+
+    th, td {
+        font-size: 0.9em;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="container-nav">
+        <div class="links">
+            <a href="../funcoes/inicio.html">História</a>
+            <a href="racaeclasses.html">Raças</a>
+            <a href="/armas/armas.html">Armas</a>
+            <a href="../funcoes/sistema.html">Sistema</a>
+            <a href="../funcoes/inimigo.html">Inimigos</a>
+            <a href="../funcoes/criaçãodeficha.html">Função Elemental</a>
+            <a href="../funcoes/magia.html">Magias</a>
+            <a href="../funcoes/porção.html">Poções</a>
+            <a href="../funcoes/INGREDIENTES.HTML">Ingredientes</a>
+        </div>
+    </div>
+</nav>
+
+<h2>📜 Grimório Elemental Infernal</h2>
+
+<div id="container-elemental"></div>
+
+<script>
+// ===== DADOS ELEMENTAIS =====
+const categorias = {
+    "✨ Elementos Primordiais": [
+        { nome: "Fogo", elementos: "🔥 Primordial", dano: "1d8 Ígneo", efeitos: "Queimadura leve", ano: "Pré-História", classe: "tipo-base" },
+        { nome: "Água", elementos: "💧 Primordial", dano: "1d6 Impacto", efeitos: "Lentidão por umidade", ano: "Pré-História", classe: "tipo-base" },
+        { nome: "Vento", elementos: "🌪️ Primordial", dano: "1d6 Cortante", efeitos: "Repulsão", ano: "Pré-História", classe: "tipo-base" },
+        { nome: "Terra", elementos: "🌿 Primordial", dano: "1d10 Esmag.", efeitos: "Esturpor", ano: "Pré-História", classe: "tipo-base" },
+        { nome: "Raio", elementos: "⚡ Primordial", dano: "1d12 Elétrico", efeitos: "Choque breve", ano: "Era dos Mitos", classe: "tipo-base" },
+        { nome: "Veneno", elementos: "☠️ Primordial", dano: "1d4 Tóxico", efeitos: "Dano por turno", ano: "Era dos Mitos", classe: "tipo-base" },
+        { nome: "Mental", elementos: "🧠 Primordial", dano: "1d8 Psíquico", efeitos: "Confusão", ano: "Civilização", classe: "tipo-base" }
+    ],
+    "🔥 Alquimia do Fogo": [
+        { nome: "Vapor", elementos: "🔥 + 💧", dano: "2d6 Térmico", efeitos: "Cegueira", ano: "1250 d.C.", classe: "tipo-fusao" },
+        { nome: "Tempestade Ígnea", elementos: "🔥 + 🌪️", dano: "3d8 Ígneo/Cort.", efeitos: "Incêndio em Área", ano: "1312 d.C.", classe: "tipo-fusao" },
+        { nome: "Lava", elementos: "🔥 + 🌿", dano: "4d10", efeitos: "Terreno Mortal", ano: "0840 d.C.", classe: "tipo-fusao" },
+        { nome: "Plasma", elementos: "🔥 + ⚡", dano: "5d6", efeitos: "Desintegração", ano: "Era Moderna", classe: "tipo-fusao" },
+        { nome: "Gás Ácido", elementos: "🔥 + ☠️", dano: "2d8", efeitos: "Corrosão", ano: "1480 d.C.", classe: "tipo-fusao" },
+        { nome: "Iluminação", elementos: "🔥 + 🧠", dano: "2d10", efeitos: "Revelação", ano: "Antiguidade", classe: "tipo-fusao" }
+    ]
+};
+
+// ===== RENDER =====
+const container = document.querySelector("#container-elemental");
+
+for (let titulo in categorias) {
+
+    const header = document.createElement("div");
+    header.className = "secao-header";
+    header.innerText = titulo;
+    container.appendChild(header);
+
+    const tabela = document.createElement("table");
+
+    tabela.innerHTML = `
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Composição</th>
+                <th>Dano</th>
+                <th>Efeitos</th>
+                <th>Era</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    `;
+
+    const tbody = tabela.querySelector("tbody");
+
+    categorias[titulo].forEach(item => {
+        const tr = document.createElement("tr");
+        if (item.classe) tr.className = item.classe;
+
+        tr.innerHTML = `
+            <td><b>${item.nome}</b></td>
+            <td>${item.elementos}</td>
+            <td class="dado">${item.dano}</td>
+            <td>${item.efeitos}</td>
+            <td class="ano">${item.ano}</td>
+        `;
+
+        tbody.appendChild(tr);
+    });
+
+    container.appendChild(tabela);
+}
+</script>
+
 </body>
 </html>

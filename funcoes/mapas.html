@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mapas - Grimório Sombrio</title>
+
+<style>
+:root{
+    --bg:#050205;
+    --panel:#0c0a10;
+    --gold:#c5a059;
+    --blood:#8b0000;
+    --blood2:#ff1a1a;
+    --text:#e6e0d6;
+    --border:#2a1a1a;
+}
+
+/* ================= RESET ================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: Georgia, serif;
+    background:
+        radial-gradient(circle at top, #2a0000 0%, #050205 60%, #000 100%);
+    color:var(--text);
+    padding:30px;
+}
+
+/* ================= NAVBAR DIABLO ================= */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    margin-bottom:25px;
+    background:linear-gradient(180deg,#0a0000,#000);
+    border:1px solid var(--border);
+    box-shadow:0 0 25px rgba(255,0,0,0.15);
+}
+
+.container-nav{
+    padding:12px;
+}
+
+.links{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:0;
+}
+
+.links a{
+    color:var(--gold);
+    text-decoration:none;
+    padding:10px 14px;
+    font-weight:bold;
+    text-transform:uppercase;
+    font-size:12px;
+    letter-spacing:1px;
+    position:relative;
+    transition:.3s;
+}
+
+/* separador metálico */
+.links a:not(:last-child)::after{
+    content:"";
+    position:absolute;
+    right:0;
+    top:20%;
+    height:60%;
+    width:1px;
+    background:linear-gradient(to bottom,transparent,var(--gold),transparent);
+}
+
+/* hover infernal */
+.links a:hover{
+    color:var(--blood2);
+    text-shadow:0 0 10px var(--blood2);
+}
+
+/* ================= TITULOS ================= */
+h1{
+    margin:40px 0 15px;
+    color:var(--blood2);
+    text-transform:uppercase;
+    letter-spacing:2px;
+    border-left:5px solid var(--gold);
+    padding-left:12px;
+    text-shadow:0 0 15px #000;
+}
+
+h2{
+    margin:25px 0 15px;
+    color:var(--gold);
+    border-left:3px solid var(--blood);
+    padding-left:10px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+/* ================= CARDS ================= */
+a{
+    display:block;
+    max-width:350px;
+    text-decoration:none;
+    color:var(--text);
+    background:linear-gradient(145deg,#120000,#0a0a10);
+    padding:14px 16px;
+    margin:10px 0;
+    border-radius:8px;
+    border:1px solid var(--border);
+    position:relative;
+    transition:.3s;
+    font-weight:bold;
+}
+
+/* brilho interno */
+a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    border-radius:8px;
+    background:linear-gradient(90deg,transparent,#ff1a1a33,transparent);
+    opacity:0;
+    transition:.3s;
+}
+
+a:hover{
+    transform:translateX(10px);
+    border-color:var(--blood2);
+    box-shadow:0 0 20px rgba(255,0,0,0.25);
+    color:var(--gold);
+}
+
+a:hover::before{
+    opacity:1;
+}
+
+/* ================= SEÇÕES ================= */
+section{
+    margin-bottom:40px;
+    padding:15px;
+    border:1px solid var(--border);
+    background:rgba(10,0,0,0.25);
+    border-radius:10px;
+    transition:.3s;
+}
+
+section:hover{
+    box-shadow:0 0 25px rgba(255,0,0,0.15);
+}
+
+/* ================= RESPONSIVO ================= */
+@media(max-width:600px){
+    body{padding:15px;}
+    .links{gap:5px;}
+    a{max-width:100%;}
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <div class="container-nav">
+        <div class="links">
+            <a href="../funcoes/inicio.html">História</a>
+            <a href="../funcoes/racaeclasses.html">Raças</a>
+            <a href="../armas/armas.html">Armas</a>
+            <a href="../funcoes/sistema.html">Sistema</a>
+            <a href="../funcoes/inimigo.html">Inimigos</a>
+            <a href="../funcoes/criaçãodeficha.html">Função Elemental</a>
+            <a href="../funcoes/magia.html">Magias</a>
+            <a href="../funcoes/porção.html">Poções</a>
+            <a href="../funcoes/ingredientes.html">Ingredientes</a>
+            <a href="../funcoes/mapas.html">Mapas</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ================= CONTEÚDO ================= -->
+
+<section>
+<h1>Dungeon</h1>
+<a href="/funcoes/maps/Captura de Tela (239).png">Mato Selvagem</a>
+</section>
+
+<section>
+<h2>Ruínas Antigas</h2>
+<a href="/funcoes/maps/Captura de Tela (238).png">Ruínas Esquecidas</a>
+</section>
+
+<section>
+<h1>Cidade Imperial</h1>
+<a href="/funcoes/maps/Captura de Tela (244).png">Capital Norte</a>
+<a href="/funcoes/maps/Captura de Tela (245).png">Capital Sul</a>
+<a href="/funcoes/maps/Captura de Tela (242).png">Vilarejo Esquecido</a>
+<a href="/funcoes/maps/Captura de Tela (240).png">Palácio Sombrio</a>
+<a href="/funcoes/maps/Captura de Tela (243).png">Cabana do Caçador</a>
+<a href="/funcoes/maps/Captura de Tela (246).png">Ruínas Perdidas</a>
+</section>
+
+<section>
+<h1>Taverna</h1>
+<a href="/funcoes/maps/Captura de Tela (241).png">Taverna dos Caídos</a>
+</section>
+
+<section>
+<h1>Outros Reinos</h1>
+<a href="/funcoes/maps/Captura de Tela (247).png">Dungeon Abandonada</a>
+<a href="/funcoes/maps/Captura de Tela (248).png">Trono Negro</a>
+<a href="/funcoes/maps/Captura de Tela (249).png">Catacumbas</a>
+<a href="/funcoes/maps/Captura de Tela (250).png">Profundezas</a>
+<a href="/funcoes/maps/Captura de Tela (251).png">Cripta Antiga</a>
+<a href="/funcoes/maps/Captura de Tela (252).png">Templo Caído</a>
+<a href="/funcoes/maps/Captura de Tela (253).png">Ruína Sangrenta</a>
+<a href="/funcoes/maps/Captura de Tela (254).png">Caverna Sombria</a>
+<a href="/funcoes/maps/Captura de Tela (255).png">Caverna da Mão</a>
+<a href="/funcoes/maps/Captura de Tela (256).png">Paladino Caído</a>
+<a href="/funcoes/maps/Captura de Tela (257).png">Midgard</a>
+<a href="/funcoes/maps/Captura de Tela (258).png">Vazio Abissal</a>
+</section>
+
+</body>
+</html>

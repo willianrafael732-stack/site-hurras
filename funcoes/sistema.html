@@ -1,267 +1,348 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexalis - Sistema de Regras</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexalis - Crônicas das Sombras</title>
 
-    <style>
-        :root {
-            --bg: #050508;
-            --surface: #0f101a;
-            --primary: #6366f1;
-            --secondary: #ccff00;
-            --attr-color: #00ff88;
-            --bad-color: #ff4757;
-            --text-main: #e2e8f0;
-            --text-dim: #94a3b8;
-            --border: #1e293b;
-            --glass: rgba(15, 16, 26, 0.95);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
+:root{
+    --bg:#040406;
+    --blood:#b30000;
+    --bloodGlow:#ff1a1a;
+    --gold:#d4af37;
+    --dark:#0b0b12;
+    --text:#e6e0d6;
+    --muted:#8b8b8b;
+    --green:#00ff88;
+    --danger:#ff3b3b;
+}
 
-        body {
-            background: var(--bg);
-            color: var(--text-main);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            background-image: radial-gradient(circle at 50% 0%, #111827 0%, transparent 50%);
-        }
+*{margin:0;padding:0;box-sizing:border-box;}
 
-        h1, h2, h3 { font-family: 'Cinzel', serif; }
+body{
+    background:
+        radial-gradient(circle at top,#220000,#040406 55%,#000);
+    color:var(--text);
+    font-family:Inter;
+    line-height:1.6;
+}
 
-        header {
-            height: 180px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+h1,h2,h3{font-family:Cinzel;}
 
-        header h1 {
-            font-size: 3.5rem;
-            color: var(--secondary);
-            text-shadow: 0 0 20px rgba(204, 255, 0, 0.2);
-        }
+header{
+    text-align:center;
+    padding:60px 20px 30px;
+}
 
-        nav {
-            position: sticky;
-            top: 0;
-            background: var(--glass);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            padding: 15px;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+header h1{
+    font-size:4rem;
+    color:var(--blood);
+    text-shadow:
+        0 0 10px var(--bloodGlow),
+        0 0 30px rgba(179,0,0,.6);
+}
 
-        nav a {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+header p{
+    color:#aaa;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:.8rem;
+}
 
-        nav a:hover { color: var(--secondary); }
+nav{
+    position:sticky;
+    top:0;
+    background:rgba(0,0,0,.8);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #2a0000;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    padding:12px;
+    flex-wrap:wrap;
+    z-index:1000;
+}
 
-        .container {
-            max-width: 950px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
+nav a{
+    color:#aaa;
+    text-decoration:none;
+    font-size:.75rem;
+    text-transform:uppercase;
+    transition:.2s;
+}
 
-        section {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 35px;
-            margin-bottom: 40px;
-            white-space: pre-line;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
+nav a:hover{
+    color:var(--bloodGlow);
+    text-shadow:0 0 10px var(--bloodGlow);
+}
 
-        h2 {
-            color: var(--secondary);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            white-space: normal;
-        }
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+}
 
-        h3 {
-            color: var(--attr-color);
-            margin: 20px 0 10px;
-        }
+section{
+    background:rgba(10,5,5,.78);
+    border:1px solid #2a0000;
+    padding:28px;
+    margin:22px 0;
+    border-radius:14px;
+    box-shadow:
+        0 0 25px rgba(255,0,0,.05),
+        inset 0 0 30px rgba(0,0,0,.6);
+    backdrop-filter:blur(6px);
+}
 
-        .arma { color: var(--secondary); font-weight: 700; text-transform: uppercase; }
-        .attr { color: var(--attr-color); font-weight: 700; }
-        .vantagem { color: var(--attr-color); font-weight: 700; text-transform: uppercase; }
-        .desvantagem { color: var(--bad-color); font-weight: 700; text-transform: uppercase; }
+h2{
+    color:var(--bloodGlow);
+    border-bottom:1px solid #2a0000;
+    padding-bottom:10px;
+    margin-bottom:15px;
+    text-shadow:0 0 8px rgba(255,0,0,.3);
+}
 
-        .highlight-box {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
+h3{color:var(--gold);margin-top:15px;}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: rgba(0,0,0,0.25);
-        }
+.good{color:var(--green);font-weight:bold;text-shadow:0 0 8px rgba(0,255,136,.3);}
+.bad{color:var(--danger);font-weight:bold;text-shadow:0 0 8px rgba(255,0,0,.3);}
+.attr{color:var(--green);font-weight:bold;}
 
-        th, td {
-            border: 1px solid var(--border);
-            padding: 12px;
-        }
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
 
-        th {
-            background: var(--border);
-            color: var(--secondary);
-        }
+th,td{
+    border:1px solid #2a0000;
+    padding:10px;
+}
 
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: var(--text-dim);
-            font-size: 0.8rem;
-        }
-    </style>
+th{
+    background:#1a0000;
+    color:var(--gold);
+}
+
+/* CLÃ CARDS MAIS IMERSIVOS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:12px;
+}
+
+.card{
+    background:linear-gradient(145deg,#120000,#050000);
+    border-left:4px solid var(--blood);
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 0 15px rgba(255,0,0,.08);
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 0 25px rgba(255,0,0,.15);
+}
+
+input,button{
+    padding:8px;
+    margin:5px 0;
+    background:#0b0b0b;
+    border:1px solid #333;
+    color:white;
+    border-radius:6px;
+}
+
+button{
+    cursor:pointer;
+    background:#2a0000;
+    transition:.2s;
+}
+
+button:hover{
+    background:var(--bloodGlow);
+    box-shadow:0 0 15px rgba(255,0,0,.4);
+}
+
+/* LOG estilo “destino” */
+.log{
+    background:
+        radial-gradient(circle,#000,#050000);
+    padding:12px;
+    height:200px;
+    overflow:auto;
+    border:1px solid #2a0000;
+    font-family:monospace;
+    font-size:.85rem;
+    color:#ddd;
+}
+
+.log::-webkit-scrollbar{width:6px;}
+.log::-webkit-scrollbar-thumb{background:#330000;}
+</style>
 </head>
 
 <body>
 
-        <link rel="stylesheet" href="/funcoes/css/sistema.css">
-
-      
-      <nav class="navbar">
-        <div class="container-nav">
-            <div class="links">
-                <a href="../funcoes/inicio.html">historia </a>
-                <a href="racaeclasses.html">Raças e Classes</a>
-                <a href="/armas/armas.html">Armas</a>
-                <a href="../funcoes/sistema.html">sistema</a>
-                <a href="../funcoes/inimigo.html">inimigos</a>
-                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
-                <a href="..//funcoes/magia.html">magias</a>
-                <a href="..//funcoes/porção.html">porção</a>
-                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
-                
-            </div>
-        </div>
-    </nav>
+<nav>
+<a href="#sistema">Sistema</a>
+<a href="#clans">Clãs</a>
+<a href="#disciplinas">Disciplinas</a>
+<a href="#combate">Combate</a>
+<a href="#humanidade">Humanidade</a>
+<a href="#rpg">Jogável</a>
+</nav>
 
 <header>
-    <h1>Sistema</h1>
-    <p>Manual de Combate e Atributos</p>
+<h1>NEXALIS</h1>
+<p>Crônicas de Sangue e Eternidade</p>
 </header>
-
-<nav>
-    <a href="#proficiencia">Proficiência</a>
-    <a href="#vontade">Recursos</a>
-    <a href="#vitalidade">Vitalidade</a>
-    <a href="#sistema">Sistema & XP</a>
-    <a href="#combate">Combate</a>
-</nav>
 
 <div class="container">
 
-<section id="proficiencia">
-    <h2>Proficiência</h2>
-    A <span class="attr">Proficiência</span> define o limite de habilidades e <span class="arma">equipamentos</span>.
-
-    <table>
-        <tr><th>Nível</th><th>Status Máximo</th></tr>
-        <tr><td>1</td><td>1 – Aprendiz</td></tr>
-        <tr><td>3</td><td>3 – Profissional</td></tr>
-        <tr><td>6</td><td>6 – Mestre</td></tr>
-        <tr><td>7</td><td>7 – Evolução Racial</td></tr>
-        <tr><td>12</td><td>10 – Mestre 2ª Classe</td></tr>
-    </table>
-</section>
-
-<section id="vontade">
-    <h2>Recursos Vitalis</h2>
-
-    <h3>Força de Vontade</h3>
-    Recurso raro para reverter falhas, reduzir dificuldade ou re-rolar dados.
-
-    <h3>Mana / Fúria / Chí</h3>
-    Energia usada para habilidades e magias.
-
-    <h3>Benções & Maldições</h3>
-    <span class="vantagem">Benção:</span> Sucesso automático ou recuperação.
-    <br>
-    <span class="desvantagem">Maldição:</span> Penalidades prolongadas.
-</section>
-
-<section id="vitalidade">
-    <h2>Vitalidade e Dor</h2>
-
-    <table>
-        <tr><th>Estado</th><th>Penalidade</th></tr>
-        <tr><td>Saudável</td><td>+0</td></tr>
-        <tr><td>Ferido</td><td>+2</td></tr>
-        <tr><td>Aleijado</td><td>+5</td></tr>
-        <tr><td>Caído</td><td>+7</td></tr>
-        <tr><td style="color:var(--bad-color)">MORTE</td><td>Definitiva</td></tr>
-    </table>
-</section>
-
 <section id="sistema">
-    <h2>Sistema de Evolução (XP)</h2>
+<h2>Sistema d10 Sombrio</h2>
 
-    <div class="highlight-box">
-        <strong>Custos de XP:</strong><br>
-        Atributos: nível x4<br>
-        Habilidades: nível x2<br>
-        Proficiência: nível x10
-    </div>
+<p>Role <b>Atributo + Perícia</b> em d10.</p>
 
-    <h3>Dificuldade e Testes</h3>
-    Dificuldade base: <strong>5</strong> | Sucessos necessários: <strong>3</strong>
+<ul>
+<li><span class="good">6+</span> sucesso</li>
+<li><span class="bad">1</span> pode quebrar o resultado</li>
+<li>5+ sucessos = ação perfeita</li>
+</ul>
+</section>
 
-    <div class="highlight-box">
-        <h3>Ataque & Ação Conjunta</h3>
+<section id="clans">
+<h2>Clãs Vampíricos</h2>
 
-        Uma <span class="attr">Ação Conjunta</span> acontece quando dois ou mais personagens cooperam no mesmo turno.
+<div class="grid">
 
-        <h3>Ataque Conjunto</h3>
-        • Um personagem é o <span class="vantagem">Atacante Principal</span><br>
-        • Cada aliado concede <span class="vantagem">+1 dado</span> OU <span class="vantagem">-1 dificuldade</span><br>
-        • O dano base vem apenas do atacante principal<br>
-        <span class="desvantagem">Limite:</span> Máx. +3 dados ou -3 dificuldade
+<div class="card"><h3>Brujah</h3><p>Fúria, caos e guerra.</p></div>
+<div class="card"><h3>Ventrue</h3><p>Controle absoluto e sangue nobre.</p></div>
+<div class="card"><h3>Toreador</h3><p>Arte, beleza e manipulação.</p></div>
+<div class="card"><h3>Nosferatu</h3><p>Sombras e terror invisível.</p></div>
+<div class="card"><h3>Malkavian</h3><p>Insanidade profética.</p></div>
+<div class="card"><h3>Gangrel</h3><p>Instinto animal puro.</p></div>
+<div class="card"><h3>Tremere</h3><p>Magia de sangue proibida.</p></div>
 
-        <h3>Ação Conjunta Não Ofensiva</h3>
-        • Todos rolam normalmente<br>
-        • Cada sucesso extra reduz a dificuldade ou acelera a ação<br>
-        <span class="desvantagem">Falha Crítica:</span> +1 dificuldade ao grupo
-    </div>
+</div>
+</section>
+
+<section id="disciplinas">
+<h2>Disciplinas</h2>
+
+<div class="grid">
+
+<div class="card"><h3>Potência</h3><p>Força sobrenatural.</p></div>
+<div class="card"><h3>Celeridade</h3><p>Velocidade impossível.</p></div>
+<div class="card"><h3>Ofuscação</h3><p>Desaparecer da realidade.</p></div>
+<div class="card"><h3>Dominação</h3><p>Controle mental absoluto.</p></div>
+<div class="card"><h3>Animalismo</h3><p>Comandar feras.</p></div>
+<div class="card"><h3>Taumaturgia</h3><p>Rituais de sangue.</p></div>
+
+</div>
 </section>
 
 <section id="combate">
-    <h2>Movimento e Turnos</h2>
+<h2>Combate</h2>
+<ul>
+<li>1 ação por turno</li>
+<li>Movimento curto livre</li>
+<li>6+ = acerto</li>
+</ul>
+</section>
 
-    <strong>Movimento Básico:</strong> 5 metros por turno<br>
-    <span class="desvantagem">Regra:</span> Não é possível mover e agir no mesmo turno sem habilidade especial.
+<section id="humanidade">
+<h2>Humanidade & Fome</h2>
+
+<table>
+<tr><th>Nível</th><th>Efeito</th></tr>
+<tr><td>10</td><td>Quase humano</td></tr>
+<tr><td>7</td><td>Emoções fracas</td></tr>
+<tr><td>4</td><td>Instinto dominante</td></tr>
+<tr><td>1</td><td>Monstro completo</td></tr>
+</table>
+
+<p><b>Fome</b> aumenta risco de Frenesi.</p>
+</section>
+
+<section id="rpg">
+<h2>Interface Jogável</h2>
+
+Nome: <input id="nome"><br>
+
+Força: <input id="forca" type="number" value="3">
+Destreza: <input id="destreza" type="number" value="3">
+Carisma: <input id="carisma" type="number" value="3">
+
+<p>Fome: <span id="fome">0</span>/5</p>
+
+<button onclick="teste('forca')">Força</button>
+<button onclick="teste('destreza')">Destreza</button>
+<button onclick="teste('carisma')">Carisma</button>
+
+<br>
+
+<button onclick="atacar()">Atacar</button>
+<button onclick="frenesi()">Frenesi</button>
+
+<h3>Destino</h3>
+<div class="log" id="log"></div>
 </section>
 
 </div>
 
-<footer>
-    NEXALIS © 2026 — Manual de Regras RPG
-</footer>
+<script>
+
+let fome = 0;
+
+function roll(){
+    return Math.floor(Math.random()*10)+1;
+}
+
+function log(msg){
+    document.getElementById("log").innerHTML += msg+"<br>";
+}
+
+function teste(tipo){
+    let attr = parseInt(document.getElementById(tipo).value);
+    let pool = attr + fome;
+    let sucessos = 0;
+
+    for(let i=0;i<pool;i++){
+        if(roll() >= 6) sucessos++;
+    }
+
+    log(sucessos===0 ? "<span class='bad'>Falha crítica</span>" : "Sucessos: "+sucessos);
+}
+
+function atacar(){
+    let forca = parseInt(document.getElementById("forca").value);
+    let pool = forca + fome;
+    let sucessos = 0;
+
+    for(let i=0;i<pool;i++){
+        if(roll() >= 6) sucessos++;
+    }
+
+    log("Ataque: "+sucessos);
+
+    if(sucessos>=5){
+        log("<span class='good'>EXECUÇÃO DEVASTADORA</span>");
+    }
+}
+
+function frenesi(){
+    fome = Math.min(5,fome+1);
+    document.getElementById("fome").innerText = fome;
+    log("<span class='bad'>Frenesi desperto...</span>");
+}
+
+</script>
 
 </body>
 </html>
