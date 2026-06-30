@@ -23,8 +23,7 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-    background:
-        radial-gradient(circle at top,#220000,#040406 55%,#000);
+    background: radial-gradient(circle at top,#220000,#040406 55%,#000);
     color:var(--text);
     font-family:Inter;
     line-height:1.6;
@@ -40,9 +39,7 @@ header{
 header h1{
     font-size:4rem;
     color:var(--blood);
-    text-shadow:
-        0 0 10px var(--bloodGlow),
-        0 0 30px rgba(179,0,0,.6);
+    text-shadow: 0 0 10px var(--bloodGlow), 0 0 30px rgba(179,0,0,.6);
 }
 
 header p{
@@ -79,6 +76,14 @@ nav a:hover{
     text-shadow:0 0 10px var(--bloodGlow);
 }
 
+/* Separadores no navbar superior */
+.navbar .links a:not(:last-child)::after {
+    content: " | ";
+    color: #440000;
+    margin: 0 8px;
+    opacity: 0.6;
+}
+
 .container{
     max-width:1100px;
     margin:auto;
@@ -91,9 +96,7 @@ section{
     padding:28px;
     margin:22px 0;
     border-radius:14px;
-    box-shadow:
-        0 0 25px rgba(255,0,0,.05),
-        inset 0 0 30px rgba(0,0,0,.6);
+    box-shadow: 0 0 25px rgba(255,0,0,.05), inset 0 0 30px rgba(0,0,0,.6);
     backdrop-filter:blur(6px);
 }
 
@@ -106,28 +109,9 @@ h2{
 }
 
 h3{color:var(--gold);margin-top:15px;}
-
 .good{color:var(--green);font-weight:bold;text-shadow:0 0 8px rgba(0,255,136,.3);}
 .bad{color:var(--danger);font-weight:bold;text-shadow:0 0 8px rgba(255,0,0,.3);}
-.attr{color:var(--green);font-weight:bold;}
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    margin-top:10px;
-}
-
-th,td{
-    border:1px solid #2a0000;
-    padding:10px;
-}
-
-th{
-    background:#1a0000;
-    color:var(--gold);
-}
-
-/* CLÃ CARDS MAIS IMERSIVOS */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -168,10 +152,8 @@ button:hover{
     box-shadow:0 0 15px rgba(255,0,0,.4);
 }
 
-/* LOG estilo “destino” */
 .log{
-    background:
-        radial-gradient(circle,#000,#050000);
+    background: radial-gradient(circle,#000,#050000);
     padding:12px;
     height:200px;
     overflow:auto;
@@ -188,160 +170,165 @@ button:hover{
 
 <body>
 
-<nav>
-<a href="#sistema">Sistema</a>
-<a href="#clans">Clãs</a>
-<a href="#disciplinas">Disciplinas</a>
-<a href="#combate">Combate</a>
-<a href="#humanidade">Humanidade</a>
-<a href="#rpg">Jogável</a>
-</nav>
+    <!-- Navegação Superior com separadores -->
+    <nav class="navbar">
+        <div class="links">
+            <a href="../funcoes/inicio.html">História</a>
+            <a href="racaeclasses.html">Raças e Classes</a>
+            <a href="/armas/armas.html">Armas</a>
+            <a href="../funcoes/sistema.html">Sistema</a>
+            <a href="../funcoes/inimigo.html">Inimigos</a>
+            <a href="../funcoes/criaçãodeficha.html">Função Elemental</a>
+            <a href="../funcoes/magia.html">Magias</a>
+            <a href="../funcoes/porção.html">Poções</a>
+            <a href="../funcoes/INGREDIENTES.HTML">Ingredientes</a>
+            <a href="/funcoes/mapas.html">Mapas</a>
+            <a href="/funcoes/clan.html">Criação de Ficha</a>
+        </div>
+    </nav>
+
+    <!-- Navegação Interna -->
+    <nav>
+        <a href="#sistema">Sistema</a>
+        <a href="#clans">Clãs</a>
+        <a href="#disciplinas">Disciplinas</a>
+        <a href="#combate">Combate</a>
+        <a href="#humanidade">Humanidade</a>
+        <a href="#rpg">Jogável</a>
+    </nav>
 
 <header>
-<h1>NEXALIS</h1>
-<p>Crônicas de Sangue e Eternidade</p>
+    <h1>NEXALIS</h1>
+    <p>Crônicas de Sangue e Eternidade</p>
 </header>
 
 <div class="container">
 
-<section id="sistema">
-<h2>Sistema d10 Sombrio</h2>
+    <section id="sistema">
+        <h2>Sistema d10 Sombrio</h2>
+        <p>Role <b>Atributo + Perícia</b> em d10.</p>
+        <ul>
+            <li><span class="good">6+</span> sucesso</li>
+            <li><span class="bad">1</span> pode quebrar o resultado</li>
+            <li>5+ sucessos = ação perfeita</li>
+        </ul>
+    </section>
 
-<p>Role <b>Atributo + Perícia</b> em d10.</p>
+    <section id="clans">
+        <h2>Clãs Vampíricos</h2>
+        <div class="grid">
+            <div class="card"><h3>Brujah</h3><p>Fúria, caos e guerra.</p></div>
+            <div class="card"><h3>Ventrue</h3><p>Controle absoluto e sangue nobre.</p></div>
+            <div class="card"><h3>Toreador</h3><p>Arte, beleza e manipulação.</p></div>
+            <div class="card"><h3>Nosferatu</h3><p>Sombras e terror invisível.</p></div>
+            <div class="card"><h3>Malkavian</h3><p>Insanidade profética.</p></div>
+            <div class="card"><h3>Gangrel</h3><p>Instinto animal puro.</p></div>
+            <div class="card"><h3>Tremere</h3><p>Magia de sangue proibida.</p></div>
+        </div>
+    </section>
 
-<ul>
-<li><span class="good">6+</span> sucesso</li>
-<li><span class="bad">1</span> pode quebrar o resultado</li>
-<li>5+ sucessos = ação perfeita</li>
-</ul>
-</section>
+    <section id="disciplinas">
+        <h2>Disciplinas</h2>
+        <div class="grid">
+            <div class="card"><h3>Potência</h3><p>Força sobrenatural.</p></div>
+            <div class="card"><h3>Celeridade</h3><p>Velocidade impossível.</p></div>
+            <div class="card"><h3>Ofuscação</h3><p>Desaparecer da realidade.</p></div>
+            <div class="card"><h3>Dominação</h3><p>Controle mental absoluto.</p></div>
+            <div class="card"><h3>Animalismo</h3><p>Comandar feras.</p></div>
+            <div class="card"><h3>Taumaturgia</h3><p>Rituais de sangue.</p></div>
+        </div>
+    </section>
 
-<section id="clans">
-<h2>Clãs Vampíricos</h2>
+    <section id="combate">
+        <h2>Combate</h2>
+        <ul>
+            <li>1 ação por turno</li>
+            <li>Movimento curto livre</li>
+            <li>6+ = acerto</li>
+        </ul>
+    </section>
 
-<div class="grid">
+    <section id="humanidade">
+        <h2>Humanidade & Fome</h2>
+        <table>
+            <tr><th>Nível</th><th>Efeito</th></tr>
+            <tr><td>10</td><td>Quase humano</td></tr>
+            <tr><td>7</td><td>Emoções fracas</td></tr>
+            <tr><td>4</td><td>Instinto dominante</td></tr>
+            <tr><td>1</td><td>Monstro completo</td></tr>
+        </table>
+        <p><b>Fome</b> aumenta risco de Frenesi.</p>
+    </section>
 
-<div class="card"><h3>Brujah</h3><p>Fúria, caos e guerra.</p></div>
-<div class="card"><h3>Ventrue</h3><p>Controle absoluto e sangue nobre.</p></div>
-<div class="card"><h3>Toreador</h3><p>Arte, beleza e manipulação.</p></div>
-<div class="card"><h3>Nosferatu</h3><p>Sombras e terror invisível.</p></div>
-<div class="card"><h3>Malkavian</h3><p>Insanidade profética.</p></div>
-<div class="card"><h3>Gangrel</h3><p>Instinto animal puro.</p></div>
-<div class="card"><h3>Tremere</h3><p>Magia de sangue proibida.</p></div>
+    <section id="rpg">
+        <h2>Interface Jogável</h2>
+        
+        Nome: <input id="nome"><br><br>
+        
+        Força: <input id="forca" type="number" value="3">
+        Destreza: <input id="destreza" type="number" value="3">
+        Carisma: <input id="carisma" type="number" value="3">
+        
+        <p>Fome: <span id="fome">0</span>/5</p>
 
-</div>
-</section>
+        <button onclick="teste('forca')">Testar Força</button>
+        <button onclick="teste('destreza')">Testar Destreza</button>
+        <button onclick="teste('carisma')">Testar Carisma</button>
+        <br><br>
+        <button onclick="atacar()">Atacar</button>
+        <button onclick="frenesi()">Frenesi</button>
 
-<section id="disciplinas">
-<h2>Disciplinas</h2>
-
-<div class="grid">
-
-<div class="card"><h3>Potência</h3><p>Força sobrenatural.</p></div>
-<div class="card"><h3>Celeridade</h3><p>Velocidade impossível.</p></div>
-<div class="card"><h3>Ofuscação</h3><p>Desaparecer da realidade.</p></div>
-<div class="card"><h3>Dominação</h3><p>Controle mental absoluto.</p></div>
-<div class="card"><h3>Animalismo</h3><p>Comandar feras.</p></div>
-<div class="card"><h3>Taumaturgia</h3><p>Rituais de sangue.</p></div>
-
-</div>
-</section>
-
-<section id="combate">
-<h2>Combate</h2>
-<ul>
-<li>1 ação por turno</li>
-<li>Movimento curto livre</li>
-<li>6+ = acerto</li>
-</ul>
-</section>
-
-<section id="humanidade">
-<h2>Humanidade & Fome</h2>
-
-<table>
-<tr><th>Nível</th><th>Efeito</th></tr>
-<tr><td>10</td><td>Quase humano</td></tr>
-<tr><td>7</td><td>Emoções fracas</td></tr>
-<tr><td>4</td><td>Instinto dominante</td></tr>
-<tr><td>1</td><td>Monstro completo</td></tr>
-</table>
-
-<p><b>Fome</b> aumenta risco de Frenesi.</p>
-</section>
-
-<section id="rpg">
-<h2>Interface Jogável</h2>
-
-Nome: <input id="nome"><br>
-
-Força: <input id="forca" type="number" value="3">
-Destreza: <input id="destreza" type="number" value="3">
-Carisma: <input id="carisma" type="number" value="3">
-
-<p>Fome: <span id="fome">0</span>/5</p>
-
-<button onclick="teste('forca')">Força</button>
-<button onclick="teste('destreza')">Destreza</button>
-<button onclick="teste('carisma')">Carisma</button>
-
-<br>
-
-<button onclick="atacar()">Atacar</button>
-<button onclick="frenesi()">Frenesi</button>
-
-<h3>Destino</h3>
-<div class="log" id="log"></div>
-</section>
+        <h3>Destino</h3>
+        <div class="log" id="log"></div>
+    </section>
 
 </div>
 
 <script>
-
 let fome = 0;
 
 function roll(){
-    return Math.floor(Math.random()*10)+1;
+    return Math.floor(Math.random() * 10) + 1;
 }
 
 function log(msg){
-    document.getElementById("log").innerHTML += msg+"<br>";
+    document.getElementById("log").innerHTML += msg + "<br>";
+    const logDiv = document.getElementById("log");
+    logDiv.scrollTop = logDiv.scrollHeight;
 }
 
 function teste(tipo){
-    let attr = parseInt(document.getElementById(tipo).value);
+    let attr = parseInt(document.getElementById(tipo).value) || 0;
     let pool = attr + fome;
     let sucessos = 0;
 
-    for(let i=0;i<pool;i++){
+    for(let i = 0; i < pool; i++){
         if(roll() >= 6) sucessos++;
     }
 
-    log(sucessos===0 ? "<span class='bad'>Falha crítica</span>" : "Sucessos: "+sucessos);
+    log(sucessos === 0 ? "<span class='bad'>Falha crítica</span>" : "Sucessos: " + sucessos);
 }
 
 function atacar(){
-    let forca = parseInt(document.getElementById("forca").value);
+    let forca = parseInt(document.getElementById("forca").value) || 0;
     let pool = forca + fome;
     let sucessos = 0;
 
-    for(let i=0;i<pool;i++){
+    for(let i = 0; i < pool; i++){
         if(roll() >= 6) sucessos++;
     }
 
-    log("Ataque: "+sucessos);
-
-    if(sucessos>=5){
+    log("Ataque: " + sucessos);
+    if(sucessos >= 5){
         log("<span class='good'>EXECUÇÃO DEVASTADORA</span>");
     }
 }
 
 function frenesi(){
-    fome = Math.min(5,fome+1);
+    fome = Math.min(5, fome + 1);
     document.getElementById("fome").innerText = fome;
     log("<span class='bad'>Frenesi desperto...</span>");
 }
-
 </script>
 
 </body>

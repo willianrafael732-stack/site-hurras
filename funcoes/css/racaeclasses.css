@@ -206,6 +206,8 @@ body::before{
     }
 }
 
+
+
 /* ===== RESPONSIVO ===== */
 @media (max-width: 768px){
     .navbar .links{
@@ -221,3 +223,5 @@ body::before{
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     }
 }
+
+esta com probema de navbar novante

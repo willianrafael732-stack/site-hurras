@@ -1,303 +1,1293 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HURRAS FANTASY - Criação Infernal</title>
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
-    <style>
-        body {
-            background: linear-gradient(#0a0000, #1f0000, #0a0000);
-            color: #ffdddd;
-            font-family: 'Cinzel', serif;
-            margin: 0;
-            padding: 0;
-        }
+    <link href="/funcoes/css/CLAN.CSS" rel="stylesheet">
 
-        /* Navbar Diablo */
-        .container-nav {
-            background: #110000;
-            border-bottom: 5px solid #b30000;
-            padding: 18px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 6px 20px rgba(179, 0, 0, 0.7);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .links a {
-            color: #ff9999;
-            text-decoration: none;
-            margin: 0 18px;
-            font-weight: bold;
-            font-size: 1.05rem;
-        }
-
-        .links a:hover {
-            color: #ff5555;
-            text-shadow: 0 0 12px #ff0000;
-        }
-
-        h1 {
-            text-align: center;
-            color: #ff4444;
-            font-family: 'Creepster', cursive;
-            text-shadow: 0 0 20px #ff0000;
-            margin: 30px 0 10px;
-            font-size: 3.2rem;
-        }
-
-        h2 {
-            color: #ff6666;
-            text-shadow: 0 0 10px #ff0000;
-            border-left: 6px solid #b30000;
-            padding-left: 18px;
-            margin: 40px 0 20px;
-        }
-
-        .ficha {
-            background: rgba(15, 0, 0, 0.95);
-            padding: 40px;
-            border: 4px solid #b30000;
-            border-radius: 8px;
-            box-shadow: 0 0 50px #330000;
-            max-width: 1100px;
-            margin: 30px auto;
-        }
-
-        .linha {
-            display: flex;
-            align-items: center;
-            margin: 16px 0;
-            padding: 10px 0;
-            border-bottom: 1px solid #440000;
-        }
-
-        .nome-atributo {
-            width: 260px;
-            font-weight: bold;
-            color: #ffaa77;
-        }
-
-        .valor {
-            color: #ff5555;
-            font-size: 28px;
-            font-weight: bold;
-            min-width: 70px;
-        }
-
-        .bonus {
-            color: #ffdd77;
-            margin-left: 20px;
-        }
-
-        button {
-            padding: 14px 32px;
-            background: #440000;
-            color: #ffeeee;
-            border: 3px solid #b30000;
-            cursor: pointer;
-            font-size: 1.1rem;
-            margin: 12px 10px;
-            border-radius: 4px;
-        }
-
-        button:hover {
-            background: #770000;
-            box-shadow: 0 0 25px #ff0000;
-        }
-    </style>
+    
+   
 </head>
+
 <body>
 
-    <nav class="container-nav">
-        <div class="links">
-            <a href="../funcoes/inicio.html">História</a>
-            <a href="racaeclasses.html">Raças e Classes</a>
-            <a href="/armas/armas.html">Armas</a>
-            <a href="../funcoes/sistema.html">Sistema</a>
-            <a href="../funcoes/inimigo.html">Inimigos</a>
-            <a href="../funcoes/magia.html">Magias</a>
-            <a href="../funcoes/criaçãodeficha.html">Criação</a>
+    <nav class="navbar">
+        <div class="container-nav">
+            <div class="links">
+                <a href="../funcoes/inicio.html">historia </a>
+                <a href="racaeclasses.html">Raças e Classes</a>
+                <a href="/armas/armas.html">Armas</a>
+                <a href="../funcoes/sistema.html">sistema</a>
+                <a href="../funcoes/inimigo.html">inimigos</a>
+                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
+                <a href="..//funcoes/magia.html">magias</a>
+                <a href="..//funcoes/porção.html">porção</a>
+                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
+                <a href="/funcoes/mapas.html">mapas</a>
+                <a href="/funcoes/clan.html">Criação de Ficha</a>
+
+            </div>
         </div>
     </nav>
 
-   <h1>HURRAS FANTASY</h1>
-<h2>✦ FICHA INFERNAL ✦</h2>
+    <h1>HURRAS FANTASY</h1>
+    <h2>✦ FICHA INFERNAL ✦</h2>
 
-<label>Nome</label>
-<input type="text" id="nome" placeholder="Nome do personagem"><br>
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" placeholder="Nome do personagem">
 
-<label>Nível</label>
-<select id="nivel" onchange="criarFicha()">
-    <option value="1">Nível 1</option>
-    <option value="2">Nível 2</option>
-    <option value="3">Nível 3</option>
-    <option value="4">Nível 4</option>
-    <option value="5">Nível 5</option>
-    <option value="6">Nível 6</option>
-    <option value="7">Nível 7</option>
-    <option value="8">Nível 8</option>
-    <option value="9">Nível 9</option>
-    <option value="10">Nível 10</option>
-</select><br>
+    <br>
 
-<label>Raça</label>
-<select id="raca" onchange="criarFicha()">
-    <option value="Humano">Humano</option>
-    <option value="Elfo">Elfo</option>
-    <option value="Anão">Anão</option>
-    <option value="Draconato">Draconato</option>
-    <option value="Vampiro">Vampiro</option>
-    <option value="Demônio">Demônio</option>
-    <option value="Kitsune">Kitsune</option>
-    <option value="Licantropo">Licantropo</option>
-    <option value="Autômato">Autômato</option>
-</select><br>
+    <label for="nivel">Nível</label>
+    <select id="nivel" onchange="criarFicha()">
+        <option value="1">Nível 1</option>
+        <option value="2">Nível 2</option>
+        <option value="3">Nível 3</option>
+        <option value="4">Nível 4</option>
+        <option value="5">Nível 5</option>
+        <option value="6">Nível 6</option>
+        <option value="7">Nível 7</option>
+        <option value="8">Nível 8</option>
+        <option value="9">Nível 9</option>
+        <option value="10">Nível 10</option>
+    </select>
 
-<label>Classe</label>
-<select id="classe" onchange="criarFicha()">
-    <option value="Guerreiro">Guerreiro</option>
-    <option value="Arqueiro">Arqueiro</option>
-    <option value="Mago">Mago</option>
-    <option value="Ladino">Ladino</option>
-    <option value="Bruxo">Bruxo</option>
-    <option value="Necromante">Necromante</option>
-    <option value="Bardo">Bardo</option>
-    <option value="Ninja">Ninja</option>
-    <option value="Kitsune">Kitsune</option>
-    <option value="Licantropo">Licantropo</option>
-</select><br><br>
+    <label for="raca">Raça</label>
+    <select id="raca" onchange="criarFicha()">
+        <option value="Humano">Humano</option>
+        <option value="Anjo">Anjo</option>
+        <option value="Anão">Anão</option>
+        <option value="Demônio">Demônio</option>
+        <option value="Djinn">Djinn</option>
+        <option value="Draconiano">Draconiano</option>
+        <option value="Elfo">Elfo</option>
+        <option value="Fada">Fada</option>
+        <option value="Faunos e Sátiros">Faunos e Sátiros</option>
+        <option value="Gigante">Gigante</option>
+        <option value="Goblin">Goblin</option>
+        <option value="Homem-Fera">Homem-Fera</option>
+        <option value="Lich">Lich</option>
+        <option value="Lobisomem">Lobisomem</option>
+        <option value="Meio-Elfo">Meio-Elfo</option>
+        <option value="Meio-Orc">Meio-Orc</option>
+        <option value="Metamorfo">Metamorfo</option>
+        <option value="Minotauro">Minotauro</option>
+        <option value="Orc">Orc</option>
+        <option value="Reptiliano">Reptiliano</option>
+        <option value="Sereianos">Sereianos</option>
+        <option value="Troll">Troll</option>
+        <option value="Vampiro">Vampiro</option>
+        <option value="Zumbi">Zumbi</option>
+    </select>
 
-<button onclick="criarFicha()">Gerar Ficha</button>
-<button onclick="criarAleatorio()">🎲 Aleatório Completo</button>
+    <br>
 
-<div id="ficha" class="ficha"></div>
+    <label for="classe">Classe</label>
+    <select id="classe" onchange="criarFicha()">
+        <option value="Arqueiro">Arqueiro</option>
+        <option value="Bardo">Bardo</option>
+        <option value="Bruxo">Bruxo</option>
+        <option value="Clérigo">Clérigo</option>
+        <option value="Domador">Domador</option>
+        <option value="Druida">Druida</option>
+        <option value="Guerreiro">Guerreiro</option>
+        <option value="Ladino">Ladino</option>
+        <option value="Lanceiro">Lanceiro</option>
+        <option value="Mago">Mago</option>
+        <option value="Monge">Monge</option>
+        <option value="Necromante">Necromante</option>
+        <option value="Ninja">Ninja</option>
+        <option value="Tecnomancer">Tecnomancer</option>
+        <option value="Transmutador">Transmutador</option>
+    </select>
+
+    <br><br>
+
+    <label for="subclasse">Subclasse</label>
+
+    <select id="subclasse" onchange="criarFicha()">
+        <option value="">Selecione uma subclasse</option>
+
+        <optgroup label="Arqueiro">
+            <option value="Patrulheiro">Patrulheiro</option>
+            <option value="Atirador">Atirador</option>
+        </optgroup>
+
+        <optgroup label="Bardo">
+            <option value="InicianteBardo">Iniciante</option>
+            <option value="Musico">Músico</option>
+        </optgroup>
+
+        <optgroup label="Bruxo">
+            <option value="FeiticeiroBruxo">Feiticeiro</option>
+            <option value="PaladinoNegro">Paladino Negro</option>
+        </optgroup>
+
+        <optgroup label="Clérigo">
+            <option value="Sacerdote">Sacerdote</option>
+            <option value="Paladino">Paladino</option>
+        </optgroup>
+
+        <optgroup label="Domador">
+            <option value="ControladorDeBestas">Controlador de Bestas</option>
+        </optgroup>
+
+        <optgroup label="Druida">
+            <option value="Xama">Xamã</option>
+            <option value="MetamorfoDruida">Metamorfo</option>
+        </optgroup>
+
+        <optgroup label="Guerreiro">
+            <option value="Barbaro">Bárbaro</option>
+            <option value="Espadachim">Espadachim</option>
+        </optgroup>
+
+        <optgroup label="Ladino">
+            <option value="Assassino">Assassino</option>
+            <option value="Ladrao">Ladrão</option>
+        </optgroup>
+
+        <optgroup label="Lanceiro">
+            <option value="MestreDasLancas">Mestre das Lanças</option>
+            <option value="CampeaoReal">Campeão Real</option>
+        </optgroup>
+
+        <optgroup label="Mago">
+            <option value="FeiticeiroMago">Feiticeiro</option>
+            <option value="Elementalista">Elementalista</option>
+        </optgroup>
+
+        <optgroup label="Monge">
+            <option value="ArtistaMarcial">Artista Marcial</option>
+            <option value="DobradorElemental">Dobrador Elemental</option>
+        </optgroup>
+
+        <optgroup label="Necromante">
+            <option value="Conjurador">Conjurador</option>
+            <option value="Sombrio">Sombrio</option>
+        </optgroup>
+
+        <optgroup label="Ninja">
+            <option value="Jounin">Jounin</option>
+        </optgroup>
+
+        <optgroup label="Tecnomancer">
+            <option value="Arquitecnomante">Arquitécnomante</option>
+        </optgroup>
+
+        <optgroup label="Transmutador">
+            <option value="MestreDaTransmutacao">Mestre da Transmutação</option>
+        </optgroup>
+    </select>
+
+    <br><br>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <script>
-    const racas = {
-        Humano: { nome: "Humano", bonus: { Qualquer: "+1" } },
-        Elfo: { nome: "Elfo", bonus: { Destreza: "+2", Inteligência: "+1" } },
-        Anão: { nome: "Anão", bonus: { Vigor: "+2", Força: "+1" } },
-        Draconato: { nome: "Draconato", bonus: { Força: "+2", Vigor: "+1" } },
-        Vampiro: { nome: "Vampiro", bonus: { Destreza: "+1", Manipulação: "+1" } },
-        Demônio: { nome: "Demônio", bonus: { "Magia Sombria": "+2" } },
-        Kitsune: { nome: "Kitsune", bonus: { Manipulação: "+2", Carisma: "+1", Ilusão: "+1" } },
-        Licantropo: { nome: "Licantropo", bonus: { Força: "+2", Vigor: "+2", Rastreamento: "+1" } },
-        Autômato: { nome: "Autômato", bonus: { Tecnologia: "+2", Vigor: "+1" } }
-    };
+        function gerarPDF() {
+            const ficha = document.getElementById("ficha");
 
-    const classes = {
-        Guerreiro: { nome: "Guerreiro", bonus: { Força: "+2", Vigor: "+2" } },
-        Arqueiro: { nome: "Arqueiro", bonus: { Destreza: "+2" } },
-        Mago: { nome: "Mago", bonus: { Inteligência: "+2" } },
-        Ladino: { nome: "Ladino", bonus: { Furtividade: "+2", Crítico: "+1" } },
-        Bruxo: { nome: "Bruxo", bonus: { "Magia Sombria": "+2" } },
-        Necromante: { nome: "Necromante", bonus: { Inteligência: "+1", "Magia Sombria": "+2" } },
-        Bardo: { nome: "Bardo", bonus: { Carisma: "+2", Persuasão: "+1" } },
-        Ninja: { nome: "Ninja", bonus: { Furtividade: "+2", Esquiva: "+1" } },
-        Kitsune: { nome: "Kitsune", bonus: { Manipulação: "+2", Ilusão: "+2", Carisma: "+1" } },
-        Licantropo: { nome: "Licantropo", bonus: { Força: "+2", Vigor: "+2", Rastreamento: "+1" } }
-    };
+            html2pdf()
+                .set({
+                    margin: 10,
+                    filename: 'ficha-rpg.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                })
+                .from(ficha)
+                .save();
+        }
+    </script>
 
-    function randomValue(level) {
-        const max = parseInt(level);
-        return Math.floor(Math.random() * (max + 1));
-    }
+    <button onclick="gerarPDF()">Gerar PDF</button>
+    <button onclick="criarFicha()">Gerar Ficha</button>
+    <button onclick="criarAleatorio()">🎲 Aleatório Completo</button>
 
-    function getBonusText(atributo) {
-        const racaKey = document.getElementById("raca").value;
-        const classeKey = document.getElementById("classe").value;
-        const r = racas[racaKey]?.bonus[atributo] || "";
-        const c = classes[classeKey]?.bonus[atributo] || "";
-        return (r || c) ? `(${r} ${c})`.trim() : "";
-    }
+    <div id="ficha" class="ficha"></div>
 
-    const elementos = ["Fogo", "Água", "Vento", "Terra", "Raio", "Veneno", "Mental", "Sagrado", "Sombrio"];
+    <script>
+        const racas = {
+            Anjo: {
+                nome: "Anjo",
+                bonus: {
+                    Persuasao: "+1",
+                    Carisma: "+1",
+                    MagiaSagrada: "+1"
+                },
+                fraqueza: {
+                    ResistenciaSombra: "-2",
+                    Manipulacao: "-1"
+                },
+                evolucao: {
+                    MagiaSagrada: "+2"
+                }
+            },
 
-    function gerarNivelMagico(level) {
-        let html = '';
-        elementos.forEach(el => {
-            const valor = randomValue(level);
-            html += `<div class="linha"><span class="nome-atributo">${el}</span> <span class="valor">${valor}</span></div>`;
-        });
-        return html;
-    }
+            Anão: {
+                nome: "Anão",
+                bonus: {
+                    Runas: "+1",
+                    Oficio: "+1"
+                },
+                fraqueza: {
+                    Esquiva: "-1",
+                    Briga: "-1"
+                },
+                evolucao: {
+                    Vigor: "+2"
+                }
+            },
 
-    function gerarResistenciaMagica(level) {
-        let html = '';
-        elementos.forEach(el => {
-            const valor = randomValue(level);
-            html += `<div class="linha"><span class="nome-atributo">${el}</span> <span class="valor">${valor}</span></div>`;
-        });
-        return html;
-    }
+            Demônio: {
+                nome: "Demônio",
+                bonus: {
+                    MagiaSombria: "+1",
+                    ResistenciaFogo: "+1"
+                },
+                fraqueza: {
+                    ResistenciaSagrada: "-2"
+                },
+                evolucao: {
+                    MagiaSombria: "+2"
+                }
+            },
 
-    function criarAleatorio() {
-        const rKeys = Object.keys(racas);
-        const cKeys = Object.keys(classes);
-        document.getElementById("nome").value = ["Draven","Lilith","Azrael","Morgana","Ragnar","Kael"][Math.floor(Math.random()*6)];
-        document.getElementById("nivel").value = Math.floor(Math.random() * 10) + 1;
-        document.getElementById("raca").value = rKeys[Math.floor(Math.random() * rKeys.length)];
-        document.getElementById("classe").value = cKeys[Math.floor(Math.random() * cKeys.length)];
-        criarFicha();
-    }
+            Djinn: {
+                nome: "Djinn",
+                bonus: {
+                    MagiaElemento: "+1",
+                    ResistenciaMagica: "+1"
+                },
+                fraqueza: {
+                    DanoFisicoRecebido: "+4"
+                },
+                evolucao: {}
+            },
 
-    function criarFicha() {
-        const nome = document.getElementById("nome").value.trim() || "Alma Perdida";
-        const nivel = parseInt(document.getElementById("nivel").value);
-        const racaKey = document.getElementById("raca").value;
-        const classeKey = document.getElementById("classe").value;
+            Draconiano: {
+                nome: "Draconiano",
+                bonus: {
+                    MagiaFogo: "+1",
+                    ResistenciaFogo: "+2"
+                },
+                fraqueza: {
+                    ResistenciaAguaGelo: "-3"
+                },
+                evolucao: {
+                    MagiaFogo: "+2",
+                    ResistenciaFogo: "+2",
+                    Forca: "+2",
+                    Vigor: "+2"
+                }
+            },
 
-        const raca = racas[racaKey] || { nome: racaKey };
-        const classe = classes[classeKey] || { nome: classeKey };
+            Elfo: {
+                nome: "Elfo",
+                bonus: {
+                    Persuasao: "+1",
+                    Encantamento: "+1"
+                },
+                fraqueza: {
+                    ResistenciaVeneno: "-1",
+                    Tecnologia: "-1"
+                },
+                evolucao: {
+                    Mana: "+10"
+                }
+            },
 
-        const vida =  (nivel * 10);
-        const mana =  (nivel * 5);
+            Fada: {
+                nome: "Fada",
+                bonus: {
+                    Persuasao: "+2",
+                    Carisma: "+1"
+                },
+                fraqueza: {
+                    Ferro: "+100% Dano"
+                },
+                evolucao: {
+                    MagiaMental: "+3"
+                }
+            },
 
-        const fichaHTML = `
-            <h1>${nome}</h1>
-            <p><strong>Raça:</strong> ${raca.nome} | <strong>Classe:</strong> ${classe.nome} | <strong>Nível:</strong> ${nivel}</p>
-            <hr>
+            "Faunos e Sátiros": {
+                nome: "Faunos e Sátiros",
+                bonus: {
+                    Carisma: "+1",
+                    Medicina: "+1"
+                },
+                fraqueza: {
+                    ResistenciaVeneno: "-2"
+                },
+                evolucao: {
+                    Forca: "+1",
+                    Vigor: "+1"
+                }
+            },
 
-            <h1>FÍSICOS</h1>
-            <div class="linha"><span class="nome-atributo">Força</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Força")}</span></div>
-            <div class="linha"><span class="nome-atributo">Destreza</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Destreza")}</span></div>
-            <div class="linha"><span class="nome-atributo">Vigor</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Vigor")}</span></div>
+            Gigante: {
+                nome: "Gigante",
+                bonus: {
+                    Forca: "+2",
+                    Vigor: "+2"
+                },
+                fraqueza: {
+                    Reacao: "-2",
+                    Esquiva: "-3"
+                },
+                evolucao: {
+                    Forca: "+2"
+                }
+            },
 
-            <h1>TALENTOS</h1>
-            <div class="linha"><span class="nome-atributo">Intimidação</span> <span class="valor">${randomValue(nivel)}</span></div>
-            <div class="linha"><span class="nome-atributo">Esquiva</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Esquiva")}</span></div>
-            <div class="linha"><span class="nome-atributo">Crítico</span> <span class="valor">${randomValue(nivel)}</span></div>
-            <div class="linha"><span class="nome-atributo">Furtividade</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Furtividade")}</span></div>
+            Goblin: {
+                nome: "Goblin",
+                bonus: {
+                    Financas: "+1",
+                    Tecnologia: "+1"
+                },
+                fraqueza: {
+                    Carisma: "-1",
+                    Briga: "-1"
+                },
+                evolucao: {
+                    Furtividade: "+2",
+                    Percepcao: "+2"
+                }
+            },
 
-            <h1>SOCIAIS</h1>
-            <div class="linha"><span class="nome-atributo">Carisma</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Carisma")}</span></div>
-            <div class="linha"><span class="nome-atributo">Manipulação</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Manipulação")}</span></div>
-            <div class="linha"><span class="nome-atributo">Persuasão</span> <span class="valor">${randomValue(nivel)}</span></div>
+            "Homem-Fera": {
+                nome: "Homem-Fera",
+                bonus: {
+                    Carnivoros: "+1 Destreza, +1 Reacao, +1 Percepcao",
+                    Herbivoros: "+1 Forca, +1 Vigor, +1 Bloqueio",
+                    Mamiferos: "+1 Inteligencia, +1 Reacao, +1 Esquiva",
+                    Onivoros: "+1 Forca, +1 Inteligencia, +1 Esquiva"
+                },
+                fraqueza: {
+                    Oficios: "-1",
+                    Cavalgada: "-1",
+                    ArmasDistancia: "-1"
+                },
+                evolucao: {
+                    Vigor: "+2",
+                    Reacao: "+2"
+                }
+            },
 
-            <h1>MENTAL</h1>
-            <div class="linha"><span class="nome-atributo">Inteligência</span> <span class="valor">${randomValue(nivel)}</span> <span class="bonus">${getBonusText("Inteligência")}</span></div>
-            <div class="linha"><span class="nome-atributo">Percepção</span> <span class="valor">${randomValue(nivel)}</span></div>
+            Humano: {
+                nome: "Humano",
+                bonus: {
+                    Persuasao: "+1",
+                    Carisma: "+1",
+                    MagiaSagrada: "+1"
+                },
+                fraqueza: {
+                    ResistenciaSombra: "-2",
+                    Manipulacao: "-1"
+                },
+                evolucao: {
+                    Inteligencia: "+2"
+                }
+            },
 
-            <h1>NIVEL MÁGICO</h1>
-            ${gerarNivelMagico(nivel)}
+            Lich: {
+                nome: "Lich",
+                bonus: {},
+                fraqueza: {},
+                evolucao: {}
+            },
 
-            <h1>RESISTÊNCIA MÁGICA</h1>
-            ${gerarResistenciaMagica(nivel)}
+            Lobisomem: {
+                nome: "Lobisomem",
+                bonus: {
+                    Forca: "+1",
+                    Reacao: "+1"
+                },
+                fraqueza: {
+                    Prata: "Dano Dobrado",
+                    Inteligencia: "-1"
+                },
+                evolucao: {
+                    Vigor: "+2"
+                }
+            },
 
-            <h1>VITALIDADE</h1>
-            <p><strong>${vida} pontos</strong></p>
+            "Meio-Elfo": {
+                nome: "Meio-Elfo",
+                bonus: {
+                    Carisma: "+1",
+                    Inteligencia: "+1"
+                },
+                fraqueza: {
+                    ResistenciaVeneno: "-1"
+                },
+                evolucao: {
+                    Mana: "+10",
+                    Encantamento: "+1"
+                }
+            },
 
-            <h1>MANA</h1>
-            <p><strong>${mana} pontos</strong></p>
-        `;
+            "Meio-Orc": {
+                nome: "Meio-Orc",
+                bonus: {
+                    Forca: "+1",
+                    Vigor: "+1"
+                },
+                fraqueza: {
+                    Inteligencia: "-1"
+                },
+                evolucao: {
+                    Forca: "+2"
+                }
+            },
 
-        document.getElementById("ficha").innerHTML = fichaHTML;
-    }
-</script>
-</body>
-</html>
+            Metamorfo: {
+                nome: "Metamorfo",
+                bonus: {
+                    Manipulacao: "+1",
+                    Furtividade: "+1"
+                },
+                fraqueza: {
+                    ForcaDeVontade: "-2"
+                },
+                evolucao: {
+                    Destreza: "+2",
+                    Ciencia: "+2"
+                }
+            },
+
+            Minotauro: {
+                nome: "Minotauro",
+                bonus: {
+                    Forca: "+1",
+                    Armas2H: "+1"
+                },
+                fraqueza: {
+                    ResistenciaFogo: "-1",
+                    ResistenciaRaio: "-1"
+                },
+                evolucao: {
+                    Vigor: "+1",
+                    ResistenciaTerra: "+1"
+                }
+            },
+
+            Orc: {
+                nome: "Orc",
+                bonus: {
+                    Forca: "+1",
+                    Briga: "+1"
+                },
+                fraqueza: {
+                    Inteligencia: "-1",
+                    Academicos: "-1"
+                },
+                evolucao: {
+                    Forca: "+1",
+                    Vigor: "+1"
+                }
+            },
+
+            Reptiliano: {
+                nome: "Reptiliano",
+                bonus: {
+                    MagiaTerra: "+1",
+                    ResistenciaTerra: "+2"
+                },
+                fraqueza: {
+                    ResistenciaGelo: "-2"
+                },
+                evolucao: {
+                    MagiaTerra: "+2",
+                    ResistenciaTerra: "+1"
+                }
+            },
+
+            Sereianos: {
+                nome: "Sereianos",
+                bonus: {
+                    MagiaAgua: "+1",
+                    ResistenciaAguaGelo: "+2"
+                },
+                fraqueza: {
+                    ResistenciaEletricidade: "-2"
+                },
+                evolucao: {
+                    MagiaAgua: "+2",
+                    ResistenciaAguaGelo: "+1"
+                }
+            },
+
+            Troll: {
+                nome: "Troll",
+                bonus: {
+                    Vitalidade: "+10",
+                    Mana: "+5",
+                    SuporteInvertido: "Magias de suporte causam dano/debuff"
+                },
+                fraqueza: {},
+                evolucao: {
+                    Armas1H: "+2",
+                    Armas2H: "+2"
+                }
+            },
+
+            Vampiro: {
+                nome: "Vampiro",
+                bonus: {
+                    Reacao: "+1",
+                    Furtividade: "+1",
+                    MorteSubitaSobSol: true
+                },
+                fraqueza: {
+                    ResistenciaSagrada: "-3"
+                },
+                evolucao: {
+                    Reacao: "+2",
+                    Furtividade: "+2"
+                }
+            },
+
+            Zumbi: {
+                nome: "Zumbi",
+                bonus: {
+                    Virtudes: "+3"
+                },
+                fraqueza: {
+                    AtributosSociais: "-3"
+                },
+                evolucao: {
+                    MagiaSombria: "+2"
+                }
+            }
+        };
+
+        const classes = {
+            Arqueiro: {
+                nome: "Arqueiro",
+
+                statusInicial: {
+                    bonus: {
+                        Destreza: "+1",
+                        ArmasDistancia: "+1"
+                    },
+                    fraqueza: {
+                        Briga: "-1"
+                    }
+                },
+
+                variacoes: {
+                    Patrulheiro: {
+                        bonus: {
+                            Destreza: "+2",
+                            ArmasDistancia: "+1"
+                        },
+                        fraqueza: {
+                            Briga: "-1",
+                            Vigor: "-1"
+                        }
+                    },
+
+                    Atirador: {
+                        bonus: {
+                            ArmasDistancia: "+2",
+                            Critico: "+1"
+                        },
+                        fraqueza: {
+                            Vigor: "-1",
+                            Bloqueio: "-1"
+                        }
+                    }
+                }
+            },
+
+            Bardo: {
+                nome: "Bardo",
+
+                statusInicial: {
+                    bonus: {
+                        Carisma: "+1",
+                        Manipulacao: "+1"
+                    },
+                    fraqueza: {
+                        Forca: "-1"
+                    }
+                },
+
+                variacoes: {
+                    Iniciante: {
+                        bonus: {
+                            Carisma: "+1",
+                            Manipulacao: "+1",
+                            Persuasao: "+1"
+                        },
+                        fraqueza: {
+                            Forca: "-1",
+                            Destreza: "-1",
+                            Vigor: "-1"
+                        }
+                    },
+
+                    Musico: {
+                        bonus: {
+                            Carisma: "+1",
+                            Labia: "+1",
+                            Manipulacao: "+1"
+                        },
+                        fraqueza: {
+                            Intimidacao: "-1",
+                            Bloqueio: "-1",
+                            Armadura: "-1"
+                        }
+                    }
+                }
+            },
+
+            Bruxo: {
+                nome: "Bruxo",
+
+                statusInicial: {
+                    bonus: {
+                        Inteligencia: "+1",
+                        MagiaSombria: "+1"
+                    },
+                    fraqueza: {
+                        Vigor: "-1"
+                    }
+                },
+
+                variacoes: {
+                    Feiticeiro: {
+                        bonus: {
+                            MagiaSombria: "+2",
+                            Inteligencia: "+1"
+                        },
+                        fraqueza: {
+                            Vigor: "-1",
+                            ResistenciaSagrada: "-1"
+                        }
+                    },
+
+                    PaladinoNegro: {
+                        bonus: {
+                            Vigor: "+2",
+                            MagiaSombria: "+1"
+                        },
+                        fraqueza: {
+                            ResistenciaSagrada: "-3"
+                        }
+                    }
+                }
+            },
+
+            Clérigo: {
+                nome: "Clérigo",
+
+                statusInicial: {
+                    bonus: {
+                        Carisma: "+1",
+                        Inteligencia: "+1"
+                    },
+                    fraqueza: {
+                        ResistenciaSombria: "-1"
+                    }
+                },
+
+                variacoes: {
+                    Sacerdote: {
+                        bonus: {
+                            Carisma: "+2",
+                            Inteligencia: "+1"
+                        },
+                        fraqueza: {
+                            Forca: "-1",
+                            ResistenciaSombria: "-1"
+                        }
+                    },
+
+                    Paladino: {
+                        bonus: {
+                            Vigor: "+2",
+                            MagiaSagrada: "+1"
+                        },
+                        fraqueza: {
+                            ResistenciaSombria: "-3"
+                        }
+                    }
+                }
+            },
+
+            Domador: {
+                nome: "Domador",
+
+                statusInicial: {
+                    bonus: {
+                        Reacao: "+1",
+                        Adestramento: "+1"
+                    },
+                    fraqueza: {
+                        Destreza: "-1"
+                    }
+                },
+
+                variacoes: {
+                    ControladorDeBestas: {
+                        bonus: {
+                            Reacao: "+1",
+                            EmpatiaComAnimais: "+2"
+                        },
+                        fraqueza: {
+                            Destreza: "-1",
+                            ResistenciaFogo: "-1"
+                        }
+                    }
+                }
+            },
+
+            Druida: {
+                nome: "Druida",
+
+                statusInicial: {
+                    bonus: {
+                        Inteligencia: "+1",
+                        Medicina: "+1"
+                    },
+                    fraqueza: {
+                        ResistenciaFogo: "-1"
+                    }
+                },
+
+                variacoes: {
+                    Xama: {
+                        bonus: {
+                            Inteligencia: "+2",
+                            Medicina: "+1"
+                        },
+                        fraqueza: {
+                            ResistenciaFogo: "-2"
+                        }
+                    },
+
+                    Metamorfo: {
+                        bonus: {
+                            Vigor: "+2",
+                            EmpatiaAnimal: "+1"
+                        },
+                        fraqueza: {
+                            ResistenciaFogo: "-1",
+                            Esquiva: "-1"
+                        }
+                    }
+                }
+            },
+
+
+
+
+            Guerreiro: {
+                nome: "Guerreiro",
+
+                statusInicial: {
+                    bonus: {
+                        Forca: "+1",
+                        Vigor: "+1"
+                    },
+                    fraqueza: {
+                        Destreza: "-1"
+                    }
+                },
+
+                variacoes: {
+                    Barbaro: {
+                        bonus: {
+                            Forca: "+2",
+                            Armas2H: "+1"
+                        },
+                        fraqueza: {
+                            Inteligencia: "-2"
+                        }
+                    },
+
+                    Espadachim: {
+                        bonus: {
+                            Forca: "+1",
+                            Armas1H: "+2"
+                        },
+                        fraqueza: {
+                            Destreza: "-2"
+                        }
+                    }
+                }
+            },
+
+            Ladino: {
+                nome: "Ladino",
+
+                statusInicial: {
+                    bonus: {
+                        Critico: "+1",
+                        Furtividade: "+1"
+                    },
+                    fraqueza: {
+                        Vigor: "-1"
+                    }
+                },
+
+                variacoes: {
+                    Assassino: {
+                        bonus: {
+                            Critico: "+1",
+                            Furtividade: "+2"
+                        },
+                        fraqueza: {
+                            Vigor: "-1",
+                            Bloqueio: "-1"
+                        }
+                    },
+
+                    Ladrao: {
+                        bonus: {
+                            Critico: "+1",
+                            Furtividade: "+1",
+                            Seguranca: "+1"
+                        },
+                        fraqueza: {
+                            Forca: "-1",
+                            Bloqueio: "-1"
+                        }
+                    }
+                }
+            },
+
+            Lanceiro: {
+                nome: "Lanceiro",
+
+                statusInicial: {
+                    bonus: {
+                        Forca: "+1",
+                        Destreza: "+1"
+                    },
+                    fraqueza: {
+                        Inteligencia: "-1"
+                    }
+                },
+
+                variacoes: {
+                    MestreDasLancas: {
+                        bonus: {
+                            Destreza: "+2",
+                            Forca: "+1"
+                        },
+                        fraqueza: {
+                            Inteligencia: "-2"
+                        }
+                    },
+
+                    CampeaoReal: {
+                        bonus: {
+                            Forca: "+2",
+                            Carisma: "+2"
+                        },
+                        fraqueza: {
+                            Agilidade: "-2"
+                        }
+                    }
+                }
+            },
+
+            Mago: {
+                nome: "Mago",
+
+                statusInicial: {
+                    bonus: {
+                        Inteligencia: "+2"
+                    },
+                    fraqueza: {
+                        Vigor: "-1"
+                    }
+                },
+
+                variacoes: {
+                    Feiticeiro: {
+                        bonus: {
+                            Inteligencia: "+2",
+                            Encantamento: "+2"
+                        },
+                        fraqueza: {
+                            Forca: "-2"
+                        }
+                    },
+
+                    Elementalista: {
+                        bonus: {
+                            Inteligencia: "+1",
+                            ResistenciaMagica: "+1 (Escola)"
+                        },
+                        fraqueza: {
+                            Vigor: "-2"
+                        }
+                    }
+                }
+            },
+
+            Monge: {
+                nome: "Monge",
+
+                statusInicial: {
+                    bonus: {
+                        Forca: "+1",
+                        Agilidade: "+1"
+                    },
+                    fraqueza: {
+                        UsoArmasPesadas: "-1"
+                    }
+                },
+
+                variacoes: {
+                    ArtistaMarcial: {
+                        bonus: {
+                            Esquiva: "+1",
+                            Briga: "+1",
+                            Critico: "+1"
+                        },
+                        fraqueza: {
+                            Manipulacao: "-1",
+                            Labia: "-1"
+                        }
+                    },
+
+                    DobradorElemental: {
+                        bonus: {
+                            Inteligencia: "+1",
+                            Reacao: "+1",
+                            MagiaElemental: "+1 (Fogo, Água, Terra, Ar ou Raio)"
+                        },
+                        fraqueza: {
+                            Manipulacao: "-2",
+                            ResistenciaSombria: "-5"
+                        }
+                    }
+                }
+            },
+
+            Necromante: {
+                nome: "Necromante",
+
+                statusInicial: {
+                    bonus: {
+                        Inteligencia: "+1",
+                        MagiaSombria: "+1"
+                    },
+                    fraqueza: {
+                        Vigor: "-1"
+                    }
+                },
+
+                variacoes: {
+                    Conjurador: {
+                        bonus: {
+                            Lideranca: "+2",
+                            Inteligencia: "+1"
+                        },
+                        fraqueza: {
+                            Carisma: "-1",
+                            ResistenciaSagrada: "-1"
+                        }
+                    },
+
+                    Sombrio: {
+                        bonus: {
+                            MagiaSombria: "+2",
+                            Inteligencia: "+1"
+                        },
+                        fraqueza: {
+                            ResistenciaSagrada: "-3"
+                        }
+                    }
+                }
+            },
+
+            Ninja: {
+                nome: "Ninja",
+
+                statusInicial: {
+                    bonus: {
+                        Furtividade: "+2"
+                    },
+                    fraqueza: {
+                        Forca: "-1"
+                    }
+                },
+
+                variacoes: {
+                    Jounin: {
+                        bonus: {
+                            Destreza: "+1",
+                            Furtividade: "+1",
+                            Investida: "+1"
+                        },
+                        fraqueza: {
+                            Vigor: "-2",
+                            Forca: "-1"
+                        }
+                    }
+                }
+            },
+
+            Tecnomancer: {
+                nome: "Tecnomancer",
+
+                statusInicial: {
+                    bonus: {
+                        Inteligencia: "+1",
+                        Tecnologia: "+1"
+                    },
+                    fraqueza: {
+                        Esquiva: "-1",
+                        ResistenciaRaio: "-1"
+                    }
+                },
+
+                variacoes: {
+                    Arquitecnomante: {
+                        bonus: {
+                            Tecnologia: "+2",
+                            Inteligencia: "+1"
+                        },
+                        fraqueza: {
+                            ResistenciaRaio: "-3"
+                        }
+                    }
+                }
+            },
+
+            Transmutador: {
+                nome: "Transmutador",
+
+                statusInicial: {
+                    bonus: {
+                        Medicina: "+1",
+                        Ciencia: "+1"
+                    },
+                    fraqueza: {
+                        Forca: "-1"
+                    }
+                },
+
+                variacoes: {
+                    MestreDaTransmutacao: {
+                        bonus: {
+                            Ciencia: "+2",
+                            Tecnologia: "+1"
+                        },
+                        fraqueza: {
+                            Forca: "-1",
+                            Vigor: "-1"
+                        }
+                    }
+                }
+            }
+        };
+
+
+      function atributo(nomeAtributo) {
+
+    const nivel = Number(document.getElementById("nivel").value) || 1;
+    const dados = getAtributoDetalhado(nomeAtributo);
+    const base = randomValue(nivel);
+
+    const total = Number(base) + Number(dados.total);
+
+    return `
+        <div class="linha">
+            <span class="nome-atributo">${nomeAtributo}</span>
+
+            <span class="valor">
+                (NORMAL ${base})
+            </span>
+
+            <span class="bonus">
+                (BONUS <span style="color:#00ff99">+${dados.bonus}</span>)
+            </span>
+
+            <span class="bonus">
+                (FRAQUEZA <span style="color:#ff5555">-${dados.fraqueza}</span>)
+            </span>
+
+            <span class="bonus">
+                = TOTAL <span style="color:#ffffff">${total}</span>
+            </span>
+        </div>
+    `;
+}
+
+
+        function randomValue(level) {
+            const max = parseInt(level);
+            return Math.floor(Math.random() * (max + 1));
+        }
+
+        function getBonusText(atributo) {
+            const racaKey = document.getElementById("raca").value;
+            const classeKey = document.getElementById("classe").value;
+            const subclasseKey = document.getElementById("subclasse").value;
+
+            const raca = racas[racaKey];
+            const classe = classes[classeKey];
+
+            let total = 0;
+
+            function parseBonus(value) {
+                if (!value) return 0;
+                return parseInt(value);
+            }
+
+            if (raca?.bonus?.[atributo]) {
+                total += parseBonus(raca.bonus[atributo]);
+            }
+
+            if (classe?.statusInicial?.bonus?.[atributo]) {
+                total += parseBonus(classe.statusInicial.bonus[atributo]);
+            }
+
+            if (classe?.variacoes?.[subclasseKey]?.bonus?.[atributo]) {
+                total += parseBonus(classe.variacoes[subclasseKey].bonus[atributo]);
+            }
+
+            return total >= 0 ? `+${total}` : `${total}`;
+        }
+
+        function criarFicha() {
+            const nome = document.getElementById("nome").value.trim() || "Alma Perdida";
+            const nivel = Number(document.getElementById("nivel").value) || 1;
+
+            const racaKey = document.getElementById("raca").value;
+            const classeKey = document.getElementById("classe").value;
+            const subclasseKey = document.getElementById("subclasse").value;
+
+            const raca = racas[racaKey] || { nome: racaKey, bonus: {} };
+            const classe = classes[classeKey] || { nome: classeKey, statusInicial: {}, variacoes: {} };
+
+            const vida = 50 + (nivel * 10);
+            const mana = 25 + (nivel * 5);
+
+
+
+            const atributo = (nomeAtributo) => `
+        <div class="linha">
+            <span class="nome-atributo">${nomeAtributo}</span>
+            <span class="valor">${randomValue(nivel)}</span>
+            <span class="bonus">${getBonusText(nomeAtributo)}</span>
+        </div>
+    `;
+
+            document.getElementById("ficha").innerHTML = `
+        <h1>${nome}</h1>
+
+        <p>
+            <strong>Raça:</strong> ${raca.nome} |
+            <strong>Classe:</strong> ${classe.nome} |
+            <strong>Subclasse:</strong> ${subclasseKey || "Nenhuma"} |
+            <strong>Nível:</strong> ${nivel}
+        </p>
+
+        <hr>
+
+       <h2>FÍSICOS</h2>
+${atributo("Força")}
+${atributo("Destreza")}
+${atributo("Vigor")}
+
+<h2>TALENTOS</h2>
+${atributo("Intimidação")}
+${atributo("Liderança")}
+${atributo("Manha")}
+${atributo("Lábia")}
+${atributo("Esquiva")}
+${atributo("Briga")}
+${atributo("Investida")}
+${atributo("Crítico")}
+${atributo("Bloqueio")}
+${atributo("Avaliação")}
+
+<h2>VIRTUDES</h2>
+${atributo("Consciência")}
+${atributo("Autocontrole")}
+${atributo("Coragem")}
+
+<h2>SOCIAL</h2>
+${atributo("Carisma")}
+${atributo("Manipulação")}
+${atributo("Persuasão")}
+
+<h2>MENTAL</h2>
+${atributo("Percepção")}
+${atributo("Inteligência")}
+${atributo("Reação")}
+
+<h2>PERÍCIAS</h2>
+${atributo("Adestramento")}
+${atributo("Ofício")}
+${atributo("Cavalgada")}
+${atributo("Arma Mágica")}
+${atributo("Arma Distância")}
+${atributo("Arma 1 Mão")}
+${atributo("Arma 2 Mãos")}
+${atributo("Segurança")}
+${atributo("Furtividade")}
+${atributo("Armadura")}
+
+<h2>CONHECIMENTOS</h2>
+${atributo("Acadêmicos")}
+${atributo("Finanças")}
+${atributo("Encantamento")}
+${atributo("Runas")}
+${atributo("Medicina")}
+${atributo("Ciências")}
+${atributo("Tecnologia")}
+${atributo("Linguística")}
+${atributo("Investigação")}
+${atributo("Ocultação")}
+
+<h2>MAGIAS / TÉCNICAS</h2>
+${atributo("RAIO")}
+${atributo("fogo")}
+${atributo("agua")}
+${atributo("terra")}
+${atributo("ar")}
+${atributo("VENENO")}
+${atributo("MENTAL")}
+${atributo("SAGRADA")}
+${atributo("SOMBRIO")}
+
+<h2>MAGIAS RESISTENCIA</h2>
+${atributo("RAIO")}
+${atributo("fogo")}
+${atributo("agua")}
+${atributo("terra")}
+${atributo("ar")}
+${atributo("VENENO")}
+${atributo("MENTAL")}
+${atributo("SAGRADA")}
+${atributo("SOMBRIO")}
+
+
+        <h2>VITALIDADE</h2>
+        <p><strong>${nivel * 10} pontos</strong></p>
+        <p><strong>${nivel * 1} FORÇA DE VONTADE</strong></p>
+
+
+
+        <h2>MANA</h2>
+        <p><strong>${nivel * 5} pontos</strong></p>
+    `;
+        }
+
+
+    </script>
