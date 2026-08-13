@@ -1,329 +1,1008 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arsenal do Aventureiro | Nexalis RPG</title>
+
+    <title>Nexalis RPG — Arsenal do Aventureiro</title>
+
+    <link rel="stylesheet" href="../site.css">
 
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap"
         rel="stylesheet">
 
     <style>
-        /* ========================= */
-        /* CONFIGURAÇÕES GERAIS */
-        /* ========================= */
+
+        /* =========================================================
+           TEMA DIABLO — NEXALIS RPG
+        ========================================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background: radial-gradient(circle at top, #1a1a2e, #0a0a12 70%, #050508);
-            color: #e0e0e0;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    #321414 0%,
+                    #160b0b 30%,
+                    #090607 65%,
+                    #030303 100%
+                );
+
+            color: #d6d0c8;
+
             font-family: 'Cinzel', serif;
+
             margin: 0;
+
             padding: 0;
+
             line-height: 1.6;
+
+            min-height: 100vh;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
+
+        /* =========================================================
+           EFEITO DE FUNDO
+        ========================================================= */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            background:
+                radial-gradient(
+                    circle at 50% 20%,
+                    rgba(120, 20, 10, 0.12),
+                    transparent 45%
+                );
+
+            z-index: -1;
         }
 
-        h1 {
-            text-align: center;
-            color: #ffd700;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-            font-size: 3rem;
-            margin-bottom: 40px;
-            border-bottom: 2px solid #333;
-            padding-bottom: 10px;
-        }
 
-        h2 {
-            color: #cfa14a;
-            border-left: 4px solid #ffd700;
-            padding-left: 15px;
-            margin-top: 50px;
-        }
+        /* =========================================================
+           CONTAINER
+        ========================================================= */
 
-        /* ========================= */
-        /* CARDS */
-        /* ========================= */
-        .grid-armas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
+        .container-principal {
 
-        .item-card {
-            background: rgba(15, 15, 25, 0.8);
-            border: 1px solid #333;
+            max-width: 1050px;
+
+            margin: 45px auto;
+
             padding: 20px;
-            border-radius: 12px;
+        }
+
+
+        /* =========================================================
+           ABA PRINCIPAL
+        ========================================================= */
+
+        .tab {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(25, 16, 16, 0.97),
+                    rgba(8, 7, 7, 0.98)
+                );
+
+            border:
+
+                1px solid #4b3026;
+
+            border-radius: 3px;
+
+            padding: 35px;
+
+            margin-bottom: 50px;
+
+            box-shadow:
+
+                0 15px 45px rgba(0, 0, 0, 0.8),
+
+                inset 0 0 50px rgba(90, 20, 10, 0.05);
+
             position: relative;
-            transition: 0.3s;
+
             overflow: hidden;
         }
 
-        .item-card::before {
+
+        /* =========================================================
+           BORDA INFERNAL
+        ========================================================= */
+
+        .tab::before {
+
             content: "";
+
             position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(255, 215, 0, 0.05) 0%,
-                transparent 100%
-            );
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #7e1e13,
+                    #b53a20,
+                    #7e1e13,
+                    transparent
+                );
+
+            box-shadow:
+                0 0 12px rgba(150, 30, 15, 0.7);
+        }
+
+
+        .tab::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 8px;
+
+            border:
+
+                1px solid rgba(130, 70, 45, 0.08);
+
             pointer-events: none;
         }
 
-        .item-card:hover {
-            transform: translateY(-5px);
-            border-color: #ffd700;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+
+        /* =========================================================
+           TÍTULO
+        ========================================================= */
+
+        .tab h1 {
+
+            color: #d8b36a;
+
+            text-shadow:
+
+                0 0 8px rgba(150, 70, 25, 0.6),
+
+                2px 2px 3px #000;
+
+            font-size: 2.4rem;
+
+            text-align: center;
+
+            margin:
+
+                0 0 15px;
+
+            border-bottom:
+
+                1px solid #4a2b22;
+
+            padding-bottom: 18px;
+
+            letter-spacing: 1px;
         }
 
-        .item-card h3 {
-            margin-top: 0;
-            color: #fff;
-            border-bottom: 1px solid #444;
-            padding-bottom: 10px;
-        }
 
-        .status {
-            color: #ffd700;
-            font-weight: bold;
-        }
+        /* =========================================================
+           DESCRIÇÃO
+        ========================================================= */
 
-        .penalidade {
-            color: #ff4d4d;
-            font-size: 0.9em;
-        }
+        .descricao {
 
-        .vantagem {
-            color: #4dff88;
-        }
+            text-align: center;
 
-        .lore {
-            color: #b8b8b8;
+            color: #806f61;
+
+            font-family: 'MedievalSharp', cursive;
+
+            font-size: 14px;
+
             font-style: italic;
+
+            margin:
+
+                0 0 35px;
         }
 
-        /* ========================= */
-        /* RODAPÉ */
-        /* ========================= */
-        .rodape {
-            margin-top: 80px;
-            padding: 50px 20px 20px;
-            background: linear-gradient(to top, #050508, #0a0a12);
-            border-top: 1px solid #333;
-            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.8);
+
+        /* =========================================================
+           DIVISOR
+        ========================================================= */
+
+        .divisor {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin:
+
+                35px 0;
+        }
+
+        .divisor::before {
+
+            content: "✦";
+
+            color: #8d291b;
+
+            font-size: 18px;
+
+            text-shadow:
+                0 0 8px rgba(160, 40, 20, 0.7);
+        }
+
+
+        /* =========================================================
+           ITENS
+        ========================================================= */
+
+        .item-rpg {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(70, 35, 25, 0.20),
+                    rgba(255, 255, 255, 0.015)
+                );
+
+            border-left:
+
+                3px solid #70432d;
+
+            border-bottom:
+
+                1px solid rgba(100, 60, 40, 0.12);
+
+            padding:
+
+                18px 20px;
+
+            margin-bottom:
+
+                15px;
+
+            border-radius:
+
+                2px 8px 8px 2px;
+
+            transition:
+
+                0.3s;
+
             position: relative;
         }
 
-        .rodape::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                #ffd700,
-                transparent
-            );
-            animation: linhaMagica 3s infinite linear;
+
+        .item-rpg:hover {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(100, 35, 20, 0.28),
+                    rgba(255, 255, 255, 0.035)
+                );
+
+            transform:
+
+                translateX(6px);
+
+            border-left:
+
+                3px solid #a83220;
+
+            box-shadow:
+
+                0 5px 20px rgba(0, 0, 0, 0.5);
         }
 
-        @keyframes linhaMagica {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 1; }
+
+        /* =========================================================
+           TÍTULO DOS ITENS
+        ========================================================= */
+
+        .item-rpg b {
+
+            color: #c69a58;
+
+            font-size: 1.15rem;
+
+            display: block;
+
+            margin-bottom: 7px;
+
+            text-shadow:
+
+                1px 1px 2px #000;
         }
+
+
+        /* =========================================================
+           TEXTO
+        ========================================================= */
+
+        .item-rpg span {
+
+            color: #b8afa6;
+        }
+
+
+        .lore {
+
+            color: #81776e;
+
+            font-style: italic;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================================
+           STATUS POSITIVO
+        ========================================================= */
+
+        .status-valor {
+
+            color: #65a65c;
+
+            font-weight: bold;
+
+            text-shadow:
+
+                0 0 5px rgba(80, 150, 60, 0.25);
+        }
+
+
+        /* =========================================================
+           PENALIDADE
+        ========================================================= */
+
+        .status-penalidade {
+
+            color: #b84a3b;
+
+            font-weight: bold;
+
+            text-shadow:
+
+                0 0 5px rgba(160, 40, 25, 0.25);
+        }
+
+
+        /* =========================================================
+           STATUS ESPECIAL
+        ========================================================= */
+
+        .status-especial {
+
+            color: #d3a548;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================================================
+           TÍTULO DE CATEGORIA
+        ========================================================= */
+
+        .categoria {
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(90, 25, 15, 0.35),
+                    transparent
+                );
+
+            border-left:
+
+                4px solid #8e291c;
+
+            padding:
+
+                12px 18px;
+
+            margin:
+
+                35px 0 20px;
+
+            color: #b9955b;
+
+            font-size: 1.25rem;
+
+            text-shadow:
+
+                1px 1px 3px #000;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================================
+           RODAPÉ
+        ========================================================= */
+
+        .rodape {
+
+            margin-top:
+
+                80px;
+
+            padding:
+
+                55px 20px 20px;
+
+            background:
+
+                linear-gradient(
+                    to top,
+                    #020202,
+                    #090606
+                );
+
+            border-top:
+
+                1px solid #42231d;
+
+            box-shadow:
+
+                0 -15px 40px rgba(0, 0, 0, 0.9);
+
+            position: relative;
+        }
+
+
+        /* LINHA INFERNAL */
+
+        .rodape::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 2px;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #6f1b12,
+                    #b23820,
+                    #6f1b12,
+                    transparent
+                );
+
+            animation:
+
+                linhaInfernal 4s infinite;
+        }
+
+
+        @keyframes linhaInfernal {
+
+            0% {
+                opacity: 0.25;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.25;
+            }
+        }
+
+
+        /* =========================================================
+           GRID DO RODAPÉ
+        ========================================================= */
 
         .rodape-grid {
+
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto 30px;
+
+            grid-template-columns:
+
+                repeat(
+                    auto-fit,
+                    minmax(220px, 1fr)
+                );
+
+            gap: 40px;
+
+            max-width: 1050px;
+
+            margin:
+
+                0 auto 30px;
         }
+
 
         .rodape-col h2 {
-            color: #ffd700;
-            text-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+
+            color: #b88b4d;
+
+            text-shadow:
+
+                0 0 10px rgba(140, 50, 20, 0.5);
         }
 
+
         .rodape-col h3 {
-            color: #cfa14a;
+
+            color: #9d7444;
+
             margin-bottom: 15px;
         }
 
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
+
+        .rodape-quote {
+
+            color: #675c55;
+
+            font-family: 'MedievalSharp', cursive;
+
+            font-size: 13px;
+
+            font-style: italic;
         }
+
+
+        /* =========================================================
+           LINKS
+        ========================================================= */
+
+        .links {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 4px;
+        }
+
 
         .links a {
-            color: #aaa;
+
+            color: #77706b;
+
             text-decoration: none;
-            transition: 0.3s;
-            padding: 5px;
-            border-radius: 6px;
+
+            transition:
+
+                0.3s;
+
+            display: block;
+
+            padding:
+
+                6px 0;
         }
+
 
         .links a:hover {
-            color: #fff;
-            background: rgba(255, 255, 255, 0.05);
-            padding-left: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+
+            color: #c19a5b;
+
+            padding-left:
+
+                10px;
+
+            text-shadow:
+
+                0 0 8px rgba(180, 120, 50, 0.5);
         }
+
+
+        /* =========================================================
+           COPYRIGHT
+        ========================================================= */
 
         .rodape-bottom {
-            border-top: 1px solid #222;
-            padding-top: 15px;
-            text-align: center;
-            font-size: 12px;
-            color: #666;
+
+            border-top:
+
+                1px solid #1d1613;
+
+            padding-top:
+
+                15px;
+
+            text-align:
+
+                center;
+
+            font-size:
+
+                12px;
+
+            color:
+
+                #4c4642;
         }
+
+
+        /* =========================================================
+           RESPONSIVIDADE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .container-principal {
+
+                margin:
+
+                    20px auto;
+
+                padding:
+
+                    10px;
+            }
+
+
+            .tab {
+
+                padding:
+
+                    22px 18px;
+
+                margin-bottom:
+
+                    30px;
+            }
+
+
+            .tab h1 {
+
+                font-size:
+
+                    1.7rem;
+            }
+
+
+            .item-rpg {
+
+                padding:
+
+                    15px;
+            }
+
+
+            .rodape-grid {
+
+                grid-template-columns:
+
+                    1fr;
+            }
+
+        }
+
     </style>
+
 </head>
 
-<body>
-
-     <p style="font-size:13px; color:#888; font-style:italic;">
-                    "Dos metais comuns surgem armas; das lendas surgem relíquias."
-                </p>
-            </div>
-
-            <div class="rodape-col">
-                <h3>📖 Navegação</h3>
-
-                <div class="links">
-                    <a href="../funcoes/inicio.html">História</a>
-                    <a href="racaeclasses.html">Raças e Classes</a>
-                    <a href="/armas/armas.html">Armas</a>
-                    <a href="../funcoes/sistema.html">Sistema</a>
-                    <a href="../funcoes/inimigo.html">Inimigos</a>
-                    <a href="../funcoes/criaçãodeficha.html">Função Elemental</a>
-                    <a href="../funcoes/magia.html">Magias</a>
-                    <a href="../funcoes/porção.html">Poções</a>
-                    <a href="../funcoes/INGREDIENTES.HTML">Ingredientes</a>
-                </div>
-            </div>
-
-            <div class="rodape-col">
-                <h3>🗡️ Tipos de Armas</h3>
-
-                <div class="links">
-                    <a href="armaduras.html">Armaduras</a>
-                    <a href="curtoalacance.html">Curto Alcance</a>
-                    <a href="medioalcance.html">Médio Alcance</a>
-                    <a href="longo.html">Longo Alcance</a>
-                    <a href="magicos.html">Mágicos</a>
-                    <a href="Runas.html">Runas</a>
-                </div>
-            </div>
-
-        </div>
-
-    <div class="container">
-
-        <h1>⚔️ Arsenal do Aventureiro</h1>
-
-        <section id="armaduras">
-            <h2>🛡️ Defesa e Proteção</h2>
-
-            <div class="grid-armas">
-
-                <div class="item-card">
-                    <h3>Armadura Leve</h3>
-                    <p><span class="status">+1 Armadura</span></p>
-                    <p class="lore">
-                        Ideal para ladinos e arqueiros que prezam pela agilidade.
-                    </p>
-                    <p><i>Sem penalidades aplicadas.</i></p>
-                </div>
-
-                <div class="item-card">
-                    <h3>Armadura Média</h3>
-                    <p><span class="status">+4 Armadura</span></p>
-                    <p class="penalidade">⚠️ -2 Esquiva, -1 Reação</p>
-                    <p class="lore">
-                        O equilíbrio entre o aço e a mobilidade do guerreiro.
-                    </p>
-                </div>
-
-                <div class="item-card">
-                    <h3>Armadura Pesada</h3>
-                    <p><span class="status">Alta Defesa</span></p>
-                    <p class="penalidade">⚠️ +2 Dificuldade Mobilidade</p>
-                    <p class="penalidade">⚠️ -2 Reação, -2 Res. Fogo/Raio</p>
-                    <p class="lore">
-                        Um tanque de metal ambulante, quase impenetrável.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-        <section id="qualidade">
-            <h2>✨ Qualidade & Proficiência</h2>
-
-            <div class="grid-armas">
-
-                <div class="item-card">
-                    <h3>Ferro Básico</h3>
-                    <p>Equipamento comum encontrado em qualquer ferraria.</p>
-                    <p><i>Sem bônus extras.</i></p>
-                </div>
-
-                <div class="item-card" style="border-color:#4a90e2;">
-                    <h3>Épica</h3>
-                    <p class="vantagem">⭐ Vantagem +2</p>
-                    <p class="lore">
-                        Forjada por mestres artesãos com materiais raros.
-                    </p>
-                </div>
-
-                <div class="item-card" style="border-color:#a335ee;">
-                    <h3>Lendária</h3>
-                    <p class="vantagem">🌟 Vantagem +3</p>
-                    <p class="lore">
-                        Contém fragmentos de essência mística.
-                    </p>
-                </div>
-
-                <div class="item-card" style="border-color:#ffd700;">
-                    <h3>Mitológica</h3>
-                    <p class="vantagem">🔱 Vantagem +4</p>
-                    <p class="lore">
-                        Dizem ter sido empunhada pelos próprios Deuses.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-    </div>
+<!-- =========================================================
+         RODAPÉ
+    ========================================================= -->
 
     <footer class="rodape">
 
+
         <div class="rodape-grid">
 
+
+            <!-- =================================================
+                 NEXALIS
+            ================================================== -->
+
             <div class="rodape-col">
-                <h2>⚔️ Nexalis RPG</h2>
 
-               
+                <h2>
+                    ⚔️ Nexalis RPG
+                </h2>
 
-        <div class="rodape-bottom">
-            &copy; 2026 - Nexalis RPG. Todos os direitos reservados aos mestres.
+                <p class="rodape-quote">
+
+                    "O poder não vem da força…
+                    mas do domínio das runas."
+
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 NAVEGAÇÃO
+            ================================================== -->
+
+            <nav class="rodape-col">
+
+                <h3>
+                    📖 Navegação
+                </h3>
+
+
+                <div class="links">
+
+                    <a href="../funcoes/inicio.html">
+                        História
+                    </a>
+
+                    <a href="racaeclasses.html">
+                        Raças e Classes
+                    </a>
+
+                    <a href="/armas/armas.html">
+                        Armas
+                    </a>
+
+                    <a href="../funcoes/sistema.html">
+                        Sistema
+                    </a>
+
+                    <a href="../funcoes/inimigo.html">
+                        Inimigos
+                    </a>
+
+                    <a href="../funcoes/criaçãodeficha.html">
+                        Função Elemental
+                    </a>
+
+                    <a href="../funcoes/magia.html">
+                        Magias
+                    </a>
+
+                    <a href="../funcoes/porção.html">
+                        Poções
+                    </a>
+
+                    <a href="../funcoes/INGREDIENTES.HTML">
+                        Ingredientes
+                    </a>
+
+                </div>
+
+            </nav>
+
+
+            <!-- =================================================
+                 TIPOS DE ARMAS
+            ================================================== -->
+
+            <div class="rodape-col">
+
+                <h3>
+                    🗡️ Tipos de Armas
+                </h3>
+
+
+                <div class="links">
+
+                    <a href="armaduras.html">
+                        Armaduras
+                    </a>
+
+                    <a href="curtoalacance.html">
+                        Curto Alcance
+                    </a>
+
+                    <a href="medioalcance.html">
+                        Médio Alcance
+                    </a>
+
+                    <a href="longo.html">
+                        Longo Alcance
+                    </a>
+
+                    <a href="magicos.html">
+                        Mágicos
+                    </a>
+
+                    <a href="Runas.html">
+                        Runas
+                    </a>
+
+                </div>
+
+            </div>
+
+
         </div>
 
+
+       
+
+
     </footer>
+
+
+<body>
+
+
+    <!-- =========================================================
+         CONTEÚDO PRINCIPAL
+    ========================================================= -->
+
+    <main class="container-principal">
+
+
+        <!-- =====================================================
+             ARSENAL
+        ====================================================== -->
+
+        <section id="arsenal" class="tab">
+
+
+            <h1>
+                ⚔️ Arsenal do Aventureiro
+            </h1>
+
+
+            <p class="descricao">
+                "Dos metais comuns surgem armas;
+                das lendas surgem relíquias."
+            </p>
+
+
+            <!-- =================================================
+                 DEFESA
+            ================================================== -->
+
+            <div class="categoria">
+
+                🛡️ Defesa e Proteção
+
+            </div>
+
+
+            <!-- ARMADURA LEVE -->
+
+            <div class="item-rpg">
+
+                <b>
+                    Armadura Leve
+                </b>
+
+                <span class="status-valor">
+                    +1 Armadura
+                </span>
+
+                <p class="lore">
+
+                    Ideal para ladinos e arqueiros
+                    que prezam pela agilidade.
+
+                </p>
+
+                <span>
+
+                    Sem penalidades aplicadas.
+
+                </span>
+
+            </div>
+
+
+            <!-- ARMADURA MÉDIA -->
+
+            <div class="item-rpg">
+
+                <b>
+                    Armadura Média
+                </b>
+
+                <span class="status-valor">
+                    +4 Armadura
+                </span>
+
+                <p class="status-penalidade">
+
+                    ⚠️ -2 Esquiva, -1 Reação
+
+                </p>
+
+                <p class="lore">
+
+                    O equilíbrio entre o aço
+                    e a mobilidade do guerreiro.
+
+                </p>
+
+            </div>
+
+
+            <!-- ARMADURA PESADA -->
+
+            <div class="item-rpg">
+
+                <b>
+                    Armadura Pesada
+                </b>
+
+                <span class="status-especial">
+
+                    Alta Defesa
+
+                </span>
+
+                <p class="status-penalidade">
+
+                    ⚠️ +2 Dificuldade Mobilidade
+
+                </p>
+
+                <p class="status-penalidade">
+
+                    ⚠️ -2 Reação,
+                    -2 Res. Fogo/Raio
+
+                </p>
+
+                <p class="lore">
+
+                    Um tanque de metal ambulante,
+                    quase impenetrável.
+
+                </p>
+
+            </div>
+
+
+            <div class="divisor"></div>
+
+
+            <!-- =================================================
+             COPYRIGHT
+        ================================================== -->
+
+        <div class="rodape-bottom">
+
+            &copy; 2026 Nexalis RPG -
+            Todos os direitos reservados aos Mestres.
+
+        </div>
+
+
+    </main>
+
+
+    
+
 
 </body>
 

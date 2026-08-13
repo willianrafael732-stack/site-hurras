@@ -1,231 +1,955 @@
-<style>
-    /* ========================= */
-/* RODAPÉ RPG */
-/* ========================= */
-.rodape{
-margin-top:60px;
-padding:50px 20px 20px;
-background:linear-gradient(to top,#050508,#0a0a12);
-border-top:1px solid #333;
-box-shadow:0 -10px 30px rgba(0,0,0,0.8);
-position:relative;
-overflow:hidden;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
 
-/* LINHA MÁGICA */
-.rodape::before{
-content:"";
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:2px;
-background:linear-gradient(90deg,transparent,#ffd700,transparent);
-animation:linhaMagica 3s infinite linear;
-}
+<head>
 
-body{
-background: radial-gradient(circle at top, #1a1a2e, #0a0a12 70%, #050508);
-color:#e0e0e0;
-font-family:'Cinzel', serif;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@keyframes linhaMagica{
-0%{opacity:0.2;}
-50%{opacity:1;}
-100%{opacity:0.2;}
-}
+    <title>Nexalis RPG — Curto Alcance</title>
 
-/* GRID */
-.rodape-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:30px;
-margin-bottom:30px;
-}
+    <link rel="stylesheet" href="../site.css">
 
-/* COLUNAS */
-.rodape-col h2{
-color:#ffd700;
-text-shadow:0 0 12px rgba(255,215,0,0.8);
-}
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=MedievalSharp&display=swap"
+        rel="stylesheet">
 
-.rodape-col h3{
-color:#cfa14a;
-margin-bottom:10px;
-}
+    <style>
 
-/* LINKS */
-.links{
-display:flex;
-flex-direction:column;
-gap:8px;
-}
+        /* =========================================================
+           BASE — DIABLO / DARK FANTASY
+        ========================================================= */
 
-.links a{
-color:#aaa;
-text-decoration:none;
-transition:0.3s;
-padding:5px;
-border-radius:6px;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-.links a:hover{
-color:#fff;
-background:rgba(255,255,255,0.05);
-padding-left:10px;
-box-shadow:0 0 10px rgba(255,255,255,0.2);
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* TEXTO */
-.lore{
-font-size:13px;
-color:#888;
-margin-top:10px;
-font-style:italic;
-}
+        body {
 
-/* FINAL */
-.rodape-bottom{
-border-top:1px solid #222;
-padding-top:15px;
-text-align:center;
-font-size:12px;
-color:#666;
-}
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    #3a0d09 0%,
+                    #180706 25%,
+                    #090607 60%,
+                    #020203 100%
+                );
 
-/* ========================= */
-/* ARMAS */
-/* ========================= */
-.classe-armas{
-margin-top:40px;
-}
+            color: #d8d0c8;
 
-.arma{
-background:rgba(0,0,0,0.7);
-border:1px solid #333;
-padding:15px;
-border-radius:12px;
-margin-bottom:15px;
-transition:0.3s;
-}
+            font-family: 'Cinzel', serif;
+
+            margin: 0;
+
+            padding: 0;
+
+            line-height: 1.6;
+
+            min-height: 100vh;
+        }
 
 
-.arma:hover{
-transform:scale(1.02);
-box-shadow:0 0 15px rgba(255,255,255,0.2);
-}
-</style>
+        /* =========================================================
+           MENU SUPERIOR
+        ========================================================= */
 
-<!-- ========================= -->
-<!-- RODAPÉ -->
-<!-- ========================= -->
-<footer class="rodape">
+        .rodape {
+
+            margin: 0;
+
+            padding: 35px 20px 20px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    #030303,
+                    #100504,
+                    #070303
+                );
+
+            border-bottom:
+                1px solid #542019;
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.95);
+
+            position: relative;
+
+            z-index: 100;
+
+            overflow: hidden;
+        }
+
+
+        .rodape::before {
+
+            content: "";
+
+            position: absolute;
+
+            bottom: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #6d1d16,
+                    #c23c27,
+                    #6d1d16,
+                    transparent
+                );
+
+            box-shadow:
+                0 0 12px rgba(190,50,30,0.7);
+
+            animation:
+                linhaInfernal 4s infinite;
+        }
+
+
+        @keyframes linhaInfernal {
+
+            0% {
+                opacity: .25;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: .25;
+            }
+        }
+
+
+        /* =========================================================
+           CONTAINER DO MENU
+        ========================================================= */
+
+        .rodape-container {
+
+            max-width: 1150px;
+
+            margin: 0 auto;
+        }
+
+
+        .rodape-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(220px, 1fr)
+                );
+
+            gap: 35px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================================================
+           TÍTULOS DO MENU
+        ========================================================= */
+
+        .rodape-col h2 {
+
+            color: #b53627;
+
+            margin-top: 0;
+
+            text-shadow:
+                0 0 8px rgba(190,50,35,.7),
+                0 0 20px rgba(120,20,10,.4);
+
+            letter-spacing: 1px;
+        }
+
+
+        .rodape-col h3 {
+
+            color: #a77a45;
+
+            margin-bottom: 12px;
+
+            font-size: 15px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================================
+           LINKS
+        ========================================================= */
+
+        .links {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 4px;
+        }
+
+
+        .links a {
+
+            color: #918982;
+
+            text-decoration: none;
+
+            padding: 6px 8px;
+
+            border-left:
+                2px solid transparent;
+
+            transition:
+                .3s ease;
+        }
+
+
+        .links a:hover {
+
+            color: #e2b77a;
+
+            padding-left: 15px;
+
+            border-left:
+                2px solid #b53527;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(130,30,20,.2),
+                    transparent
+                );
+
+            text-shadow:
+                0 0 8px rgba(200,60,40,.7);
+        }
+
+
+        /* =========================================================
+           LORE
+        ========================================================= */
+
+        .lore {
+
+            font-size: 13px;
+
+            color: #766e68;
+
+            margin-top: 10px;
+
+            font-style: italic;
+        }
+
+
+        /* =========================================================
+           CONTEÚDO PRINCIPAL
+        ========================================================= */
+
+        .container-principal {
+
+            max-width: 1050px;
+
+            margin: 50px auto;
+
+            padding: 20px;
+        }
+
+
+        /* =========================================================
+           TÍTULO DA CATEGORIA
+        ========================================================= */
+
+        .classe-armas {
+
+            position: relative;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(31,10,9,.97),
+                    rgba(7,5,6,.98)
+                );
+
+            border:
+                1px solid #4a201b;
+
+            padding: 35px;
+
+            border-radius: 5px;
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,.9),
+
+                inset 0 0 40px
+                rgba(120,20,15,.06);
+
+            overflow: hidden;
+        }
+
+
+        .classe-armas::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 8px;
+
+            border:
+                1px solid rgba(150,50,35,.15);
+
+            pointer-events: none;
+        }
+
+
+        .classe-armas > h1 {
+
+            color: #b53627;
+
+            text-align: center;
+
+            font-size: 2.4rem;
+
+            margin-top: 0;
+
+            margin-bottom: 35px;
+
+            text-shadow:
+                0 0 10px rgba(190,50,35,.7),
+                0 0 25px rgba(100,10,5,.5);
+
+            border-bottom:
+                1px solid #4b201b;
+
+            padding-bottom: 18px;
+        }
+
+
+        /* =========================================================
+           CARTÃO DE ARMA
+        ========================================================= */
+
+        .arma {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(70,15,12,.20),
+                    rgba(255,255,255,.015)
+                );
+
+            border:
+                1px solid #39201c;
+
+            border-left:
+                4px solid #704027;
+
+            padding: 20px;
+
+            border-radius:
+                2px 10px 10px 2px;
+
+            margin-bottom: 18px;
+
+            transition:
+                .3s ease;
+
+            position: relative;
+        }
+
+
+        .arma:hover {
+
+            transform:
+                translateX(8px);
+
+            border-left:
+                4px solid #b93b29;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(120,25,18,.25),
+                    rgba(255,255,255,.025)
+                );
+
+            box-shadow:
+                0 8px 25px rgba(0,0,0,.7),
+
+                inset 0 0 20px
+                rgba(150,30,20,.08);
+        }
+
+
+        /* =========================================================
+           NOME DA ARMA
+        ========================================================= */
+
+        .arma h2 {
+
+            color: #bd7945;
+
+            margin-top: 0;
+
+            margin-bottom: 12px;
+
+            text-shadow:
+                0 0 6px rgba(180,80,40,.4);
+        }
+
+
+        /* =========================================================
+           INFORMAÇÕES
+        ========================================================= */
+
+        .arma p {
+
+            margin:
+                7px 0;
+
+            color: #aaa39c;
+        }
+
+
+        .arma b {
+
+            color: #c2a071;
+        }
+
+
+        /* VANTAGEM */
+
+        .vantagem {
+
+            color: #a8a26d !important;
+
+            font-weight: bold;
+        }
+
+
+        /* DESVANTAGEM */
+
+        .desvantagem {
+
+            color: #b83b2e !important;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================================================
+           QUALIDADE
+        ========================================================= */
+
+        .tab {
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(25,9,9,.97),
+                    rgba(7,5,6,.98)
+                );
+
+            border:
+                1px solid #43201c;
+
+            border-radius: 5px;
+
+            padding: 35px;
+
+            margin-top: 45px;
+
+            box-shadow:
+                0 15px 45px rgba(0,0,0,.85);
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .tab h1 {
+
+            color: #b53627;
+
+            text-align: center;
+
+            text-shadow:
+                0 0 10px rgba(180,45,30,.6);
+
+            border-bottom:
+                1px solid #45201b;
+
+            padding-bottom: 15px;
+
+            margin-top: 0;
+        }
+
+
+        .tab p {
+
+            background:
+                rgba(255,255,255,.025);
+
+            border-left:
+                3px solid #704027;
+
+            padding: 12px 15px;
+
+            margin:
+                10px 0;
+
+            border-radius:
+                2px 7px 7px 2px;
+        }
+
+
+        .tab p:hover {
+
+            border-left:
+                3px solid #b53627;
+
+            background:
+                rgba(120,30,20,.12);
+
+            transform:
+                translateX(5px);
+
+            transition:
+                .3s;
+        }
+
+
+        .tab b {
+
+            color: #c27a43;
+        }
+
+
+        /* =========================================================
+           COPYRIGHT
+        ========================================================= */
+
+        .rodape-bottom {
+
+            border-top:
+                1px solid #281412;
+
+            padding-top:
+                15px;
+
+            text-align:
+                center;
+
+            font-size:
+                12px;
+
+            color:
+                #504944;
+        }
+
+
+        /* =========================================================
+           RESPONSIVIDADE
+        ========================================================= */
+
+        @media (max-width: 700px) {
+
+            .rodape-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .container-principal {
+
+                margin:
+                    20px auto;
+
+                padding:
+                    10px;
+            }
+
+
+            .classe-armas,
+            .tab {
+
+                padding:
+                    20px;
+            }
+
+
+            .classe-armas > h1 {
+
+                font-size:
+                    1.8rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================================= -->
+<!-- MENU SUPERIOR -->
+<!-- ========================================================= -->
+
+<header class="rodape">
 
     <div class="rodape-container">
 
         <div class="rodape-grid">
 
+
             <!-- LOGO -->
+
             <div class="rodape-col">
-                <h2>⚔️ Nexalis RPG</h2>
+
+                <h2>
+                    ⚔️ Nexalis RPG
+                </h2>
+
                 <p class="lore">
-                "O poder não vem da força… mas do domínio das runas."
+
+                    "O poder não vem da força…
+                    mas do domínio das runas."
+
                 </p>
+
             </div>
+
 
             <!-- NAVEGAÇÃO -->
+
             <div class="rodape-col">
-                <h3>📜 Navegação</h3>
+
+                <h3>
+                    📜 Navegação
+                </h3>
+
                 <div class="links">
-                    <a href="../funcoes/inicio.html">História</a>
-                    <a href="../funcoes/racaeclasses.html">Raças e Classes</a>
-                    <a href="armas.html">Armas</a>
-                    <a href="../funcoes/sistema.html">Sistema</a>
-                    <a href="../funcoes/inimigo.html">Inimigos</a>
-                     <a href="../funcoes/criaçãodeficha.html">Mistura de elementos</a>
-                    <a href="../funcoes/magia.html">Magias</a>
+
+                    <a href="../funcoes/inicio.html">
+                        História
+                    </a>
+
+                    <a href="../funcoes/racaeclasses.html">
+                        Raças e Classes
+                    </a>
+
+                    <a href="armas.html">
+                        Armas
+                    </a>
+
+                    <a href="../funcoes/sistema.html">
+                        Sistema
+                    </a>
+
+                    <a href="../funcoes/inimigo.html">
+                        Inimigos
+                    </a>
+
+                    <a href="../funcoes/criaçãodeficha.html">
+                        Mistura de elementos
+                    </a>
+
+                    <a href="../funcoes/magia.html">
+                        Magias
+                    </a>
+
                 </div>
+
             </div>
 
+
             <!-- ARMAS -->
+
             <div class="rodape-col">
-                <h3>🗡️ Tipos de Armas</h3>
+
+                <h3>
+                    🗡️ Tipos de Armas
+                </h3>
+
                 <div class="links">
-                    <a href="armaduras.html">Armaduras</a>
-                    <a href="curtoalacance.html">Curto Alcance</a>
-                    <a href="medioalcance.html">Médio Alcance</a>
-                    <a href="medioalcance2M.html">Médio Alcance 2M</a>
-                    <a href="longo.html">Longo Alcance</a>
-                    <a href="escudo.html">Escudos</a>
-                    <a href="Instrumentais.html">Instrumentais</a>
-                    <a href="magicos.html">Mágicos</a>
-                    <a href="encantos.html">Encantos</a>
-                    <a href="Runas.html">Runas</a>
+
+                    <a href="armaduras.html">
+                        Armaduras
+                    </a>
+
+                    <a href="curtoalacance.html">
+                        Curto Alcance
+                    </a>
+
+                    <a href="medioalcance.html">
+                        Médio Alcance
+                    </a>
+
+                    <a href="medioalcance2M.html">
+                        Médio Alcance 2M
+                    </a>
+
+                    <a href="longo.html">
+                        Longo Alcance
+                    </a>
+
+                    <a href="escudo.html">
+                        Escudos
+                    </a>
+
+                    <a href="Instrumentais.html">
+                        Instrumentais
+                    </a>
+
+                    <a href="magicos.html">
+                        Mágicos
+                    </a>
+
+                    <a href="encantos.html">
+                        Encantos
+                    </a>
+
+                    <a href="Runas.html">
+                        Runas
+                    </a>
+
                 </div>
+
             </div>
 
         </div>
 
-<!-- ========================= -->
-<!-- CURTO ALCANCE -->
-<!-- ========================= -->
-<div class="classe-armas">
-<h1>⚔️ Curto Alcance</h1>
+    </div>
 
-<div class="arma">
-<h2>🗡️ Espada</h2>
-<p><b>Atributo:</b> Força ou Destreza</p>
-<p><b>Tipo:</b> 1 Mão</p>
-<p><b>Vantagem:</b> +1 Dano, +1 Crítico</p>
-<p><b>Desvantagem:</b> -2 Bloqueio</p>
-</div>
-
-<div class="arma">
-<h2>🗡️ Adaga</h2>
-<p><b>Atributo:</b> Destreza</p>
-<p><b>Tipo:</b> 1 Mão</p>
-<p><b>Vantagem:</b> +2 Crítico</p>
-<p><b>Desvantagem:</b> -3 Bloqueio</p>
-</div>
-
-<div class="arma">
-<h2>⚔️ Montante</h2>
-<p><b>Atributo:</b> Força</p>
-<p><b>Tipo:</b> 2 Mãos</p>
-<p><b>Vantagem:</b> +4 Dano</p>
-<p><b>Desvantagem:</b> -4 Reação</p>
-</div>
-
-<div class="arma">
-<h2>🔨 Martelo</h2>
-<p><b>Atributo:</b> Força</p>
-<p><b>Tipo:</b> 2 Mãos</p>
-<p><b>Vantagem:</b> +4 Dano</p>
-<p><b>Desvantagem:</b> -4 Reação</p>
-</div>
-
-<div class="arma">
-<h2>🪓 Machado</h2>
-<p><b>Atributo:</b> Força</p>
-<p><b>Tipo:</b> 2 Mãos</p>
-<p><b>Vantagem:</b> +4 Dano</p>
-<p><b>Desvantagem:</b> -4 Reação</p>
-</div>
-
-</div>
+</header>
 
 
 
+<!-- ========================================================= -->
+<!-- CONTEÚDO -->
+<!-- ========================================================= -->
+
+<main class="container-principal">
+
+
+    <!-- ========================================================= -->
+    <!-- CURTO ALCANCE -->
+    <!-- ========================================================= -->
+
+    <section class="classe-armas">
+
+        <h1>
+            ⚔️ Curto Alcance
+        </h1>
+
+
+        <!-- ESPADA -->
+
+        <div class="arma">
+
+            <h2>
+                🗡️ Espada
+            </h2>
+
+            <p>
+                <b>Atributo:</b>
+                Força ou Destreza
+            </p>
+
+            <p>
+                <b>Tipo:</b>
+                1 Mão
+            </p>
+
+            <p class="vantagem">
+                <b>Vantagem:</b>
+                +1 Dano, +1 Crítico
+            </p>
+
+            <p class="desvantagem">
+                <b>Desvantagem:</b>
+                -2 Bloqueio
+            </p>
+
+        </div>
+
+
+        <!-- ADAGA -->
+
+        <div class="arma">
+
+            <h2>
+                🗡️ Adaga
+            </h2>
+
+            <p>
+                <b>Atributo:</b>
+                Destreza
+            </p>
+
+            <p>
+                <b>Tipo:</b>
+                1 Mão
+            </p>
+
+            <p class="vantagem">
+                <b>Vantagem:</b>
+                +2 Crítico
+            </p>
+
+            <p class="desvantagem">
+                <b>Desvantagem:</b>
+                -3 Bloqueio
+            </p>
+
+        </div>
+
+
+        <!-- MONTANTE -->
+
+        <div class="arma">
+
+            <h2>
+                ⚔️ Montante
+            </h2>
+
+            <p>
+                <b>Atributo:</b>
+                Força
+            </p>
+
+            <p>
+                <b>Tipo:</b>
+                2 Mãos
+            </p>
+
+            <p class="vantagem">
+                <b>Vantagem:</b>
+                +4 Dano
+            </p>
+
+            <p class="desvantagem">
+                <b>Desvantagem:</b>
+                -4 Reação
+            </p>
+
+        </div>
+
+
+        <!-- MARTELO -->
+
+        <div class="arma">
+
+            <h2>
+                🔨 Martelo
+            </h2>
+
+            <p>
+                <b>Atributo:</b>
+                Força
+            </p>
+
+            <p>
+                <b>Tipo:</b>
+                2 Mãos
+            </p>
+
+            <p class="vantagem">
+                <b>Vantagem:</b>
+                +4 Dano
+            </p>
+
+            <p class="desvantagem">
+                <b>Desvantagem:</b>
+                -4 Reação
+            </p>
+
+        </div>
+
+
+        <!-- MACHADO -->
+
+        <div class="arma">
+
+            <h2>
+                🪓 Machado
+            </h2>
+
+            <p>
+                <b>Atributo:</b>
+                Força
+            </p>
+
+            <p>
+                <b>Tipo:</b>
+                2 Mãos
+            </p>
+
+            <p class="vantagem">
+                <b>Vantagem:</b>
+                +4 Dano
+            </p>
+
+            <p class="desvantagem">
+                <b>Desvantagem:</b>
+                -4 Reação
+            </p>
+
+        </div>
+
+    </section>
 
 
 
+   
 
-<!-- QUALIDADE -->
-<div id="qualidade" class="tab">
-<h1>Qualidade & Proficiência</h1>
+</main>
 
-<p><b>Básica</b> — Sem bônus extras</p>
-<p><b>Épica</b> — Vantagens +2</p>
-<p><b>Lendária</b> — Vantagens +3</p>
-<p><b>Mitológica</b> — Vantagens +4</p>
+
+
+<!-- ========================================================= -->
+<!-- RODAPÉ -->
+<!-- ========================================================= -->
+
+<footer class="rodape">
+
+    <div class="rodape-container">
+
+        <div class="rodape-bottom">
+
+            &copy; 2026 Nexalis RPG —
+            Todos os direitos reservados aos Mestres.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
