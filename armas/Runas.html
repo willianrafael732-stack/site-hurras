@@ -1,16 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexalis RPG — Sistema de Runas</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nexalis RPG — Sistema de Runas</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
         /* ========================================================= */
         /* NEXALIS RPG — TEMA DIABLO */
         /* ========================================================= */
@@ -596,320 +594,274 @@
             }
         }
     </style>
-</head>
-
+<meta content="strict-origin-when-cross-origin" name="referrer"/></head>
 <body>
-
-    <!-- ========================================================= -->
-    <!-- RODAPÉ -->
-    <!-- ========================================================= -->
-    <footer class="rodape">
-        <div class="rodape-grid">
-
-            <!-- LOGO -->
-            <div class="rodape-col">
-                <h2>⚔️ Nexalis RPG</h2>
-                <p class="lore">
+<!-- ========================================================= -->
+<!-- RODAPÉ -->
+<!-- ========================================================= -->
+<footer class="rodape">
+<div class="rodape-grid">
+<!-- LOGO -->
+<div class="rodape-col">
+<h2>⚔️ Nexalis RPG</h2>
+<p class="lore">
                     "O poder não vem da força…
                     mas do domínio das runas."
                 </p>
-            </div>
-
-            <!-- NAVEGAÇÃO -->
-            <div class="rodape-col">
-                <h3>📜 Navegação</h3>
-                <div class="links">
-                    <a href="../funcoes/inicio.html">História</a>
-                    <a href="../funcoes/racaeclasses.html">Raças e Classes</a>
-                    <a href="armas.html">Armas</a>
-                    <a href="../funcoes/sistema.html">Sistema</a>
-                    <a href="../funcoes/inimigo.html">Inimigos</a>
-                    <a href="../funcoes/criaçãodeficha.html">Função Elemental</a>
-                    <a href="../funcoes/magia.html">Magias</a>
-                    <a href="../funcoes/porção.html">Poções</a>
-                    <a href="../funcoes/INGREDIENTES.HTML">Ingredientes</a>
-                    <a href="../funcoes/mapas.html">Mapas</a>
-                    <a href="../funcoes/clan.html">Criação de Ficha</a>
-                </div>
-            </div>
-
-            <!-- ARSENAL -->
-            <div class="rodape-col">
-                <h3>⚔️ Arsenal</h3>
-                <div class="links">
-                    <a href="armaduras.html">🛡️ Armaduras</a>
-                    <a href="curtoalacance.html">🗡️ Curto Alcance</a>
-                    <a href="medioalcance.html">🪶 Médio Alcance</a>
-                    <a href="medioalcance2M.html">⚔️ Médio Alcance 2M</a>
-                    <a href="longo.html">🏹 Longo Alcance</a>
-                    <a href="escudo.html">🛡️ Escudos</a>
-                    <a href="Instrumentais.html">🎵 Instrumentais</a>
-                    <a href="magicos.html">🔮 Mágicos</a>
-                    <a href="encantos.html">✨ Encantos</a>
-                    <a href="Runas.html">ᚱ Runas</a>
-                </div>
-            </div>
-
-            <!-- RUNAS (atalhos) -->
-            <div class="rodape-col">
-                <h3>ᚱ Runas</h3>
-                <div class="links">
-                    <a href="#runa-af">AF — Físico</a>
-                    <a href="#runa-dn">DN — Dano</a>
-                    <a href="#runa-ia">IA — Ignorar Armadura</a>
-                    <a href="#runa-ac">AC — Alcance</a>
-                    <a href="#runa-mn">MN — Mana</a>
-                    <a href="#runa-vt">VT — Vida</a>
-                    <a href="#runa-rm">RM — Resistência Mágica</a>
-                    <a href="#runa-rc">RC — Resistência Crítica</a>
-                    <a href="#runa-nm">NM — Magia</a>
-                    <a href="#runa-ra">RA — Retorno</a>
-                    <a href="#runa-si">SI — Silêncio Arcano</a>
-                    <a href="#runa-sp">SP — Supressão de Mana</a>
-                    <a href="#runa-sm">SM — Anulação Total</a>
-                    <a href="#runa-ordem">⚖️ Runa da Ordem</a>
-                    <a href="#runa-morte">☠️ Runa da Morte</a>
-                    <a href="#runa-destruicao">🔥 Runa da Destruição</a>
-                    <a href="#runa-arcanista">🧠 Runa do Arcanista</a>
-                    <a href="#runa-fortaleza">🛡️ Runa da Fortaleza</a>
-                    <a href="#runa-cacador">🏹 Runa do Caçador</a>
-                    <a href="#runa-vazio">🌑 Runa do Vazio</a>
-                    <a href="#runa-fluxo">⚡ Runa do Fluxo</a>
-                </div>
-            </div>
-
-        </div>
-
-        
-    </footer>
-
-
-    <!-- ========================================================= -->
-    <!-- SISTEMA DE RUNAS -->
-    <!-- ========================================================= -->
-    <main id="runas" class="tab">
-
-        <h1>🔮 Sistema de Runas</h1>
-
-        <!-- RUNAS BASE -->
-        <h2>📜 Runas Base — Nível 1 até 4</h2>
-
-        <div class="grid-runas">
-
-            <div class="runa" id="runa-af">
-                <b>AF — Físico</b>
-                <p>
-                    I: +1 dano<br>
-                    II: +2 dano<br>
+</div>
+<!-- NAVEGAÇÃO -->
+<div class="rodape-col">
+<h3>📜 Navegação</h3>
+<div class="links">
+<a href="../funcoes/inicio.html">História</a>
+<a href="../funcoes/racaeclasses.html">Raças e Classes</a>
+<a href="armas.html">Armas</a>
+<a href="../funcoes/sistema.html">Sistema</a>
+<a href="../funcoes/inimigo.html">Inimigos</a>
+<a href="../funcoes/criaçãodeficha.html">Função Elemental</a>
+<a href="../funcoes/magia.html">Magias</a>
+<a href="../funcoes/porção.html">Poções</a>
+<a href="../funcoes/INGREDIENTES.HTML">Ingredientes</a>
+<a href="../funcoes/mapas.html">Mapas</a>
+<a href="../funcoes/clan.html">Criação de Ficha</a>
+</div>
+</div>
+<!-- ARSENAL -->
+<div class="rodape-col">
+<h3>⚔️ Arsenal</h3>
+<div class="links">
+<a href="armaduras.html">🛡️ Armaduras</a>
+<a href="curtoalacance.html">🗡️ Curto Alcance</a>
+<a href="medioalcance.html">🪶 Médio Alcance</a>
+<a href="medioalcance2M.html">⚔️ Médio Alcance 2M</a>
+<a href="longo.html">🏹 Longo Alcance</a>
+<a href="escudo.html">🛡️ Escudos</a>
+<a href="Instrumentais.html">🎵 Instrumentais</a>
+<a href="magicos.html">🔮 Mágicos</a>
+<a href="encantos.html">✨ Encantos</a>
+<a href="Runas.html">ᚱ Runas</a>
+</div>
+</div>
+<!-- RUNAS (atalhos) -->
+<div class="rodape-col">
+<h3>ᚱ Runas</h3>
+<div class="links">
+<a href="#runa-af">AF — Físico</a>
+<a href="#runa-dn">DN — Dano</a>
+<a href="#runa-ia">IA — Ignorar Armadura</a>
+<a href="#runa-ac">AC — Alcance</a>
+<a href="#runa-mn">MN — Mana</a>
+<a href="#runa-vt">VT — Vida</a>
+<a href="#runa-rm">RM — Resistência Mágica</a>
+<a href="#runa-rc">RC — Resistência Crítica</a>
+<a href="#runa-nm">NM — Magia</a>
+<a href="#runa-ra">RA — Retorno</a>
+<a href="#runa-si">SI — Silêncio Arcano</a>
+<a href="#runa-sp">SP — Supressão de Mana</a>
+<a href="#runa-sm">SM — Anulação Total</a>
+<a href="#runa-ordem">⚖️ Runa da Ordem</a>
+<a href="#runa-morte">☠️ Runa da Morte</a>
+<a href="#runa-destruicao">🔥 Runa da Destruição</a>
+<a href="#runa-arcanista">🧠 Runa do Arcanista</a>
+<a href="#runa-fortaleza">🛡️ Runa da Fortaleza</a>
+<a href="#runa-cacador">🏹 Runa do Caçador</a>
+<a href="#runa-vazio">🌑 Runa do Vazio</a>
+<a href="#runa-fluxo">⚡ Runa do Fluxo</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- ========================================================= -->
+<!-- SISTEMA DE RUNAS -->
+<!-- ========================================================= -->
+<main class="tab" id="runas">
+<h1>🔮 Sistema de Runas</h1>
+<!-- RUNAS BASE -->
+<h2>📜 Runas Base — Nível 1 até 4</h2>
+<div class="grid-runas">
+<div class="runa" id="runa-af">
+<b>AF — Físico</b>
+<p>
+                    I: +1 dano<br/>
+                    II: +2 dano<br/>
                     III: +3 dano
                 </p>
-            </div>
-
-            <div class="runa" id="runa-dn">
-                <b>DN — Dano</b>
-                <p>
-                    I: +1 dano geral<br>
-                    II: +2<br>
+</div>
+<div class="runa" id="runa-dn">
+<b>DN — Dano</b>
+<p>
+                    I: +1 dano geral<br/>
+                    II: +2<br/>
                     III: +3
                 </p>
-            </div>
-
-            <div class="runa" id="runa-ia">
-                <b>IA — Ignorar Armadura</b>
-                <p>
-                    I: ignora 1<br>
-                    II: ignora 2<br>
+</div>
+<div class="runa" id="runa-ia">
+<b>IA — Ignorar Armadura</b>
+<p>
+                    I: ignora 1<br/>
+                    II: ignora 2<br/>
                     III: ignora 3
                 </p>
-            </div>
-
-            <div class="runa" id="runa-ac">
-                <b>AC — Alcance</b>
-                <p>
-                    I: +1m<br>
-                    II: +2m<br>
+</div>
+<div class="runa" id="runa-ac">
+<b>AC — Alcance</b>
+<p>
+                    I: +1m<br/>
+                    II: +2m<br/>
                     III: +3m
                 </p>
-            </div>
-
-            <div class="runa" id="runa-mn">
-                <b>MN — Mana</b>
-                <p>
-                    I: +1 regen<br>
-                    II: +2<br>
+</div>
+<div class="runa" id="runa-mn">
+<b>MN — Mana</b>
+<p>
+                    I: +1 regen<br/>
+                    II: +2<br/>
                     III: +3
                 </p>
-            </div>
-
-            <div class="runa" id="runa-vt">
-                <b>VT — Vida</b>
-                <p>
-                    I: +1 regen<br>
-                    II: +2<br>
+</div>
+<div class="runa" id="runa-vt">
+<b>VT — Vida</b>
+<p>
+                    I: +1 regen<br/>
+                    II: +2<br/>
                     III: +3
                 </p>
-            </div>
-
-            <div class="runa" id="runa-rm">
-                <b>RM — Resistência Mágica</b>
-                <p>
-                    I: -1 dano mágico<br>
-                    II: -2<br>
+</div>
+<div class="runa" id="runa-rm">
+<b>RM — Resistência Mágica</b>
+<p>
+                    I: -1 dano mágico<br/>
+                    II: -2<br/>
                     III: -3
                 </p>
-            </div>
-
-            <div class="runa" id="runa-rc">
-                <b>RC — Resistência Crítica</b>
-                <p>
-                    I: -1 crítico<br>
-                    II: -2<br>
+</div>
+<div class="runa" id="runa-rc">
+<b>RC — Resistência Crítica</b>
+<p>
+                    I: -1 crítico<br/>
+                    II: -2<br/>
                     III: -3
                 </p>
-            </div>
-
-            <div class="runa" id="runa-nm">
-                <b>NM — Magia</b>
-                <p>
-                    I: +1 poder mágico<br>
-                    II: +2<br>
+</div>
+<div class="runa" id="runa-nm">
+<b>NM — Magia</b>
+<p>
+                    I: +1 poder mágico<br/>
+                    II: +2<br/>
                     III: +3
                 </p>
-            </div>
-
-            <div class="runa" id="runa-ra">
-                <b>RA — Retorno</b>
-                <p>
+</div>
+<div class="runa" id="runa-ra">
+<b>RA — Retorno</b>
+<p>
                     Runa especializada em efeitos
                     de retorno e contra-ataque.
                 </p>
-            </div>
-
-        </div>
-
-        <p style="margin-top:20px;">
-            <b>Regra:</b>
+</div>
+</div>
+<p style="margin-top:20px;">
+<b>Regra:</b>
             Máximo +3 por runa | Até 10 runas por item.
         </p>
-
-        <!-- RUNAS AVANÇADAS -->
-        <h2>📜 Runas Avançadas — Nível 4 até 8</h2>
-
-        <div class="runa-avancada" id="runa-si">
-            <b>SI — Silêncio Arcano 4</b>
-            <p><b>Efeito:</b> Bloqueia magias.</p>
-            <p><b>Duração:</b> 5 turnos.</p>
-            <p><b>Habilidade:</b> Quebra de Conjuração.</p>
-            <p>Interrompe magias em canalização e aplica -1 sucesso no próximo turno do alvo.</p>
-            <p><b>Passiva:</b> Eco Silencioso.</p>
-            <p>Se o alvo tentar usar magia, sofre 3 pontos de dano.</p>
-        </div>
-
-        <div class="runa-avancada" id="runa-sp">
-            <b>SP — Supressão de Mana 6</b>
-            <p><b>Efeito:</b> Impede uso de mana.</p>
-            <p><b>Duração:</b> 5 turnos.</p>
-            <p><b>Habilidade:</b> Drenagem Arcana.</p>
-            <p>Rouba 1 ponto de mana por turno do alvo.</p>
-            <p><b>Passiva:</b> Vazio Interno.</p>
-            <p>Inimigos afetados têm regeneração de mana reduzida a 0.</p>
-        </div>
-
-        <div class="runa-avancada" id="runa-sm">
-            <b>SM — Anulação Total 8</b>
-            <p><b>Efeito:</b> Bloqueia mana, habilidades e passivas.</p>
-            <p><b>Duração:</b> 5 turnos.</p>
-            <p><b>Habilidade:</b> Zona Nula.</p>
-            <p>Cria uma área onde nenhuma habilidade funciona. Alcance: 3m.</p>
-            <p><b>Passiva:</b> Colapso Arcano.</p>
-            <p>Alvos afetados sofrem -1 ação por turno.</p>
-        </div>
-
-        <!-- RUNAS LENDÁRIAS -->
-        <h2>🌟 Runas Lendárias — Junção 8 até 10</h2>
-
-        <div class="runa-avancada lendaria" id="runa-ordem">
-            <h3>⚖️ Runa da Ordem</h3>
-            <p><b>Combinação:</b> VI + RM + RC</p>
-            <p><b>Efeito:</b> O alvo é controlado pelo oponente por 5 rodadas para receber ordens.</p>
-            <p><b>Bônus:</b> Imune a penalidades de dados.</p>
-        </div>
-
-        <div class="runa-avancada lendaria" id="runa-morte">
-            <h3>☠️ Runa da Morte</h3>
-            <p><b>Combinação:</b> DN + NM + IA</p>
-            <p><b>Efeito:</b> Aplica dano contínuo por 2 turnos.</p>
-            <p><b>Bônus:</b> Inimigos não regeneram enquanto afetados.</p>
-        </div>
-
-        <div class="runa-avancada lendaria" id="runa-destruicao">
-            <h3>🔥 Runa da Destruição</h3>
-            <p><b>Combinação:</b> AF + DN + IA</p>
-            <p><b>Efeito:</b> +3 dano e quebra armadura.</p>
-            <p><b>Bônus:</b> Ataques críticos causam dano em área.</p>
-        </div>
-
-        <div class="runa-avancada lendaria" id="runa-arcanista">
-            <h3>🧠 Runa do Arcanista</h3>
-            <p><b>Combinação:</b> AM + NM + MN</p>
-            <p><b>Efeito:</b> +2 poder mágico e regeneração alta.</p>
-            <p><b>Bônus:</b> Reduz custo de mana em -1.</p>
-        </div>
-
-        <div class="runa-avancada lendaria" id="runa-fortaleza">
-            <h3>🛡️ Runa da Fortaleza</h3>
-            <p><b>Combinação:</b> VT + RM + RC</p>
-            <p><b>Efeito:</b> Reduz dano e crítico.</p>
-            <p><b>Bônus:</b> Recupera vida ao bloquear.</p>
-        </div>
-
-        <div class="runa-avancada lendaria" id="runa-cacador">
-            <h3>🏹 Runa do Caçador</h3>
-            <p><b>Combinação:</b> AC + DN + RA</p>
-            <p><b>Efeito:</b> Ataques retornam e ganham precisão.</p>
-            <p><b>Bônus:</b> +1 sucesso à distância.</p>
-        </div>
-
-        <div class="runa-avancada lendaria" id="runa-vazio">
-            <h3>🌑 Runa do Vazio</h3>
-            <p><b>Combinação:</b> SM + NM + AC</p>
-            <p><b>Efeito:</b> Zona que bloqueia magia.</p>
-            <p><b>Bônus:</b> Inimigos dentro recebem -1 ação.</p>
-        </div>
-
-        <div class="runa-avancada lendaria" id="runa-fluxo">
-            <h3>⚡ Runa do Fluxo</h3>
-            <p><b>Combinação:</b> MN + VT + VI</p>
-            <p><b>Efeito:</b> Regeneração contínua.</p>
-            <p><b>Bônus:</b> Cura aumenta a cada turno.</p>
-        </div>
-
-        <!-- NÍVEIS -->
-        <h2>💎 Níveis de Runa</h2>
-
-        <ul>
-            <li><b>Iniciante (I)</b> — efeito básico: 1 até 4</li>
-            <li><b>Profissional (II)</b> — efeito dobrado: 4 até 8</li>
-            <li><b>Mestre (III)</b> — efeito máximo: 8 até 10</li>
-            <li><b>Lendária</b> — combinação única, conta como 3 runas</li>
-        </ul>
-
-        <p style="margin-top:25px;">
+<!-- RUNAS AVANÇADAS -->
+<h2>📜 Runas Avançadas — Nível 4 até 8</h2>
+<div class="runa-avancada" id="runa-si">
+<b>SI — Silêncio Arcano 4</b>
+<p><b>Efeito:</b> Bloqueia magias.</p>
+<p><b>Duração:</b> 5 turnos.</p>
+<p><b>Habilidade:</b> Quebra de Conjuração.</p>
+<p>Interrompe magias em canalização e aplica -1 sucesso no próximo turno do alvo.</p>
+<p><b>Passiva:</b> Eco Silencioso.</p>
+<p>Se o alvo tentar usar magia, sofre 3 pontos de dano.</p>
+</div>
+<div class="runa-avancada" id="runa-sp">
+<b>SP — Supressão de Mana 6</b>
+<p><b>Efeito:</b> Impede uso de mana.</p>
+<p><b>Duração:</b> 5 turnos.</p>
+<p><b>Habilidade:</b> Drenagem Arcana.</p>
+<p>Rouba 1 ponto de mana por turno do alvo.</p>
+<p><b>Passiva:</b> Vazio Interno.</p>
+<p>Inimigos afetados têm regeneração de mana reduzida a 0.</p>
+</div>
+<div class="runa-avancada" id="runa-sm">
+<b>SM — Anulação Total 8</b>
+<p><b>Efeito:</b> Bloqueia mana, habilidades e passivas.</p>
+<p><b>Duração:</b> 5 turnos.</p>
+<p><b>Habilidade:</b> Zona Nula.</p>
+<p>Cria uma área onde nenhuma habilidade funciona. Alcance: 3m.</p>
+<p><b>Passiva:</b> Colapso Arcano.</p>
+<p>Alvos afetados sofrem -1 ação por turno.</p>
+</div>
+<!-- RUNAS LENDÁRIAS -->
+<h2>🌟 Runas Lendárias — Junção 8 até 10</h2>
+<div class="runa-avancada lendaria" id="runa-ordem">
+<h3>⚖️ Runa da Ordem</h3>
+<p><b>Combinação:</b> VI + RM + RC</p>
+<p><b>Efeito:</b> O alvo é controlado pelo oponente por 5 rodadas para receber ordens.</p>
+<p><b>Bônus:</b> Imune a penalidades de dados.</p>
+</div>
+<div class="runa-avancada lendaria" id="runa-morte">
+<h3>☠️ Runa da Morte</h3>
+<p><b>Combinação:</b> DN + NM + IA</p>
+<p><b>Efeito:</b> Aplica dano contínuo por 2 turnos.</p>
+<p><b>Bônus:</b> Inimigos não regeneram enquanto afetados.</p>
+</div>
+<div class="runa-avancada lendaria" id="runa-destruicao">
+<h3>🔥 Runa da Destruição</h3>
+<p><b>Combinação:</b> AF + DN + IA</p>
+<p><b>Efeito:</b> +3 dano e quebra armadura.</p>
+<p><b>Bônus:</b> Ataques críticos causam dano em área.</p>
+</div>
+<div class="runa-avancada lendaria" id="runa-arcanista">
+<h3>🧠 Runa do Arcanista</h3>
+<p><b>Combinação:</b> AM + NM + MN</p>
+<p><b>Efeito:</b> +2 poder mágico e regeneração alta.</p>
+<p><b>Bônus:</b> Reduz custo de mana em -1.</p>
+</div>
+<div class="runa-avancada lendaria" id="runa-fortaleza">
+<h3>🛡️ Runa da Fortaleza</h3>
+<p><b>Combinação:</b> VT + RM + RC</p>
+<p><b>Efeito:</b> Reduz dano e crítico.</p>
+<p><b>Bônus:</b> Recupera vida ao bloquear.</p>
+</div>
+<div class="runa-avancada lendaria" id="runa-cacador">
+<h3>🏹 Runa do Caçador</h3>
+<p><b>Combinação:</b> AC + DN + RA</p>
+<p><b>Efeito:</b> Ataques retornam e ganham precisão.</p>
+<p><b>Bônus:</b> +1 sucesso à distância.</p>
+</div>
+<div class="runa-avancada lendaria" id="runa-vazio">
+<h3>🌑 Runa do Vazio</h3>
+<p><b>Combinação:</b> SM + NM + AC</p>
+<p><b>Efeito:</b> Zona que bloqueia magia.</p>
+<p><b>Bônus:</b> Inimigos dentro recebem -1 ação.</p>
+</div>
+<div class="runa-avancada lendaria" id="runa-fluxo">
+<h3>⚡ Runa do Fluxo</h3>
+<p><b>Combinação:</b> MN + VT + VI</p>
+<p><b>Efeito:</b> Regeneração contínua.</p>
+<p><b>Bônus:</b> Cura aumenta a cada turno.</p>
+</div>
+<!-- NÍVEIS -->
+<h2>💎 Níveis de Runa</h2>
+<ul>
+<li><b>Iniciante (I)</b> — efeito básico: 1 até 4</li>
+<li><b>Profissional (II)</b> — efeito dobrado: 4 até 8</li>
+<li><b>Mestre (III)</b> — efeito máximo: 8 até 10</li>
+<li><b>Lendária</b> — combinação única, conta como 3 runas</li>
+</ul>
+<p style="margin-top:25px;">
             🔥 <b>Evolução:</b>
             Para evoluir uma runa para o próximo nível,
             o jogador deve encontrá-la através de
             <b>loot de inimigos</b> ou durante
             <b>explorações</b>.
         </p>
-
-    </main>
-
-    <div class="rodape-bottom">
+</main>
+<div class="rodape-bottom">
             ⚔️ Nexalis RPG — Sistema de Runas
-            <br>
+            <br/>
             Forjado nas sombras. Dominado pelas runas.
         </div>
-
-    
 </body>
 </html>

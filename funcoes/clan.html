@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
 
+<html lang="pt-BR">
 <head>
-    <link rel="stylesheet" href="../site.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HURRAS FANTASY - Criação Infernal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
-    <link href="/funcoes/css/CLAN.CSS" rel="stylesheet">
-    <style>
+<link href="../site.css" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HURRAS FANTASY - Criação Infernal</title>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&amp;family=UnifrakturMaguntia&amp;display=swap" rel="stylesheet"/>
+<link href="/funcoes/css/CLAN.CSS" rel="stylesheet"/>
+<style>
         body {
             background: #1a1a1a;
             color: #e8e0c8;
@@ -361,243 +361,212 @@
             }
         }
     </style>
-</head>
-
+<meta content="strict-origin-when-cross-origin" name="referrer"/></head>
 <body>
-
-    <nav class="navbar">
-        <div class="container-nav">
-            <div class="links">
-                <a href="../funcoes/inicio.html">historia </a>
-                <a href="racaeclasses.html">Raças e Classes</a>
-                <a href="/armas/armas.html">Armas</a>
-                <a href="../funcoes/sistema.html">sistema</a>
-                <a href="../funcoes/inimigo.html">inimigos</a>
-                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
-                <a href="..//funcoes/magia.html">magias</a>
-                <a href="..//funcoes/porção.html">porção</a>
-                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
-                <a href="/funcoes/mapas.html">mapas</a>
-                <a href="/funcoes/clan.html">Criação de Ficha</a>
-
-            </div>
-        </div>
-    </nav>
-
-    <div class="controls">
-    <h1 style="margin:0 0 8px;color:#f0d78c;letter-spacing:3px;">HURRAS FANTASY</h1>
-    <h2 style="margin:0 0 16px;color:#c9a227;font-size:14px;letter-spacing:2px;">✦ FICHA INFERNAL ✦</h2>
-
-    <label for="nome">Nome</label>
-    <input type="text" id="nome" placeholder="Nome do personagem" oninput="atualizarCabecalho()">
-
-    <label for="nivel">Nível</label>
-    <select id="nivel" onchange="criarFicha()">
-        <option value="1">Nível 1</option>
-        <option value="2">Nível 2</option>
-        <option value="3">Nível 3</option>
-        <option value="4">Nível 4</option>
-        <option value="5">Nível 5</option>
-        <option value="6">Nível 6</option>
-        <option value="7">Nível 7</option>
-        <option value="8">Nível 8</option>
-        <option value="9">Nível 9</option>
-        <option value="10">Nível 10</option>
-    </select>
-
-    <label for="raca">Raça</label>
-    <select id="raca" onchange="criarFicha()">
-        <option value="Humano">Humano</option>
-        <option value="Anjo">Anjo</option>
-        <option value="Anão">Anão</option>
-        <option value="Demônio">Demônio</option>
-        <option value="Djinn">Djinn</option>
-        <option value="Draconiano">Draconiano</option>
-        <option value="Elfo">Elfo</option>
-        <option value="Fada">Fada</option>
-        <option value="Faunos e Sátiros">Faunos e Sátiros</option>
-        <option value="Gigante">Gigante</option>
-        <option value="Goblin">Goblin</option>
-        <option value="Homem-Fera">Homem-Fera</option>
-        <option value="Lich">Lich</option>
-        <option value="Lobisomem">Lobisomem</option>
-        <option value="Meio-Elfo">Meio-Elfo</option>
-        <option value="Meio-Orc">Meio-Orc</option>
-        <option value="Metamorfo">Metamorfo</option>
-        <option value="Minotauro">Minotauro</option>
-        <option value="Orc">Orc</option>
-        <option value="Reptiliano">Reptiliano</option>
-        <option value="Sereianos">Sereianos</option>
-        <option value="Troll">Troll</option>
-        <option value="Vampiro">Vampiro</option>
-        <option value="Zumbi">Zumbi</option>
-    </select>
-
-    <label for="classe">Classe</label>
-    <select id="classe" onchange="onClasseChange()">
-        <option value="Arqueiro">Arqueiro</option>
-        <option value="Bardo">Bardo</option>
-        <option value="Bruxo">Bruxo</option>
-        <option value="Clérigo">Clérigo</option>
-        <option value="Domador">Domador</option>
-        <option value="Druida">Druida</option>
-        <option value="Guerreiro">Guerreiro</option>
-        <option value="Ladino">Ladino</option>
-        <option value="Lanceiro">Lanceiro</option>
-        <option value="Mago">Mago</option>
-        <option value="Monge">Monge</option>
-        <option value="Necromante">Necromante</option>
-        <option value="Ninja">Ninja</option>
-        <option value="Tecnomancer">Tecnomancer</option>
-        <option value="Transmutador">Transmutador</option>
-    </select>
-
-    <br>
-
-    <label for="natureza">Natureza</label>
-    <select id="natureza" onchange="criarFicha(true)">
-        <option value="">—</option>
-        <option>Anti-Herói</option>
-        <option>Artista</option>
-        <option>Aventureiro</option>
-        <option>Bon Vivant</option>
-        <option>Bravo</option>
-        <option>Caçador de Recompensas</option>
-        <option>Cavaleiro</option>
-        <option>Cético</option>
-        <option>Contrabandista</option>
-        <option>Curador</option>
-        <option>Desbravador</option>
-        <option>Destruidor</option>
-        <option>Diplomata</option>
-        <option>Dissimulado</option>
-        <option>Enganador</option>
-        <option>Errante</option>
-        <option>Estrategista</option>
-        <option>Explorador Urbano</option>
-        <option>Fanático</option>
-        <option>Filantropo</option>
-        <option>Filósofo</option>
-        <option>Guerreiro</option>
-        <option>Hedonista</option>
-        <option>Herói</option>
-        <option>Inventor</option>
-        <option>Investigador</option>
-        <option>Líder</option>
-        <option>Mártir</option>
-        <option>Mentor</option>
-        <option>Otimista</option>
-        <option>Pária</option>
-        <option>Perfeccionista</option>
-        <option>Pirata</option>
-        <option>Poeta</option>
-        <option>Protetor</option>
-        <option>Realista</option>
-        <option>Recluso</option>
-        <option>Revolucionário</option>
-        <option>Romântico</option>
-        <option>Sábio</option>
-        <option>Sobrevivente</option>
-        <option>Solitário</option>
-        <option>Vilão</option>
-        <option>Vingador</option>
-        <option>Visionário</option>
-    </select>
-
-    <label for="profissao">Profissão</label>
-    <select id="profissao" onchange="criarFicha(true)">
-        <option value="">—</option>
-        <option value="Alquimista">Alquimista</option>
-        <option value="Armeiro">Armeiro</option>
-        <option value="Artífice">Artífice</option>
-        <option value="Encantador">Encantador</option>
-        <option value="Engenheiro">Engenheiro</option>
-        <option value="Médico">Médico</option>
-    </select>
-
-    <br>
-
-    <label for="subclasse">Subclasse</label>
-    <select id="subclasse" onchange="criarFicha()">
-        <option value="">Selecione uma subclasse</option>
-
-        <optgroup label="Arqueiro">
-            <option value="Patrulheiro">Patrulheiro</option>
-            <option value="Atirador">Atirador</option>
-        </optgroup>
-
-        <optgroup label="Bardo">
-            <option value="InicianteBardo">Iniciante</option>
-            <option value="Musico">Músico</option>
-        </optgroup>
-
-        <optgroup label="Bruxo">
-            <option value="FeiticeiroBruxo">Feiticeiro</option>
-            <option value="PaladinoNegro">Paladino Negro</option>
-        </optgroup>
-
-        <optgroup label="Clérigo">
-            <option value="Sacerdote">Sacerdote</option>
-            <option value="Paladino">Paladino</option>
-        </optgroup>
-
-        <optgroup label="Domador">
-            <option value="ControladorDeBestas">Controlador de Bestas</option>
-        </optgroup>
-
-        <optgroup label="Druida">
-            <option value="Xama">Xamã</option>
-            <option value="MetamorfoDruida">Metamorfo</option>
-        </optgroup>
-
-        <optgroup label="Guerreiro">
-            <option value="Barbaro">Bárbaro</option>
-            <option value="Espadachim">Espadachim</option>
-        </optgroup>
-
-        <optgroup label="Ladino">
-            <option value="Assassino">Assassino</option>
-            <option value="Ladrao">Ladrão</option>
-        </optgroup>
-
-        <optgroup label="Lanceiro">
-            <option value="MestreDasLancas">Mestre das Lanças</option>
-            <option value="CampeaoReal">Campeão Real</option>
-        </optgroup>
-
-        <optgroup label="Mago">
-            <option value="FeiticeiroMago">Feiticeiro</option>
-            <option value="Elementalista">Elementalista</option>
-        </optgroup>
-
-        <optgroup label="Monge">
-            <option value="ArtistaMarcial">Artista Marcial</option>
-            <option value="DobradorElemental">Dobrador Elemental</option>
-        </optgroup>
-
-        <optgroup label="Necromante">
-            <option value="Conjurador">Conjurador</option>
-            <option value="Sombrio">Sombrio</option>
-        </optgroup>
-
-        <optgroup label="Ninja">
-            <option value="Jounin">Jounin</option>
-        </optgroup>
-
-        <optgroup label="Tecnomancer">
-            <option value="Arquitecnomante">Arquitécnomante</option>
-        </optgroup>
-
-        <optgroup label="Transmutador">
-            <option value="MestreDaTransmutacao">Mestre da Transmutação</option>
-        </optgroup>
-    </select>
-
-    <br>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-
-    <script>
+<nav class="navbar">
+<div class="container-nav">
+<div class="links">
+<a href="../funcoes/inicio.html">historia </a>
+<a href="racaeclasses.html">Raças e Classes</a>
+<a href="/armas/armas.html">Armas</a>
+<a href="../funcoes/sistema.html">sistema</a>
+<a href="../funcoes/inimigo.html">inimigos</a>
+<a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
+<a href="..//funcoes/magia.html">magias</a>
+<a href="..//funcoes/porção.html">porção</a>
+<a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
+<a href="/funcoes/mapas.html">mapas</a>
+<a href="/funcoes/clan.html">Criação de Ficha</a>
+</div>
+</div>
+</nav>
+<div class="controls">
+<h1 style="margin:0 0 8px;color:#f0d78c;letter-spacing:3px;">HURRAS FANTASY</h1>
+<h2 style="margin:0 0 16px;color:#c9a227;font-size:14px;letter-spacing:2px;">✦ FICHA INFERNAL ✦</h2>
+<label for="nome">Nome</label>
+<input id="nome" oninput="atualizarCabecalho()" placeholder="Nome do personagem" type="text"/>
+<label for="nivel">Nível</label>
+<select id="nivel" onchange="criarFicha()">
+<option value="1">Nível 1</option>
+<option value="2">Nível 2</option>
+<option value="3">Nível 3</option>
+<option value="4">Nível 4</option>
+<option value="5">Nível 5</option>
+<option value="6">Nível 6</option>
+<option value="7">Nível 7</option>
+<option value="8">Nível 8</option>
+<option value="9">Nível 9</option>
+<option value="10">Nível 10</option>
+</select>
+<label for="raca">Raça</label>
+<select id="raca" onchange="criarFicha()">
+<option value="Humano">Humano</option>
+<option value="Anjo">Anjo</option>
+<option value="Anão">Anão</option>
+<option value="Demônio">Demônio</option>
+<option value="Djinn">Djinn</option>
+<option value="Draconiano">Draconiano</option>
+<option value="Elfo">Elfo</option>
+<option value="Fada">Fada</option>
+<option value="Faunos e Sátiros">Faunos e Sátiros</option>
+<option value="Gigante">Gigante</option>
+<option value="Goblin">Goblin</option>
+<option value="Homem-Fera">Homem-Fera</option>
+<option value="Lich">Lich</option>
+<option value="Lobisomem">Lobisomem</option>
+<option value="Meio-Elfo">Meio-Elfo</option>
+<option value="Meio-Orc">Meio-Orc</option>
+<option value="Metamorfo">Metamorfo</option>
+<option value="Minotauro">Minotauro</option>
+<option value="Orc">Orc</option>
+<option value="Reptiliano">Reptiliano</option>
+<option value="Sereianos">Sereianos</option>
+<option value="Troll">Troll</option>
+<option value="Vampiro">Vampiro</option>
+<option value="Zumbi">Zumbi</option>
+</select>
+<label for="classe">Classe</label>
+<select id="classe" onchange="onClasseChange()">
+<option value="Arqueiro">Arqueiro</option>
+<option value="Bardo">Bardo</option>
+<option value="Bruxo">Bruxo</option>
+<option value="Clérigo">Clérigo</option>
+<option value="Domador">Domador</option>
+<option value="Druida">Druida</option>
+<option value="Guerreiro">Guerreiro</option>
+<option value="Ladino">Ladino</option>
+<option value="Lanceiro">Lanceiro</option>
+<option value="Mago">Mago</option>
+<option value="Monge">Monge</option>
+<option value="Necromante">Necromante</option>
+<option value="Ninja">Ninja</option>
+<option value="Tecnomancer">Tecnomancer</option>
+<option value="Transmutador">Transmutador</option>
+</select>
+<br/>
+<label for="natureza">Natureza</label>
+<select id="natureza" onchange="criarFicha(true)">
+<option value="">—</option>
+<option>Anti-Herói</option>
+<option>Artista</option>
+<option>Aventureiro</option>
+<option>Bon Vivant</option>
+<option>Bravo</option>
+<option>Caçador de Recompensas</option>
+<option>Cavaleiro</option>
+<option>Cético</option>
+<option>Contrabandista</option>
+<option>Curador</option>
+<option>Desbravador</option>
+<option>Destruidor</option>
+<option>Diplomata</option>
+<option>Dissimulado</option>
+<option>Enganador</option>
+<option>Errante</option>
+<option>Estrategista</option>
+<option>Explorador Urbano</option>
+<option>Fanático</option>
+<option>Filantropo</option>
+<option>Filósofo</option>
+<option>Guerreiro</option>
+<option>Hedonista</option>
+<option>Herói</option>
+<option>Inventor</option>
+<option>Investigador</option>
+<option>Líder</option>
+<option>Mártir</option>
+<option>Mentor</option>
+<option>Otimista</option>
+<option>Pária</option>
+<option>Perfeccionista</option>
+<option>Pirata</option>
+<option>Poeta</option>
+<option>Protetor</option>
+<option>Realista</option>
+<option>Recluso</option>
+<option>Revolucionário</option>
+<option>Romântico</option>
+<option>Sábio</option>
+<option>Sobrevivente</option>
+<option>Solitário</option>
+<option>Vilão</option>
+<option>Vingador</option>
+<option>Visionário</option>
+</select>
+<label for="profissao">Profissão</label>
+<select id="profissao" onchange="criarFicha(true)">
+<option value="">—</option>
+<option value="Alquimista">Alquimista</option>
+<option value="Armeiro">Armeiro</option>
+<option value="Artífice">Artífice</option>
+<option value="Encantador">Encantador</option>
+<option value="Engenheiro">Engenheiro</option>
+<option value="Médico">Médico</option>
+</select>
+<br/>
+<label for="subclasse">Subclasse</label>
+<select id="subclasse" onchange="criarFicha()">
+<option value="">Selecione uma subclasse</option>
+<optgroup label="Arqueiro">
+<option value="Patrulheiro">Patrulheiro</option>
+<option value="Atirador">Atirador</option>
+</optgroup>
+<optgroup label="Bardo">
+<option value="InicianteBardo">Iniciante</option>
+<option value="Musico">Músico</option>
+</optgroup>
+<optgroup label="Bruxo">
+<option value="FeiticeiroBruxo">Feiticeiro</option>
+<option value="PaladinoNegro">Paladino Negro</option>
+</optgroup>
+<optgroup label="Clérigo">
+<option value="Sacerdote">Sacerdote</option>
+<option value="Paladino">Paladino</option>
+</optgroup>
+<optgroup label="Domador">
+<option value="ControladorDeBestas">Controlador de Bestas</option>
+</optgroup>
+<optgroup label="Druida">
+<option value="Xama">Xamã</option>
+<option value="MetamorfoDruida">Metamorfo</option>
+</optgroup>
+<optgroup label="Guerreiro">
+<option value="Barbaro">Bárbaro</option>
+<option value="Espadachim">Espadachim</option>
+</optgroup>
+<optgroup label="Ladino">
+<option value="Assassino">Assassino</option>
+<option value="Ladrao">Ladrão</option>
+</optgroup>
+<optgroup label="Lanceiro">
+<option value="MestreDasLancas">Mestre das Lanças</option>
+<option value="CampeaoReal">Campeão Real</option>
+</optgroup>
+<optgroup label="Mago">
+<option value="FeiticeiroMago">Feiticeiro</option>
+<option value="Elementalista">Elementalista</option>
+</optgroup>
+<optgroup label="Monge">
+<option value="ArtistaMarcial">Artista Marcial</option>
+<option value="DobradorElemental">Dobrador Elemental</option>
+</optgroup>
+<optgroup label="Necromante">
+<option value="Conjurador">Conjurador</option>
+<option value="Sombrio">Sombrio</option>
+</optgroup>
+<optgroup label="Ninja">
+<option value="Jounin">Jounin</option>
+</optgroup>
+<optgroup label="Tecnomancer">
+<option value="Arquitecnomante">Arquitécnomante</option>
+</optgroup>
+<optgroup label="Transmutador">
+<option value="MestreDaTransmutacao">Mestre da Transmutação</option>
+</optgroup>
+</select>
+<br/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
         function gerarPDF() {
             const ficha = document.querySelector(".ficha-oficial") || document.getElementById("ficha");
 
@@ -613,15 +582,12 @@
                 .save();
         }
     </script>
-
-    <button onclick="gerarPDF()">Gerar PDF</button>
-    <button onclick="criarFicha()">Gerar Ficha</button>
-    <button onclick="criarAleatorio()">🎲 Aleatório Completo</button>
-    </div>
-
-    <div id="ficha" class="ficha"></div>
-
-    <script>
+<button onclick="gerarPDF()">Gerar PDF</button>
+<button onclick="criarFicha()">Gerar Ficha</button>
+<button onclick="criarAleatorio()">🎲 Aleatório Completo</button>
+</div>
+<div class="ficha" id="ficha"></div>
+<script>
         const racas = {
             Anjo: {
                 nome: "Anjo",

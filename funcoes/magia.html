@@ -1,13 +1,12 @@
 <!DOCTYPE html>
+
 <html lang="pt-br">
-
 <head>
-    <link rel="stylesheet" href="../site.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grimório Elemental - Infernal</title>
-
-    <style>
+<link href="../site.css" rel="stylesheet"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grimório Elemental - Infernal</title>
+<style>
         /* =========================
    TEMA DIABLO / INFERNO RPG
 ========================= */
@@ -286,1201 +285,871 @@
             }
         }
     </style>
-</head>
-
+<meta content="strict-origin-when-cross-origin" name="referrer"/></head>
 <body>
-
-
-    <nav class="navbar">
-        <div class="container-nav">
-            <div class="links">
-                <a href="../funcoes/inicio.html">historia </a>
-                <a href="racaeclasses.html">Raças e Classes</a>
-                <a href="/armas/armas.html">Armas</a>
-                <a href="../funcoes/sistema.html">sistema</a>
-                <a href="../funcoes/inimigo.html">inimigos</a>
-                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
-                <a href="..//funcoes/magia.html">magias</a>
-                <a href="..//funcoes/porção.html">porção</a>
-                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
-                <a href="/funcoes/mapas.html">mapas</a>
-                <a href="/funcoes/clan.html">Criação de Ficha</a>
-
-            </div>
-        </div>
-    </nav>
-
-
-
-    <div class="grimorio">
-
-        <div class="tabs">
-
-            <button class="active" onclick="openTab(event,'fogo')">🔥 Fogo</button>
-            <button class="active" onclick="openTab(event,'agua')">💧 Água</button>
-            <button class="active" onclick="openTab(event,'vento')">🌪️ Vento</button>
-            <button class="active" onclick="openTab(event,'terra')">🌿 Terra</button>
-            <button class="active" onclick="openTab(event,'raio')">⚡ Raio</button>
-            <button class="active" onclick="openTab(event,'veneno')">☠️ Veneno</button>
-            <button class="active" onclick="openTab(event,'mental')">🧠 Mental</button>
-            <button class="active" onclick="openTab(event,'sombra')">🌑 Sombrio</button>
-            <button class="active" onclick="openTab(event,'sagrado')">✨ Sagrado</button>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-    <div id="fogo" class="tab-content active">
-
-        <h1>Fogo</h1>
-
-        <span class="scaling-info">(Inteligência + Nível Magico de Fogo)</span>
-
-
-
-        <h2>🔥 Nível Aprendiz</h2>
-
-        <div class="magia-card">
-            <h3>Bola de Fogo</h3>
-            <p>Uma esfera flamejante explode ao atingir o alvo.</p>
-            <div class="info-row">🎲 2d8 | 📏 12m | ⚡ 5 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Chuva de Brasas</h3>
-            <p>Pequenas brasas caem sobre uma área.</p>
-            <div class="info-row">🎲 3d4 | Área 3m | 🔥 Queimadura 1 turno | ⚡ 6 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Toque Incandescente</h3>
-            <p>As mãos do conjurador queimam tudo que tocam.</p>
-            <div class="info-row">🎲 2d6 | 🔥 Queimadura | ⚡ 5 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Aura Flamejante</h3>
-            <p>O corpo é envolvido por chamas.</p>
-            <div class="info-row">🛡️ Inimigos adjacentes sofrem 1d6 por turno | ⏳ 3 turnos | ⚡ 6 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Explosão Ígnea</h3>
-            <p>Uma explosão de fogo atinge todos próximos.</p>
-            <div class="info-row">🎲 5d6 | Área 5m | ⚡ 14 Mana</div>
-        </div>
-
-
-        <h2>🔥 Nível Profissional</h2>
-
-        <div class="magia-card">
-            <h3>Bafo do Dragão</h3>
-            <p>Uma torrente de fogo consome os inimigos à frente.</p>
-            <div class="info-row">🎲 5d6 | Cone 8m | 🔥 Queimadura | ⚡ 15 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Chama de Hélios</h3>
-            <p>Uma chama divina persegue o alvo.</p>
-            <div class="info-row">🎲 4d8 | Não pode ser esquivada | ⚡ 12 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Parede de Fogo</h3>
-            <p>Cria uma muralha de chamas.</p>
-            <div class="info-row">🔥 Área 8m | 2d6 por turno | ⏳ 4 turnos | ⚡ 14 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Fênix Ardente</h3>
-            <p>Invoca uma fênix de fogo para lutar.</p>
-            <div class="info-row">🦅 Invocação | ⏳ 4 turnos | ⚡ 20 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Armadura Flamejante</h3>
-            <p>Uma armadura de fogo protege o conjurador.</p>
-            <div class="info-row">🛡️ +4 Defesa | Reflete 2d6 | ⚡ 20 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Explosão Solar</h3>
-            <p>Uma explosão de calor intenso cega os inimigos.</p>
-            <div class="info-row">🎲 6d6 | 👁️ Cega 1 turno | ⚡ 22 Mana</div>
-        </div>
-
-
-        <h2>🔥 Nível Mestre</h2>
-
-        <div class="magia-card">
-            <h3>Inferno de Ifrit</h3>
-            <p>Um meteoro flamejante destrói a área.</p>
-            <div class="info-row">🎲 6d8 | Área 8m | 🔥 Queimadura | ⚡ 24 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Erupção Vulcânica</h3>
-            <p>O solo explode lançando lava.</p>
-            <div class="info-row">🎲 8d8 | Área 12m | ⚡ 30 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Lança Solar</h3>
-            <p>Uma lança de fogo perfura o inimigo.</p>
-            <div class="info-row">🎲 8d8 | Ignora 30% da Defesa | ⚡ 28 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Mar de Lava</h3>
-            <p>Transforma o terreno em lava.</p>
-            <div class="info-row">🔥 Área 10m | 3d6 por turno | ⚡ 30 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Sol Escaldante</h3>
-            <p>Um pequeno sol surge sobre o campo.</p>
-            <div class="info-row">☀️ Todos sofrem 2d8 por turno | ⏳ 4 turnos | ⚡ 32 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Avatar de Ifrit</h3>
-            <p>O conjurador torna-se a encarnação do fogo.</p>
-            <div class="info-row">🔥 +100% Dano de Fogo | Imune a fogo | ⏳ 5 turnos | ⚡ 45 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Supernova</h3>
-            <p>Uma explosão semelhante ao nascimento de uma estrela.</p>
-            <div class="info-row">🎲 10d10 | Área 15m | ⚡ 50 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Chamas do Juízo Final</h3>
-            <p>Colunas de fogo celestial atingem todo o campo.</p>
-            <div class="info-row">🎲 12d8 | Área 20m | Ignora Escudos | ⚡ 55 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Apocalipse de Fogo</h3>
-            <p>O mundo é consumido por um oceano de chamas.</p>
-            <div class="info-row">🎲 12d10 | Área 25m | Ignora Resistência Mágica | 🔥 Queimadura Permanente | ⚡
+<nav class="navbar">
+<div class="container-nav">
+<div class="links">
+<a href="../funcoes/inicio.html">historia </a>
+<a href="racaeclasses.html">Raças e Classes</a>
+<a href="/armas/armas.html">Armas</a>
+<a href="../funcoes/sistema.html">sistema</a>
+<a href="../funcoes/inimigo.html">inimigos</a>
+<a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
+<a href="..//funcoes/magia.html">magias</a>
+<a href="..//funcoes/porção.html">porção</a>
+<a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
+<a href="/funcoes/mapas.html">mapas</a>
+<a href="/funcoes/clan.html">Criação de Ficha</a>
+</div>
+</div>
+</nav>
+<div class="grimorio">
+<div class="tabs">
+<button class="active" onclick="openTab(event,'fogo')">🔥 Fogo</button>
+<button class="active" onclick="openTab(event,'agua')">💧 Água</button>
+<button class="active" onclick="openTab(event,'vento')">🌪️ Vento</button>
+<button class="active" onclick="openTab(event,'terra')">🌿 Terra</button>
+<button class="active" onclick="openTab(event,'raio')">⚡ Raio</button>
+<button class="active" onclick="openTab(event,'veneno')">☠️ Veneno</button>
+<button class="active" onclick="openTab(event,'mental')">🧠 Mental</button>
+<button class="active" onclick="openTab(event,'sombra')">🌑 Sombrio</button>
+<button class="active" onclick="openTab(event,'sagrado')">✨ Sagrado</button>
+</div>
+</div>
+<div class="tab-content active" id="fogo">
+<h1>Fogo</h1>
+<span class="scaling-info">(Inteligência + Nível Magico de Fogo)</span>
+<h2>🔥 Nível Aprendiz</h2>
+<div class="magia-card">
+<h3>Bola de Fogo</h3>
+<p>Uma esfera flamejante explode ao atingir o alvo.</p>
+<div class="info-row">🎲 2d8 | 📏 12m | ⚡ 5 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Chuva de Brasas</h3>
+<p>Pequenas brasas caem sobre uma área.</p>
+<div class="info-row">🎲 3d4 | Área 3m | 🔥 Queimadura 1 turno | ⚡ 6 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Toque Incandescente</h3>
+<p>As mãos do conjurador queimam tudo que tocam.</p>
+<div class="info-row">🎲 2d6 | 🔥 Queimadura | ⚡ 5 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Aura Flamejante</h3>
+<p>O corpo é envolvido por chamas.</p>
+<div class="info-row">🛡️ Inimigos adjacentes sofrem 1d6 por turno | ⏳ 3 turnos | ⚡ 6 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Explosão Ígnea</h3>
+<p>Uma explosão de fogo atinge todos próximos.</p>
+<div class="info-row">🎲 5d6 | Área 5m | ⚡ 14 Mana</div>
+</div>
+<h2>🔥 Nível Profissional</h2>
+<div class="magia-card">
+<h3>Bafo do Dragão</h3>
+<p>Uma torrente de fogo consome os inimigos à frente.</p>
+<div class="info-row">🎲 5d6 | Cone 8m | 🔥 Queimadura | ⚡ 15 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Chama de Hélios</h3>
+<p>Uma chama divina persegue o alvo.</p>
+<div class="info-row">🎲 4d8 | Não pode ser esquivada | ⚡ 12 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Parede de Fogo</h3>
+<p>Cria uma muralha de chamas.</p>
+<div class="info-row">🔥 Área 8m | 2d6 por turno | ⏳ 4 turnos | ⚡ 14 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Fênix Ardente</h3>
+<p>Invoca uma fênix de fogo para lutar.</p>
+<div class="info-row">🦅 Invocação | ⏳ 4 turnos | ⚡ 20 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Armadura Flamejante</h3>
+<p>Uma armadura de fogo protege o conjurador.</p>
+<div class="info-row">🛡️ +4 Defesa | Reflete 2d6 | ⚡ 20 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Explosão Solar</h3>
+<p>Uma explosão de calor intenso cega os inimigos.</p>
+<div class="info-row">🎲 6d6 | 👁️ Cega 1 turno | ⚡ 22 Mana</div>
+</div>
+<h2>🔥 Nível Mestre</h2>
+<div class="magia-card">
+<h3>Inferno de Ifrit</h3>
+<p>Um meteoro flamejante destrói a área.</p>
+<div class="info-row">🎲 6d8 | Área 8m | 🔥 Queimadura | ⚡ 24 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Erupção Vulcânica</h3>
+<p>O solo explode lançando lava.</p>
+<div class="info-row">🎲 8d8 | Área 12m | ⚡ 30 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Lança Solar</h3>
+<p>Uma lança de fogo perfura o inimigo.</p>
+<div class="info-row">🎲 8d8 | Ignora 30% da Defesa | ⚡ 28 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Mar de Lava</h3>
+<p>Transforma o terreno em lava.</p>
+<div class="info-row">🔥 Área 10m | 3d6 por turno | ⚡ 30 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Sol Escaldante</h3>
+<p>Um pequeno sol surge sobre o campo.</p>
+<div class="info-row">☀️ Todos sofrem 2d8 por turno | ⏳ 4 turnos | ⚡ 32 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Avatar de Ifrit</h3>
+<p>O conjurador torna-se a encarnação do fogo.</p>
+<div class="info-row">🔥 +100% Dano de Fogo | Imune a fogo | ⏳ 5 turnos | ⚡ 45 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Supernova</h3>
+<p>Uma explosão semelhante ao nascimento de uma estrela.</p>
+<div class="info-row">🎲 10d10 | Área 15m | ⚡ 50 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Chamas do Juízo Final</h3>
+<p>Colunas de fogo celestial atingem todo o campo.</p>
+<div class="info-row">🎲 12d8 | Área 20m | Ignora Escudos | ⚡ 55 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Apocalipse de Fogo</h3>
+<p>O mundo é consumido por um oceano de chamas.</p>
+<div class="info-row">🎲 12d10 | Área 25m | Ignora Resistência Mágica | 🔥 Queimadura Permanente | ⚡
                 60 Mana</div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="agua" class="tab-content  active ">
-
-        <h1>Água</h1>
-
-        <span class="scaling-info">(Inteligência + Nível Mágico de Água)</span>
-
-
-        <h2>💧 Nível Aprendiz</h2>
-
-        <div class="magia-card">
-            <h3>Jato de Água</h3>
-            <p>Um poderoso jato de água empurra o inimigo.</p>
-            <div class="info-row">🎲 2d6 | 📏 10m | 💨 Empurra 2m | ⚡ 4 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Gotas Congelantes</h3>
-            <p>Fragmentos de gelo perfuram o alvo.</p>
-            <div class="info-row">🎲 2d4 | ❄️ Reduz Movimento | ⚡ 5 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Névoa</h3>
-            <p>Uma espessa névoa reduz a visão dos inimigos.</p>
-            <div class="info-row">👁️ -2 Acerto | Área 5m | ⚡ 6 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Fonte Restauradora</h3>
-            <p>Água pura restaura ferimentos leves.</p>
-            <div class="info-row">💚 Cura 2d6 | ⚡ 6 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Escudo de Água</h3>
-            <p>Uma barreira líquida reduz o dano recebido.</p>
-            <div class="info-row">🛡️ Absorve 3d8 | ⚡ 8 Mana</div>
-        </div>
-
-        <h2>💧 Nível Profissional</h2>
-
-        <div class="magia-card">
-            <h3>Nevasca</h3>
-            <p>Uma tempestade de neve cobre o campo.</p>
-            <div class="info-row">🎲 4d6 | ❄️ Lentidão | Área 6m | ⚡ 10 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Barreira de Água</h3>
-            <p>Protege aliados com uma muralha líquida.</p>
-            <div class="info-row">🛡️ Absorve 4d8 | ⚡ 12 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Lanças de Gelo</h3>
-            <p>Espinhos de gelo atravessam os inimigos.</p>
-            <div class="info-row">🎲 4d6 | Área 5m | ⚡ 12 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Correnteza</h3>
-            <p>Uma onda derruba e arrasta os inimigos.</p>
-            <div class="info-row">🎲 3d8 | Derruba | ⚡ 10 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Explosão de Gelo</h3>
-            <p>Explode gelo ao redor do conjurador.</p>
-            <div class="info-row">🎲 6d6 | ❄️ Congela 1 turno | Área 8m | ⚡ 18 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Prisão de Gelo</h3>
-            <p>Aprisiona completamente o alvo.</p>
-            <div class="info-row">🧊 Imobiliza 2 turnos | ⚡ 18 Mana</div>
-        </div>
-
-        <h2>💧 Nível Mestre</h2>
-
-        <div class="magia-card">
-            <h3>Serpente Marinha</h3>
-            <p>Invoca uma serpente feita de água.</p>
-            <div class="info-row">🐍 Invocação | ⏳ 4 turnos | ⚡ 20 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Chuva Congelante</h3>
-            <p>Granizo destrói todos os inimigos na área.</p>
-            <div class="info-row">🎲 5d8 | Área 8m | ❄️ Lentidão | ⚡ 20 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Maremoto</h3>
-            <p>Uma onda gigantesca invade o campo.</p>
-            <div class="info-row">🎲 8d8 | Área 12m | Derruba | ⚡ 35 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Iceberg</h3>
-            <p>Um enorme bloco de gelo despenca sobre o alvo.</p>
-            <div class="info-row">🎲 8d8 | ❄️ Congela | ⚡ 30 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Mar Revolto</h3>
-            <p>Ondas violentas impedem a movimentação.</p>
-            <div class="info-row">🌊 Área 15m | -50% Movimento | ⚡ 30 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Avatar de Poseidon</h3>
-            <p>O conjurador torna-se o senhor dos mares.</p>
-            <div class="info-row">🌊 +100% Dano de Água | Cura +100% | ⏳ 5 turnos | ⚡ 45 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Tsunami Absoluto</h3>
-            <p>Uma onda colossal destrói tudo em seu caminho.</p>
-            <div class="info-row">🎲 10d10 | Área 20m | Derruba todos | ⚡ 50 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Era Glacial</h3>
-            <p>O campo inteiro é congelado.</p>
-            <div class="info-row">🎲 12d8 | Área 25m | Congela sobreviventes | ⚡ 55 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Dilúvio Final</h3>
-            <p>As águas inundam completamente o campo de batalha.</p>
-            <div class="info-row">🎲 12d10 | Área 30m | Ignora Resistência Mágica | ⚡ 60 Mana</div>
-        </div>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="vento" class="tab-content   active ">
-
-        <h1>Vento</h1>
-
-        <span class="scaling-info">(Inteligência + Nível Mágico de Vento)</span>
-
-        <h2>🌪️ Nível Aprendiz</h2>
-
-        <div class="magia-card">
-            <h3>Lâmina de Vento</h3>
-            <p>Um corte de ar extremamente afiado.</p>
-            <div class="info-row">🎲 2d6 | 📏 10m | ⚡ 5 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Rajada de Vento</h3>
-            <p>Empurra e desequilibra o inimigo.</p>
-            <div class="info-row">🎲 1d8 | 💨 Empurra 3m | ⚡ 6 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Passo Leve</h3>
-            <p>O vento impulsiona seus movimentos.</p>
-            <div class="info-row">🏃 +2 Esquiva | ⏳ 3 turnos | ⚡ 5 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Brisa Curativa</h3>
-            <p>Uma corrente de ar revitaliza um aliado.</p>
-            <div class="info-row">💚 Cura 2d4 | ⚡ 6 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Salto dos Ventos</h3>
-            <p>Permite realizar saltos impossíveis.</p>
-            <div class="info-row">🪽 Salta até 15m | ⚡ 8 Mana</div>
-        </div>
-
-        <h2>🌪️ Nível Profissional</h2>
-
-        <div class="magia-card">
-            <h3>Velocidade do Vento</h3>
-            <p>O corpo torna-se extremamente veloz.</p>
-            <div class="info-row">⚡ +100% Reação e Investida | ⏳ 4 turnos | ⚡ 14 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Foices de Ar</h3>
-            <p>Diversas lâminas de vento cortam todos à frente.</p>
-            <div class="info-row">🎲 4d6 | Área 4m | ⚡ 12 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Corrente Ascendente</h3>
-            <p>Uma coluna de vento lança o inimigo ao alto.</p>
-            <div class="info-row">🎲 3d6 | 💨 Suspende 1 turno | ⚡ 10 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Tornado</h3>
-            <p>Um tornado arremessa os inimigos aos céus.</p>
-            <div class="info-row">🎲 6d6 | Área 6m | Dano de Queda | ⚡ 22 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Asas do Vento</h3>
-            <p>O conjurador ganha a capacidade de voar.</p>
-            <div class="info-row">🪽 Voo | ⏳ 5 turnos | ⚡ 18 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Muralha de Ar</h3>
-            <p>Uma barreira de vento reduz ataques à distância.</p>
-            <div class="info-row">🛡️ Reduz 50% do dano à distância | ⚡ 18 Mana</div>
-        </div>
-
-        <h2>🌪️ Nível Mestre</h2>
-
-        <div class="magia-card">
-            <h3>Tempestade de Lâminas</h3>
-            <p>Centenas de cortes de vento devastam a área.</p>
-            <div class="info-row">🎲 5d8 | Área 8m | ⚡ 20 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Vácuo</h3>
-            <p>Retira o oxigênio de uma grande área.</p>
-            <div class="info-row">💀 -5 Vigor por turno | Área 8m | ⏳ 4 turnos | ⚡ 28 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Furacão</h3>
-            <p>Um ciclone colossal destrói tudo ao redor.</p>
-            <div class="info-row">🎲 8d6 | Área 10m | Derruba | ⚡ 28 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Lança Celeste</h3>
-            <p>Uma lança de vento comprimido atravessa o alvo.</p>
-            <div class="info-row">🎲 8d8 | Ignora 30% da Defesa | ⚡ 30 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Olho da Tempestade</h3>
-            <p>Um ciclone protege o conjurador e fere quem se aproxima.</p>
-            <div class="info-row">🛡️ +5 Defesa | 🎲 2d6 por turno | ⚡ 30 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Avatar de Éolo</h3>
-            <p>O conjurador torna-se a personificação dos ventos.</p>
-            <div class="info-row">⚡ +100% Velocidade | +100% Dano de Vento | ⏳ 5 turnos | ⚡ 45 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Ciclone Absoluto</h3>
-            <p>Um ciclone colossal arrasta todos os inimigos.</p>
-            <div class="info-row">🎲 10d10 | Área 15m | Derruba Todos | ⚡ 50 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Tempestade Celestial</h3>
-            <p>Milhares de lâminas de vento caem dos céus.</p>
-            <div class="info-row">🎲 12d8 | Área 20m | Ignora Escudos | ⚡ 55 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Apocalipse dos Ventos</h3>
-            <p>Os céus entram em colapso, criando uma tempestade devastadora.</p>
-            <div class="info-row">🎲 12d10 | Área 25m | Ignora Resistência Mágica | ⚡ 60 Mana</div>
-        </div>
-
-
-
-
-        <h2>🌪️ Nível Aprendiz</h2>
-
-        <div class="magia-card">
-            <h3>Lâmina de Vento</h3>
-            <p>Um corte de ar extremamente afiado.</p>
-            <div class="info-row">🎲 2d6 | 📏 10m | ⚡ 5 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Rajada de Vento</h3>
-            <p>Empurra e desequilibra o inimigo.</p>
-            <div class="info-row">🎲 1d8 | 💨 Empurra 3m | ⚡ 6 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Passo Leve</h3>
-            <p>O vento impulsiona seus movimentos.</p>
-            <div class="info-row">🏃 +2 Esquiva | ⏳ 3 turnos | ⚡ 5 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Brisa Curativa</h3>
-            <p>Uma corrente de ar revitaliza um aliado.</p>
-            <div class="info-row">💚 Cura 2d4 | ⚡ 6 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Salto dos Ventos</h3>
-            <p>Permite realizar saltos impossíveis.</p>
-            <div class="info-row">🪽 Salta até 15m | ⚡ 8 Mana</div>
-        </div>
-
-        <h2>🌪️ Nível Profissional</h2>
-
-        <div class="magia-card">
-            <h3>Velocidade do Vento</h3>
-            <p>O corpo torna-se extremamente veloz.</p>
-            <div class="info-row">⚡ +100% Reação e Investida | ⏳ 4 turnos | ⚡ 14 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Foices de Ar</h3>
-            <p>Diversas lâminas de vento cortam todos à frente.</p>
-            <div class="info-row">🎲 4d6 | Área 4m | ⚡ 12 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Corrente Ascendente</h3>
-            <p>Uma coluna de vento lança o inimigo ao alto.</p>
-            <div class="info-row">🎲 3d6 | 💨 Suspende 1 turno | ⚡ 10 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Tornado</h3>
-            <p>Um tornado arremessa os inimigos aos céus.</p>
-            <div class="info-row">🎲 6d6 | Área 6m | Dano de Queda | ⚡ 22 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Asas do Vento</h3>
-            <p>O conjurador ganha a capacidade de voar.</p>
-            <div class="info-row">🪽 Voo | ⏳ 5 turnos | ⚡ 18 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Muralha de Ar</h3>
-            <p>Uma barreira de vento reduz ataques à distância.</p>
-            <div class="info-row">🛡️ Reduz 50% do dano à distância | ⚡ 18 Mana</div>
-        </div>
-
-        <h2>🌪️ Nível Mestre</h2>
-
-        <div class="magia-card">
-            <h3>Tempestade de Lâminas</h3>
-            <p>Centenas de cortes de vento devastam a área.</p>
-            <div class="info-row">🎲 5d8 | Área 8m | ⚡ 20 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Vácuo</h3>
-            <p>Retira o oxigênio de uma grande área.</p>
-            <div class="info-row">💀 -5 Vigor por turno | Área 8m | ⏳ 4 turnos | ⚡ 28 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Furacão</h3>
-            <p>Um ciclone colossal destrói tudo ao redor.</p>
-            <div class="info-row">🎲 8d6 | Área 10m | Derruba | ⚡ 28 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Lança Celeste</h3>
-            <p>Uma lança de vento comprimido atravessa o alvo.</p>
-            <div class="info-row">🎲 8d8 | Ignora 30% da Defesa | ⚡ 30 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Olho da Tempestade</h3>
-            <p>Um ciclone protege o conjurador e fere quem se aproxima.</p>
-            <div class="info-row">🛡️ +5 Defesa | 🎲 2d6 por turno | ⚡ 30 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Avatar de Éolo</h3>
-            <p>O conjurador torna-se a personificação dos ventos.</p>
-            <div class="info-row">⚡ +100% Velocidade | +100% Dano de Vento | ⏳ 5 turnos | ⚡ 45 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Ciclone Absoluto</h3>
-            <p>Um ciclone colossal arrasta todos os inimigos.</p>
-            <div class="info-row">🎲 10d10 | Área 15m | Derruba Todos | ⚡ 50 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Tempestade Celestial</h3>
-            <p>Milhares de lâminas de vento caem dos céus.</p>
-            <div class="info-row">🎲 12d8 | Área 20m | Ignora Escudos | ⚡ 55 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Apocalipse dos Ventos</h3>
-            <p>Os céus entram em colapso, criando uma tempestade devastadora.</p>
-            <div class="info-row">🎲 12d10 | Área 25m | Ignora Resistência Mágica | ⚡ 60 Mana</div>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="terra" class="tab-content active">
-
-        <h1>🌿 Terra / Natureza</h1>
-
-        <span class="scaling-info">(Inteligência + Nível Mágico de Terra)</span>
-
-        <h3>Nível Aprendiz</h3>
-
-        <div class="magia-card">
-            <h3>Lança de Pedra</h3>
-            <p>Projeta uma lança de rocha contra o inimigo.</p>
-            <div class="info-row">🎲 2d6 | 📏 12m | ⚡ 5 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Vinha Aprisionadora</h3>
-            <p>Raízes emergem do solo prendendo o alvo.</p>
-            <div class="info-row">🌿 Imobiliza 1 turno | 📏 8m | ⚡ 7 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Pele de Casca</h3>
-            <p>A pele endurece como madeira ancestral.</p>
-            <div class="info-row">🛡️ +2 Defesa | ⏳ 3 turnos | ⚡ 6 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Sementa Vital</h3>
-            <p>A energia da natureza recupera pequenas feridas.</p>
-            <div class="info-row">💚 Cura 2d4 | ⚡ 6 Mana</div>
-        </div>
-
-        <h3>Nível Profissional</h3>
-
-        <div class="magia-card">
-            <h3>Corpo de Rocha</h3>
-            <p>O corpo torna-se sólido como granito.</p>
-            <div class="info-row">🛡️ Reduz 100% do dano por 2 turnos | ⚡ 20 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Muralha de Pedra</h3>
-            <p>Ergue uma enorme barreira de rocha.</p>
-            <div class="info-row">🪨 Bloqueia projéteis e passagem | ⚡ 18 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Espinhos da Floresta</h3>
-            <p>Espinhos surgem do chão perfurando os inimigos.</p>
-            <div class="info-row">🎲 5d6 | Área 5m | 🌿 Sangramento | ⚡ 18 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Campo Florido</h3>
-            <p>Flores mágicas restauram a vitalidade dos aliados.</p>
-            <div class="info-row">💚 Cura 4d6 | +3 Vigor | Área 6m | ⚡ 22 Mana</div>
-        </div>
-
-        <h3>Nível Mestre</h3>
-
-        <div class="magia-card">
-            <h3>Terremoto</h3>
-            <p>Abala violentamente o solo.</p>
-            <div class="info-row">🎲 8d8 | Área 12m | Derruba todos | ⚡ 32 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Guardião da Montanha</h3>
-            <p>Invoca um colossal golem de pedra.</p>
-            <div class="info-row">🪨 Invocação | ⏳ 5 turnos | ⚡ 30 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Floresta Ancestral</h3>
-            <p>Uma floresta viva toma conta do campo de batalha.</p>
-            <div class="info-row">🌿 Área 15m | Imobiliza e causa 3d6 por turno | ⚡ 35 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Ira de Gaia</h3>
-            <p>A própria terra desperta para destruir os inimigos.</p>
-            <div class="info-row">🎲 12d10 | Área 20m | Ignora Resistência Física | ⚡ 60 Mana</div>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-    <div id="raio" class="tab-content active">
-
-        <h1>⚡ Raio – Ira de Zeus</h1>
-
-        <span class="scaling-info">(Inteligência + Nível Mágico de Raio)</span>
-
-        <h3>Nível Aprendiz</h3>
-
-        <div class="magia-card">
-            <h3>Relâmpago</h3>
-            <p>Um poderoso raio atinge um único inimigo.</p>
-            <div class="info-row">🎲 2d8 | 📏 12m | ⚡ 6 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Campo Eletrostático</h3>
-            <p>Uma área eletrificada paralisa quem entrar.</p>
-            <div class="info-row">🎲 2d6 | 💀 Paralisa 1 turno | Área 4m | ⚡ 9 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Centelha Explosiva</h3>
-            <p>Uma pequena explosão elétrica atinge o alvo.</p>
-            <div class="info-row">🎲 3d6 | ⚡ 30% de Paralisia | ⚡ 8 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Choque Energizante</h3>
-            <p>Carrega um aliado com energia elétrica.</p>
-            <div class="info-row">⚡ +2 Ataque e Reação | ⏳ 3 turnos | ⚡ 8 Mana</div>
-        </div>
-
-        <h3>Nível Profissional</h3>
-
-        <div class="magia-card">
-            <h3>Energia de Hermes</h3>
-            <p>O corpo é envolvido por raios, aumentando drasticamente a velocidade.</p>
-            <div class="info-row">⚡ +1 ação por turno | ⏳ 2 turnos | ⚡ 16 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Lanças de Trovão</h3>
-            <p>Várias lanças elétricas caem sobre os inimigos.</p>
-            <div class="info-row">🎲 5d6 | Área 5m | ⚡ 14 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Correntes Elétricas</h3>
-            <p>Correntes de raios prendem o alvo.</p>
-            <div class="info-row">🎲 4d6 | 💀 Paralisa 2 turnos | ⚡ 15 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Escudo Eletrostático</h3>
-            <p>Uma barreira elétrica protege o conjurador.</p>
-            <div class="info-row">🛡️ Absorve 3d8 | Reflete 2d6 | ⚡ 16 Mana</div>
-        </div>
-
-        <h3>Nível Mestre</h3>
-
-        <div class="magia-card">
-            <h3>Teletransporte</h3>
-            <p>Transforma o corpo em eletricidade e se move instantaneamente.</p>
-            <div class="info-row">⚡ Até 20m | ⚡ 18 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Tempestade Elétrica</h3>
-            <p>Relâmpagos caem continuamente sobre uma enorme área.</p>
-            <div class="info-row">🎲 8d8 | Área 12m | Paralisa | ⚡ 32 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Avatar de Zeus</h3>
-            <p>O conjurador torna-se a personificação da tempestade.</p>
-            <div class="info-row">⚡ +100% Dano Elétrico | +1 ação por turno | ⏳ 5 turnos | ⚡ 45 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Julgamento de Zeus</h3>
-            <p>Um colossal raio celestial destrói tudo em seu caminho.</p>
-            <div class="info-row">🎲 12d10 | Ignora Resistência Mágica | Paralisa sobreviventes | ⚡ 60 Mana
+</div>
+</div>
+<div class="tab-content active" id="agua">
+<h1>Água</h1>
+<span class="scaling-info">(Inteligência + Nível Mágico de Água)</span>
+<h2>💧 Nível Aprendiz</h2>
+<div class="magia-card">
+<h3>Jato de Água</h3>
+<p>Um poderoso jato de água empurra o inimigo.</p>
+<div class="info-row">🎲 2d6 | 📏 10m | 💨 Empurra 2m | ⚡ 4 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Gotas Congelantes</h3>
+<p>Fragmentos de gelo perfuram o alvo.</p>
+<div class="info-row">🎲 2d4 | ❄️ Reduz Movimento | ⚡ 5 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Névoa</h3>
+<p>Uma espessa névoa reduz a visão dos inimigos.</p>
+<div class="info-row">👁️ -2 Acerto | Área 5m | ⚡ 6 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Fonte Restauradora</h3>
+<p>Água pura restaura ferimentos leves.</p>
+<div class="info-row">💚 Cura 2d6 | ⚡ 6 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Escudo de Água</h3>
+<p>Uma barreira líquida reduz o dano recebido.</p>
+<div class="info-row">🛡️ Absorve 3d8 | ⚡ 8 Mana</div>
+</div>
+<h2>💧 Nível Profissional</h2>
+<div class="magia-card">
+<h3>Nevasca</h3>
+<p>Uma tempestade de neve cobre o campo.</p>
+<div class="info-row">🎲 4d6 | ❄️ Lentidão | Área 6m | ⚡ 10 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Barreira de Água</h3>
+<p>Protege aliados com uma muralha líquida.</p>
+<div class="info-row">🛡️ Absorve 4d8 | ⚡ 12 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Lanças de Gelo</h3>
+<p>Espinhos de gelo atravessam os inimigos.</p>
+<div class="info-row">🎲 4d6 | Área 5m | ⚡ 12 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Correnteza</h3>
+<p>Uma onda derruba e arrasta os inimigos.</p>
+<div class="info-row">🎲 3d8 | Derruba | ⚡ 10 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Explosão de Gelo</h3>
+<p>Explode gelo ao redor do conjurador.</p>
+<div class="info-row">🎲 6d6 | ❄️ Congela 1 turno | Área 8m | ⚡ 18 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Prisão de Gelo</h3>
+<p>Aprisiona completamente o alvo.</p>
+<div class="info-row">🧊 Imobiliza 2 turnos | ⚡ 18 Mana</div>
+</div>
+<h2>💧 Nível Mestre</h2>
+<div class="magia-card">
+<h3>Serpente Marinha</h3>
+<p>Invoca uma serpente feita de água.</p>
+<div class="info-row">🐍 Invocação | ⏳ 4 turnos | ⚡ 20 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Chuva Congelante</h3>
+<p>Granizo destrói todos os inimigos na área.</p>
+<div class="info-row">🎲 5d8 | Área 8m | ❄️ Lentidão | ⚡ 20 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Maremoto</h3>
+<p>Uma onda gigantesca invade o campo.</p>
+<div class="info-row">🎲 8d8 | Área 12m | Derruba | ⚡ 35 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Iceberg</h3>
+<p>Um enorme bloco de gelo despenca sobre o alvo.</p>
+<div class="info-row">🎲 8d8 | ❄️ Congela | ⚡ 30 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Mar Revolto</h3>
+<p>Ondas violentas impedem a movimentação.</p>
+<div class="info-row">🌊 Área 15m | -50% Movimento | ⚡ 30 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Avatar de Poseidon</h3>
+<p>O conjurador torna-se o senhor dos mares.</p>
+<div class="info-row">🌊 +100% Dano de Água | Cura +100% | ⏳ 5 turnos | ⚡ 45 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Tsunami Absoluto</h3>
+<p>Uma onda colossal destrói tudo em seu caminho.</p>
+<div class="info-row">🎲 10d10 | Área 20m | Derruba todos | ⚡ 50 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Era Glacial</h3>
+<p>O campo inteiro é congelado.</p>
+<div class="info-row">🎲 12d8 | Área 25m | Congela sobreviventes | ⚡ 55 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Dilúvio Final</h3>
+<p>As águas inundam completamente o campo de batalha.</p>
+<div class="info-row">🎲 12d10 | Área 30m | Ignora Resistência Mágica | ⚡ 60 Mana</div>
+</div>
+</div>
+<div class="tab-content active" id="vento">
+<h1>Vento</h1>
+<span class="scaling-info">(Inteligência + Nível Mágico de Vento)</span>
+<h2>🌪️ Nível Aprendiz</h2>
+<div class="magia-card">
+<h3>Lâmina de Vento</h3>
+<p>Um corte de ar extremamente afiado.</p>
+<div class="info-row">🎲 2d6 | 📏 10m | ⚡ 5 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Rajada de Vento</h3>
+<p>Empurra e desequilibra o inimigo.</p>
+<div class="info-row">🎲 1d8 | 💨 Empurra 3m | ⚡ 6 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Passo Leve</h3>
+<p>O vento impulsiona seus movimentos.</p>
+<div class="info-row">🏃 +2 Esquiva | ⏳ 3 turnos | ⚡ 5 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Brisa Curativa</h3>
+<p>Uma corrente de ar revitaliza um aliado.</p>
+<div class="info-row">💚 Cura 2d4 | ⚡ 6 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Salto dos Ventos</h3>
+<p>Permite realizar saltos impossíveis.</p>
+<div class="info-row">🪽 Salta até 15m | ⚡ 8 Mana</div>
+</div>
+<h2>🌪️ Nível Profissional</h2>
+<div class="magia-card">
+<h3>Velocidade do Vento</h3>
+<p>O corpo torna-se extremamente veloz.</p>
+<div class="info-row">⚡ +100% Reação e Investida | ⏳ 4 turnos | ⚡ 14 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Foices de Ar</h3>
+<p>Diversas lâminas de vento cortam todos à frente.</p>
+<div class="info-row">🎲 4d6 | Área 4m | ⚡ 12 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Corrente Ascendente</h3>
+<p>Uma coluna de vento lança o inimigo ao alto.</p>
+<div class="info-row">🎲 3d6 | 💨 Suspende 1 turno | ⚡ 10 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Tornado</h3>
+<p>Um tornado arremessa os inimigos aos céus.</p>
+<div class="info-row">🎲 6d6 | Área 6m | Dano de Queda | ⚡ 22 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Asas do Vento</h3>
+<p>O conjurador ganha a capacidade de voar.</p>
+<div class="info-row">🪽 Voo | ⏳ 5 turnos | ⚡ 18 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Muralha de Ar</h3>
+<p>Uma barreira de vento reduz ataques à distância.</p>
+<div class="info-row">🛡️ Reduz 50% do dano à distância | ⚡ 18 Mana</div>
+</div>
+<h2>🌪️ Nível Mestre</h2>
+<div class="magia-card">
+<h3>Tempestade de Lâminas</h3>
+<p>Centenas de cortes de vento devastam a área.</p>
+<div class="info-row">🎲 5d8 | Área 8m | ⚡ 20 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Vácuo</h3>
+<p>Retira o oxigênio de uma grande área.</p>
+<div class="info-row">💀 -5 Vigor por turno | Área 8m | ⏳ 4 turnos | ⚡ 28 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Furacão</h3>
+<p>Um ciclone colossal destrói tudo ao redor.</p>
+<div class="info-row">🎲 8d6 | Área 10m | Derruba | ⚡ 28 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Lança Celeste</h3>
+<p>Uma lança de vento comprimido atravessa o alvo.</p>
+<div class="info-row">🎲 8d8 | Ignora 30% da Defesa | ⚡ 30 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Olho da Tempestade</h3>
+<p>Um ciclone protege o conjurador e fere quem se aproxima.</p>
+<div class="info-row">🛡️ +5 Defesa | 🎲 2d6 por turno | ⚡ 30 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Avatar de Éolo</h3>
+<p>O conjurador torna-se a personificação dos ventos.</p>
+<div class="info-row">⚡ +100% Velocidade | +100% Dano de Vento | ⏳ 5 turnos | ⚡ 45 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Ciclone Absoluto</h3>
+<p>Um ciclone colossal arrasta todos os inimigos.</p>
+<div class="info-row">🎲 10d10 | Área 15m | Derruba Todos | ⚡ 50 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Tempestade Celestial</h3>
+<p>Milhares de lâminas de vento caem dos céus.</p>
+<div class="info-row">🎲 12d8 | Área 20m | Ignora Escudos | ⚡ 55 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Apocalipse dos Ventos</h3>
+<p>Os céus entram em colapso, criando uma tempestade devastadora.</p>
+<div class="info-row">🎲 12d10 | Área 25m | Ignora Resistência Mágica | ⚡ 60 Mana</div>
+</div>
+<h2>🌪️ Nível Aprendiz</h2>
+<div class="magia-card">
+<h3>Lâmina de Vento</h3>
+<p>Um corte de ar extremamente afiado.</p>
+<div class="info-row">🎲 2d6 | 📏 10m | ⚡ 5 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Rajada de Vento</h3>
+<p>Empurra e desequilibra o inimigo.</p>
+<div class="info-row">🎲 1d8 | 💨 Empurra 3m | ⚡ 6 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Passo Leve</h3>
+<p>O vento impulsiona seus movimentos.</p>
+<div class="info-row">🏃 +2 Esquiva | ⏳ 3 turnos | ⚡ 5 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Brisa Curativa</h3>
+<p>Uma corrente de ar revitaliza um aliado.</p>
+<div class="info-row">💚 Cura 2d4 | ⚡ 6 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Salto dos Ventos</h3>
+<p>Permite realizar saltos impossíveis.</p>
+<div class="info-row">🪽 Salta até 15m | ⚡ 8 Mana</div>
+</div>
+<h2>🌪️ Nível Profissional</h2>
+<div class="magia-card">
+<h3>Velocidade do Vento</h3>
+<p>O corpo torna-se extremamente veloz.</p>
+<div class="info-row">⚡ +100% Reação e Investida | ⏳ 4 turnos | ⚡ 14 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Foices de Ar</h3>
+<p>Diversas lâminas de vento cortam todos à frente.</p>
+<div class="info-row">🎲 4d6 | Área 4m | ⚡ 12 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Corrente Ascendente</h3>
+<p>Uma coluna de vento lança o inimigo ao alto.</p>
+<div class="info-row">🎲 3d6 | 💨 Suspende 1 turno | ⚡ 10 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Tornado</h3>
+<p>Um tornado arremessa os inimigos aos céus.</p>
+<div class="info-row">🎲 6d6 | Área 6m | Dano de Queda | ⚡ 22 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Asas do Vento</h3>
+<p>O conjurador ganha a capacidade de voar.</p>
+<div class="info-row">🪽 Voo | ⏳ 5 turnos | ⚡ 18 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Muralha de Ar</h3>
+<p>Uma barreira de vento reduz ataques à distância.</p>
+<div class="info-row">🛡️ Reduz 50% do dano à distância | ⚡ 18 Mana</div>
+</div>
+<h2>🌪️ Nível Mestre</h2>
+<div class="magia-card">
+<h3>Tempestade de Lâminas</h3>
+<p>Centenas de cortes de vento devastam a área.</p>
+<div class="info-row">🎲 5d8 | Área 8m | ⚡ 20 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Vácuo</h3>
+<p>Retira o oxigênio de uma grande área.</p>
+<div class="info-row">💀 -5 Vigor por turno | Área 8m | ⏳ 4 turnos | ⚡ 28 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Furacão</h3>
+<p>Um ciclone colossal destrói tudo ao redor.</p>
+<div class="info-row">🎲 8d6 | Área 10m | Derruba | ⚡ 28 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Lança Celeste</h3>
+<p>Uma lança de vento comprimido atravessa o alvo.</p>
+<div class="info-row">🎲 8d8 | Ignora 30% da Defesa | ⚡ 30 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Olho da Tempestade</h3>
+<p>Um ciclone protege o conjurador e fere quem se aproxima.</p>
+<div class="info-row">🛡️ +5 Defesa | 🎲 2d6 por turno | ⚡ 30 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Avatar de Éolo</h3>
+<p>O conjurador torna-se a personificação dos ventos.</p>
+<div class="info-row">⚡ +100% Velocidade | +100% Dano de Vento | ⏳ 5 turnos | ⚡ 45 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Ciclone Absoluto</h3>
+<p>Um ciclone colossal arrasta todos os inimigos.</p>
+<div class="info-row">🎲 10d10 | Área 15m | Derruba Todos | ⚡ 50 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Tempestade Celestial</h3>
+<p>Milhares de lâminas de vento caem dos céus.</p>
+<div class="info-row">🎲 12d8 | Área 20m | Ignora Escudos | ⚡ 55 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Apocalipse dos Ventos</h3>
+<p>Os céus entram em colapso, criando uma tempestade devastadora.</p>
+<div class="info-row">🎲 12d10 | Área 25m | Ignora Resistência Mágica | ⚡ 60 Mana</div>
+</div>
+</div>
+<div class="tab-content active" id="terra">
+<h1>🌿 Terra / Natureza</h1>
+<span class="scaling-info">(Inteligência + Nível Mágico de Terra)</span>
+<h3>Nível Aprendiz</h3>
+<div class="magia-card">
+<h3>Lança de Pedra</h3>
+<p>Projeta uma lança de rocha contra o inimigo.</p>
+<div class="info-row">🎲 2d6 | 📏 12m | ⚡ 5 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Vinha Aprisionadora</h3>
+<p>Raízes emergem do solo prendendo o alvo.</p>
+<div class="info-row">🌿 Imobiliza 1 turno | 📏 8m | ⚡ 7 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Pele de Casca</h3>
+<p>A pele endurece como madeira ancestral.</p>
+<div class="info-row">🛡️ +2 Defesa | ⏳ 3 turnos | ⚡ 6 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Sementa Vital</h3>
+<p>A energia da natureza recupera pequenas feridas.</p>
+<div class="info-row">💚 Cura 2d4 | ⚡ 6 Mana</div>
+</div>
+<h3>Nível Profissional</h3>
+<div class="magia-card">
+<h3>Corpo de Rocha</h3>
+<p>O corpo torna-se sólido como granito.</p>
+<div class="info-row">🛡️ Reduz 100% do dano por 2 turnos | ⚡ 20 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Muralha de Pedra</h3>
+<p>Ergue uma enorme barreira de rocha.</p>
+<div class="info-row">🪨 Bloqueia projéteis e passagem | ⚡ 18 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Espinhos da Floresta</h3>
+<p>Espinhos surgem do chão perfurando os inimigos.</p>
+<div class="info-row">🎲 5d6 | Área 5m | 🌿 Sangramento | ⚡ 18 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Campo Florido</h3>
+<p>Flores mágicas restauram a vitalidade dos aliados.</p>
+<div class="info-row">💚 Cura 4d6 | +3 Vigor | Área 6m | ⚡ 22 Mana</div>
+</div>
+<h3>Nível Mestre</h3>
+<div class="magia-card">
+<h3>Terremoto</h3>
+<p>Abala violentamente o solo.</p>
+<div class="info-row">🎲 8d8 | Área 12m | Derruba todos | ⚡ 32 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Guardião da Montanha</h3>
+<p>Invoca um colossal golem de pedra.</p>
+<div class="info-row">🪨 Invocação | ⏳ 5 turnos | ⚡ 30 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Floresta Ancestral</h3>
+<p>Uma floresta viva toma conta do campo de batalha.</p>
+<div class="info-row">🌿 Área 15m | Imobiliza e causa 3d6 por turno | ⚡ 35 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Ira de Gaia</h3>
+<p>A própria terra desperta para destruir os inimigos.</p>
+<div class="info-row">🎲 12d10 | Área 20m | Ignora Resistência Física | ⚡ 60 Mana</div>
+</div>
+</div>
+<div class="tab-content active" id="raio">
+<h1>⚡ Raio – Ira de Zeus</h1>
+<span class="scaling-info">(Inteligência + Nível Mágico de Raio)</span>
+<h3>Nível Aprendiz</h3>
+<div class="magia-card">
+<h3>Relâmpago</h3>
+<p>Um poderoso raio atinge um único inimigo.</p>
+<div class="info-row">🎲 2d8 | 📏 12m | ⚡ 6 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Campo Eletrostático</h3>
+<p>Uma área eletrificada paralisa quem entrar.</p>
+<div class="info-row">🎲 2d6 | 💀 Paralisa 1 turno | Área 4m | ⚡ 9 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Centelha Explosiva</h3>
+<p>Uma pequena explosão elétrica atinge o alvo.</p>
+<div class="info-row">🎲 3d6 | ⚡ 30% de Paralisia | ⚡ 8 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Choque Energizante</h3>
+<p>Carrega um aliado com energia elétrica.</p>
+<div class="info-row">⚡ +2 Ataque e Reação | ⏳ 3 turnos | ⚡ 8 Mana</div>
+</div>
+<h3>Nível Profissional</h3>
+<div class="magia-card">
+<h3>Energia de Hermes</h3>
+<p>O corpo é envolvido por raios, aumentando drasticamente a velocidade.</p>
+<div class="info-row">⚡ +1 ação por turno | ⏳ 2 turnos | ⚡ 16 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Lanças de Trovão</h3>
+<p>Várias lanças elétricas caem sobre os inimigos.</p>
+<div class="info-row">🎲 5d6 | Área 5m | ⚡ 14 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Correntes Elétricas</h3>
+<p>Correntes de raios prendem o alvo.</p>
+<div class="info-row">🎲 4d6 | 💀 Paralisa 2 turnos | ⚡ 15 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Escudo Eletrostático</h3>
+<p>Uma barreira elétrica protege o conjurador.</p>
+<div class="info-row">🛡️ Absorve 3d8 | Reflete 2d6 | ⚡ 16 Mana</div>
+</div>
+<h3>Nível Mestre</h3>
+<div class="magia-card">
+<h3>Teletransporte</h3>
+<p>Transforma o corpo em eletricidade e se move instantaneamente.</p>
+<div class="info-row">⚡ Até 20m | ⚡ 18 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Tempestade Elétrica</h3>
+<p>Relâmpagos caem continuamente sobre uma enorme área.</p>
+<div class="info-row">🎲 8d8 | Área 12m | Paralisa | ⚡ 32 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Avatar de Zeus</h3>
+<p>O conjurador torna-se a personificação da tempestade.</p>
+<div class="info-row">⚡ +100% Dano Elétrico | +1 ação por turno | ⏳ 5 turnos | ⚡ 45 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Julgamento de Zeus</h3>
+<p>Um colossal raio celestial destrói tudo em seu caminho.</p>
+<div class="info-row">🎲 12d10 | Ignora Resistência Mágica | Paralisa sobreviventes | ⚡ 60 Mana
             </div>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div id="veneno" class="tab-content active">
-
-        <h1>☠️ Veneno – Agonia Prolongada</h1>
-
-        <span class="scaling-info">(Inteligência + Nível Mágico de Veneno)</span>
-
-        <h3>Nível Aprendiz</h3>
-
-        <div class="magia-card">
-            <h3>Toque Envenenado</h3>
-            <p>O toque do conjurador injeta uma toxina mortal.</p>
-            <div class="info-row">🎲 2d6 | ☠️ Veneno (2 turnos) | ⚡ 5 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Névoa Tóxica</h3>
-            <p>Uma nuvem venenosa cobre uma pequena área.</p>
-            <div class="info-row">🎲 2d4 por turno | Área 4m | ⏳ 2 turnos | ⚡ 8 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Espinhos Venenosos</h3>
-            <p>Espinhos tóxicos perfuram o alvo.</p>
-            <div class="info-row">🎲 3d6 | ☠️ -2 Vigor | ⚡ 7 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Sangue Corrosivo</h3>
-            <p>O veneno corrói lentamente o organismo do inimigo.</p>
-            <div class="info-row">☠️ 2d6 por turno | ⏳ 3 turnos | ⚡ 8 Mana</div>
-        </div>
-
-        <h3>Nível Profissional</h3>
-
-        <div class="magia-card">
-            <h3>Maldição Tóxica</h3>
-            <p>Uma poderosa toxina enfraquece o alvo continuamente.</p>
-            <div class="info-row">☠️ 4d6 por turno | Cura reduzida em 50% | ⚡ 14 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Pústula Sonífera</h3>
-            <p>Esporos venenosos fazem os inimigos adormecerem.</p>
-            <div class="info-row">😴 Sono por 2 turnos | Área 5m | ⚡ 16 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Ácido Corrosivo</h3>
-            <p>Um jato ácido dissolve armaduras e carne.</p>
-            <div class="info-row">🎲 6d6 | Ignora 25% da Defesa | ⚡ 18 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Parasita Tóxico</h3>
-            <p>Uma criatura venenosa prende-se ao inimigo.</p>
-            <div class="info-row">☠️ 3d8 por turno | -2 Força | ⏳ 4 turnos | ⚡ 20 Mana</div>
-        </div>
-
-        <h3>Nível Mestre</h3>
-
-        <div class="magia-card">
-            <h3>Mácula</h3>
-            <p>Uma praga sobrenatural corrói todos os inimigos da área.</p>
-            <div class="info-row">🎲 8d8 | -5 Vigor | Área 10m | ⚡ 28 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Mar de Veneno</h3>
-            <p>O chão transforma-se em um lago de toxinas.</p>
-            <div class="info-row">☠️ 4d8 por turno | Área 12m | ⏳ 5 turnos | ⚡ 32 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Avatar da Pestilência</h3>
-            <p>O conjurador torna-se a encarnação da doença.</p>
-            <div class="info-row">☠️ +100% Dano de Veneno | Imune a Veneno | ⏳ 5 turnos | ⚡ 45 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Apocalipse Tóxico</h3>
-            <p>Uma nuvem letal cobre todo o campo de batalha.</p>
-            <div class="info-row">🎲 12d10 | Área 20m | Ignora Resistência Mágica | ☠️ Veneno Permanente | ⚡ 60
+</div>
+</div>
+<div class="tab-content active" id="veneno">
+<h1>☠️ Veneno – Agonia Prolongada</h1>
+<span class="scaling-info">(Inteligência + Nível Mágico de Veneno)</span>
+<h3>Nível Aprendiz</h3>
+<div class="magia-card">
+<h3>Toque Envenenado</h3>
+<p>O toque do conjurador injeta uma toxina mortal.</p>
+<div class="info-row">🎲 2d6 | ☠️ Veneno (2 turnos) | ⚡ 5 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Névoa Tóxica</h3>
+<p>Uma nuvem venenosa cobre uma pequena área.</p>
+<div class="info-row">🎲 2d4 por turno | Área 4m | ⏳ 2 turnos | ⚡ 8 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Espinhos Venenosos</h3>
+<p>Espinhos tóxicos perfuram o alvo.</p>
+<div class="info-row">🎲 3d6 | ☠️ -2 Vigor | ⚡ 7 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Sangue Corrosivo</h3>
+<p>O veneno corrói lentamente o organismo do inimigo.</p>
+<div class="info-row">☠️ 2d6 por turno | ⏳ 3 turnos | ⚡ 8 Mana</div>
+</div>
+<h3>Nível Profissional</h3>
+<div class="magia-card">
+<h3>Maldição Tóxica</h3>
+<p>Uma poderosa toxina enfraquece o alvo continuamente.</p>
+<div class="info-row">☠️ 4d6 por turno | Cura reduzida em 50% | ⚡ 14 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Pústula Sonífera</h3>
+<p>Esporos venenosos fazem os inimigos adormecerem.</p>
+<div class="info-row">😴 Sono por 2 turnos | Área 5m | ⚡ 16 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Ácido Corrosivo</h3>
+<p>Um jato ácido dissolve armaduras e carne.</p>
+<div class="info-row">🎲 6d6 | Ignora 25% da Defesa | ⚡ 18 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Parasita Tóxico</h3>
+<p>Uma criatura venenosa prende-se ao inimigo.</p>
+<div class="info-row">☠️ 3d8 por turno | -2 Força | ⏳ 4 turnos | ⚡ 20 Mana</div>
+</div>
+<h3>Nível Mestre</h3>
+<div class="magia-card">
+<h3>Mácula</h3>
+<p>Uma praga sobrenatural corrói todos os inimigos da área.</p>
+<div class="info-row">🎲 8d8 | -5 Vigor | Área 10m | ⚡ 28 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Mar de Veneno</h3>
+<p>O chão transforma-se em um lago de toxinas.</p>
+<div class="info-row">☠️ 4d8 por turno | Área 12m | ⏳ 5 turnos | ⚡ 32 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Avatar da Pestilência</h3>
+<p>O conjurador torna-se a encarnação da doença.</p>
+<div class="info-row">☠️ +100% Dano de Veneno | Imune a Veneno | ⏳ 5 turnos | ⚡ 45 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Apocalipse Tóxico</h3>
+<p>Uma nuvem letal cobre todo o campo de batalha.</p>
+<div class="info-row">🎲 12d10 | Área 20m | Ignora Resistência Mágica | ☠️ Veneno Permanente | ⚡ 60
                 Mana</div>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-    <div id="mental" class="tab-content active">
-
-        <h1>🧠 Mental</h1>
-
-        <span class="scaling-info">(Inteligência + Nível Mágico de Mental)</span>
-
-        <h3>Nível Aprendiz</h3>
-
-        <div class="magia-card">
-            <h3>Lança Psíquica</h3>
-            <p>Perfura a mente do inimigo com energia psíquica.</p>
-            <div class="info-row">🎲 2d8 | 📏 12m | ⚡ 5 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Barreira Mental</h3>
-            <p>Cria uma barreira que bloqueia ataques mentais.</p>
-            <div class="info-row">🛡️ Imune a dano psíquico | ⏳ 2 turnos | ⚡ 8 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Confusão</h3>
-            <p>Desorienta a mente do alvo.</p>
-            <div class="info-row">🌀 -2 Acerto | ⏳ 2 turnos | ⚡ 7 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Leitura Mental</h3>
-            <p>Lê os pensamentos superficiais de uma criatura.</p>
-            <div class="info-row">👁️ Revela intenções | ⏳ 5 minutos | ⚡ 6 Mana</div>
-        </div>
-
-        <h3>Nível Profissional</h3>
-
-        <div class="magia-card">
-            <h3>Controle Mental</h3>
-            <p>Domina temporariamente a mente de um inimigo.</p>
-            <div class="info-row">🧠 Controla por 1 turno | 📏 10m | ⚡ 22 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Ilusão Perfeita</h3>
-            <p>Cria uma ilusão extremamente realista.</p>
-            <div class="info-row">👁️ Engana múltiplos alvos | ⏳ 4 turnos | ⚡ 18 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Onda Psíquica</h3>
-            <p>Uma onda mental derruba e atordoa os inimigos.</p>
-            <div class="info-row">🎲 5d6 | Área 6m | 💫 Atordoamento | ⚡ 20 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Telepatia</h3>
-            <p>Permite comunicação mental com aliados.</p>
-            <div class="info-row">📡 Alcance 1 km | ⏳ 30 minutos | ⚡ 15 Mana</div>
-        </div>
-
-        <h3>Nível Mestre</h3>
-
-        <div class="magia-card">
-            <h3>Explosão Psíquica</h3>
-            <p>Uma explosão de energia mental destrói a consciência dos inimigos.</p>
-            <div class="info-row">🎲 8d8 | Área 10m | 💥 Atordoa | ⚡ 26 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Telecinesia</h3>
-            <p>Move objetos gigantescos e arremessa inimigos.</p>
-            <div class="info-row">💥 Até 500kg | Arremessa 3 inimigos | ⚡ 30 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Domínio Mental</h3>
-            <p>Controla diversas mentes ao mesmo tempo.</p>
-            <div class="info-row">🧠 Até 5 alvos | ⏳ 2 turnos | ⚡ 40 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Colapso Psíquico</h3>
-            <p>A mente dos inimigos entra em colapso absoluto.</p>
-            <div class="info-row">🎲 12d10 | Área 20m | Ignora Resistência Mágica | 💀 Paralisa sobreviventes |
+</div>
+</div>
+<div class="tab-content active" id="mental">
+<h1>🧠 Mental</h1>
+<span class="scaling-info">(Inteligência + Nível Mágico de Mental)</span>
+<h3>Nível Aprendiz</h3>
+<div class="magia-card">
+<h3>Lança Psíquica</h3>
+<p>Perfura a mente do inimigo com energia psíquica.</p>
+<div class="info-row">🎲 2d8 | 📏 12m | ⚡ 5 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Barreira Mental</h3>
+<p>Cria uma barreira que bloqueia ataques mentais.</p>
+<div class="info-row">🛡️ Imune a dano psíquico | ⏳ 2 turnos | ⚡ 8 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Confusão</h3>
+<p>Desorienta a mente do alvo.</p>
+<div class="info-row">🌀 -2 Acerto | ⏳ 2 turnos | ⚡ 7 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Leitura Mental</h3>
+<p>Lê os pensamentos superficiais de uma criatura.</p>
+<div class="info-row">👁️ Revela intenções | ⏳ 5 minutos | ⚡ 6 Mana</div>
+</div>
+<h3>Nível Profissional</h3>
+<div class="magia-card">
+<h3>Controle Mental</h3>
+<p>Domina temporariamente a mente de um inimigo.</p>
+<div class="info-row">🧠 Controla por 1 turno | 📏 10m | ⚡ 22 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Ilusão Perfeita</h3>
+<p>Cria uma ilusão extremamente realista.</p>
+<div class="info-row">👁️ Engana múltiplos alvos | ⏳ 4 turnos | ⚡ 18 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Onda Psíquica</h3>
+<p>Uma onda mental derruba e atordoa os inimigos.</p>
+<div class="info-row">🎲 5d6 | Área 6m | 💫 Atordoamento | ⚡ 20 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Telepatia</h3>
+<p>Permite comunicação mental com aliados.</p>
+<div class="info-row">📡 Alcance 1 km | ⏳ 30 minutos | ⚡ 15 Mana</div>
+</div>
+<h3>Nível Mestre</h3>
+<div class="magia-card">
+<h3>Explosão Psíquica</h3>
+<p>Uma explosão de energia mental destrói a consciência dos inimigos.</p>
+<div class="info-row">🎲 8d8 | Área 10m | 💥 Atordoa | ⚡ 26 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Telecinesia</h3>
+<p>Move objetos gigantescos e arremessa inimigos.</p>
+<div class="info-row">💥 Até 500kg | Arremessa 3 inimigos | ⚡ 30 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Domínio Mental</h3>
+<p>Controla diversas mentes ao mesmo tempo.</p>
+<div class="info-row">🧠 Até 5 alvos | ⏳ 2 turnos | ⚡ 40 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Colapso Psíquico</h3>
+<p>A mente dos inimigos entra em colapso absoluto.</p>
+<div class="info-row">🎲 12d10 | Área 20m | Ignora Resistência Mágica | 💀 Paralisa sobreviventes |
                 ⚡ 60 Mana</div>
-        </div>
-
-    </div>
-
-
-    <div id="sombra" class="tab-content active">
-
-        <h1>🌑 Sombrio</h1>
-
-        <span class="scaling-info">(Inteligência + Nível Mágico de Sombra)</span>
-
-        <h3>Nível Aprendiz</h3>
-
-        <div class="magia-card">
-            <h3>Sombra Rasteira</h3>
-            <p>Uma sombra se arrasta pelo chão e prende o alvo.</p>
-            <div class="info-row">🎲 2d6 | 💀 -50% Velocidade | ⏳ 2 turnos | ⚡ 5 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Escuridão Leve</h3>
-            <p>Cria uma área envolta por trevas.</p>
-            <div class="info-row">👁️ -2 Acerto | Área 4m | ⚡ 4 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Toque Sombrio</h3>
-            <p>Rouba parte da energia vital do inimigo.</p>
-            <div class="info-row">🎲 2d8 | 💀 Recupera metade do dano causado | ⚡ 6 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Passo nas Sombras</h3>
-            <p>O conjurador desaparece entre as sombras.</p>
-            <div class="info-row">🌑 Invisível por 1 turno | ⚡ 7 Mana</div>
-        </div>
-
-        <h3>Nível Profissional</h3>
-
-        <div class="magia-card">
-            <h3>Prisão das Sombras</h3>
-            <p>Sombras vivas aprisionam completamente o alvo.</p>
-            <div class="info-row">🎲 4d8 | 💀 Imobiliza 2 turnos | ⚡ 12 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Lanças Obscuras</h3>
-            <p>Lanças feitas de pura escuridão atravessam os inimigos.</p>
-            <div class="info-row">🎲 5d6 | Área 5m | ⚡ 16 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Manto das Trevas</h3>
-            <p>As sombras envolvem o conjurador.</p>
-            <div class="info-row">🛡️ +4 Defesa | +2 Esquiva | ⏳ 4 turnos | ⚡ 18 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Consumir Luz</h3>
-            <p>Apaga todas as fontes de luz da área.</p>
-            <div class="info-row">🌑 Área 10m | Inimigos ficam Cegos por 2 turnos | ⚡ 20 Mana</div>
-        </div>
-
-        <h3>Nível Mestre</h3>
-
-        <div class="magia-card">
-            <h3>Eclipse Total</h3>
-            <p>Trevas absolutas cobrem todo o campo de batalha.</p>
-            <div class="info-row">🎲 8d8 | 💀 -3 em todos os atributos | Área 15m | ⚡ 30 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Avatar das Sombras</h3>
-            <p>O conjurador torna-se um ser de pura escuridão.</p>
-            <div class="info-row">🌑 +100% Dano Sombrio | Imune à Escuridão | ⏳ 5 turnos | ⚡ 45 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Exército das Sombras</h3>
-            <p>Invoca guerreiros feitos de trevas para lutar.</p>
-            <div class="info-row">👥 6 Invocações | ⏳ 4 turnos | ⚡ 45 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Abismo Eterno</h3>
-            <p>Um abismo de escuridão engole todos os inimigos.</p>
-            <div class="info-row">🎲 12d10 | Área 20m | Ignora Resistência Mágica | 💀 Cega e Paralisa
+</div>
+</div>
+<div class="tab-content active" id="sombra">
+<h1>🌑 Sombrio</h1>
+<span class="scaling-info">(Inteligência + Nível Mágico de Sombra)</span>
+<h3>Nível Aprendiz</h3>
+<div class="magia-card">
+<h3>Sombra Rasteira</h3>
+<p>Uma sombra se arrasta pelo chão e prende o alvo.</p>
+<div class="info-row">🎲 2d6 | 💀 -50% Velocidade | ⏳ 2 turnos | ⚡ 5 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Escuridão Leve</h3>
+<p>Cria uma área envolta por trevas.</p>
+<div class="info-row">👁️ -2 Acerto | Área 4m | ⚡ 4 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Toque Sombrio</h3>
+<p>Rouba parte da energia vital do inimigo.</p>
+<div class="info-row">🎲 2d8 | 💀 Recupera metade do dano causado | ⚡ 6 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Passo nas Sombras</h3>
+<p>O conjurador desaparece entre as sombras.</p>
+<div class="info-row">🌑 Invisível por 1 turno | ⚡ 7 Mana</div>
+</div>
+<h3>Nível Profissional</h3>
+<div class="magia-card">
+<h3>Prisão das Sombras</h3>
+<p>Sombras vivas aprisionam completamente o alvo.</p>
+<div class="info-row">🎲 4d8 | 💀 Imobiliza 2 turnos | ⚡ 12 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Lanças Obscuras</h3>
+<p>Lanças feitas de pura escuridão atravessam os inimigos.</p>
+<div class="info-row">🎲 5d6 | Área 5m | ⚡ 16 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Manto das Trevas</h3>
+<p>As sombras envolvem o conjurador.</p>
+<div class="info-row">🛡️ +4 Defesa | +2 Esquiva | ⏳ 4 turnos | ⚡ 18 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Consumir Luz</h3>
+<p>Apaga todas as fontes de luz da área.</p>
+<div class="info-row">🌑 Área 10m | Inimigos ficam Cegos por 2 turnos | ⚡ 20 Mana</div>
+</div>
+<h3>Nível Mestre</h3>
+<div class="magia-card">
+<h3>Eclipse Total</h3>
+<p>Trevas absolutas cobrem todo o campo de batalha.</p>
+<div class="info-row">🎲 8d8 | 💀 -3 em todos os atributos | Área 15m | ⚡ 30 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Avatar das Sombras</h3>
+<p>O conjurador torna-se um ser de pura escuridão.</p>
+<div class="info-row">🌑 +100% Dano Sombrio | Imune à Escuridão | ⏳ 5 turnos | ⚡ 45 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Exército das Sombras</h3>
+<p>Invoca guerreiros feitos de trevas para lutar.</p>
+<div class="info-row">👥 6 Invocações | ⏳ 4 turnos | ⚡ 45 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Abismo Eterno</h3>
+<p>Um abismo de escuridão engole todos os inimigos.</p>
+<div class="info-row">🎲 12d10 | Área 20m | Ignora Resistência Mágica | 💀 Cega e Paralisa
                 sobreviventes | ⚡ 60 Mana</div>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-    <div id="sagrado" class="tab-content active">
-
-        <h1>Sagrado</h1>
-
-        <span class="scaling-info">(Inteligência + Nível Mágico de Sagrado)</span>
-
-        <h3>Nível Aprendiz</h3>
-
-        <div class="magia-card">
-            <h3>Luz Purificadora</h3>
-            <p>Um feixe de luz sagrada que causa dano extra em criaturas sombrias.</p>
-            <div class="info-row">🎲 2d8 (+2d6 vs Sombras) | 📏 8m | ⚡ 5 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Cura Leve</h3>
-            <p>Restaura pequenos ferimentos de um aliado.</p>
-            <div class="info-row">💚 Cura 2d8 | 📏 Toque | ⚡ 4 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Escudo Divino</h3>
-            <p>Uma barreira sagrada protege um aliado.</p>
-            <div class="info-row">🛡️ Reduz 50% do dano por 2 turnos | ⚡ 8 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Bênção Celestial</h3>
-            <p>Aumenta a coragem e fortalece os aliados.</p>
-            <div class="info-row">✨ +2 Ataque e Defesa | ⏳ 3 Turnos | ⚡ 10 Mana</div>
-        </div>
-
-        <h3>Nível Profissional</h3>
-
-        <div class="magia-card">
-            <h3>Cura em Área</h3>
-            <p>Uma onda de energia divina restaura todos os aliados próximos.</p>
-            <div class="info-row">💚 Cura 4d6 | Área 6m | ⚡ 12 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Lança Sagrada</h3>
-            <p>Uma lança feita de pura luz atravessa o inimigo.</p>
-            <div class="info-row">🎲 5d8 | Ignora Mortos-Vivos | ⚡ 18 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Aura da Esperança</h3>
-            <p>Aliados recuperam vida continuamente.</p>
-            <div class="info-row">💚 Cura 1d6 por turno | ⏳ 4 Turnos | ⚡ 18 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Julgamento Divino</h3>
-            <p>Uma coluna de luz atinge um inimigo.</p>
-            <div class="info-row">🎲 6d8 | 💀 +50% contra Sombras | ⚡ 22 Mana</div>
-        </div>
-
-        <h3>Nível Mestre</h3>
-
-        <div class="magia-card">
-            <h3>Ressurreição Total</h3>
-            <p>Revive completamente um aliado caído.</p>
-            <div class="info-row">💚 Revive com Vida Total | ⚡ 35 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Exorcismo Supremo</h3>
-            <p>Expulsa ou destrói entidades malignas.</p>
-            <div class="info-row">🎲 8d10 | 💀 Chance de Eliminar Sombras | ⚡ 32 Mana</div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Avatar da Luz</h3>
-            <p>O conjurador torna-se um campeão divino.</p>
-            <div class="info-row">✨ +100% Cura | +100% Dano Sagrado | Imune a Trevas | ⏳ 5 Turnos | ⚡ 45 Mana
+</div>
+</div>
+<div class="tab-content active" id="sagrado">
+<h1>Sagrado</h1>
+<span class="scaling-info">(Inteligência + Nível Mágico de Sagrado)</span>
+<h3>Nível Aprendiz</h3>
+<div class="magia-card">
+<h3>Luz Purificadora</h3>
+<p>Um feixe de luz sagrada que causa dano extra em criaturas sombrias.</p>
+<div class="info-row">🎲 2d8 (+2d6 vs Sombras) | 📏 8m | ⚡ 5 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Cura Leve</h3>
+<p>Restaura pequenos ferimentos de um aliado.</p>
+<div class="info-row">💚 Cura 2d8 | 📏 Toque | ⚡ 4 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Escudo Divino</h3>
+<p>Uma barreira sagrada protege um aliado.</p>
+<div class="info-row">🛡️ Reduz 50% do dano por 2 turnos | ⚡ 8 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Bênção Celestial</h3>
+<p>Aumenta a coragem e fortalece os aliados.</p>
+<div class="info-row">✨ +2 Ataque e Defesa | ⏳ 3 Turnos | ⚡ 10 Mana</div>
+</div>
+<h3>Nível Profissional</h3>
+<div class="magia-card">
+<h3>Cura em Área</h3>
+<p>Uma onda de energia divina restaura todos os aliados próximos.</p>
+<div class="info-row">💚 Cura 4d6 | Área 6m | ⚡ 12 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Lança Sagrada</h3>
+<p>Uma lança feita de pura luz atravessa o inimigo.</p>
+<div class="info-row">🎲 5d8 | Ignora Mortos-Vivos | ⚡ 18 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Aura da Esperança</h3>
+<p>Aliados recuperam vida continuamente.</p>
+<div class="info-row">💚 Cura 1d6 por turno | ⏳ 4 Turnos | ⚡ 18 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Julgamento Divino</h3>
+<p>Uma coluna de luz atinge um inimigo.</p>
+<div class="info-row">🎲 6d8 | 💀 +50% contra Sombras | ⚡ 22 Mana</div>
+</div>
+<h3>Nível Mestre</h3>
+<div class="magia-card">
+<h3>Ressurreição Total</h3>
+<p>Revive completamente um aliado caído.</p>
+<div class="info-row">💚 Revive com Vida Total | ⚡ 35 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Exorcismo Supremo</h3>
+<p>Expulsa ou destrói entidades malignas.</p>
+<div class="info-row">🎲 8d10 | 💀 Chance de Eliminar Sombras | ⚡ 32 Mana</div>
+</div>
+<div class="magia-card">
+<h3>Avatar da Luz</h3>
+<p>O conjurador torna-se um campeão divino.</p>
+<div class="info-row">✨ +100% Cura | +100% Dano Sagrado | Imune a Trevas | ⏳ 5 Turnos | ⚡ 45 Mana
             </div>
-        </div>
-
-        <div class="magia-card">
-            <h3>Apocalipse Celestial</h3>
-            <p>Milhares de raios de luz divina caem sobre o campo de batalha.</p>
-            <div class="info-row">🎲 12d10 | Área 20m | Ignora Resistência Sombria | ⚡ 60 Mana</div>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-    <script>
+</div>
+<div class="magia-card">
+<h3>Apocalipse Celestial</h3>
+<p>Milhares de raios de luz divina caem sobre o campo de batalha.</p>
+<div class="info-row">🎲 12d10 | Área 20m | Ignora Resistência Sombria | ⚡ 60 Mana</div>
+</div>
+</div>
+<script>
         function openTab(evt, tabId) {
 
             document.querySelectorAll(".tab-content").forEach(tab => {
@@ -1501,5 +1170,4 @@
         }
     </script>
 </body>
-
 </html>
