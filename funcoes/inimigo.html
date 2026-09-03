@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 
 <html lang="pt-br">
+
 <head>
-<link href="../site.css" rel="stylesheet"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Bestiário &amp; NPCs - Grimório Infernal</title>
-<style>
+    <link href="../site.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Bestiário &amp; NPCs - Grimório Infernal</title>
+    <style>
         /* =========================
    TEMA DIABLO INFERNAL
 ========================= */
@@ -195,311 +196,314 @@
         }
 
         .navbar {
-    background: linear-gradient(180deg, #0a0a0a, #000);
-    border-bottom: 2px solid #c5a059;
-    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+            background: linear-gradient(180deg, #0a0a0a, #000);
+            border-bottom: 2px solid #c5a059;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-.container-nav {
-    max-width: 1200px;
-    margin: auto;
-    padding: 12px;
-}
+        .container-nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 12px;
+        }
 
-.links {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0;
-}
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0;
+        }
 
-/* LINKS COM SEPARADOR METÁLICO */
-.links a {
-    color: #c5a059;
-    text-decoration: none;
-    padding: 10px 14px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    transition: 0.3s;
-}
+        /* LINKS COM SEPARADOR METÁLICO */
+        .links a {
+            color: #c5a059;
+            text-decoration: none;
+            padding: 10px 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: 0.3s;
+        }
 
-/* barra metálica entre links */
-.links a:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 20%;
-    height: 60%;
-    width: 1px;
-    background: linear-gradient(to bottom, transparent, #c5a059, transparent);
-}
+        /* barra metálica entre links */
+        .links a:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: 20%;
+            height: 60%;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, #c5a059, transparent);
+        }
 
-/* glow infernal */
-.links a:hover {
-    color: #ff1a1a;
-    text-shadow: 0 0 10px #ff1a1a;
-}
+        /* glow infernal */
+        .links a:hover {
+            color: #ff1a1a;
+            text-shadow: 0 0 10px #ff1a1a;
+        }
 
-.sub-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+        .sub-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
 
-    gap: 12px;
-    padding: 10px;
+            gap: 12px;
+            padding: 10px;
 
-    background: rgba(0, 0, 0, 0.6);
-    border-bottom: 1px solid #2a1a1a;
-}
+            background: rgba(0, 0, 0, 0.6);
+            border-bottom: 1px solid #2a1a1a;
+        }
 
-.sub-nav a {
-    color: #e6e0d6;
-    text-decoration: none;
-    font-size: 13px;
+        .sub-nav a {
+            color: #e6e0d6;
+            text-decoration: none;
+            font-size: 13px;
 
-    padding: 5px 10px;
+            padding: 5px 10px;
 
-    border: 1px solid transparent;
-    transition: 0.3s;
-}
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
 
-.sub-nav a:hover {
-    color: #ff1a1a;
-    border-color: #c5a059;
-    text-shadow: 0 0 10px #8b0000;
-}
+        .sub-nav a:hover {
+            color: #ff1a1a;
+            border-color: #c5a059;
+            text-shadow: 0 0 10px #8b0000;
+        }
     </style>
-<meta content="strict-origin-when-cross-origin" name="referrer"/></head>
+    <meta content="strict-origin-when-cross-origin" name="referrer" />
+</head>
+
 <body>
-<!-- ================= NAVBAR PRINCIPAL ================= -->
-<nav class="navbar">
-<div class="container-nav">
-<div class="links">
-<a href="../funcoes/inicio.html">historia </a>
-<a href="racaeclasses.html">Raças e Classes</a>
-<a href="/armas/armas.html">Armas</a>
-<a href="../funcoes/sistema.html">sistema</a>
-<a href="../funcoes/inimigo.html">inimigos</a>
-<a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
-<a href="..//funcoes/magia.html">magias</a>
-<a href="..//funcoes/porção.html">porção</a>
-<a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
-<a href="/funcoes/mapas.html">mapas</a>
-<a href="/funcoes/clan.html">Criação de Ficha</a>
-</div>
-</div>
-</nav>
-<!-- ================= SUB NAV (ÂNCORAS DA PÁGINA) ================= -->
-<div class="sub-nav">
-<a href="#animais">🐾 Animais</a>
-<a href="#nemeses">💀 Nemeses</a>
-<a href="#forja">⚒️ Forja</a>
-<a href="#nv1">Níveis (1-10)</a>
-<a href="#especiais">🌟 Especiais</a>
-<a href="#player">👥 Grupos</a>
-</div>
-<header>
-<h1>Bestiário &amp; NPCs</h1>
-</header>
-<main class="pdf-section">
-<h2 id="animais">Animais Selvagens</h2>
-<div class="grid-container">
-<div class="animal-box">
-<h3>🐺 Lobo</h3>
-<ul>
-<li><strong>Alfa da Alcateia</strong> – aliados animais recebem +1 ataque</li>
-<li><strong>Faro Absoluto</strong> – sem penalidade em rastreamento</li>
-<li><strong>Ataque Coordenado</strong> – +1 dano após aliado</li>
-<li><strong>Resistência Selvagem</strong> – reduz 1 dano físico</li>
-</ul>
-<div class="btn-group">
-<a class="pdf-card" href="../ini/animais/lobo.pdf" target="_blank">Ficha Lobo</a>
-<a class="pdf-card" href="../ini/animais/loboalfo.pdf" target="_blank">Lobo Alfa</a>
-</div>
-</div>
-<div class="animal-box">
-<h3>🐻 Urso</h3>
-<ul>
-<li><strong>Couraça Natural</strong> – reduz 2 dano físico</li>
-<li><strong>Fúria Bestial</strong> – ao perder metade da vida ganha +1 Força</li>
-<li><strong>Investida Pesada</strong> – empurra ao atacar em movimento</li>
-<li><strong>Resistência Selvagem</strong> – vantagem contra dor e medo</li>
-</ul>
-<div class="btn-group">
-<a class="pdf-card" href="../ini/animais/urso.pdf" target="_blank">Ficha Urso</a>
-<a class="pdf-card" href="../ini/animais/ursoalfo.pdf" target="_blank">Urso Alfa</a>
-</div>
-</div>
-</div>
-<h2 id="nemeses">Nemeses (Chefões)</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/nemeses/1.gYRO - WILLIAM.pdf" target="_blank">GYRO</a>
-<a class="pdf-card" href="../ini/nemeses/3.GRONTHAR - CLEBER.pdf" target="_blank">GRONTHAR</a>
-<a class="pdf-card" href="../ini/nemeses/DAEMON - NEMESIS.pdf" target="_blank">Daemon</a>
-<a class="pdf-card" href="../ini/nemeses/PYROMANCE - NEMESIS.pdf" target="_blank">Pyromance</a>
-<a class="pdf-card" href="../ini/nemeses/SIGRID - NEMESIS.pdf" target="_blank">Sigrid</a>
-<a class="pdf-card" href="../ini/nemeses/THORFIN - NEMESIS.pdf" target="_blank">Thorfin</a>
-<a class="pdf-card" href="../ini/nemeses/YMIR - NEMESIS.pdf" target="_blank">Ymir</a>
-<a class="pdf-card" href="../ini/nemeses/vesh igor nemeses.pdf">Vesh Nemeses</a>
-</div>
-<h2 id="forja">Mestres da Forja</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/forja/Kaelen.pdf" target="_blank">Kaelen</a>
-<a class="pdf-card" href="../ini/forja/Lyara.pdf" target="_blank">Lyara</a>
-<a class="pdf-card" href="../ini/forja/Tharok.pdf" target="_blank">Tharok</a>
-<a class="pdf-card" href="../ini/forja/Brugor.pdf" target="_blank">Brugor</a>
-<a class="pdf-card" href="../ini/forja/Selene.pdf" target="_blank">Selene</a>
-</div>
-<h2 id="nv1">NPCs Nível 1</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/npcnv1/1 - Arqueiro Iniciante LV1.pdf" target="_blank">Arqueiro LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/2 - Bardo Iniciante LV1.pdf" target="_blank">Bardo LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/3 - Bruxo Iniciante LV1.pdf" target="_blank">Bruxo LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/4 - Clerigo Iniciante LV1.pdf" target="_blank">Clérigo LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/5 - Domador Iniciante LV1.pdf" target="_blank">Domador LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/6 - Druida Iniciante LV1.pdf" target="_blank">Druida LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/7 - Guerreiro Iniciante LV1.pdf" target="_blank">Guerreiro LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/8 - Ladino Iniciante LV1.pdf" target="_blank">Ladino LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/9 - Lanceiro Iniciante LV1.pdf" target="_blank">Lanceiro LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/10 - Mago Iniciante LV1.pdf" target="_blank">Mago LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/11 - Monge Iniciante LV1.pdf" target="_blank">Monge LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/12 - Necromante Iniciante LV1.pdf" target="_blank">Necromante
+    <!-- ================= NAVBAR PRINCIPAL ================= -->
+    <nav class="navbar">
+        <div class="container-nav">
+            <div class="links">
+                <a href="../funcoes/inicio.html">historia </a>
+                <a href="racaeclasses.html">Raças e Classes</a>
+                <a href="/armas/armas.html">Armas</a>
+                <a href="../funcoes/sistema.html">sistema</a>
+                <a href="../funcoes/inimigo.html">inimigos</a>
+                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
+                <a href="..//funcoes/magia.html">magias</a>
+                <a href="..//funcoes/porção.html">porção</a>
+                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
+                <a href="/funcoes/mapas.html">mapas</a>
+                <a href="/funcoes/clan.html">Criação de Ficha</a>
+            </div>
+        </div>
+    </nav>
+    <!-- ================= SUB NAV (ÂNCORAS DA PÁGINA) ================= -->
+    <div class="sub-nav">
+        <a href="#animais">🐾 Animais</a>
+        <a href="#nemeses">💀 Nemeses</a>
+        <a href="#forja">⚒️ Forja</a>
+        <a href="#nv1">Níveis (1-10)</a>
+        <a href="#especiais">🌟 Especiais</a>
+        <a href="#player">👥 Grupos</a>
+    </div>
+    <header>
+        <h1>Bestiário &amp; NPCs</h1>
+    </header>
+    <main class="pdf-section">
+        <h2 id="animais">Animais Selvagens</h2>
+        <div class="grid-container">
+            <div class="animal-box">
+                <h3>🐺 Lobo</h3>
+                <ul>
+                    <li><strong>Alfa da Alcateia</strong> – aliados animais recebem +1 ataque</li>
+                    <li><strong>Faro Absoluto</strong> – sem penalidade em rastreamento</li>
+                    <li><strong>Ataque Coordenado</strong> – +1 dano após aliado</li>
+                    <li><strong>Resistência Selvagem</strong> – reduz 1 dano físico</li>
+                </ul>
+                <div class="btn-group">
+                    <a class="pdf-card" href="../ini/animais/lobo.pdf" target="_blank">Ficha Lobo</a>
+                    <a class="pdf-card" href="../ini/animais/loboalfo.pdf" target="_blank">Lobo Alfa</a>
+                </div>
+            </div>
+            <div class="animal-box">
+                <h3>🐻 Urso</h3>
+                <ul>
+                    <li><strong>Couraça Natural</strong> – reduz 2 dano físico</li>
+                    <li><strong>Fúria Bestial</strong> – ao perder metade da vida ganha +1 Força</li>
+                    <li><strong>Investida Pesada</strong> – empurra ao atacar em movimento</li>
+                    <li><strong>Resistência Selvagem</strong> – vantagem contra dor e medo</li>
+                </ul>
+                <div class="btn-group">
+                    <a class="pdf-card" href="../ini/animais/urso.pdf" target="_blank">Ficha Urso</a>
+                    <a class="pdf-card" href="../ini/animais/ursoalfo.pdf" target="_blank">Urso Alfa</a>
+                </div>
+            </div>
+        </div>
+        <h2 id="nemeses">Nemeses (Chefões)</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/nemeses/1.gYRO - WILLIAM.pdf" target="_blank">GYRO</a>
+            <a class="pdf-card" href="../ini/nemeses/3.GRONTHAR - CLEBER.pdf" target="_blank">GRONTHAR</a>
+            <a class="pdf-card" href="../ini/nemeses/DAEMON - NEMESIS.pdf" target="_blank">Daemon</a>
+            <a class="pdf-card" href="../ini/nemeses/PYROMANCE - NEMESIS.pdf" target="_blank">Pyromance</a>
+            <a class="pdf-card" href="../ini/nemeses/SIGRID - NEMESIS.pdf" target="_blank">Sigrid</a>
+            <a class="pdf-card" href="../ini/nemeses/THORFIN - NEMESIS.pdf" target="_blank">Thorfin</a>
+            <a class="pdf-card" href="../ini/nemeses/YMIR - NEMESIS.pdf" target="_blank">Ymir</a>
+            <a class="pdf-card" href="../ini/nemeses/vesh igor nemeses.pdf">Vesh Nemeses</a>
+        </div>
+        <h2 id="forja">Mestres da Forja</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/forja/Kaelen.pdf" target="_blank">Kaelen</a>
+            <a class="pdf-card" href="../ini/forja/Lyara.pdf" target="_blank">Lyara</a>
+            <a class="pdf-card" href="../ini/forja/Tharok.pdf" target="_blank">Tharok</a>
+            <a class="pdf-card" href="../ini/forja/Brugor.pdf" target="_blank">Brugor</a>
+            <a class="pdf-card" href="../ini/forja/Selene.pdf" target="_blank">Selene</a>
+        </div>
+        <h2 id="nv1">NPCs Nível 1</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/npcnv1/1 - Arqueiro Iniciante LV1.pdf" target="_blank">Arqueiro LV1</a>
+            <a class="pdf-card" href="../ini/npcnv1/2 - Bardo Iniciante LV1.pdf" target="_blank">Bardo LV1</a>
+            <a class="pdf-card" href="../ini/npcnv1/3 - Bruxo Iniciante LV1.pdf" target="_blank">Bruxo LV1</a>
+            <a class="pdf-card" href="../ini/npcnv1/4 - Clerigo Iniciante LV1.pdf" target="_blank">Clérigo LV1</a>
+            <a class="pdf-card" href="../ini/npcnv1/5 - Domador Iniciante LV1.pdf" target="_blank">Domador LV1</a>
+            <a class="pdf-card" href="../ini/npcnv1/6 - Druida Iniciante LV1.pdf" target="_blank">Druida LV1</a>
+            <a class="pdf-card" href="../ini/npcnv1/7 - Guerreiro Iniciante LV1.pdf" target="_blank">Guerreiro LV1</a>
+            <a class="pdf-card" href="../ini/npcnv1/8 - Ladino Iniciante LV1.pdf" target="_blank">Ladino LV1</a>
+            <a class="pdf-card" href="../ini/npcnv1/9 - Lanceiro Iniciante LV1.pdf" target="_blank">Lanceiro LV1</a>
+            <a class="pdf-card" href="../ini/npcnv1/10 - Mago Iniciante LV1.pdf" target="_blank">Mago LV1</a>
+            <a class="pdf-card" href="../ini/npcnv1/11 - Monge Iniciante LV1.pdf" target="_blank">Monge LV1</a>
+            <a class="pdf-card" href="../ini/npcnv1/12 - Necromante Iniciante LV1.pdf" target="_blank">Necromante
 
                 LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/13 - Ninja Iniciante LV1.pdf" target="_blank">Ninja LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/14 - Tecnomancer Iniciante LV1.pdf" target="_blank">Tecnomancer
+            <a class="pdf-card" href="../ini/npcnv1/13 - Ninja Iniciante LV1.pdf" target="_blank">Ninja LV1</a>
+            <a class="pdf-card" href="../ini/npcnv1/14 - Tecnomancer Iniciante LV1.pdf" target="_blank">Tecnomancer
 
                 LV1</a>
-<a class="pdf-card" href="../ini/npcnv1/15 - Transmutador Iniciante LV1.pdf" target="_blank">Transmutador
+            <a class="pdf-card" href="../ini/npcnv1/15 - Transmutador Iniciante LV1.pdf" target="_blank">Transmutador
 
                 LV1</a>
-</div>
-<h2 id="nv2">NPCs Nível 2</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/npcnv2/1 - Arqueiro Iniciante LV2.pdf" target="_blank">Arqueiro LV2</a>
-<a class="pdf-card" href="../ini/npcnv2/1 - Arqueiro Iniciante LV2.2.pdf" target="_blank">Arqueiro LV2.2</a>
-<a class="pdf-card" href="../ini/npcnv2/2 - Bardo Iniciante LV2.pdf" target="_blank">Bardo LV2</a>
-<a class="pdf-card" href="../ini/npcnv2/3 - Bruxo Iniciante LV2.pdf" target="_blank">Bruxo LV2</a>
-<a class="pdf-card" href="../ini/npcnv2/4 - Clerigo Iniciante LV2.pdf" target="_blank">Clérigo LV2</a>
-<a class="pdf-card" href="../ini/npcnv2/5 - Domador Iniciante LV2.pdf" target="_blank">Domador LV2</a>
-<a class="pdf-card" href="../ini/npcnv2/6 - Druida Iniciante LV2.pdf" target="_blank">Druida LV2</a>
-<a class="pdf-card" href="../ini/npcnv2/7 - Guerreiro Iniciante LV2.pdf" target="_blank">Guerreiro LV2</a>
-<a class="pdf-card" href="../ini/npcnv2/8 - Ladino Iniciante LV2.pdf" target="_blank">Ladino LV2</a>
-<a class="pdf-card" href="../ini/npcnv2/10 - Mago Iniciante LV2.pdf" target="_blank">Mago LV2</a>
-<a class="pdf-card" href="../ini/npcnv2/11 - Monge Iniciante LV2.pdf" target="_blank">Monge LV2</a>
-<a class="pdf-card" href="../ini/npcnv2/12 - Necromante Iniciante LV2.pdf" target="_blank">Necromante
+        </div>
+        <h2 id="nv2">NPCs Nível 2</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/npcnv2/1 - Arqueiro Iniciante LV2.pdf" target="_blank">Arqueiro LV2</a>
+            <a class="pdf-card" href="../ini/npcnv2/1 - Arqueiro Iniciante LV2.2.pdf" target="_blank">Arqueiro LV2.2</a>
+            <a class="pdf-card" href="../ini/npcnv2/2 - Bardo Iniciante LV2.pdf" target="_blank">Bardo LV2</a>
+            <a class="pdf-card" href="../ini/npcnv2/3 - Bruxo Iniciante LV2.pdf" target="_blank">Bruxo LV2</a>
+            <a class="pdf-card" href="../ini/npcnv2/4 - Clerigo Iniciante LV2.pdf" target="_blank">Clérigo LV2</a>
+            <a class="pdf-card" href="../ini/npcnv2/5 - Domador Iniciante LV2.pdf" target="_blank">Domador LV2</a>
+            <a class="pdf-card" href="../ini/npcnv2/6 - Druida Iniciante LV2.pdf" target="_blank">Druida LV2</a>
+            <a class="pdf-card" href="../ini/npcnv2/7 - Guerreiro Iniciante LV2.pdf" target="_blank">Guerreiro LV2</a>
+            <a class="pdf-card" href="../ini/npcnv2/8 - Ladino Iniciante LV2.pdf" target="_blank">Ladino LV2</a>
+            <a class="pdf-card" href="../ini/npcnv2/10 - Mago Iniciante LV2.pdf" target="_blank">Mago LV2</a>
+            <a class="pdf-card" href="../ini/npcnv2/11 - Monge Iniciante LV2.pdf" target="_blank">Monge LV2</a>
+            <a class="pdf-card" href="../ini/npcnv2/12 - Necromante Iniciante LV2.pdf" target="_blank">Necromante
 
                 LV2</a>
-<a class="pdf-card" href="../ini/npcnv2/13 - Ninja Iniciante LV2.pdf" target="_blank">Ninja LV2</a>
-<a class="pdf-card" href="../ini/npcnv2/14 - Tecnomancer Iniciante LV2.pdf" target="_blank">Tecnomancer
+            <a class="pdf-card" href="../ini/npcnv2/13 - Ninja Iniciante LV2.pdf" target="_blank">Ninja LV2</a>
+            <a class="pdf-card" href="../ini/npcnv2/14 - Tecnomancer Iniciante LV2.pdf" target="_blank">Tecnomancer
 
                 LV2</a>
-<a class="pdf-card" href="../ini/npcnv2/15 - Transmutador Iniciante LV2.pdf" target="_blank">Transmutador
+            <a class="pdf-card" href="../ini/npcnv2/15 - Transmutador Iniciante LV2.pdf" target="_blank">Transmutador
 
                 LV2 </a>
-</div>
-<h2 id="nv3">NPCs Nível 3</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/npcnv3/1 - Arqueiro Iniciante LV3.pdf" target="_blank">Arqueiro iniciante
+        </div>
+        <h2 id="nv3">NPCs Nível 3</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/npcnv3/1 - Arqueiro Iniciante LV3.pdf" target="_blank">Arqueiro iniciante
 
                 LV3</a>
-<a class="pdf-card" href="../ini/npcnv3/1 - Patrulheiro LV3.pdf - Arqueiro Iniciante LV2.pdf" target="_blank">Patrulheiro</a>
-<a class="pdf-card" href="../ini/npcnv3/2 - Atirador LV3.pdf" target="_blank">Atirador</a>
-<a class="pdf-card" href="../ini/npcnv3/1 - Patrulheiro LV3.pdf" target="_blank">Patrulheiro LV3</a>
-<a class="pdf-card" href="../ini/npcnv3/2 - Atirador LV3.pdf" target="_blank">Atirador LV3</a>
-<a class="pdf-card" href="../ini/npcnv3/3 - Musico LV3.pdf" target="_blank">Músico LV3</a>
-<a class="pdf-card" href="../ini/npcnv3/4 - Feiticeiro das Sombras LV3.pdf" target="_blank">Feiticeiro
+            <a class="pdf-card" href="../ini/npcnv3/1 - Patrulheiro LV3.pdf - Arqueiro Iniciante LV2.pdf"
+                target="_blank">Patrulheiro</a>
+            <a class="pdf-card" href="../ini/npcnv3/2 - Atirador LV3.pdf" target="_blank">Atirador</a>
+            <a class="pdf-card" href="../ini/npcnv3/1 - Patrulheiro LV3.pdf" target="_blank">Patrulheiro LV3</a>
+            <a class="pdf-card" href="../ini/npcnv3/2 - Atirador LV3.pdf" target="_blank">Atirador LV3</a>
+            <a class="pdf-card" href="../ini/npcnv3/3 - Musico LV3.pdf" target="_blank">Músico LV3</a>
+            <a class="pdf-card" href="../ini/npcnv3/4 - Feiticeiro das Sombras LV3.pdf" target="_blank">Feiticeiro
 
                 Sombras</a>
-<a class="pdf-card" href="../ini/npcnv3/5 - Paladino Negro LV3.pdf" target="_blank">Paladino Negro</a>
-<a class="pdf-card" href="../ini/npcnv3/6 - Sacerdote LV3.pdf" target="_blank">Sacerdote LV3</a>
-<a class="pdf-card" href="../ini/npcnv3/7 - Paladino LV3.pdf" target="_blank">Paladino LV3</a>
-<a class="pdf-card" href="../ini/npcnv3/8 - Controlador de Bestas LV3.pdf" target="_blank">Controlador de
+            <a class="pdf-card" href="../ini/npcnv3/5 - Paladino Negro LV3.pdf" target="_blank">Paladino Negro</a>
+            <a class="pdf-card" href="../ini/npcnv3/6 - Sacerdote LV3.pdf" target="_blank">Sacerdote LV3</a>
+            <a class="pdf-card" href="../ini/npcnv3/7 - Paladino LV3.pdf" target="_blank">Paladino LV3</a>
+            <a class="pdf-card" href="../ini/npcnv3/8 - Controlador de Bestas LV3.pdf" target="_blank">Controlador de
 
                 Bestas</a>
-<a class="pdf-card" href="../ini/npcnv3/9 - Xamã LV3.pdf" target="_blank">Xamã LV3</a>
-<a class="pdf-card" href="../ini/npcnv3/24 - Mestre da Transmutação LV3.pdf" target="_blank">Mestre
+            <a class="pdf-card" href="../ini/npcnv3/9 - Xamã LV3.pdf" target="_blank">Xamã LV3</a>
+            <a class="pdf-card" href="../ini/npcnv3/24 - Mestre da Transmutação LV3.pdf" target="_blank">Mestre
 
                 Transmutação</a>
-</div>
-<h2 id="nv4">NPCs Nível 4</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/npcnv4/9 - Xamã LV4.pdf" target="_blank">Xamã 4</a>
-<a class="pdf-card" href="../ini/npcnv4/1 - Patrulheiro LV4.pdf" target="_blank">Patrulheiro LV4</a>
-<a class="pdf-card" href="../ini/npcnv4/1 - Arqueiro atirador LV4.pdf" target="_blank">Arqueiro LV4</a>
-</div>
-<h2 id="nv5">NPCs Nível 5</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/npcnv5/1 - Arqueiro atirador LV5.pdf" target="_blank">Patrulheiro LV5</a>
-<a class="pdf-card" href="../ini/npcnv5/1 - Arqueiro patruleiro LV5.pdf" target="_blank">Arqueiro LV5</a>
-<a class="pdf-card" href="../ini/npcnv5/9 - Xamã LV5.pdf" target="_blank">Xamã 5</a>
-</div>
-<h2 id="nv6">NPCs Nível 6</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/npcnv6/" target="_blank">Patrulheiro LV6</a>
-<a class="pdf-card" href="../ini/npcnv6/1 - Arqueiro  mestre do arco LV6.pdf" target="_blank">Arqueiro
+        </div>
+        <h2 id="nv4">NPCs Nível 4</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/npcnv4/9 - Xamã LV4.pdf" target="_blank">Xamã 4</a>
+            <a class="pdf-card" href="../ini/npcnv4/1 - Patrulheiro LV4.pdf" target="_blank">Patrulheiro LV4</a>
+            <a class="pdf-card" href="../ini/npcnv4/1 - Arqueiro atirador LV4.pdf" target="_blank">Arqueiro LV4</a>
+        </div>
+        <h2 id="nv5">NPCs Nível 5</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/npcnv5/1 - Arqueiro atirador LV5.pdf" target="_blank">Patrulheiro LV5</a>
+            <a class="pdf-card" href="../ini/npcnv5/1 - Arqueiro patruleiro LV5.pdf" target="_blank">Arqueiro LV5</a>
+            <a class="pdf-card" href="../ini/npcnv5/9 - Xamã LV5.pdf" target="_blank">Xamã 5</a>
+        </div>
+        <h2 id="nv6">NPCs Nível 6</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/npcnv6/" target="_blank">Patrulheiro LV6</a>
+            <a class="pdf-card" href="../ini/npcnv6/1 - Arqueiro  mestre do arco LV6.pdf" target="_blank">Arqueiro
 
                 LV6</a>
-<a class="pdf-card" href="../ini/npcnv6/9 - Xamã LV6.pdf" target="_blank">Xamã 6 </a>
-</div>
-<h2 id="nv7">NPCs Nível 7</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/npcnv" target="_blank">Patrulheiro LV7</a>
-<a class="pdf-card" href="../ini/npcnv7/1 - Arqueiro  mestre do arco LV7.pdf" target="_blank">Arqueiro
+            <a class="pdf-card" href="../ini/npcnv6/9 - Xamã LV6.pdf" target="_blank">Xamã 6 </a>
+        </div>
+        <h2 id="nv7">NPCs Nível 7</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/npcnv" target="_blank">Patrulheiro LV7</a>
+            <a class="pdf-card" href="../ini/npcnv7/1 - Arqueiro  mestre do arco LV7.pdf" target="_blank">Arqueiro
 
                 LV7</a>
-<a class="pdf-card" href="../ini/npcnv7/9 - Xamã LV7.pdf" target="_blank">Xamã 7</a>
-</div>
-<h2 id="nv8">NPCs Nível 8</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/npcnv8/1 - Arqueiro  mestre do arco LV8.pdf" target="_blank">Patrulheiro
+            <a class="pdf-card" href="../ini/npcnv7/9 - Xamã LV7.pdf" target="_blank">Xamã 7</a>
+        </div>
+        <h2 id="nv8">NPCs Nível 8</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/npcnv8/1 - Arqueiro  mestre do arco LV8.pdf" target="_blank">Patrulheiro
 
                 LV8</a>
-<a class="pdf-card" href="../ini/npcnv4/1 - Arqueiro atirador LV4.pdf" target="_blank">Arqueiro LV8</a>
-<a class="pdf-card" href="../ini/npcnv8/9 - Xamã LV8.pdf" target="_blank">Xamã 8 </a>
-</div>
-<h2 id="nv9">NPCs Nível 9</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/npcnv9/" target="_blank">Patrulheiro LV9</a>
-<a class="pdf-card" href="../ini/npcnv9/" target="_blank">Arqueiro LV9</a>
-<a class="pdf-card" href="../ini/npcnv9/9 - Xamã LV9.pdf" target="_blank">Xamã 9 </a>
-</div>
-<h2 id="nv10">NPCs Nível 10</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/npcnv10/" target="_blank">Patrulheiro LV10</a>
-<a class="pdf-card" href="../ini/npcnv10/9 - Xamã LV10.pdf" target="_blank">Xamã 10 </a>
-</div>
-<h2 id="especiais">Especiais &amp; Grupos</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/especiais/warhamer.pdf" target="_blank">Warhamer</a>
-<a class="pdf-card" href="../ini/especiais/doom_guy.pdf" target="_blank">Doom Guy</a>
-<a class="pdf-card" href="../ini/especiais/almagama_de_almas.pdf" target="_blank">Amalgama</a>
-<a class="pdf-card" href="../ini/especiais/juggernog.pdf" target="_blank">Juggernog</a>
-</div>
-<h2 id="player">Players: Diogo &amp; Igor</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/grupo 3/diogo npc.pdf" target="_blank">Diogo NPC</a>
-<a class="pdf-card" href="../ini/grupo 3/vesh igor.pdf" target="_blank">Igor Vesh</a>
-</div>
-<section class="pdf-section">
-<h2 id="player3">player grupo diogo e CLEBER</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/grupo2/FICHA DO HURRAS FANTASY cleber.pdf" target="_blank">cleber</a>
-<a class="pdf-card" href="../ini/grupo2/FICHA DO HURRAS FANTASY diogo.pdf" target="_blank">diogo</a>
-</div>
-</section>
-<h2 id="player2">Players: Li &amp; Douglas</h2>
-<div class="grid-container">
-<a class="pdf-card" href="../ini/grupo1/2.DRAKIAN -  PÃO.pdf" target="_blank">Douglas</a>
-<a class="pdf-card" href="../ini/grupo1/4.RAYZER - ELICIANO.pdf" target="_blank">Li</a>
-</div>
-</main>
-<script>
+            <a class="pdf-card" href="../ini/npcnv4/1 - Arqueiro atirador LV4.pdf" target="_blank">Arqueiro LV8</a>
+            <a class="pdf-card" href="../ini/npcnv8/9 - Xamã LV8.pdf" target="_blank">Xamã 8 </a>
+        </div>
+        <h2 id="nv9">NPCs Nível 9</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/npcnv9/" target="_blank">Patrulheiro LV9</a>
+            <a class="pdf-card" href="../ini/npcnv9/" target="_blank">Arqueiro LV9</a>
+            <a class="pdf-card" href="../ini/npcnv9/9 - Xamã LV9.pdf" target="_blank">Xamã 9 </a>
+        </div>
+        <h2 id="nv10">NPCs Nível 10</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/npcnv10/" target="_blank">Patrulheiro LV10</a>
+            <a class="pdf-card" href="../ini/npcnv10/9 - Xamã LV10.pdf" target="_blank">Xamã 10 </a>
+        </div>
+        <h2 id="especiais">Especiais &amp; Grupos</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/especiais/warhamer.pdf" target="_blank">Warhamer</a>
+            <a class="pdf-card" href="../ini/especiais/doom_guy.pdf" target="_blank">Doom Guy</a>
+            <a class="pdf-card" href="../ini/especiais/almagama_de_almas.pdf" target="_blank">Amalgama</a>
+            <a class="pdf-card" href="../ini/especiais/juggernog.pdf" target="_blank">Juggernog</a>
+        </div>
+        <h2 id="player">Players: Diogo &amp; Igor</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/grupo 3/diogo npc.pdf" target="_blank">Diogo NPC</a>
+            <a class="pdf-card" href="../ini/grupo 3/vesh igor.pdf" target="_blank">Igor Vesh</a>
+        </div>
+        <section class="pdf-section">
+            <h2 id="player3">player grupo diogo e CLEBER</h2>
+            <div class="grid-container">
+                <a class="pdf-card" href="../ini/grupo2/FICHA DO HURRAS FANTASY cleber.pdf" target="_blank">cleber</a>
+                <a class="pdf-card" href="../ini/grupo2/FICHA DO HURRAS FANTASY diogo.pdf" target="_blank">diogo</a>
+            </div>
+        </section>
+        <h2 id="player2">Players: Li &amp; Douglas</h2>
+        <div class="grid-container">
+            <a class="pdf-card" href="../ini/grupo1/2.DRAKIAN -  PÃO.pdf" target="_blank">Douglas</a>
+            <a class="pdf-card" href="../ini/grupo1/4.RAYZER - ELICIANO.pdf" target="_blank">Li</a>
+        </div>
+    </main>
+    <script>
         document.querySelectorAll("h2").forEach(h => {
             const grid = h.nextElementSibling;
             if (!grid || !grid.classList.contains("grid-container")) return;
@@ -512,4 +516,5 @@
         });
     </script>
 </body>
+
 </html>

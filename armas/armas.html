@@ -1,736 +1,705 @@
 <style>
-
-/* ========================================================= */
-/* ⚔️ NEXALIS RPG — MENU + ARSENAL DE ARMAS */
-/* TEMA DIABLO / INFERNAL */
-/* ========================================================= */
-
-:root{
-    --inferno:#070303;
-    --sombra:#0d0605;
-    --sangue:#7a0000;
-    --vermelho:#b31313;
-    --brasa:#ff3c00;
-    --ouro:#b88624;
-    --ouro-claro:#e0b84f;
-    --bronze:#65452c;
-    --pedra:#211816;
-    --cinza:#9b9189;
-    --texto:#d6d0c8;
-}
-
-
-/* ========================================================= */
-/* RESET */
-/* ========================================================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-
-/* ========================================================= */
-/* NAVBAR */
-/* ========================================================= */
-
-.navbar{
-
-    width:100%;
-
-    margin-bottom:35px;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(30,5,3,.98),
-            rgba(8,2,2,.98)
-        );
-
-    border:1px solid #452018;
-
-    border-top:2px solid #720000;
-
-    box-shadow:
-        0 8px 25px rgba(0,0,0,.8),
-        inset 0 -1px 0 rgba(255,60,0,.08);
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-
-/* LINHA INFERIOR */
-
-.navbar::after{
-
-    content:"";
-
-    position:absolute;
-
-    bottom:0;
-    left:10%;
-
-    width:80%;
-    height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #720000,
-            #e0b84f,
-            #720000,
-            transparent
-        );
-
-    box-shadow:
-        0 0 10px #720000;
-
-}
-
-
-.container-nav{
-
-    max-width:1200px;
-
-    margin:auto;
-
-    padding:12px 20px;
-
-}
-
-
-/* ========================================================= */
-/* LINKS DA NAVBAR */
-/* ========================================================= */
-
-.container-nav .links{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    flex-wrap:wrap;
-
-    gap:5px;
-
-}
-
-
-.container-nav .links a{
-
-    color:#a99a90;
-
-    text-decoration:none;
-
-    padding:10px 13px;
-
-    font-size:12px;
-
-    letter-spacing:.5px;
-
-    border-left:2px solid transparent;
-
-    transition:.3s ease;
-
-    text-transform:uppercase;
-
-}
-
-
-.container-nav .links a:hover{
-
-    color:#f0c75e;
-
-    border-left-color:#ff3c00;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(130,0,0,.35),
-            transparent
-        );
-
-    text-shadow:
-        0 0 8px rgba(255,60,0,.6);
-
-    transform:translateY(-2px);
-
-}
-
-
-/* ========================================================= */
-/* ⚔️ ARSENAL PRINCIPAL */
-/* ========================================================= */
-
-.armas-destaque{
-
-    position:relative;
-
-    max-width:1100px;
-
-    margin:0 auto;
-
-    padding:30px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(55,10,6,.98),
-            rgba(12,3,2,.99)
-        );
-
-    border:1px solid #71301e;
-
-    border-left:7px solid #a30000;
-
-    box-shadow:
-        inset 0 0 40px rgba(150,0,0,.15),
-        0 0 30px rgba(90,0,0,.35),
-        0 20px 50px rgba(0,0,0,.9);
-
-    overflow:hidden;
-
-}
-
-
-/* ========================================================= */
-/* BRILHO SUPERIOR */
-/* ========================================================= */
-
-.armas-destaque::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:3px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #720000,
-            #ff3c00,
-            #e0b84f,
-            #ff3c00,
-            #720000,
-            transparent
-        );
-
-    box-shadow:
-        0 0 15px #ff3c00;
-
-    animation:
-        arsenalGlow 2.5s infinite alternate;
-
-}
-
-
-@keyframes arsenalGlow{
-
-    from{
-        opacity:.35;
+    /* ========================================================= */
+    /* ⚔️ NEXALIS RPG — MENU + ARSENAL DE ARMAS */
+    /* TEMA DIABLO / INFERNAL */
+    /* ========================================================= */
+
+    :root {
+        --inferno: #070303;
+        --sombra: #0d0605;
+        --sangue: #7a0000;
+        --vermelho: #b31313;
+        --brasa: #ff3c00;
+        --ouro: #b88624;
+        --ouro-claro: #e0b84f;
+        --bronze: #65452c;
+        --pedra: #211816;
+        --cinza: #9b9189;
+        --texto: #d6d0c8;
+    }
+
+
+    /* ========================================================= */
+    /* RESET */
+    /* ========================================================= */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    /* ========================================================= */
+    /* NAVBAR */
+    /* ========================================================= */
+
+    .navbar {
+
+        width: 100%;
+
+        margin-bottom: 35px;
+
+        background:
+            linear-gradient(180deg,
+                rgba(30, 5, 3, .98),
+                rgba(8, 2, 2, .98));
+
+        border: 1px solid #452018;
+
+        border-top: 2px solid #720000;
 
         box-shadow:
-            0 0 8px #ff3c00;
+            0 8px 25px rgba(0, 0, 0, .8),
+            inset 0 -1px 0 rgba(255, 60, 0, .08);
+
+        position: relative;
+
+        overflow: hidden;
+
     }
 
-    to{
-        opacity:1;
+
+    /* LINHA INFERIOR */
+
+    .navbar::after {
+
+        content: "";
+
+        position: absolute;
+
+        bottom: 0;
+        left: 10%;
+
+        width: 80%;
+        height: 1px;
+
+        background:
+            linear-gradient(90deg,
+                transparent,
+                #720000,
+                #e0b84f,
+                #720000,
+                transparent);
 
         box-shadow:
-            0 0 22px #ff3c00;
-    }
-
-}
-
-
-/* ========================================================= */
-/* BRILHO INFERIOR */
-/* ========================================================= */
-
-.armas-destaque::after{
-
-    content:"";
-
-    position:absolute;
-
-    bottom:0;
-    left:10%;
-
-    width:80%;
-    height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #8b0000,
-            #e0b84f,
-            #8b0000,
-            transparent
-        );
-
-    box-shadow:
-        0 0 10px #8b0000;
-
-}
-
-
-/* ========================================================= */
-/* CABEÇALHO DO ARSENAL */
-/* ========================================================= */
-
-.armas-destaque h1{
-
-    color:#e0b84f;
-
-    text-align:center;
-
-    font-size:30px;
-
-    letter-spacing:4px;
-
-    margin-bottom:10px;
-
-    text-transform:uppercase;
-
-    text-shadow:
-        0 0 5px #720000,
-        0 0 15px rgba(255,60,0,.6),
-        0 0 30px rgba(139,0,0,.5);
-
-}
-
-
-.armas-destaque .descricao-armas{
-
-    text-align:center;
-
-    color:#8e7b70;
-
-    font-size:12px;
-
-    letter-spacing:2px;
-
-    margin-bottom:25px;
-
-    text-transform:uppercase;
-
-}
-
-
-/* ========================================================= */
-/* LINHA DECORATIVA */
-/* ========================================================= */
-
-.arsenal-titulo{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:12px;
-
-    margin-bottom:20px;
-
-    color:#b88624;
-
-    font-size:11px;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
-}
-
-
-.arsenal-titulo span{
-
-    height:1px;
-
-    flex:1;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #692018
-        );
-
-}
-
-
-.arsenal-titulo span:last-child{
-
-    background:
-        linear-gradient(
-            90deg,
-            #692018,
-            transparent
-        );
-
-}
-
-
-/* ========================================================= */
-/* LISTA DE ARMAS */
-/* ========================================================= */
-
-.armas-destaque .links{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(
-            2,
-            minmax(0,1fr)
-        );
-
-    gap:9px;
-
-}
-
-
-/* ========================================================= */
-/* LINK DE CADA ARMA */
-/* ========================================================= */
-
-.armas-destaque .links a{
-
-    display:flex;
-
-    align-items:center;
-
-    min-height:50px;
-
-    padding:10px 14px;
-
-    color:#b9aaa0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(80,0,0,.28),
-            rgba(15,5,4,.7)
-        );
-
-    border:1px solid #321713;
-
-    border-left:4px solid #4d0b07;
-
-    text-decoration:none;
-
-    position:relative;
-
-    transition:.25s ease;
-
-    font-size:13px;
-
-}
-
-
-/* ========================================================= */
-/* HOVER DAS ARMAS */
-/* ========================================================= */
-
-.armas-destaque .links a:hover{
-
-    color:#f0c75e;
-
-    transform:
-        translateX(7px)
-        scale(1.01);
-
-    border-color:#71301e;
-
-    border-left-color:#ff3c00;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(130,0,0,.5),
-            rgba(35,7,5,.9)
-        );
-
-    box-shadow:
-        0 0 18px rgba(139,0,0,.45),
-        inset 0 0 15px rgba(255,60,0,.1);
-
-    text-shadow:
-        0 0 8px rgba(255,60,0,.6);
-
-}
-
-
-/* ========================================================= */
-/* ARMAS ESPECIAIS */
-/* ========================================================= */
-
-.armas-destaque .links a[href="magicos.html"]{
-
-    border-left-color:#b88624;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(120,70,0,.3),
-            rgba(15,5,4,.7)
-        );
-
-}
-
-
-.armas-destaque .links a[href="encantos.html"]{
-
-    border-left-color:#ff3c00;
-
-}
-
-
-.armas-destaque .links a[href="Runas.html"]{
-
-    border-left-color:#d00000;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(120,0,0,.4),
-            rgba(10,2,2,.8)
-        );
-
-}
-
-
-/* ========================================================= */
-/* ÍCONES */
-/* ========================================================= */
-
-.armas-destaque .links a::first-letter{
-
-    font-size:19px;
-
-}
-
-
-/* ========================================================= */
-/* RODAPÉ */
-/* ========================================================= */
-
-.rodape{
-
-    max-width:1100px;
-
-    margin:50px auto 0;
-
-    padding:30px 0 15px;
-
-    border-top:1px solid #452018;
-
-    position:relative;
-
-}
-
-
-.rodape-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:40px;
-
-}
-
-
-/* ========================================================= */
-/* NEXALIS */
-/* ========================================================= */
-
-.rodape-col h2{
-
-    color:#e0b84f;
-
-    font-size:22px;
-
-    margin-bottom:10px;
-
-    text-shadow:
-        0 0 10px rgba(139,0,0,.6);
-
-}
-
-
-.lore{
-
-    color:#746a63;
-
-    font-size:13px;
-
-    font-style:italic;
-
-    line-height:1.6;
-
-    max-width:350px;
-
-}
-
-
-/* ========================================================= */
-/* INFORMAÇÕES DO RODAPÉ */
-/* ========================================================= */
-
-.rodape-col h3{
-
-    color:#b88624;
-
-    font-size:15px;
-
-    margin-bottom:12px;
-
-    text-transform:uppercase;
-
-    letter-spacing:1px;
-
-}
-
-
-/* ========================================================= */
-/* LINKS DO RODAPÉ */
-/* ========================================================= */
-
-.rodape .rodape-links{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:7px;
-
-}
-
-
-.rodape .rodape-links a{
-
-    color:#82766e;
-
-    text-decoration:none;
-
-    padding:6px 10px;
-
-    border-left:2px solid transparent;
-
-    transition:.3s;
-
-    font-size:12px;
-
-}
-
-
-.rodape .rodape-links a:hover{
-
-    color:#e0b84f;
-
-    border-left-color:#9b0000;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(139,0,0,.18),
-            transparent
-        );
-
-}
-
-
-/* ========================================================= */
-/* RESPONSIVO */
-/* ========================================================= */
-
-@media(max-width:800px){
-
-    .container-nav .links{
-
-        justify-content:flex-start;
+            0 0 10px #720000;
 
     }
 
 
-    .armas-destaque{
+    .container-nav {
 
-        margin:20px 10px;
+        max-width: 1200px;
 
-        padding:20px;
+        margin: auto;
 
-    }
-
-
-    .armas-destaque .links{
-
-        grid-template-columns:1fr;
+        padding: 12px 20px;
 
     }
 
 
-    .rodape-grid{
+    /* ========================================================= */
+    /* LINKS DA NAVBAR */
+    /* ========================================================= */
 
-        grid-template-columns:1fr;
+    .container-nav .links {
 
-        gap:25px;
+        display: flex;
 
-    }
+        justify-content: center;
 
-}
+        align-items: center;
 
+        flex-wrap: wrap;
 
-@media(max-width:500px){
-
-    .armas-destaque h1{
-
-        font-size:23px;
-
-        letter-spacing:2px;
+        gap: 5px;
 
     }
 
 
-    .container-nav .links a{
+    .container-nav .links a {
 
-        font-size:10px;
+        color: #a99a90;
 
-        padding:8px;
+        text-decoration: none;
+
+        padding: 10px 13px;
+
+        font-size: 12px;
+
+        letter-spacing: .5px;
+
+        border-left: 2px solid transparent;
+
+        transition: .3s ease;
+
+        text-transform: uppercase;
 
     }
 
-}
+
+    .container-nav .links a:hover {
+
+        color: #f0c75e;
+
+        border-left-color: #ff3c00;
+
+        background:
+            linear-gradient(90deg,
+                rgba(130, 0, 0, .35),
+                transparent);
+
+        text-shadow:
+            0 0 8px rgba(255, 60, 0, .6);
+
+        transform: translateY(-2px);
+
+    }
 
 
-/* ========================================================= */
-/* SELEÇÃO */
-/* ========================================================= */
+    /* ========================================================= */
+    /* ⚔️ ARSENAL PRINCIPAL */
+    /* ========================================================= */
 
-::selection{
+    .armas-destaque {
 
-    background:#720000;
+        position: relative;
 
-    color:#f0c75e;
+        max-width: 1100px;
 
-}
+        margin: 0 auto;
 
+        padding: 30px;
+
+        background:
+            linear-gradient(145deg,
+                rgba(55, 10, 6, .98),
+                rgba(12, 3, 2, .99));
+
+        border: 1px solid #71301e;
+
+        border-left: 7px solid #a30000;
+
+        box-shadow:
+            inset 0 0 40px rgba(150, 0, 0, .15),
+            0 0 30px rgba(90, 0, 0, .35),
+            0 20px 50px rgba(0, 0, 0, .9);
+
+        overflow: hidden;
+
+    }
+
+
+    /* ========================================================= */
+    /* BRILHO SUPERIOR */
+    /* ========================================================= */
+
+    .armas-destaque::before {
+
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 3px;
+
+        background:
+            linear-gradient(90deg,
+                transparent,
+                #720000,
+                #ff3c00,
+                #e0b84f,
+                #ff3c00,
+                #720000,
+                transparent);
+
+        box-shadow:
+            0 0 15px #ff3c00;
+
+        animation:
+            arsenalGlow 2.5s infinite alternate;
+
+    }
+
+
+    @keyframes arsenalGlow {
+
+        from {
+            opacity: .35;
+
+            box-shadow:
+                0 0 8px #ff3c00;
+        }
+
+        to {
+            opacity: 1;
+
+            box-shadow:
+                0 0 22px #ff3c00;
+        }
+
+    }
+
+
+    /* ========================================================= */
+    /* BRILHO INFERIOR */
+    /* ========================================================= */
+
+    .armas-destaque::after {
+
+        content: "";
+
+        position: absolute;
+
+        bottom: 0;
+        left: 10%;
+
+        width: 80%;
+        height: 1px;
+
+        background:
+            linear-gradient(90deg,
+                transparent,
+                #8b0000,
+                #e0b84f,
+                #8b0000,
+                transparent);
+
+        box-shadow:
+            0 0 10px #8b0000;
+
+    }
+
+
+    /* ========================================================= */
+    /* CABEÇALHO DO ARSENAL */
+    /* ========================================================= */
+
+    .armas-destaque h1 {
+
+        color: #e0b84f;
+
+        text-align: center;
+
+        font-size: 30px;
+
+        letter-spacing: 4px;
+
+        margin-bottom: 10px;
+
+        text-transform: uppercase;
+
+        text-shadow:
+            0 0 5px #720000,
+            0 0 15px rgba(255, 60, 0, .6),
+            0 0 30px rgba(139, 0, 0, .5);
+
+    }
+
+
+    .armas-destaque .descricao-armas {
+
+        text-align: center;
+
+        color: #8e7b70;
+
+        font-size: 12px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 25px;
+
+        text-transform: uppercase;
+
+    }
+
+
+    /* ========================================================= */
+    /* LINHA DECORATIVA */
+    /* ========================================================= */
+
+    .arsenal-titulo {
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 12px;
+
+        margin-bottom: 20px;
+
+        color: #b88624;
+
+        font-size: 11px;
+
+        letter-spacing: 3px;
+
+        text-transform: uppercase;
+
+    }
+
+
+    .arsenal-titulo span {
+
+        height: 1px;
+
+        flex: 1;
+
+        background:
+            linear-gradient(90deg,
+                transparent,
+                #692018);
+
+    }
+
+
+    .arsenal-titulo span:last-child {
+
+        background:
+            linear-gradient(90deg,
+                #692018,
+                transparent);
+
+    }
+
+
+    /* ========================================================= */
+    /* LISTA DE ARMAS */
+    /* ========================================================= */
+
+    .armas-destaque .links {
+
+        display: grid;
+
+        grid-template-columns:
+            repeat(2,
+                minmax(0, 1fr));
+
+        gap: 9px;
+
+    }
+
+
+    /* ========================================================= */
+    /* LINK DE CADA ARMA */
+    /* ========================================================= */
+
+    .armas-destaque .links a {
+
+        display: flex;
+
+        align-items: center;
+
+        min-height: 50px;
+
+        padding: 10px 14px;
+
+        color: #b9aaa0;
+
+        background:
+            linear-gradient(90deg,
+                rgba(80, 0, 0, .28),
+                rgba(15, 5, 4, .7));
+
+        border: 1px solid #321713;
+
+        border-left: 4px solid #4d0b07;
+
+        text-decoration: none;
+
+        position: relative;
+
+        transition: .25s ease;
+
+        font-size: 13px;
+
+    }
+
+
+    /* ========================================================= */
+    /* HOVER DAS ARMAS */
+    /* ========================================================= */
+
+    .armas-destaque .links a:hover {
+
+        color: #f0c75e;
+
+        transform:
+            translateX(7px) scale(1.01);
+
+        border-color: #71301e;
+
+        border-left-color: #ff3c00;
+
+        background:
+            linear-gradient(90deg,
+                rgba(130, 0, 0, .5),
+                rgba(35, 7, 5, .9));
+
+        box-shadow:
+            0 0 18px rgba(139, 0, 0, .45),
+            inset 0 0 15px rgba(255, 60, 0, .1);
+
+        text-shadow:
+            0 0 8px rgba(255, 60, 0, .6);
+
+    }
+
+
+    /* ========================================================= */
+    /* ARMAS ESPECIAIS */
+    /* ========================================================= */
+
+    .armas-destaque .links a[href="magicos.html"] {
+
+        border-left-color: #b88624;
+
+        background:
+            linear-gradient(90deg,
+                rgba(120, 70, 0, .3),
+                rgba(15, 5, 4, .7));
+
+    }
+
+
+    .armas-destaque .links a[href="encantos.html"] {
+
+        border-left-color: #ff3c00;
+
+    }
+
+
+    .armas-destaque .links a[href="Runas.html"] {
+
+        border-left-color: #d00000;
+
+        background:
+            linear-gradient(90deg,
+                rgba(120, 0, 0, .4),
+                rgba(10, 2, 2, .8));
+
+    }
+
+
+    /* ========================================================= */
+    /* ÍCONES */
+    /* ========================================================= */
+
+    .armas-destaque .links a::first-letter {
+
+        font-size: 19px;
+
+    }
+
+
+    /* ========================================================= */
+    /* RODAPÉ */
+    /* ========================================================= */
+
+    .rodape {
+
+        max-width: 1100px;
+
+        margin: 50px auto 0;
+
+        padding: 30px 0 15px;
+
+        border-top: 1px solid #452018;
+
+        position: relative;
+
+    }
+
+
+    .rodape-grid {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 40px;
+
+    }
+
+
+    /* ========================================================= */
+    /* NEXALIS */
+    /* ========================================================= */
+
+    .rodape-col h2 {
+
+        color: #e0b84f;
+
+        font-size: 22px;
+
+        margin-bottom: 10px;
+
+        text-shadow:
+            0 0 10px rgba(139, 0, 0, .6);
+
+    }
+
+
+    .lore {
+
+        color: #746a63;
+
+        font-size: 13px;
+
+        font-style: italic;
+
+        line-height: 1.6;
+
+        max-width: 350px;
+
+    }
+
+
+    /* ========================================================= */
+    /* INFORMAÇÕES DO RODAPÉ */
+    /* ========================================================= */
+
+    .rodape-col h3 {
+
+        color: #b88624;
+
+        font-size: 15px;
+
+        margin-bottom: 12px;
+
+        text-transform: uppercase;
+
+        letter-spacing: 1px;
+
+    }
+
+
+    /* ========================================================= */
+    /* LINKS DO RODAPÉ */
+    /* ========================================================= */
+
+    .rodape .rodape-links {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        gap: 7px;
+
+    }
+
+
+    .rodape .rodape-links a {
+
+        color: #82766e;
+
+        text-decoration: none;
+
+        padding: 6px 10px;
+
+        border-left: 2px solid transparent;
+
+        transition: .3s;
+
+        font-size: 12px;
+
+    }
+
+
+    .rodape .rodape-links a:hover {
+
+        color: #e0b84f;
+
+        border-left-color: #9b0000;
+
+        background:
+            linear-gradient(90deg,
+                rgba(139, 0, 0, .18),
+                transparent);
+
+    }
+
+
+    /* ========================================================= */
+    /* RESPONSIVO */
+    /* ========================================================= */
+
+    @media(max-width:800px) {
+
+        .container-nav .links {
+
+            justify-content: flex-start;
+
+        }
+
+
+        .armas-destaque {
+
+            margin: 20px 10px;
+
+            padding: 20px;
+
+        }
+
+
+        .armas-destaque .links {
+
+            grid-template-columns: 1fr;
+
+        }
+
+
+        .rodape-grid {
+
+            grid-template-columns: 1fr;
+
+            gap: 25px;
+
+        }
+
+    }
+
+
+    @media(max-width:500px) {
+
+        .armas-destaque h1 {
+
+            font-size: 23px;
+
+            letter-spacing: 2px;
+
+        }
+
+
+        .container-nav .links a {
+
+            font-size: 10px;
+
+            padding: 8px;
+
+        }
+
+    }
+
+
+    /* ========================================================= */
+    /* SELEÇÃO */
+    /* ========================================================= */
+
+    ::selection {
+
+        background: #720000;
+
+        color: #f0c75e;
+
+    }
 </style>
 
 
@@ -881,11 +850,11 @@
     <div class="rodape-grid">
 
 
-        
 
 
-       
-        </div>
+
+
+    </div>
 
     </div>
 

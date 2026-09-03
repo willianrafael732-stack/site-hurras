@@ -1,606 +1,586 @@
 <style>
-
-/* =========================================================
+    /* =========================================================
    NEXALIS RPG — TEMA DIABLO / INFERNO
    ========================================================= */
 
-:root {
-    --inferno: #080404;
-    --inferno-2: #120605;
-    --sangue: #650b08;
-    --sangue-claro: #9e1710;
-    --brasa: #ff4500;
-    --ouro: #b88a2a;
-    --ouro-claro: #e0b84f;
-    --pedra: #2a211d;
-    --pedra-clara: #49362c;
-    --texto: #d6d0c8;
-    --texto-fraco: #8c8178;
-}
+    :root {
+        --inferno: #080404;
+        --inferno-2: #120605;
+        --sangue: #650b08;
+        --sangue-claro: #9e1710;
+        --brasa: #ff4500;
+        --ouro: #b88a2a;
+        --ouro-claro: #e0b84f;
+        --pedra: #2a211d;
+        --pedra-clara: #49362c;
+        --texto: #d6d0c8;
+        --texto-fraco: #8c8178;
+    }
 
 
-/* =========================================================
+    /* =========================================================
    BODY
    ========================================================= */
 
-body {
+    body {
 
-    margin: 0;
+        margin: 0;
 
-    padding: 0;
+        padding: 0;
 
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            #3b0b07 0%,
-            #1b0705 22%,
-            #0d0504 50%,
-            #050202 80%,
-            #020202 100%
-        );
+        background:
+            radial-gradient(circle at 50% 0%,
+                #3b0b07 0%,
+                #1b0705 22%,
+                #0d0504 50%,
+                #050202 80%,
+                #020202 100%);
 
-    background-attachment: fixed;
+        background-attachment: fixed;
 
-    color: var(--texto);
+        color: var(--texto);
 
-    font-family: 'Cinzel', serif;
+        font-family: 'Cinzel', serif;
 
-    line-height: 1.6;
+        line-height: 1.6;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    EFEITO DE FUMAÇA / ESCURIDÃO
    ========================================================= */
 
-body::before {
+    body::before {
 
-    content: "";
+        content: "";
 
-    position: fixed;
+        position: fixed;
 
-    inset: 0;
+        inset: 0;
 
-    pointer-events: none;
+        pointer-events: none;
 
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(139, 0, 0, 0.08),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 70%,
-            rgba(255, 69, 0, 0.04),
-            transparent 25%
-        );
+        background:
+            radial-gradient(circle at 20% 20%,
+                rgba(139, 0, 0, 0.08),
+                transparent 30%),
+            radial-gradient(circle at 80% 70%,
+                rgba(255, 69, 0, 0.04),
+                transparent 25%);
 
-    z-index: -1;
+        z-index: -1;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    RODAPÉ / MENU SUPERIOR
    ========================================================= */
 
-.rodape {
+    .rodape {
 
-    margin: 0;
+        margin: 0;
 
-    padding: 45px 30px 20px;
+        padding: 45px 30px 20px;
 
-    background:
-        linear-gradient(
-            to bottom,
-            #090303,
-            #120605,
-            #070303
-        );
+        background:
+            linear-gradient(to bottom,
+                #090303,
+                #120605,
+                #070303);
 
-    border-bottom:
-        1px solid #542018;
+        border-bottom:
+            1px solid #542018;
 
-    box-shadow:
-        0 10px 40px rgba(0,0,0,0.95),
-        inset 0 -20px 40px rgba(80,0,0,0.12);
+        box-shadow:
+            0 10px 40px rgba(0, 0, 0, 0.95),
+            inset 0 -20px 40px rgba(80, 0, 0, 0.12);
 
-    position: relative;
+        position: relative;
 
-    overflow: hidden;
+        overflow: hidden;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    LINHA DE BRASA
    ========================================================= */
 
-.rodape::before {
+    .rodape::before {
 
-    content: "";
+        content: "";
 
-    position: absolute;
+        position: absolute;
 
-    top: 0;
+        top: 0;
 
-    left: 0;
+        left: 0;
 
-    width: 100%;
+        width: 100%;
 
-    height: 3px;
+        height: 3px;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #650b08,
-            #ff4500,
-            #d4a83f,
-            #ff4500,
-            #650b08,
-            transparent
-        );
+        background:
+            linear-gradient(90deg,
+                transparent,
+                #650b08,
+                #ff4500,
+                #d4a83f,
+                #ff4500,
+                #650b08,
+                transparent);
 
-    box-shadow:
-        0 0 15px rgba(255,69,0,0.8);
+        box-shadow:
+            0 0 15px rgba(255, 69, 0, 0.8);
 
-    animation:
-        linhaInfernal 4s infinite linear;
+        animation:
+            linhaInfernal 4s infinite linear;
 
-}
-
-
-@keyframes linhaInfernal {
-
-    0% {
-        opacity: 0.3;
-        filter: brightness(0.7);
     }
 
-    50% {
-        opacity: 1;
-        filter: brightness(1.5);
+
+    @keyframes linhaInfernal {
+
+        0% {
+            opacity: 0.3;
+            filter: brightness(0.7);
+        }
+
+        50% {
+            opacity: 1;
+            filter: brightness(1.5);
+        }
+
+        100% {
+            opacity: 0.3;
+            filter: brightness(0.7);
+        }
+
     }
 
-    100% {
-        opacity: 0.3;
-        filter: brightness(0.7);
-    }
 
-}
-
-
-/* =========================================================
+    /* =========================================================
    CONTAINER DO RODAPÉ
    ========================================================= */
 
-.rodape-container {
+    .rodape-container {
 
-    max-width: 1200px;
+        max-width: 1200px;
 
-    margin: auto;
+        margin: auto;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    GRID
    ========================================================= */
 
-.rodape-grid {
+    .rodape-grid {
 
-    display: grid;
+        display: grid;
 
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(220px, 1fr)
-        );
+        grid-template-columns:
+            repeat(auto-fit,
+                minmax(220px, 1fr));
 
-    gap: 45px;
+        gap: 45px;
 
-    margin-bottom: 30px;
+        margin-bottom: 30px;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    TÍTULO NEXALIS
    ========================================================= */
 
-.rodape-col h2 {
+    .rodape-col h2 {
 
-    color: var(--ouro-claro);
+        color: var(--ouro-claro);
 
-    font-size: 25px;
+        font-size: 25px;
 
-    letter-spacing: 2px;
+        letter-spacing: 2px;
 
-    text-shadow:
-        0 0 5px #6b150d,
-        0 0 15px rgba(180,0,0,0.7),
-        0 0 25px rgba(255,69,0,0.25);
+        text-shadow:
+            0 0 5px #6b150d,
+            0 0 15px rgba(180, 0, 0, 0.7),
+            0 0 25px rgba(255, 69, 0, 0.25);
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    TÍTULOS
    ========================================================= */
 
-.rodape-col h3 {
+    .rodape-col h3 {
 
-    color: var(--ouro);
+        color: var(--ouro);
 
-    margin-bottom: 15px;
+        margin-bottom: 15px;
 
-    letter-spacing: 1px;
+        letter-spacing: 1px;
 
-    text-shadow:
-        0 0 8px rgba(139,0,0,0.5);
+        text-shadow:
+            0 0 8px rgba(139, 0, 0, 0.5);
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    FRASE
    ========================================================= */
 
-.lore {
+    .lore {
 
-    font-size: 13px;
+        font-size: 13px;
 
-    color: var(--texto-fraco);
+        color: var(--texto-fraco);
 
-    font-style: italic;
+        font-style: italic;
 
-    max-width: 280px;
+        max-width: 280px;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    LINKS
    ========================================================= */
 
-.links {
+    .links {
 
-    display: flex;
+        display: flex;
 
-    flex-direction: column;
+        flex-direction: column;
 
-    gap: 6px;
+        gap: 6px;
 
-}
-
-
-.links a {
-
-    color: #9c928a;
-
-    text-decoration: none;
-
-    padding: 7px 10px;
-
-    border-left:
-        2px solid transparent;
-
-    transition:
-        all 0.3s ease;
-
-}
+    }
 
 
-.links a:hover {
+    .links a {
 
-    color: var(--ouro-claro);
+        color: #9c928a;
 
-    border-left:
-        2px solid var(--brasa);
+        text-decoration: none;
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(139,0,0,0.25),
-            transparent
-        );
+        padding: 7px 10px;
 
-    padding-left: 17px;
+        border-left:
+            2px solid transparent;
 
-    text-shadow:
-        0 0 8px rgba(255,69,0,0.5);
+        transition:
+            all 0.3s ease;
 
-}
+    }
 
 
-/* =========================================================
+    .links a:hover {
+
+        color: var(--ouro-claro);
+
+        border-left:
+            2px solid var(--brasa);
+
+        background:
+            linear-gradient(90deg,
+                rgba(139, 0, 0, 0.25),
+                transparent);
+
+        padding-left: 17px;
+
+        text-shadow:
+            0 0 8px rgba(255, 69, 0, 0.5);
+
+    }
+
+
+    /* =========================================================
    COPYRIGHT
    ========================================================= */
 
-.rodape-bottom {
+    .rodape-bottom {
 
-    border-top:
-        1px solid #321712;
+        border-top:
+            1px solid #321712;
 
-    padding-top: 15px;
+        padding-top: 15px;
 
-    text-align: center;
+        text-align: center;
 
-    font-size: 12px;
+        font-size: 12px;
 
-    color: #665c56;
+        color: #665c56;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    SEÇÃO DE ARMAS
    ========================================================= */
 
-.classe-armas {
+    .classe-armas {
 
-    max-width: 1000px;
+        max-width: 1000px;
 
-    margin:
-        60px auto;
+        margin:
+            60px auto;
 
-    padding:
-        0 25px;
+        padding:
+            0 25px;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    TÍTULO DA SEÇÃO
    ========================================================= */
 
-.classe-armas > h1 {
+    .classe-armas>h1 {
 
-    color: var(--ouro-claro);
+        color: var(--ouro-claro);
 
-    text-align: center;
+        text-align: center;
 
-    font-size: 32px;
+        font-size: 32px;
 
-    letter-spacing: 3px;
+        letter-spacing: 3px;
 
-    text-transform: uppercase;
+        text-transform: uppercase;
 
-    margin-bottom: 40px;
+        margin-bottom: 40px;
 
-    padding-bottom: 15px;
+        padding-bottom: 15px;
 
-    border-bottom:
-        1px solid #652018;
+        border-bottom:
+            1px solid #652018;
 
-    text-shadow:
-        0 0 5px #8b0000,
-        0 0 15px rgba(180,0,0,0.7);
+        text-shadow:
+            0 0 5px #8b0000,
+            0 0 15px rgba(180, 0, 0, 0.7);
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    CARD DA ARMA
    ========================================================= */
 
-.arma {
+    .arma {
 
-    position: relative;
+        position: relative;
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(38,13,10,0.97),
-            rgba(10,5,4,0.99)
-        );
+        background:
+            linear-gradient(145deg,
+                rgba(38, 13, 10, 0.97),
+                rgba(10, 5, 4, 0.99));
 
-    border:
-        1px solid var(--pedra-clara);
+        border:
+            1px solid var(--pedra-clara);
 
-    border-left:
-        4px solid var(--sangue-claro);
+        border-left:
+            4px solid var(--sangue-claro);
 
-    padding:
-        22px 25px;
+        padding:
+            22px 25px;
 
-    border-radius:
-        4px;
+        border-radius:
+            4px;
 
-    margin-bottom:
-        22px;
+        margin-bottom:
+            22px;
 
-    box-shadow:
-        inset 0 0 30px rgba(120,0,0,0.08),
-        0 12px 30px rgba(0,0,0,0.85);
+        box-shadow:
+            inset 0 0 30px rgba(120, 0, 0, 0.08),
+            0 12px 30px rgba(0, 0, 0, 0.85);
 
-    transition:
-        all 0.35s ease;
+        transition:
+            all 0.35s ease;
 
-    overflow: hidden;
+        overflow: hidden;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    DETALHE INFERNAL DO CARD
    ========================================================= */
 
-.arma::before {
+    .arma::before {
 
-    content: "";
+        content: "";
 
-    position: absolute;
+        position: absolute;
 
-    top: 0;
+        top: 0;
 
-    right: 0;
+        right: 0;
 
-    width: 100px;
+        width: 100px;
 
-    height: 100px;
+        height: 100px;
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(139,0,0,0.12),
-            transparent 70%
-        );
+        background:
+            radial-gradient(circle,
+                rgba(139, 0, 0, 0.12),
+                transparent 70%);
 
-    pointer-events: none;
+        pointer-events: none;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    HOVER
    ========================================================= */
 
-.arma:hover {
+    .arma:hover {
 
-    transform:
-        translateX(6px);
+        transform:
+            translateX(6px);
 
-    border-color:
-        #6b3024;
+        border-color:
+            #6b3024;
 
-    border-left-color:
-        var(--brasa);
+        border-left-color:
+            var(--brasa);
 
-    box-shadow:
-        0 0 25px rgba(139,0,0,0.45),
-        inset 0 0 25px rgba(139,0,0,0.10),
-        0 15px 35px rgba(0,0,0,0.9);
+        box-shadow:
+            0 0 25px rgba(139, 0, 0, 0.45),
+            inset 0 0 25px rgba(139, 0, 0, 0.10),
+            0 15px 35px rgba(0, 0, 0, 0.9);
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    NOME DA ARMA
    ========================================================= */
 
-.arma h2 {
+    .arma h2 {
 
-    color:
-        var(--ouro-claro);
+        color:
+            var(--ouro-claro);
 
-    margin-top: 0;
+        margin-top: 0;
 
-    margin-bottom: 15px;
+        margin-bottom: 15px;
 
-    font-size: 22px;
+        font-size: 22px;
 
-    text-shadow:
-        0 0 8px rgba(139,0,0,0.7);
+        text-shadow:
+            0 0 8px rgba(139, 0, 0, 0.7);
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    TEXTO DA ARMA
    ========================================================= */
 
-.arma p {
+    .arma p {
 
-    color:
-        #b8aea5;
+        color:
+            #b8aea5;
 
-    margin:
-        8px 0;
+        margin:
+            8px 0;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    NEGRITO
    ========================================================= */
 
-.arma b {
+    .arma b {
 
-    color:
-        #c89535;
+        color:
+            #c89535;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    VANTAGENS
    ========================================================= */
 
-.arma p:nth-of-type(2) {
+    .arma p:nth-of-type(2) {
 
-    border-left:
-        2px solid #4f9d69;
+        border-left:
+            2px solid #4f9d69;
 
-    padding-left:
-        10px;
+        padding-left:
+            10px;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    DESVANTAGENS
    ========================================================= */
 
-.arma p:nth-of-type(3) {
+    .arma p:nth-of-type(3) {
 
-    border-left:
-        2px solid #8b0000;
+        border-left:
+            2px solid #8b0000;
 
-    padding-left:
-        10px;
+        padding-left:
+            10px;
 
-}
+    }
 
 
-/* =========================================================
+    /* =========================================================
    RESPONSIVO
    ========================================================= */
 
-@media (max-width: 700px) {
+    @media (max-width: 700px) {
 
-    .rodape {
+        .rodape {
 
-        padding:
-            35px 20px 20px;
+            padding:
+                35px 20px 20px;
+
+        }
+
+        .rodape-grid {
+
+            grid-template-columns:
+                1fr;
+
+            gap:
+                25px;
+
+        }
+
+        .classe-armas {
+
+            padding:
+                0 15px;
+
+        }
+
+        .classe-armas>h1 {
+
+            font-size:
+                24px;
+
+        }
+
+        .arma {
+
+            padding:
+                18px;
+
+        }
 
     }
-
-    .rodape-grid {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            25px;
-
-    }
-
-    .classe-armas {
-
-        padding:
-            0 15px;
-
-    }
-
-    .classe-armas > h1 {
-
-        font-size:
-            24px;
-
-    }
-
-    .arma {
-
-        padding:
-            18px;
-
-    }
-
-}
-
 </style>
 
 

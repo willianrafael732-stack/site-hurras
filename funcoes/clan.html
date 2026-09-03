@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 
 <html lang="pt-BR">
+
 <head>
-<link href="../site.css" rel="stylesheet"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HURRAS FANTASY - Criação Infernal</title>
-<link href="https://fonts.googleapis.com/css2?family=Creepster&amp;family=UnifrakturMaguntia&amp;display=swap" rel="stylesheet"/>
-<link href="/funcoes/css/CLAN.CSS" rel="stylesheet"/>
-<style>
+    <link href="../site.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>HURRAS FANTASY - Criação Infernal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&amp;family=UnifrakturMaguntia&amp;display=swap"
+        rel="stylesheet" />
+    <link href="/funcoes/css/CLAN.CSS" rel="stylesheet" />
+    <style>
         body {
             background: #1a1a1a;
             color: #e8e0c8;
             font-family: Georgia, "Times New Roman", serif;
         }
+
         .controls {
             max-width: 900px;
             margin: 20px auto;
@@ -22,14 +25,20 @@
             border: 1px solid #c9a227;
             border-radius: 4px;
         }
-        .controls label { margin-right: 6px; }
-        .controls select, .controls input {
+
+        .controls label {
+            margin-right: 6px;
+        }
+
+        .controls select,
+        .controls input {
             margin: 4px 8px 8px 0;
             padding: 6px;
             background: #111;
             color: #e8e0c8;
             border: 1px solid #555;
         }
+
         .controls button {
             margin: 6px 6px 0 0;
             padding: 8px 14px;
@@ -39,7 +48,10 @@
             cursor: pointer;
             font-family: inherit;
         }
-        .controls button:hover { background: #5a4018; }
+
+        .controls button:hover {
+            background: #5a4018;
+        }
 
         /* ===== FICHA ESTILO OFICIAL ===== */
         .ficha-oficial {
@@ -50,18 +62,20 @@
             box-shadow:
                 0 0 0 2px #1a1208,
                 0 0 0 6px #8b7355,
-                0 0 40px rgba(0,0,0,.8);
+                0 0 40px rgba(0, 0, 0, .8);
             padding: 18px 22px 28px;
             color: #e8e0c8;
             position: relative;
         }
+
         .ficha-oficial::before {
             content: "";
             position: absolute;
             inset: 6px;
-            border: 1px solid rgba(201,162,39,.35);
+            border: 1px solid rgba(201, 162, 39, .35);
             pointer-events: none;
         }
+
         .ficha-logo {
             text-align: center;
             font-family: "UnifrakturMaguntia", Georgia, serif;
@@ -69,8 +83,9 @@
             color: #f0e6d0;
             letter-spacing: 2px;
             margin: 8px 0 4px;
-            text-shadow: 0 0 12px rgba(201,162,39,.4);
+            text-shadow: 0 0 12px rgba(201, 162, 39, .4);
         }
+
         .ficha-logo span {
             display: block;
             font-size: 18px;
@@ -78,6 +93,7 @@
             font-family: Georgia, serif;
             color: #c9a227;
         }
+
         .ficha-header {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -85,6 +101,7 @@
             margin: 16px 0 14px;
             font-size: 13px;
         }
+
         .ficha-header .campo {
             display: grid;
             grid-template-columns: 92px 1fr;
@@ -94,6 +111,7 @@
             padding-bottom: 3px;
             min-height: 22px;
         }
+
         .ficha-header .campo label {
             color: #c9a227;
             font-size: 10px;
@@ -102,11 +120,13 @@
             white-space: nowrap;
             text-align: right;
         }
+
         .ficha-header .campo span {
             color: #fff;
             font-weight: bold;
             min-width: 0;
         }
+
         .sec-title {
             text-align: center;
             color: #f0e6d0;
@@ -117,12 +137,14 @@
             border-bottom: 1px solid #c9a227;
             padding-bottom: 4px;
         }
+
         .cols-3 {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             gap: 8px 16px;
             align-items: start;
         }
+
         .col-title {
             text-align: center;
             color: #c9a227;
@@ -131,6 +153,7 @@
             margin-bottom: 10px;
             text-transform: uppercase;
         }
+
         .attr-row {
             display: grid;
             grid-template-columns: 108px 1fr 20px 20px;
@@ -140,6 +163,7 @@
             min-height: 20px;
             font-size: 12px;
         }
+
         .attr-name {
             width: auto;
             text-align: right;
@@ -152,6 +176,7 @@
             text-overflow: ellipsis;
             padding-right: 2px;
         }
+
         .dots {
             display: grid;
             grid-template-columns: repeat(10, 12px);
@@ -159,6 +184,7 @@
             justify-content: start;
             width: 138px;
         }
+
         .dot {
             width: 12px;
             height: 12px;
@@ -172,17 +198,20 @@
             margin: 0;
             flex-shrink: 0;
         }
+
         .dot:hover {
             transform: scale(1.25);
             border-color: #f0c75e;
-            box-shadow: 0 0 6px rgba(240,199,94,.7);
+            box-shadow: 0 0 6px rgba(240, 199, 94, .7);
             z-index: 1;
         }
+
         .dot.filled {
             background: #f0c75e;
             border-color: #c9a227;
-            box-shadow: 0 0 4px rgba(240,199,94,.5);
+            box-shadow: 0 0 4px rgba(240, 199, 94, .5);
         }
+
         .mod-box {
             width: 18px;
             height: 18px;
@@ -199,22 +228,29 @@
             transition: transform .1s;
             justify-self: center;
         }
-        .mod-box:hover { transform: scale(1.15); }
+
+        .mod-box:hover {
+            transform: scale(1.15);
+        }
+
         .mod-blue {
             background: #1a4a8a;
             border: 1px solid #3a7ad0;
             color: #a0d0ff;
         }
+
         .mod-red {
             background: #8a1a1a;
             border: 1px solid #d03a3a;
             color: #ffb0b0;
         }
+
         .mod-empty {
             background: transparent;
             border: 1px solid #444;
             color: #666;
         }
+
         .bottom-grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
@@ -222,6 +258,7 @@
             margin-top: 16px;
             align-items: stretch;
         }
+
         .box-panel {
             border: 1px solid #555;
             padding: 10px 12px;
@@ -229,9 +266,11 @@
             display: flex;
             flex-direction: column;
         }
+
         .box-panel .attr-row {
             grid-template-columns: 100px 1fr 20px 20px;
         }
+
         .box-panel h4 {
             margin: 0 0 8px;
             color: #c9a227;
@@ -240,12 +279,14 @@
             text-align: center;
             text-transform: uppercase;
         }
+
         .prof-stars {
             display: flex;
             gap: 6px;
             justify-content: center;
             margin: 6px 0;
         }
+
         .star {
             width: 18px;
             height: 18px;
@@ -253,10 +294,12 @@
             border: 1px solid #666;
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
         }
+
         .star.on {
             background: #f0c75e;
             border-color: #c9a227;
         }
+
         .sq-row {
             display: flex;
             gap: 4px;
@@ -264,6 +307,7 @@
             flex-wrap: wrap;
             margin: 4px 0;
         }
+
         .sq {
             width: 14px;
             height: 14px;
@@ -273,39 +317,76 @@
             transition: transform .1s, background .15s;
             display: inline-block;
         }
-        .sq:hover { transform: scale(1.25); border-color: #f0c75e; }
-        .sq.blue { background: #1a4a8a; border-color: #3a7ad0; }
-        .sq.red { background: #8a1a1a; border-color: #d03a3a; }
-        .sq.yellow { background: #f0c75e; border-color: #c9a227; }
-        .sq.purple { background: #5a2a8a; border-color: #9a5ad0; }
-        .sq.filled-will { background: #c41e1e; border-color: #ff4444; border-radius: 50%; }
+
+        .sq:hover {
+            transform: scale(1.25);
+            border-color: #f0c75e;
+        }
+
+        .sq.blue {
+            background: #1a4a8a;
+            border-color: #3a7ad0;
+        }
+
+        .sq.red {
+            background: #8a1a1a;
+            border-color: #d03a3a;
+        }
+
+        .sq.yellow {
+            background: #f0c75e;
+            border-color: #c9a227;
+        }
+
+        .sq.purple {
+            background: #5a2a8a;
+            border-color: #9a5ad0;
+        }
+
+        .sq.filled-will {
+            background: #c41e1e;
+            border-color: #ff4444;
+            border-radius: 50%;
+        }
+
         .star {
             cursor: pointer;
             transition: transform .1s;
         }
-        .star:hover { transform: scale(1.3); }
+
+        .star:hover {
+            transform: scale(1.3);
+        }
+
         .campo span[contenteditable] {
             outline: none;
             min-width: 40px;
             cursor: text;
             border-bottom: 1px dashed transparent;
         }
+
         .campo span[contenteditable]:hover,
         .campo span[contenteditable]:focus {
             border-bottom-color: #c9a227;
             color: #fff;
         }
+
         .passiva-box[contenteditable],
         .vm-value[contenteditable] {
             outline: none;
             cursor: text;
         }
+
         .passiva-box[contenteditable]:focus,
         .vm-value[contenteditable]:focus {
             border-color: #c9a227;
             color: #fff;
         }
-        .vm-value { cursor: text; }
+
+        .vm-value {
+            cursor: text;
+        }
+
         .vital-mana {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -313,6 +394,7 @@
             margin-top: 14px;
             align-items: stretch;
         }
+
         .vm-label {
             color: #c9a227;
             font-size: 12px;
@@ -320,6 +402,7 @@
             margin-bottom: 4px;
             text-align: center;
         }
+
         .vm-value {
             font-size: 22px;
             color: #fff;
@@ -327,6 +410,7 @@
             text-align: center;
             line-height: 1.2;
         }
+
         .passiva-box {
             border: 1px solid #555;
             min-height: 40px;
@@ -336,6 +420,7 @@
             color: #aaa;
             flex: 1;
         }
+
         .sq-row {
             display: flex;
             gap: 4px;
@@ -343,251 +428,259 @@
             flex-wrap: nowrap;
             margin: 4px 0;
         }
+
         @media (max-width: 900px) {
             .cols-3 {
                 grid-template-columns: 1fr;
                 max-width: 420px;
                 margin: 0 auto;
             }
-            .ficha-header, .bottom-grid, .vital-mana {
+
+            .ficha-header,
+            .bottom-grid,
+            .vital-mana {
                 grid-template-columns: 1fr;
             }
+
             .attr-row {
                 grid-template-columns: 120px 1fr 20px 20px;
             }
+
             .dots {
                 width: auto;
                 grid-template-columns: repeat(10, 13px);
             }
         }
     </style>
-<meta content="strict-origin-when-cross-origin" name="referrer"/></head>
-<body>
-<nav class="navbar">
-<div class="container-nav">
-<div class="links">
-<a href="../funcoes/inicio.html">historia </a>
-<a href="racaeclasses.html">Raças e Classes</a>
-<a href="/armas/armas.html">Armas</a>
-<a href="../funcoes/sistema.html">sistema</a>
-<a href="../funcoes/inimigo.html">inimigos</a>
-<a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
-<a href="..//funcoes/magia.html">magias</a>
-<a href="..//funcoes/porção.html">porção</a>
-<a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
-<a href="/funcoes/mapas.html">mapas</a>
-<a href="/funcoes/clan.html">Criação de Ficha</a>
-</div>
-</div>
-</nav>
-<div class="controls">
-<h1 style="margin:0 0 8px;color:#f0d78c;letter-spacing:3px;">HURRAS FANTASY</h1>
-<h2 style="margin:0 0 16px;color:#c9a227;font-size:14px;letter-spacing:2px;">✦ FICHA INFERNAL ✦</h2>
-<label for="nome">Nome</label>
-<input id="nome" oninput="atualizarCabecalho()" placeholder="Nome do personagem" type="text"/>
-<label for="nivel">Nível</label>
-<select id="nivel" onchange="criarFicha()">
-<option value="1">Nível 1</option>
-<option value="2">Nível 2</option>
-<option value="3">Nível 3</option>
-<option value="4">Nível 4</option>
-<option value="5">Nível 5</option>
-<option value="6">Nível 6</option>
-<option value="7">Nível 7</option>
-<option value="8">Nível 8</option>
-<option value="9">Nível 9</option>
-<option value="10">Nível 10</option>
-</select>
-<label for="raca">Raça</label>
-<select id="raca" onchange="criarFicha()">
-<option value="Humano">Humano</option>
-<option value="Anjo">Anjo</option>
-<option value="Anão">Anão</option>
-<option value="Demônio">Demônio</option>
-<option value="Djinn">Djinn</option>
-<option value="Draconiano">Draconiano</option>
-<option value="Elfo">Elfo</option>
-<option value="Fada">Fada</option>
-<option value="Faunos e Sátiros">Faunos e Sátiros</option>
-<option value="Gigante">Gigante</option>
-<option value="Goblin">Goblin</option>
-<option value="Homem-Fera">Homem-Fera</option>
-<option value="Lich">Lich</option>
-<option value="Lobisomem">Lobisomem</option>
-<option value="Meio-Elfo">Meio-Elfo</option>
-<option value="Meio-Orc">Meio-Orc</option>
-<option value="Metamorfo">Metamorfo</option>
-<option value="Minotauro">Minotauro</option>
-<option value="Orc">Orc</option>
-<option value="Reptiliano">Reptiliano</option>
-<option value="Sereianos">Sereianos</option>
-<option value="Troll">Troll</option>
-<option value="Vampiro">Vampiro</option>
-<option value="Zumbi">Zumbi</option>
-</select>
-<label for="classe">Classe</label>
-<select id="classe" onchange="onClasseChange()">
-<option value="Arqueiro">Arqueiro</option>
-<option value="Bardo">Bardo</option>
-<option value="Bruxo">Bruxo</option>
-<option value="Clérigo">Clérigo</option>
-<option value="Domador">Domador</option>
-<option value="Druida">Druida</option>
-<option value="Guerreiro">Guerreiro</option>
-<option value="Ladino">Ladino</option>
-<option value="Lanceiro">Lanceiro</option>
-<option value="Mago">Mago</option>
-<option value="Monge">Monge</option>
-<option value="Necromante">Necromante</option>
-<option value="Ninja">Ninja</option>
-<option value="Tecnomancer">Tecnomancer</option>
-<option value="Transmutador">Transmutador</option>
-</select>
-<br/>
-<label for="natureza">Natureza</label>
-<select id="natureza" onchange="criarFicha(true)">
-<option value="">—</option>
-<option>Anti-Herói</option>
-<option>Artista</option>
-<option>Aventureiro</option>
-<option>Bon Vivant</option>
-<option>Bravo</option>
-<option>Caçador de Recompensas</option>
-<option>Cavaleiro</option>
-<option>Cético</option>
-<option>Contrabandista</option>
-<option>Curador</option>
-<option>Desbravador</option>
-<option>Destruidor</option>
-<option>Diplomata</option>
-<option>Dissimulado</option>
-<option>Enganador</option>
-<option>Errante</option>
-<option>Estrategista</option>
-<option>Explorador Urbano</option>
-<option>Fanático</option>
-<option>Filantropo</option>
-<option>Filósofo</option>
-<option>Guerreiro</option>
-<option>Hedonista</option>
-<option>Herói</option>
-<option>Inventor</option>
-<option>Investigador</option>
-<option>Líder</option>
-<option>Mártir</option>
-<option>Mentor</option>
-<option>Otimista</option>
-<option>Pária</option>
-<option>Perfeccionista</option>
-<option>Pirata</option>
-<option>Poeta</option>
-<option>Protetor</option>
-<option>Realista</option>
-<option>Recluso</option>
-<option>Revolucionário</option>
-<option>Romântico</option>
-<option>Sábio</option>
-<option>Sobrevivente</option>
-<option>Solitário</option>
-<option>Vilão</option>
-<option>Vingador</option>
-<option>Visionário</option>
-</select>
-<label for="profissao">Profissão</label>
-<select id="profissao" onchange="criarFicha(true)">
-<option value="">—</option>
-<option value="Alquimista">Alquimista</option>
-<option value="Armeiro">Armeiro</option>
-<option value="Artífice">Artífice</option>
-<option value="Encantador">Encantador</option>
-<option value="Engenheiro">Engenheiro</option>
-<option value="Médico">Médico</option>
-</select>
-<br/>
-<label for="subclasse">Subclasse</label>
-<select id="subclasse" onchange="criarFicha()">
-<option value="">Selecione uma subclasse</option>
-<optgroup label="Arqueiro">
-<option value="Patrulheiro">Patrulheiro</option>
-<option value="Atirador">Atirador</option>
-</optgroup>
-<optgroup label="Bardo">
-<option value="InicianteBardo">Iniciante</option>
-<option value="Musico">Músico</option>
-</optgroup>
-<optgroup label="Bruxo">
-<option value="FeiticeiroBruxo">Feiticeiro</option>
-<option value="PaladinoNegro">Paladino Negro</option>
-</optgroup>
-<optgroup label="Clérigo">
-<option value="Sacerdote">Sacerdote</option>
-<option value="Paladino">Paladino</option>
-</optgroup>
-<optgroup label="Domador">
-<option value="ControladorDeBestas">Controlador de Bestas</option>
-</optgroup>
-<optgroup label="Druida">
-<option value="Xama">Xamã</option>
-<option value="MetamorfoDruida">Metamorfo</option>
-</optgroup>
-<optgroup label="Guerreiro">
-<option value="Barbaro">Bárbaro</option>
-<option value="Espadachim">Espadachim</option>
-</optgroup>
-<optgroup label="Ladino">
-<option value="Assassino">Assassino</option>
-<option value="Ladrao">Ladrão</option>
-</optgroup>
-<optgroup label="Lanceiro">
-<option value="MestreDasLancas">Mestre das Lanças</option>
-<option value="CampeaoReal">Campeão Real</option>
-</optgroup>
-<optgroup label="Mago">
-<option value="FeiticeiroMago">Feiticeiro</option>
-<option value="Elementalista">Elementalista</option>
-</optgroup>
-<optgroup label="Monge">
-<option value="ArtistaMarcial">Artista Marcial</option>
-<option value="DobradorElemental">Dobrador Elemental</option>
-</optgroup>
-<optgroup label="Necromante">
-<option value="Conjurador">Conjurador</option>
-<option value="Sombrio">Sombrio</option>
-</optgroup>
-<optgroup label="Ninja">
-<option value="Jounin">Jounin</option>
-</optgroup>
-<optgroup label="Tecnomancer">
-<option value="Arquitecnomante">Arquitécnomante</option>
-</optgroup>
-<optgroup label="Transmutador">
-<option value="MestreDaTransmutacao">Mestre da Transmutação</option>
-</optgroup>
-</select>
-<br/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script>
-        function gerarPDF() {
-            const ficha = document.querySelector(".ficha-oficial") || document.getElementById("ficha");
+    <meta content="strict-origin-when-cross-origin" name="referrer" />
+</head>
 
-            html2pdf()
-                .set({
-                    margin: 8,
-                    filename: 'ficha-hurras.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2, backgroundColor: '#0d0d0d' },
-                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-                })
-                .from(ficha)
-                .save();
-        }
-    </script>
-<button onclick="gerarPDF()">Gerar PDF</button>
-<button onclick="criarFicha()">Gerar Ficha</button>
-<button onclick="criarAleatorio()">🎲 Aleatório Completo</button>
-</div>
-<div class="ficha" id="ficha"></div>
-<script>
+<body>
+   <nav class="navbar">
+        <div class="container-nav">
+            <div class="links">
+                <a href="../funcoes/inicio.html">historia </a>
+                <a href="racaeclasses.html">Raças e Classes</a>
+                <a href="/armas/armas.html">Armas</a>
+                <a href="../funcoes/sistema.html">sistema</a>
+                <a href="../funcoes/inimigo.html">inimigos</a>
+                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
+                <a href="..//funcoes/magia.html">magias</a>
+                <a href="..//funcoes/porção.html">porção</a>
+                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
+                <a href="/funcoes/mapas.html">mapas</a>
+                <a href="/funcoes/clan.html">Criação de Ficha</a>
+            </div>
+        </div>
+    </nav>
+    <div class="controls">
+        <h1 style="margin:0 0 8px;color:#f0d78c;letter-spacing:3px;">HURRAS FANTASY</h1>
+        <h2 style="margin:0 0 16px;color:#c9a227;font-size:14px;letter-spacing:2px;">✦ FICHA INFERNAL ✦</h2>
+        <label for="nome">Nome</label>
+        <input id="nome" oninput="atualizarCabecalho()" placeholder="Nome do personagem" type="text" />
+        <label for="nivel">Nível</label>
+        <select id="nivel" onchange="criarFicha()">
+            <option value="1">Nível 1</option>
+            <option value="2">Nível 2</option>
+            <option value="3">Nível 3</option>
+            <option value="4">Nível 4</option>
+            <option value="5">Nível 5</option>
+            <option value="6">Nível 6</option>
+            <option value="7">Nível 7</option>
+            <option value="8">Nível 8</option>
+            <option value="9">Nível 9</option>
+            <option value="10">Nível 10</option>
+        </select>
+        <label for="raca">Raça</label>
+        <select id="raca" onchange="criarFicha()">
+            <option value="Humano">Humano</option>
+            <option value="Anjo">Anjo</option>
+            <option value="Anão">Anão</option>
+            <option value="Demônio">Demônio</option>
+            <option value="Djinn">Djinn</option>
+            <option value="Draconiano">Draconiano</option>
+            <option value="Elfo">Elfo</option>
+            <option value="Fada">Fada</option>
+            <option value="Faunos e Sátiros">Faunos e Sátiros</option>
+            <option value="Gigante">Gigante</option>
+            <option value="Goblin">Goblin</option>
+            <option value="Homem-Fera">Homem-Fera</option>
+            <option value="Lich">Lich</option>
+            <option value="Lobisomem">Lobisomem</option>
+            <option value="Meio-Elfo">Meio-Elfo</option>
+            <option value="Meio-Orc">Meio-Orc</option>
+            <option value="Metamorfo">Metamorfo</option>
+            <option value="Minotauro">Minotauro</option>
+            <option value="Orc">Orc</option>
+            <option value="Reptiliano">Reptiliano</option>
+            <option value="Sereianos">Sereianos</option>
+            <option value="Troll">Troll</option>
+            <option value="Vampiro">Vampiro</option>
+            <option value="Zumbi">Zumbi</option>
+        </select>
+        <label for="classe">Classe</label>
+        <select id="classe" onchange="onClasseChange()">
+            <option value="Arqueiro">Arqueiro</option>
+            <option value="Bardo">Bardo</option>
+            <option value="Bruxo">Bruxo</option>
+            <option value="Clérigo">Clérigo</option>
+            <option value="Domador">Domador</option>
+            <option value="Druida">Druida</option>
+            <option value="Guerreiro">Guerreiro</option>
+            <option value="Ladino">Ladino</option>
+            <option value="Lanceiro">Lanceiro</option>
+            <option value="Mago">Mago</option>
+            <option value="Monge">Monge</option>
+            <option value="Necromante">Necromante</option>
+            <option value="Ninja">Ninja</option>
+            <option value="Tecnomancer">Tecnomancer</option>
+            <option value="Transmutador">Transmutador</option>
+        </select>
+        <br />
+        <label for="natureza">Natureza</label>
+        <select id="natureza" onchange="criarFicha(true)">
+            <option value="">—</option>
+            <option>Anti-Herói</option>
+            <option>Artista</option>
+            <option>Aventureiro</option>
+            <option>Bon Vivant</option>
+            <option>Bravo</option>
+            <option>Caçador de Recompensas</option>
+            <option>Cavaleiro</option>
+            <option>Cético</option>
+            <option>Contrabandista</option>
+            <option>Curador</option>
+            <option>Desbravador</option>
+            <option>Destruidor</option>
+            <option>Diplomata</option>
+            <option>Dissimulado</option>
+            <option>Enganador</option>
+            <option>Errante</option>
+            <option>Estrategista</option>
+            <option>Explorador Urbano</option>
+            <option>Fanático</option>
+            <option>Filantropo</option>
+            <option>Filósofo</option>
+            <option>Guerreiro</option>
+            <option>Hedonista</option>
+            <option>Herói</option>
+            <option>Inventor</option>
+            <option>Investigador</option>
+            <option>Líder</option>
+            <option>Mártir</option>
+            <option>Mentor</option>
+            <option>Otimista</option>
+            <option>Pária</option>
+            <option>Perfeccionista</option>
+            <option>Pirata</option>
+            <option>Poeta</option>
+            <option>Protetor</option>
+            <option>Realista</option>
+            <option>Recluso</option>
+            <option>Revolucionário</option>
+            <option>Romântico</option>
+            <option>Sábio</option>
+            <option>Sobrevivente</option>
+            <option>Solitário</option>
+            <option>Vilão</option>
+            <option>Vingador</option>
+            <option>Visionário</option>
+        </select>
+        <label for="profissao">Profissão</label>
+        <select id="profissao" onchange="criarFicha(true)">
+            <option value="">—</option>
+            <option value="Alquimista">Alquimista</option>
+            <option value="Armeiro">Armeiro</option>
+            <option value="Artífice">Artífice</option>
+            <option value="Encantador">Encantador</option>
+            <option value="Engenheiro">Engenheiro</option>
+            <option value="Médico">Médico</option>
+        </select>
+        <br />
+        <label for="subclasse">Subclasse</label>
+        <select id="subclasse" onchange="criarFicha()">
+            <option value="">Selecione uma subclasse</option>
+            <optgroup label="Arqueiro">
+                <option value="Patrulheiro">Patrulheiro</option>
+                <option value="Atirador">Atirador</option>
+            </optgroup>
+            <optgroup label="Bardo">
+                <option value="InicianteBardo">Iniciante</option>
+                <option value="Musico">Músico</option>
+            </optgroup>
+            <optgroup label="Bruxo">
+                <option value="FeiticeiroBruxo">Feiticeiro</option>
+                <option value="PaladinoNegro">Paladino Negro</option>
+            </optgroup>
+            <optgroup label="Clérigo">
+                <option value="Sacerdote">Sacerdote</option>
+                <option value="Paladino">Paladino</option>
+            </optgroup>
+            <optgroup label="Domador">
+                <option value="ControladorDeBestas">Controlador de Bestas</option>
+            </optgroup>
+            <optgroup label="Druida">
+                <option value="Xama">Xamã</option>
+                <option value="MetamorfoDruida">Metamorfo</option>
+            </optgroup>
+            <optgroup label="Guerreiro">
+                <option value="Barbaro">Bárbaro</option>
+                <option value="Espadachim">Espadachim</option>
+            </optgroup>
+            <optgroup label="Ladino">
+                <option value="Assassino">Assassino</option>
+                <option value="Ladrao">Ladrão</option>
+            </optgroup>
+            <optgroup label="Lanceiro">
+                <option value="MestreDasLancas">Mestre das Lanças</option>
+                <option value="CampeaoReal">Campeão Real</option>
+            </optgroup>
+            <optgroup label="Mago">
+                <option value="FeiticeiroMago">Feiticeiro</option>
+                <option value="Elementalista">Elementalista</option>
+            </optgroup>
+            <optgroup label="Monge">
+                <option value="ArtistaMarcial">Artista Marcial</option>
+                <option value="DobradorElemental">Dobrador Elemental</option>
+            </optgroup>
+            <optgroup label="Necromante">
+                <option value="Conjurador">Conjurador</option>
+                <option value="Sombrio">Sombrio</option>
+            </optgroup>
+            <optgroup label="Ninja">
+                <option value="Jounin">Jounin</option>
+            </optgroup>
+            <optgroup label="Tecnomancer">
+                <option value="Arquitecnomante">Arquitécnomante</option>
+            </optgroup>
+            <optgroup label="Transmutador">
+                <option value="MestreDaTransmutacao">Mestre da Transmutação</option>
+            </optgroup>
+        </select>
+        <br />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+        <script>
+            function gerarPDF() {
+                const ficha = document.querySelector(".ficha-oficial") || document.getElementById("ficha");
+
+                html2pdf()
+                    .set({
+                        margin: 8,
+                        filename: 'ficha-hurras.pdf',
+                        image: { type: 'jpeg', quality: 0.98 },
+                        html2canvas: { scale: 2, backgroundColor: '#0d0d0d' },
+                        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+                    })
+                    .from(ficha)
+                    .save();
+            }
+        </script>
+        <button onclick="gerarPDF()">Gerar PDF</button>
+        <button onclick="criarFicha()">Gerar Ficha</button>
+        <button onclick="criarAleatorio()">🎲 Aleatório Completo</button>
+    </div>
+    <div class="ficha" id="ficha"></div>
+    <script>
         const racas = {
             Anjo: {
                 nome: "Anjo",
@@ -1774,7 +1867,7 @@
 
         // override setTrack visual for sq tracks with data-fill
         const _setTrack = setTrack;
-        setTrack = function(key, val, max) {
+        setTrack = function (key, val, max) {
             fichaState[key] = Math.max(0, Math.min(max || 20, val));
             const row = document.querySelector(`[data-track="${key}"]`);
             if (!row) return;
@@ -1787,7 +1880,7 @@
             }
             const fc = row.getAttribute('data-fill') || 'blue';
             row.querySelectorAll('.sq').forEach((sq, i) => {
-                ['filled-will','blue','red','purple','yellow'].forEach(c => sq.classList.remove(c));
+                ['filled-will', 'blue', 'red', 'purple', 'yellow'].forEach(c => sq.classList.remove(c));
                 if (i < filled) sq.classList.add(fc);
             });
             const num = document.querySelector(`[data-track-num="${key}"]`);
@@ -2069,4 +2162,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -1,595 +1,575 @@
 <style>
-
-/* =========================================================
+    /* =========================================================
    NEXALIS RPG — TEMA DIABLO / INFERNO
    ========================================================= */
 
-:root {
-    --inferno: #080404;
-    --inferno-2: #120706;
-    --sangue: #650b08;
-    --sangue-claro: #9e1712;
-    --brasa: #ff4500;
-    --ouro: #b88624;
-    --ouro-claro: #e0b94f;
-    --pedra: #211815;
-    --pedra-clara: #35251f;
-    --texto: #d6cec4;
-    --texto-fraco: #8d837b;
-}
+    :root {
+        --inferno: #080404;
+        --inferno-2: #120706;
+        --sangue: #650b08;
+        --sangue-claro: #9e1712;
+        --brasa: #ff4500;
+        --ouro: #b88624;
+        --ouro-claro: #e0b94f;
+        --pedra: #211815;
+        --pedra-clara: #35251f;
+        --texto: #d6cec4;
+        --texto-fraco: #8d837b;
+    }
 
-/* =========================================================
+    /* =========================================================
    BODY
    ========================================================= */
 
-* {
-    box-sizing: border-box;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-body {
-    margin: 0;
-    padding: 0;
+    body {
+        margin: 0;
+        padding: 0;
 
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            #3b0b07 0%,
-            #1a0705 25%,
-            #0b0404 55%,
-            #030202 100%
-        );
+        background:
+            radial-gradient(circle at 50% 0%,
+                #3b0b07 0%,
+                #1a0705 25%,
+                #0b0404 55%,
+                #030202 100%);
 
-    color: var(--texto);
+        color: var(--texto);
 
-    font-family: 'Cinzel', serif;
+        font-family: 'Cinzel', serif;
 
-    line-height: 1.6;
+        line-height: 1.6;
 
-    min-height: 100vh;
-}
+        min-height: 100vh;
+    }
 
-/* =========================================================
+    /* =========================================================
    EFEITO DE SOMBRA INFERNAL
    ========================================================= */
 
-body::before {
-    content: "";
+    body::before {
+        content: "";
 
-    position: fixed;
+        position: fixed;
 
-    inset: 0;
+        inset: 0;
 
-    pointer-events: none;
+        pointer-events: none;
 
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(139, 0, 0, 0.15),
-            transparent 45%
-        );
+        background:
+            radial-gradient(circle at 50% 0%,
+                rgba(139, 0, 0, 0.15),
+                transparent 45%);
 
-    z-index: -1;
-}
+        z-index: -1;
+    }
 
-/* =========================================================
+    /* =========================================================
    RODAPÉ / MENU SUPERIOR
    ========================================================= */
 
-.rodape {
+    .rodape {
 
-    margin: 0;
+        margin: 0;
 
-    padding: 45px 25px 20px;
+        padding: 45px 25px 20px;
 
-    background:
-        linear-gradient(
-            180deg,
-            #0c0504 0%,
-            #130706 45%,
-            #080303 100%
-        );
+        background:
+            linear-gradient(180deg,
+                #0c0504 0%,
+                #130706 45%,
+                #080303 100%);
 
-    border-bottom: 1px solid #5a2118;
+        border-bottom: 1px solid #5a2118;
 
-    box-shadow:
-        0 12px 40px rgba(0, 0, 0, 0.9),
-        inset 0 -15px 35px rgba(100, 0, 0, 0.08);
+        box-shadow:
+            0 12px 40px rgba(0, 0, 0, 0.9),
+            inset 0 -15px 35px rgba(100, 0, 0, 0.08);
 
-    position: relative;
+        position: relative;
 
-    overflow: hidden;
+        overflow: hidden;
 
-    z-index: 100;
-}
+        z-index: 100;
+    }
 
-/* =========================================================
+    /* =========================================================
    LINHA DE BRASA
    ========================================================= */
 
-.rodape::before {
+    .rodape::before {
 
-    content: "";
+        content: "";
 
-    position: absolute;
+        position: absolute;
 
-    top: 0;
-    left: 0;
+        top: 0;
+        left: 0;
 
-    width: 100%;
-    height: 3px;
+        width: 100%;
+        height: 3px;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #650b08,
-            #ff4500,
-            #d4a83f,
-            #ff4500,
-            #650b08,
-            transparent
-        );
+        background:
+            linear-gradient(90deg,
+                transparent,
+                #650b08,
+                #ff4500,
+                #d4a83f,
+                #ff4500,
+                #650b08,
+                transparent);
 
-    box-shadow:
-        0 0 12px #8b0000,
-        0 0 25px rgba(255, 69, 0, 0.5);
+        box-shadow:
+            0 0 12px #8b0000,
+            0 0 25px rgba(255, 69, 0, 0.5);
 
-    animation: brasa 4s infinite linear;
-}
-
-@keyframes brasa {
-
-    0% {
-        opacity: 0.35;
-        filter: brightness(0.7);
+        animation: brasa 4s infinite linear;
     }
 
-    50% {
-        opacity: 1;
-        filter: brightness(1.4);
+    @keyframes brasa {
+
+        0% {
+            opacity: 0.35;
+            filter: brightness(0.7);
+        }
+
+        50% {
+            opacity: 1;
+            filter: brightness(1.4);
+        }
+
+        100% {
+            opacity: 0.35;
+            filter: brightness(0.7);
+        }
     }
 
-    100% {
-        opacity: 0.35;
-        filter: brightness(0.7);
-    }
-}
-
-/* =========================================================
+    /* =========================================================
    CONTAINER DO RODAPÉ
    ========================================================= */
 
-.rodape-container {
+    .rodape-container {
 
-    max-width: 1200px;
+        max-width: 1200px;
 
-    margin: auto;
-}
+        margin: auto;
+    }
 
-/* =========================================================
+    /* =========================================================
    GRID
    ========================================================= */
 
-.rodape-grid {
+    .rodape-grid {
 
-    display: grid;
+        display: grid;
 
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(220px, 1fr)
-        );
+        grid-template-columns:
+            repeat(auto-fit,
+                minmax(220px, 1fr));
 
-    gap: 45px;
+        gap: 45px;
 
-    margin-bottom: 30px;
-}
+        margin-bottom: 30px;
+    }
 
-/* =========================================================
+    /* =========================================================
    COLUNAS
    ========================================================= */
 
-.rodape-col {
+    .rodape-col {
 
-    position: relative;
-}
+        position: relative;
+    }
 
-/* =========================================================
+    /* =========================================================
    LOGO
    ========================================================= */
 
-.rodape-col h2 {
+    .rodape-col h2 {
 
-    color: var(--ouro-claro);
+        color: var(--ouro-claro);
 
-    margin-top: 0;
+        margin-top: 0;
 
-    font-size: 25px;
+        font-size: 25px;
 
-    letter-spacing: 1px;
+        letter-spacing: 1px;
 
-    text-shadow:
-        0 0 5px #650b08,
-        0 0 15px rgba(139, 0, 0, 0.8),
-        0 0 25px rgba(139, 0, 0, 0.4);
-}
+        text-shadow:
+            0 0 5px #650b08,
+            0 0 15px rgba(139, 0, 0, 0.8),
+            0 0 25px rgba(139, 0, 0, 0.4);
+    }
 
-/* =========================================================
+    /* =========================================================
    TÍTULOS
    ========================================================= */
 
-.rodape-col h3 {
+    .rodape-col h3 {
 
-    color: var(--ouro);
+        color: var(--ouro);
 
-    margin-bottom: 15px;
+        margin-bottom: 15px;
 
-    font-size: 16px;
+        font-size: 16px;
 
-    letter-spacing: 1px;
+        letter-spacing: 1px;
 
-    text-shadow:
-        0 0 8px rgba(139, 0, 0, 0.8);
-}
+        text-shadow:
+            0 0 8px rgba(139, 0, 0, 0.8);
+    }
 
-/* =========================================================
+    /* =========================================================
    LORE
    ========================================================= */
 
-.lore {
+    .lore {
 
-    color: var(--texto-fraco);
+        color: var(--texto-fraco);
 
-    font-size: 13px;
+        font-size: 13px;
 
-    font-style: italic;
+        font-style: italic;
 
-    max-width: 300px;
-}
+        max-width: 300px;
+    }
 
-/* =========================================================
+    /* =========================================================
    LINKS
    ========================================================= */
 
-.links {
+    .links {
 
-    display: flex;
+        display: flex;
 
-    flex-direction: column;
+        flex-direction: column;
 
-    gap: 5px;
-}
+        gap: 5px;
+    }
 
-.links a {
+    .links a {
 
-    color: #a79d94;
+        color: #a79d94;
 
-    text-decoration: none;
+        text-decoration: none;
 
-    padding: 7px 10px;
+        padding: 7px 10px;
 
-    border-left: 2px solid transparent;
+        border-left: 2px solid transparent;
 
-    transition:
-        0.25s ease;
+        transition:
+            0.25s ease;
 
-    position: relative;
-}
+        position: relative;
+    }
 
-.links a:hover {
+    .links a:hover {
 
-    color: #f0c75e;
+        color: #f0c75e;
 
-    padding-left: 18px;
+        padding-left: 18px;
 
-    border-left:
-        2px solid var(--brasa);
+        border-left:
+            2px solid var(--brasa);
 
-    background:
-        linear-gradient(
-            90deg,
-            rgba(139, 0, 0, 0.25),
-            transparent
-        );
+        background:
+            linear-gradient(90deg,
+                rgba(139, 0, 0, 0.25),
+                transparent);
 
-    text-shadow:
-        0 0 8px rgba(255, 69, 0, 0.7);
-}
+        text-shadow:
+            0 0 8px rgba(255, 69, 0, 0.7);
+    }
 
-/* =========================================================
+    /* =========================================================
    CONTEÚDO DE ARMAS
    ========================================================= */
 
-.classe-armas {
+    .classe-armas {
 
-    max-width: 1000px;
+        max-width: 1000px;
 
-    margin:
-        55px auto;
+        margin:
+            55px auto;
 
-    padding:
-        0 20px;
-}
+        padding:
+            0 20px;
+    }
 
-/* =========================================================
+    /* =========================================================
    TÍTULO DAS SEÇÕES
    ========================================================= */
 
-.classe-armas h1 {
+    .classe-armas h1 {
 
-    color: var(--ouro-claro);
+        color: var(--ouro-claro);
 
-    text-align: center;
+        text-align: center;
 
-    font-size: 32px;
+        font-size: 32px;
 
-    margin-bottom: 30px;
+        margin-bottom: 30px;
 
-    padding-bottom: 15px;
+        padding-bottom: 15px;
 
-    border-bottom:
-        1px solid #5a2118;
+        border-bottom:
+            1px solid #5a2118;
 
-    text-shadow:
-        0 0 5px #650b08,
-        0 0 15px rgba(139, 0, 0, 0.8);
+        text-shadow:
+            0 0 5px #650b08,
+            0 0 15px rgba(139, 0, 0, 0.8);
 
-    position: relative;
-}
+        position: relative;
+    }
 
-.classe-armas h1::after {
+    .classe-armas h1::after {
 
-    content: "";
+        content: "";
 
-    display: block;
+        display: block;
 
-    width: 100px;
+        width: 100px;
 
-    height: 2px;
+        height: 2px;
 
-    margin:
-        12px auto 0;
+        margin:
+            12px auto 0;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--brasa),
-            transparent
-        );
+        background:
+            linear-gradient(90deg,
+                transparent,
+                var(--brasa),
+                transparent);
 
-    box-shadow:
-        0 0 10px var(--brasa);
-}
+        box-shadow:
+            0 0 10px var(--brasa);
+    }
 
-/* =========================================================
+    /* =========================================================
    CARD DE ARMA — ESTILO DIABLO
    ========================================================= */
 
-.arma {
+    .arma {
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(45, 15, 11, 0.96),
-            rgba(12, 6, 5, 0.98)
-        );
+        background:
+            linear-gradient(145deg,
+                rgba(45, 15, 11, 0.96),
+                rgba(12, 6, 5, 0.98));
 
-    border:
-        1px solid #493027;
+        border:
+            1px solid #493027;
 
-    border-left:
-        4px solid #650b08;
+        border-left:
+            4px solid #650b08;
 
-    padding:
-        22px;
+        padding:
+            22px;
 
-    margin-bottom:
-        18px;
+        margin-bottom:
+            18px;
 
-    border-radius:
-        4px;
+        border-radius:
+            4px;
 
-    position: relative;
+        position: relative;
 
-    overflow: hidden;
+        overflow: hidden;
 
-    box-shadow:
-        inset 0 0 25px rgba(120, 0, 0, 0.08),
-        0 10px 30px rgba(0, 0, 0, 0.85);
+        box-shadow:
+            inset 0 0 25px rgba(120, 0, 0, 0.08),
+            0 10px 30px rgba(0, 0, 0, 0.85);
 
-    transition:
-        0.3s ease;
-}
+        transition:
+            0.3s ease;
+    }
 
-/* DETALHE SUPERIOR */
+    /* DETALHE SUPERIOR */
 
-.arma::before {
+    .arma::before {
 
-    content: "";
+        content: "";
 
-    position: absolute;
+        position: absolute;
 
-    top: 0;
-    left: 0;
+        top: 0;
+        left: 0;
 
-    width: 100%;
-    height: 1px;
+        width: 100%;
+        height: 1px;
 
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            #7a251b,
-            transparent
-        );
+        background:
+            linear-gradient(90deg,
+                transparent,
+                #7a251b,
+                transparent);
 
-    opacity: 0.7;
-}
+        opacity: 0.7;
+    }
 
-/* =========================================================
+    /* =========================================================
    HOVER DAS ARMAS
    ========================================================= */
 
-.arma:hover {
+    .arma:hover {
 
-    transform:
-        translateY(-3px);
+        transform:
+            translateY(-3px);
 
-    border-left-color:
-        var(--brasa);
+        border-left-color:
+            var(--brasa);
 
-    box-shadow:
-        0 0 20px rgba(139, 0, 0, 0.45),
-        0 12px 35px rgba(0, 0, 0, 0.9),
-        inset 0 0 25px rgba(139, 0, 0, 0.12);
-}
+        box-shadow:
+            0 0 20px rgba(139, 0, 0, 0.45),
+            0 12px 35px rgba(0, 0, 0, 0.9),
+            inset 0 0 25px rgba(139, 0, 0, 0.12);
+    }
 
-/* =========================================================
+    /* =========================================================
    NOME DA ARMA
    ========================================================= */
 
-.arma h2 {
+    .arma h2 {
 
-    color:
-        var(--ouro-claro);
+        color:
+            var(--ouro-claro);
 
-    margin-top: 0;
+        margin-top: 0;
 
-    font-size: 21px;
+        font-size: 21px;
 
-    text-shadow:
-        0 0 8px rgba(139, 0, 0, 0.7);
-}
+        text-shadow:
+            0 0 8px rgba(139, 0, 0, 0.7);
+    }
 
-/* =========================================================
+    /* =========================================================
    TEXTOS DA ARMA
    ========================================================= */
 
-.arma p {
+    .arma p {
 
-    color:
-        #b9afa6;
+        color:
+            #b9afa6;
 
-    margin:
-        7px 0;
-}
+        margin:
+            7px 0;
+    }
 
-.arma b {
+    .arma b {
 
-    color:
-        #d4a83f;
-}
+        color:
+            #d4a83f;
+    }
 
-/* =========================================================
+    /* =========================================================
    DESTAQUES
    ========================================================= */
 
-.arma p:nth-of-type(1) {
+    .arma p:nth-of-type(1) {
 
-    border-top:
-        1px solid rgba(139, 0, 0, 0.2);
+        border-top:
+            1px solid rgba(139, 0, 0, 0.2);
 
-    padding-top:
-        10px;
-}
+        padding-top:
+            10px;
+    }
 
-/* =========================================================
+    /* =========================================================
    TEXTO DE ARREMESSO
    ========================================================= */
 
-.classe-armas + p {
+    .classe-armas+p {
 
-    max-width:
-        1000px;
+        max-width:
+            1000px;
 
-    margin:
-        -25px auto 50px;
+        margin:
+            -25px auto 50px;
 
-    padding:
-        20px;
+        padding:
+            20px;
 
-    background:
-        rgba(15, 5, 4, 0.9);
+        background:
+            rgba(15, 5, 4, 0.9);
 
-    border:
-        1px solid #3d2520;
+        border:
+            1px solid #3d2520;
 
-    border-left:
-        3px solid #8b0000;
+        border-left:
+            3px solid #8b0000;
 
-    color:
-        #aaa098;
+        color:
+            #aaa098;
 
-    box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.7);
-}
+        box-shadow:
+            0 8px 25px rgba(0, 0, 0, 0.7);
+    }
 
-/* =========================================================
+    /* =========================================================
    RODAPÉ INFERIOR
    ========================================================= */
 
-.rodape-bottom {
+    .rodape-bottom {
 
-    border-top:
-        1px solid #321613;
+        border-top:
+            1px solid #321613;
 
-    padding-top:
-        18px;
+        padding-top:
+            18px;
 
-    text-align:
-        center;
+        text-align:
+            center;
 
-    font-size:
-        12px;
+        font-size:
+            12px;
 
-    color:
-        #625a55;
-}
+        color:
+            #625a55;
+    }
 
-/* =========================================================
+    /* =========================================================
    RESPONSIVO
    ========================================================= */
 
-@media (max-width: 700px) {
+    @media (max-width: 700px) {
 
-    .rodape {
+        .rodape {
 
-        padding:
-            35px 15px 20px;
+            padding:
+                35px 15px 20px;
+        }
+
+        .rodape-grid {
+
+            grid-template-columns:
+                1fr;
+
+            gap:
+                25px;
+        }
+
+        .classe-armas {
+
+            margin-top:
+                35px;
+
+            padding:
+                0 12px;
+        }
+
+        .classe-armas h1 {
+
+            font-size:
+                25px;
+        }
+
+        .arma {
+
+            padding:
+                17px;
+        }
     }
-
-    .rodape-grid {
-
-        grid-template-columns:
-            1fr;
-
-        gap:
-            25px;
-    }
-
-    .classe-armas {
-
-        margin-top:
-            35px;
-
-        padding:
-            0 12px;
-    }
-
-    .classe-armas h1 {
-
-        font-size:
-            25px;
-    }
-
-    .arma {
-
-        padding:
-            17px;
-    }
-}
-
 </style>
 
 

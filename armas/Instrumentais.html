@@ -1,649 +1,629 @@
 <style>
+    /* ========================================================= */
+    /* NEXALIS RPG — TEMA DIABLO / INFERNO */
+    /* ========================================================= */
 
-/* ========================================================= */
-/* NEXALIS RPG — TEMA DIABLO / INFERNO */
-/* ========================================================= */
-
-:root {
-    --inferno: #050202;
-    --sombra: #0b0504;
-    --sangue: #7d0808;
-    --vermelho: #b51c16;
-    --brasa: #ff4a1c;
-    --ouro: #b88624;
-    --ouro-claro: #e0b84c;
-    --pedra: #30201b;
-    --borda: #4a2922;
-    --texto: #d4ccc4;
-    --cinza: #817873;
-}
-
-
-/* ========================================================= */
-/* BODY */
-/* ========================================================= */
-
-body {
-
-    margin: 0;
-
-    padding: 0;
-
-    color: var(--texto);
-
-    font-family: 'Cinzel', serif;
-
-    background:
-
-        radial-gradient(
-            circle at 50% 0%,
-            #3a0907 0%,
-            #1c0706 20%,
-            #0c0403 50%,
-            #030202 100%
-        );
-
-    min-height: 100vh;
-}
-
-
-/* ========================================================= */
-/* EFEITO DE BRASA NO FUNDO */
-/* ========================================================= */
-
-body::before {
-
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(139, 0, 0, 0.08),
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 80% 70%,
-            rgba(255, 69, 0, 0.05),
-            transparent 30%
-        );
-
-    z-index: -1;
-}
-
-
-/* ========================================================= */
-/* RODAPÉ / MENU */
-/* ========================================================= */
-
-.rodape {
-
-    margin: 0;
-
-    padding: 45px 25px 20px;
-
-    background:
-
-        linear-gradient(
-            to bottom,
-            #100403,
-            #070303,
-            #030202
-        );
-
-    border-bottom: 1px solid #55231d;
-
-    box-shadow:
-
-        0 10px 40px rgba(0,0,0,0.95),
-
-        inset 0 -20px 40px rgba(100,0,0,0.08);
-
-    position: relative;
-
-    overflow: hidden;
-}
-
-
-/* ========================================================= */
-/* LINHA INFERNAL */
-/* ========================================================= */
-
-.rodape::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: 0;
-
-    width: 100%;
-
-    height: 3px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            #6b0805,
-            var(--brasa),
-            #6b0805,
-            transparent
-        );
-
-    animation: linhaInfernal 3s infinite;
-
-}
-
-
-@keyframes linhaInfernal {
-
-    0% {
-        opacity: 0.25;
-        box-shadow: 0 0 5px #8b0000;
+    :root {
+        --inferno: #050202;
+        --sombra: #0b0504;
+        --sangue: #7d0808;
+        --vermelho: #b51c16;
+        --brasa: #ff4a1c;
+        --ouro: #b88624;
+        --ouro-claro: #e0b84c;
+        --pedra: #30201b;
+        --borda: #4a2922;
+        --texto: #d4ccc4;
+        --cinza: #817873;
     }
 
-    50% {
-        opacity: 1;
-        box-shadow:
-            0 0 15px #8b0000,
-            0 0 30px rgba(255,69,0,0.4);
+
+    /* ========================================================= */
+    /* BODY */
+    /* ========================================================= */
+
+    body {
+
+        margin: 0;
+
+        padding: 0;
+
+        color: var(--texto);
+
+        font-family: 'Cinzel', serif;
+
+        background:
+
+            radial-gradient(circle at 50% 0%,
+                #3a0907 0%,
+                #1c0706 20%,
+                #0c0403 50%,
+                #030202 100%);
+
+        min-height: 100vh;
     }
 
-    100% {
-        opacity: 0.25;
-        box-shadow: 0 0 5px #8b0000;
+
+    /* ========================================================= */
+    /* EFEITO DE BRASA NO FUNDO */
+    /* ========================================================= */
+
+    body::before {
+
+        content: "";
+
+        position: fixed;
+
+        inset: 0;
+
+        pointer-events: none;
+
+        background:
+
+            radial-gradient(circle at 20% 20%,
+                rgba(139, 0, 0, 0.08),
+                transparent 30%),
+
+            radial-gradient(circle at 80% 70%,
+                rgba(255, 69, 0, 0.05),
+                transparent 30%);
+
+        z-index: -1;
     }
 
-}
 
-
-/* ========================================================= */
-/* GRID DO RODAPÉ */
-/* ========================================================= */
-
-.rodape-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(
-            auto-fit,
-            minmax(220px,1fr)
-        );
-
-    gap: 35px;
-
-    max-width: 1100px;
-
-    margin: auto;
-}
-
-
-/* ========================================================= */
-/* TÍTULOS */
-/* ========================================================= */
-
-.rodape-col h2 {
-
-    color: var(--ouro-claro);
-
-    text-shadow:
-
-        0 0 5px #6b0805,
-
-        0 0 15px rgba(139,0,0,0.8);
-
-}
-
-
-.rodape-col h3 {
-
-    color: var(--ouro);
-
-    border-bottom:
-
-        1px solid #44201a;
-
-    padding-bottom: 8px;
-
-}
-
-
-/* ========================================================= */
-/* FRASE */
-/* ========================================================= */
-
-.lore {
-
-    color: #756c67;
-
-    font-size: 13px;
-
-    font-style: italic;
-
-    line-height: 1.7;
-}
-
-
-/* ========================================================= */
-/* LINKS */
-/* ========================================================= */
-
-.links {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 6px;
-}
-
-
-.links a {
-
-    color: #918782;
-
-    text-decoration: none;
-
-    padding: 7px 8px;
-
-    border-left: 2px solid transparent;
-
-    transition: 0.3s;
-}
-
-
-.links a:hover {
-
-    color: #f0d27a;
-
-    border-left:
-
-        2px solid var(--brasa);
-
-    padding-left: 15px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            rgba(139,0,0,0.18),
-            transparent
-        );
-
-    text-shadow:
-
-        0 0 8px rgba(255,69,0,0.6);
-}
-
-
-/* ========================================================= */
-/* CONTEÚDO PRINCIPAL */
-/* ========================================================= */
-
-.rodape-container {
-
-    max-width: 1100px;
-
-    margin: auto;
-}
-
-
-/* ========================================================= */
-/* SEÇÕES */
-/* ========================================================= */
-
-.classe-armas {
-
-    max-width: 1000px;
-
-    margin:
-
-        50px auto;
-
-    padding:
-
-        0 20px;
-}
-
-
-/* ========================================================= */
-/* TÍTULO PRINCIPAL */
-/* ========================================================= */
-
-.classe-armas > h1 {
-
-    text-align: center;
-
-    color: var(--ouro-claro);
-
-    font-size: 2.5rem;
-
-    letter-spacing: 2px;
-
-    text-shadow:
-
-        0 0 5px #6b0805,
-
-        0 0 15px rgba(139,0,0,0.8);
-
-    border-bottom:
-
-        1px solid #57221b;
-
-    padding-bottom: 15px;
-}
-
-
-/* ========================================================= */
-/* CARDS DE INSTRUMENTOS */
-/* ========================================================= */
-
-.arma {
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(39,12,9,0.95),
-            rgba(8,4,4,0.98)
-        );
-
-    border:
-
-        1px solid var(--borda);
-
-    border-left:
-
-        4px solid var(--sangue);
-
-    padding:
-
-        20px;
-
-    margin-bottom:
-
-        18px;
-
-    border-radius:
-
-        3px 10px 10px 3px;
-
-    box-shadow:
-
-        inset 0 0 25px rgba(120,0,0,0.08),
-
-        0 8px 25px rgba(0,0,0,0.85);
-
-    transition:
-
-        0.3s;
-}
-
-
-.arma:hover {
-
-    transform:
-
-        translateX(8px);
-
-    border-left-color:
-
-        var(--brasa);
-
-    box-shadow:
-
-        0 0 20px rgba(139,0,0,0.5),
-
-        inset 0 0 25px rgba(139,0,0,0.12);
-}
-
-
-.arma h2 {
-
-    color:
-
-        var(--ouro-claro);
-
-    margin-top: 0;
-
-    text-shadow:
-
-        0 0 8px rgba(139,0,0,0.6);
-}
-
-
-.arma p {
-
-    color:
-
-        #aaa19c;
-
-    line-height: 1.7;
-}
-
-
-.arma b {
-
-    color:
-
-        #c79c3c;
-}
-
-
-/* ========================================================= */
-/* TEXTO ESPECIAL */
-/* ========================================================= */
-
-.arma i {
-
-    color:
-
-        #8b7770;
-}
-
-
-/* ========================================================= */
-/* QUALIDADE */
-/* ========================================================= */
-
-#qualidade {
-
-    max-width: 1000px;
-
-    margin:
-
-        60px auto;
-
-    padding:
-
-        30px;
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(35,10,8,0.96),
-            rgba(6,3,3,0.98)
-        );
-
-    border:
-
-        1px solid #4a2922;
-
-    border-top:
-
-        3px solid #7d0808;
-
-    box-shadow:
-
-        inset 0 0 35px rgba(120,0,0,0.08),
-
-        0 10px 35px rgba(0,0,0,0.9);
-}
-
-
-#qualidade h1 {
-
-    color:
-
-        var(--ouro-claro);
-
-    text-align:
-
-        center;
-
-    text-shadow:
-
-        0 0 10px rgba(139,0,0,0.7);
-
-    border-bottom:
-
-        1px solid #54231c;
-
-    padding-bottom: 15px;
-}
-
-
-#qualidade p {
-
-    background:
-
-        rgba(255,255,255,0.025);
-
-    border-left:
-
-        3px solid #6f0b08;
-
-    padding:
-
-        15px;
-
-    margin:
-
-        12px 0;
-
-    color:
-
-        #aaa19c;
-
-    transition: 0.3s;
-}
-
-
-#qualidade p:hover {
-
-    border-left-color:
-
-        var(--brasa);
-
-    background:
-
-        rgba(139,0,0,0.12);
-
-    transform:
-
-        translateX(6px);
-}
-
-
-#qualidade b {
-
-    color:
-
-        var(--ouro-claro);
-}
-
-
-/* ========================================================= */
-/* COPYRIGHT */
-/* ========================================================= */
-
-.rodape-bottom {
-
-    max-width: 1100px;
-
-    margin:
-
-        35px auto 0;
-
-    padding-top:
-
-        15px;
-
-    border-top:
-
-        1px solid #2b1714;
-
-    text-align:
-
-        center;
-
-    color:
-
-        #5f5753;
-
-    font-size:
-
-        12px;
-}
-
-
-/* ========================================================= */
-/* RESPONSIVO */
-/* ========================================================= */
-
-@media (max-width: 700px) {
+    /* ========================================================= */
+    /* RODAPÉ / MENU */
+    /* ========================================================= */
 
     .rodape {
 
-        padding:
-            35px 15px 20px;
+        margin: 0;
+
+        padding: 45px 25px 20px;
+
+        background:
+
+            linear-gradient(to bottom,
+                #100403,
+                #070303,
+                #030202);
+
+        border-bottom: 1px solid #55231d;
+
+        box-shadow:
+
+            0 10px 40px rgba(0, 0, 0, 0.95),
+
+            inset 0 -20px 40px rgba(100, 0, 0, 0.08);
+
+        position: relative;
+
+        overflow: hidden;
     }
+
+
+    /* ========================================================= */
+    /* LINHA INFERNAL */
+    /* ========================================================= */
+
+    .rodape::before {
+
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        height: 3px;
+
+        background:
+
+            linear-gradient(90deg,
+                transparent,
+                #6b0805,
+                var(--brasa),
+                #6b0805,
+                transparent);
+
+        animation: linhaInfernal 3s infinite;
+
+    }
+
+
+    @keyframes linhaInfernal {
+
+        0% {
+            opacity: 0.25;
+            box-shadow: 0 0 5px #8b0000;
+        }
+
+        50% {
+            opacity: 1;
+            box-shadow:
+                0 0 15px #8b0000,
+                0 0 30px rgba(255, 69, 0, 0.4);
+        }
+
+        100% {
+            opacity: 0.25;
+            box-shadow: 0 0 5px #8b0000;
+        }
+
+    }
+
+
+    /* ========================================================= */
+    /* GRID DO RODAPÉ */
+    /* ========================================================= */
 
     .rodape-grid {
 
+        display: grid;
+
         grid-template-columns:
-            1fr;
+            repeat(auto-fit,
+                minmax(220px, 1fr));
+
+        gap: 35px;
+
+        max-width: 1100px;
+
+        margin: auto;
     }
+
+
+    /* ========================================================= */
+    /* TÍTULOS */
+    /* ========================================================= */
+
+    .rodape-col h2 {
+
+        color: var(--ouro-claro);
+
+        text-shadow:
+
+            0 0 5px #6b0805,
+
+            0 0 15px rgba(139, 0, 0, 0.8);
+
+    }
+
+
+    .rodape-col h3 {
+
+        color: var(--ouro);
+
+        border-bottom:
+
+            1px solid #44201a;
+
+        padding-bottom: 8px;
+
+    }
+
+
+    /* ========================================================= */
+    /* FRASE */
+    /* ========================================================= */
+
+    .lore {
+
+        color: #756c67;
+
+        font-size: 13px;
+
+        font-style: italic;
+
+        line-height: 1.7;
+    }
+
+
+    /* ========================================================= */
+    /* LINKS */
+    /* ========================================================= */
+
+    .links {
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+
+    .links a {
+
+        color: #918782;
+
+        text-decoration: none;
+
+        padding: 7px 8px;
+
+        border-left: 2px solid transparent;
+
+        transition: 0.3s;
+    }
+
+
+    .links a:hover {
+
+        color: #f0d27a;
+
+        border-left:
+
+            2px solid var(--brasa);
+
+        padding-left: 15px;
+
+        background:
+
+            linear-gradient(90deg,
+                rgba(139, 0, 0, 0.18),
+                transparent);
+
+        text-shadow:
+
+            0 0 8px rgba(255, 69, 0, 0.6);
+    }
+
+
+    /* ========================================================= */
+    /* CONTEÚDO PRINCIPAL */
+    /* ========================================================= */
+
+    .rodape-container {
+
+        max-width: 1100px;
+
+        margin: auto;
+    }
+
+
+    /* ========================================================= */
+    /* SEÇÕES */
+    /* ========================================================= */
 
     .classe-armas {
 
-        margin-top:
-            30px;
+        max-width: 1000px;
+
+        margin:
+
+            50px auto;
 
         padding:
-            0 12px;
+
+            0 20px;
     }
 
-    .classe-armas > h1 {
 
-        font-size:
-            1.8rem;
+    /* ========================================================= */
+    /* TÍTULO PRINCIPAL */
+    /* ========================================================= */
+
+    .classe-armas>h1 {
+
+        text-align: center;
+
+        color: var(--ouro-claro);
+
+        font-size: 2.5rem;
+
+        letter-spacing: 2px;
+
+        text-shadow:
+
+            0 0 5px #6b0805,
+
+            0 0 15px rgba(139, 0, 0, 0.8);
+
+        border-bottom:
+
+            1px solid #57221b;
+
+        padding-bottom: 15px;
     }
+
+
+    /* ========================================================= */
+    /* CARDS DE INSTRUMENTOS */
+    /* ========================================================= */
+
+    .arma {
+
+        background:
+
+            linear-gradient(145deg,
+                rgba(39, 12, 9, 0.95),
+                rgba(8, 4, 4, 0.98));
+
+        border:
+
+            1px solid var(--borda);
+
+        border-left:
+
+            4px solid var(--sangue);
+
+        padding:
+
+            20px;
+
+        margin-bottom:
+
+            18px;
+
+        border-radius:
+
+            3px 10px 10px 3px;
+
+        box-shadow:
+
+            inset 0 0 25px rgba(120, 0, 0, 0.08),
+
+            0 8px 25px rgba(0, 0, 0, 0.85);
+
+        transition:
+
+            0.3s;
+    }
+
+
+    .arma:hover {
+
+        transform:
+
+            translateX(8px);
+
+        border-left-color:
+
+            var(--brasa);
+
+        box-shadow:
+
+            0 0 20px rgba(139, 0, 0, 0.5),
+
+            inset 0 0 25px rgba(139, 0, 0, 0.12);
+    }
+
+
+    .arma h2 {
+
+        color:
+
+            var(--ouro-claro);
+
+        margin-top: 0;
+
+        text-shadow:
+
+            0 0 8px rgba(139, 0, 0, 0.6);
+    }
+
+
+    .arma p {
+
+        color:
+
+            #aaa19c;
+
+        line-height: 1.7;
+    }
+
+
+    .arma b {
+
+        color:
+
+            #c79c3c;
+    }
+
+
+    /* ========================================================= */
+    /* TEXTO ESPECIAL */
+    /* ========================================================= */
+
+    .arma i {
+
+        color:
+
+            #8b7770;
+    }
+
+
+    /* ========================================================= */
+    /* QUALIDADE */
+    /* ========================================================= */
 
     #qualidade {
 
+        max-width: 1000px;
+
         margin:
-            35px 12px;
+
+            60px auto;
 
         padding:
-            20px;
+
+            30px;
+
+        background:
+
+            linear-gradient(145deg,
+                rgba(35, 10, 8, 0.96),
+                rgba(6, 3, 3, 0.98));
+
+        border:
+
+            1px solid #4a2922;
+
+        border-top:
+
+            3px solid #7d0808;
+
+        box-shadow:
+
+            inset 0 0 35px rgba(120, 0, 0, 0.08),
+
+            0 10px 35px rgba(0, 0, 0, 0.9);
     }
 
-}
 
+    #qualidade h1 {
+
+        color:
+
+            var(--ouro-claro);
+
+        text-align:
+
+            center;
+
+        text-shadow:
+
+            0 0 10px rgba(139, 0, 0, 0.7);
+
+        border-bottom:
+
+            1px solid #54231c;
+
+        padding-bottom: 15px;
+    }
+
+
+    #qualidade p {
+
+        background:
+
+            rgba(255, 255, 255, 0.025);
+
+        border-left:
+
+            3px solid #6f0b08;
+
+        padding:
+
+            15px;
+
+        margin:
+
+            12px 0;
+
+        color:
+
+            #aaa19c;
+
+        transition: 0.3s;
+    }
+
+
+    #qualidade p:hover {
+
+        border-left-color:
+
+            var(--brasa);
+
+        background:
+
+            rgba(139, 0, 0, 0.12);
+
+        transform:
+
+            translateX(6px);
+    }
+
+
+    #qualidade b {
+
+        color:
+
+            var(--ouro-claro);
+    }
+
+
+    /* ========================================================= */
+    /* COPYRIGHT */
+    /* ========================================================= */
+
+    .rodape-bottom {
+
+        max-width: 1100px;
+
+        margin:
+
+            35px auto 0;
+
+        padding-top:
+
+            15px;
+
+        border-top:
+
+            1px solid #2b1714;
+
+        text-align:
+
+            center;
+
+        color:
+
+            #5f5753;
+
+        font-size:
+
+            12px;
+    }
+
+
+    /* ========================================================= */
+    /* RESPONSIVO */
+    /* ========================================================= */
+
+    @media (max-width: 700px) {
+
+        .rodape {
+
+            padding:
+                35px 15px 20px;
+        }
+
+        .rodape-grid {
+
+            grid-template-columns:
+                1fr;
+        }
+
+        .classe-armas {
+
+            margin-top:
+                30px;
+
+            padding:
+                0 12px;
+        }
+
+        .classe-armas>h1 {
+
+            font-size:
+                1.8rem;
+        }
+
+        #qualidade {
+
+            margin:
+                35px 12px;
+
+            padding:
+                20px;
+        }
+
+    }
 </style>
 
 
@@ -854,7 +834,7 @@ body::before {
         </section>
 
 
-       
+
 
 
         <!-- ================================================= -->
