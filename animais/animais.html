@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Animais Selvagens - Nexalis</title>
+
+    <link rel="stylesheet" href="../site.css">
+
+    <style>
+        /* =========================================
+           ANIMAIS SELVAGENS - NEXALIS
+           ========================================= */
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at top, #301414 0%, #120909 40%, #070707 100%);
+            color: #ddd;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        /* =========================================
+           NAVBAR
+           ========================================= */
+
+        .navbar {
+            width: 100%;
+            background: linear-gradient(
+                to bottom,
+                #1c1111,
+                #0b0808
+            );
+
+            border-bottom: 1px solid #633535;
+            box-shadow:
+                0 3px 15px rgba(0, 0, 0, 0.8),
+                inset 0 -1px 0 rgba(180, 70, 50, 0.15);
+        }
+
+        .container-nav {
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 20px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .links a {
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            color: #d5d5d5;
+            text-decoration: none;
+
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 1px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #261717,
+                    #100b0b
+                );
+
+            border: 1px solid #5b3535;
+            border-radius: 4px;
+
+            box-shadow:
+                inset 0 0 8px rgba(0, 0, 0, 0.8),
+                0 2px 6px rgba(0, 0, 0, 0.7);
+
+            transition: all 0.2s ease;
+        }
+
+        .links a:hover {
+            color: #e6b85c;
+
+            border-color: #a3483c;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #3a1b1b,
+                    #160b0b
+                );
+
+            box-shadow:
+                0 0 12px rgba(160, 45, 30, 0.4),
+                inset 0 0 8px rgba(0, 0, 0, 0.8);
+
+            transform: translateY(-2px);
+        }
+
+        /* =========================================
+           CONTAINER
+           ========================================= */
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        /* =========================================
+           TÍTULO
+           ========================================= */
+
+        header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        header h1 {
+            margin: 0;
+
+            color: #d8a84e;
+
+            font-size: 42px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            text-shadow:
+                0 0 5px #000,
+                0 0 15px rgba(150, 40, 20, 0.6);
+        }
+
+        header p {
+            color: #9d8989;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        /* =========================================
+           TÍTULO DA SEÇÃO
+           ========================================= */
+
+        #animais {
+            margin: 0 0 25px;
+
+            padding: 15px 20px;
+
+            color: #d7a84f;
+
+            font-size: 27px;
+            letter-spacing: 2px;
+
+            border-left: 4px solid #8e3027;
+            border-bottom: 1px solid #472424;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(90, 25, 20, 0.35),
+                    transparent
+                );
+
+            text-shadow:
+                0 0 8px rgba(0, 0, 0, 0.9);
+
+            cursor: pointer;
+        }
+
+        /* =========================================
+           GRID
+           ========================================= */
+
+        .grid-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 25px;
+
+            margin-bottom: 40px;
+        }
+
+        /* =========================================
+           CARD DOS ANIMAIS
+           ========================================= */
+
+        .animal-box {
+            position: relative;
+
+            padding: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #211313,
+                    #0e0b0b
+                );
+
+            border: 1px solid #593131;
+            border-radius: 6px;
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.7),
+                inset 0 0 20px rgba(0, 0, 0, 0.7);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .animal-box:hover {
+            transform: translateY(-5px);
+
+            border-color: #934137;
+
+            box-shadow:
+                0 12px 25px rgba(0, 0, 0, 0.8),
+                0 0 15px rgba(130, 40, 25, 0.25),
+                inset 0 0 20px rgba(0, 0, 0, 0.7);
+        }
+
+        /* =========================================
+           NOME DO ANIMAL
+           ========================================= */
+
+        .animal-box h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+
+            padding-bottom: 12px;
+
+            color: #d5a64e;
+
+            font-size: 25px;
+            letter-spacing: 1px;
+
+            border-bottom: 1px solid #563030;
+
+            text-shadow:
+                0 0 5px #000;
+        }
+
+        /* =========================================
+           HABILIDADES
+           ========================================= */
+
+        .animal-box ul {
+            margin: 0;
+            padding-left: 22px;
+        }
+
+        .animal-box li {
+            margin-bottom: 13px;
+
+            color: #bcb0b0;
+
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+        .animal-box li strong {
+            color: #d49c48;
+        }
+
+        /* =========================================
+           BOTÕES
+           ========================================= */
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 25px;
+            padding-top: 18px;
+
+            border-top: 1px solid #432525;
+        }
+
+        .pdf-card {
+            display: inline-block;
+
+            padding: 10px 15px;
+
+            color: #d8c49b;
+            text-decoration: none;
+
+            font-weight: bold;
+            font-size: 14px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #38211c,
+                    #160d0c
+                );
+
+            border: 1px solid #72502d;
+            border-radius: 4px;
+
+            box-shadow:
+                inset 0 0 7px rgba(0, 0, 0, 0.8),
+                0 2px 5px rgba(0, 0, 0, 0.6);
+
+            transition: all 0.2s ease;
+        }
+
+        .pdf-card:hover {
+            color: #ffe19a;
+
+            border-color: #b47a37;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #4a2b20,
+                    #1b0e0b
+                );
+
+            box-shadow:
+                0 0 10px rgba(190, 120, 40, 0.35),
+                inset 0 0 7px rgba(0, 0, 0, 0.8);
+
+            transform: translateY(-2px);
+        }
+
+        /* =========================================
+           ANIMAÇÃO
+           ========================================= */
+
+        .animal-box {
+            animation: fadeIn 0.6s ease both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================================
+           RESPONSIVO
+           ========================================= */
+
+        @media (max-width: 800px) {
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 32px;
+            }
+
+            .links {
+                flex-direction: column;
+            }
+
+            .links a {
+                width: 100%;
+                box-sizing: border-box;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .container {
+                padding: 25px 12px;
+            }
+
+            header h1 {
+                font-size: 26px;
+            }
+
+            #animais {
+                font-size: 22px;
+            }
+
+            .animal-box {
+                padding: 18px;
+            }
+
+            .btn-group {
+                flex-direction: column;
+            }
+
+            .pdf-card {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container-nav">
+            <div class="links">
+                <a href="../funcoes/inicio.html">historia </a>
+                <a href="racaeclasses.html">Raças e Classes</a>
+                <a href="/armas/armas.html">Armas</a>
+                <a href="../funcoes/sistema.html">sistema</a>
+                <a href="../funcoes/inimigo.html">inimigos</a>
+                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
+                <a href="..//funcoes/magia.html">magias</a>
+                <a href="..//funcoes/porção.html">porção</a>
+                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
+                <a href="/funcoes/mapas.html">mapas</a>
+                <a href="/funcoes/clan.html">Criação de Ficha</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- =========================================
+         MENU
+         ========================================= -->
+
+   <nav class="navbar">
+
+        <div class="container-nav">
+
+            <div class="links">
+
+                <a href="../player/player.html">
+                    Player
+                </a>
+
+                <a href="../npc/npc.html">
+                    NPC
+                </a>
+
+                <a href="../animais/animais.html">
+                    Animais
+                </a>
+
+                <a href="../inispeciais.html/epeciais.html">
+                    Especiais
+                </a>
+                
+                
+                <a href="../funcoes/inimigo.html">
+                    inimigos
+                </a>
+                
+
+            </div>
+
+        </div>
+
+    </nav>
+
+    <!-- =========================================
+         CONTEÚDO
+         ========================================= -->
+
+    <div class="container">
+
+        <header>
+
+            <h1>Bestiário de Nexalis</h1>
+
+            <p>
+                Criaturas selvagens encontradas nas terras de Nexalis.
+            </p>
+
+        </header>
+
+
+        <!-- =========================================
+             ANIMAIS SELVAGENS
+             ========================================= -->
+
+        <h2 id="animais">
+            🐾 Animais Selvagens
+        </h2>
+
+
+        <div class="grid-container">
+
+
+            <!-- =====================================
+                 LOBO
+                 ===================================== -->
+
+            <div class="animal-box">
+
+                <h3>🐺 Lobo</h3>
+
+                <ul>
+
+                    <li>
+                        <strong>Alfa da Alcateia</strong>
+                        – aliados animais recebem +1 ataque
+                    </li>
+
+                    <li>
+                        <strong>Faro Absoluto</strong>
+                        – sem penalidade em rastreamento
+                    </li>
+
+                    <li>
+                        <strong>Ataque Coordenado</strong>
+                        – +1 dano após aliado
+                    </li>
+
+                    <li>
+                        <strong>Resistência Selvagem</strong>
+                        – reduz 1 dano físico
+                    </li>
+
+                </ul>
+
+
+                <div class="btn-group">
+
+                    <a
+                        class="pdf-card"
+                        href="../ini/animais/lobo.pdf"
+                        target="_blank"
+                    >
+                        📜 Ficha Lobo
+                    </a>
+
+                    <a
+                        class="pdf-card"
+                        href="../ini/animais/loboalfo.pdf"
+                        target="_blank"
+                    >
+                        ⚔️ Lobo Alfa
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 URSO
+                 ===================================== -->
+
+            <div class="animal-box">
+
+                <h3>🐻 Urso</h3>
+
+                <ul>
+
+                    <li>
+                        <strong>Couraça Natural</strong>
+                        – reduz 2 dano físico
+                    </li>
+
+                    <li>
+                        <strong>Fúria Bestial</strong>
+                        – ao perder metade da vida ganha +1 Força
+                    </li>
+
+                    <li>
+                        <strong>Investida Pesada</strong>
+                        – empurra ao atacar em movimento
+                    </li>
+
+                    <li>
+                        <strong>Resistência Selvagem</strong>
+                        – vantagem contra dor e medo
+                    </li>
+
+                </ul>
+
+
+                <div class="btn-group">
+
+                    <a
+                        class="pdf-card"
+                        href="../ini/animais/urso.pdf"
+                        target="_blank"
+                    >
+                        📜 Ficha Urso
+                    </a>
+
+                    <a
+                        class="pdf-card"
+                        href="../ini/animais/ursoalfo.pdf"
+                        target="_blank"
+                    >
+                        ⚔️ Urso Alfa
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

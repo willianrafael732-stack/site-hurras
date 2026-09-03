@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Especiais & NPCs — Nexalis</title>
+
+
+    <style>
+
+        /* =====================================================
+           TEMA DARK — NEXALIS
+           MENU DE PERSONAGENS / NPCs
+           ===================================================== */
+
+        :root {
+            --bg: #080808;
+            --bg-dark: #0d0d0d;
+            --panel: #151515;
+            --panel-hover: #202020;
+
+            --red: #721c1c;
+            --red-light: #a73535;
+
+            --gold: #c09a4b;
+            --gold-light: #e0bd6b;
+
+            --text: #d8d8d8;
+            --text-dark: #888;
+
+            --border: #383838;
+        }
+
+
+        /* =====================================================
+           BODY
+           ===================================================== */
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            color: var(--text);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            background:
+                radial-gradient(
+                    circle at top,
+                    #211111 0%,
+                    #101010 35%,
+                    #050505 100%
+                );
+
+            background-attachment: fixed;
+        }
+
+
+        /* =====================================================
+           MENU
+           ===================================================== */
+
+        .navbar {
+
+            width: 100%;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #191919 0%,
+                    #090909 100%
+                );
+
+            border-bottom: 1px solid #402828;
+
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.9);
+        }
+
+
+        .container-nav {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 15px 20px;
+        }
+
+
+        .navbar .links {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 12px 0;
+        }
+
+
+        /* =====================================================
+           BOTÕES DO MENU
+           ===================================================== */
+
+        .navbar .links a {
+
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            color: #d8d8d8;
+
+            text-decoration: none;
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #211719 0%,
+                    #100d0e 100%
+                );
+
+            border: 1px solid #5b3535;
+
+            border-radius: 4px;
+
+            box-shadow:
+                inset 0 0 8px rgba(0, 0, 0, 0.8),
+                0 2px 6px rgba(0, 0, 0, 0.7);
+
+            transition:
+                color 0.2s ease,
+                border-color 0.2s ease,
+                background 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        .navbar .links a:hover {
+
+            color: #e8b84a;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #351719 0%,
+                    #160d0e 100%
+                );
+
+            border-color: #a33b32;
+
+            box-shadow:
+                0 0 10px rgba(150, 35, 25, 0.45),
+                inset 0 0 8px rgba(0, 0, 0, 0.8);
+
+            transform: translateY(-2px);
+        }
+
+
+        .navbar .links a:active {
+
+            transform: translateY(0);
+        }
+
+
+        /* =====================================================
+           CONTEÚDO
+           ===================================================== */
+
+        .container {
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 40px 20px;
+        }
+
+
+        /* =====================================================
+           TÍTULO
+           ===================================================== */
+
+        header {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+
+        header h1 {
+
+            margin: 0;
+
+            color: var(--gold);
+
+            font-size: 40px;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            text-shadow:
+                0 0 5px #000,
+                0 0 15px rgba(150, 40, 20, 0.4);
+        }
+
+
+        header p {
+
+            margin-top: 10px;
+
+            color: var(--text-dark);
+
+            font-size: 16px;
+        }
+
+
+        /* =====================================================
+           SEÇÃO
+           ===================================================== */
+
+        .pdf-section {
+
+            max-width: 1200px;
+
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           TÍTULO DA SEÇÃO
+           ===================================================== */
+
+        .pdf-section h2 {
+
+            margin: 35px 0 20px;
+
+            padding: 14px 20px;
+
+            color: #c7c7c7;
+
+            font-size: 26px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            border-left: 4px solid #6b3030;
+
+            border-bottom: 1px solid #2d2d2d;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(100, 25, 25, 0.18),
+                    transparent
+                );
+
+            text-shadow:
+                0 2px 5px #000;
+        }
+
+
+        /* =====================================================
+           GRID
+           ===================================================== */
+
+        .grid-container {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(250px, 1fr));
+
+            gap: 18px;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =====================================================
+           CARDS / PDF
+           ===================================================== */
+
+        .pdf-card {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 60px;
+
+            padding: 12px 18px;
+
+            box-sizing: border-box;
+
+            color: #c9c9c9;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #1d1d1d,
+                    #0b0b0b
+                );
+
+            border: 1px solid #3c3c3c;
+
+            border-radius: 4px;
+
+            box-shadow:
+                inset 0 0 10px rgba(0, 0, 0, 0.8),
+                0 5px 15px rgba(0, 0, 0, 0.7);
+
+            transition: all 0.25s ease;
+        }
+
+
+        .pdf-card:hover {
+
+            color: var(--gold-light);
+
+            border-color: #80652c;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #292929,
+                    #101010
+                );
+
+            box-shadow:
+                0 0 14px rgba(180, 140, 50, 0.2),
+                inset 0 0 10px rgba(0, 0, 0, 0.9);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           LINKS DOS PDFs
+           ===================================================== */
+
+        .pdf-card[target="_blank"] {
+
+            color: #c9a45c;
+
+            border-color: #654b28;
+        }
+
+
+        .pdf-card[target="_blank"]:hover {
+
+            color: #ffd875;
+
+            border-color: #b87932;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #38251a 0%,
+                    #17100d 100%
+                );
+
+            box-shadow:
+                0 0 12px rgba(190, 120, 40, 0.4),
+                inset 0 0 8px rgba(0, 0, 0, 0.8);
+        }
+
+
+        /* =====================================================
+           ANIMAÇÃO
+           ===================================================== */
+
+        .pdf-card {
+
+            animation:
+                fadeIn 0.5s ease both;
+        }
+
+
+        @keyframes fadeIn {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(10px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =====================================================
+           RESPONSIVO
+           ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .navbar .links {
+
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+
+            .navbar .links a {
+
+                width: auto;
+
+                text-align: center;
+            }
+
+
+            .grid-container {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            header h1 {
+
+                font-size: 30px;
+            }
+
+
+            .pdf-section h2 {
+
+                font-size: 21px;
+            }
+
+
+            .container {
+
+                padding: 25px 12px;
+            }
+        }
+
+
+        /* =====================================================
+           SCROLLBAR DARK
+           ===================================================== */
+
+        ::-webkit-scrollbar {
+
+            width: 10px;
+        }
+
+
+        ::-webkit-scrollbar-track {
+
+            background: #070707;
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+
+            background: #363636;
+
+            border-radius: 5px;
+
+            border: 2px solid #070707;
+        }
+
+
+        ::-webkit-scrollbar-thumb:hover {
+
+            background: #725923;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <nav class="navbar">
+        <div class="container-nav">
+            <div class="links">
+                <a href="../funcoes/inicio.html">historia </a>
+                <a href="racaeclasses.html">Raças e Classes</a>
+                <a href="/armas/armas.html">Armas</a>
+                <a href="../funcoes/sistema.html">sistema</a>
+                <a href="../funcoes/inimigo.html">inimigos</a>
+                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
+                <a href="..//funcoes/magia.html">magias</a>
+                <a href="..//funcoes/porção.html">porção</a>
+                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
+                <a href="/funcoes/mapas.html">mapas</a>
+                <a href="/funcoes/clan.html">Criação de Ficha</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- =====================================================
+         MENU
+         ===================================================== -->
+
+    <nav class="navbar">
+
+        <div class="container-nav">
+
+            <div class="links">
+
+                <a href="../player/player.html">
+                    Player
+                </a>
+
+                <a href="../npc/npc.html">
+                    NPC
+                </a>
+
+                <a href="../animais/animais.html">
+                    Animais
+                </a>
+
+                <a href="../inispeciais.html/epeciais.html">
+                    Especiais
+                </a>
+                
+                
+                <a href="../funcoes/inimigo.html">
+                    inimigos
+                </a>
+                
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         CONTEÚDO
+         ===================================================== -->
+
+    <main class="container">
+
+
+        <header>
+
+            <h1>
+                Especiais &amp; Criaturas
+            </h1>
+
+            <p>
+                Arquivos especiais do mundo de Nexalis.
+            </p>
+
+        </header>
+
+
+        <section class="pdf-section">
+
+
+            <!-- =================================================
+                 ESPECIAIS
+                 ================================================= -->
+
+            <h2 id="especiais">
+                Especiais
+            </h2>
+
+
+            <div class="grid-container">
+
+
+                <a
+                    class="pdf-card"
+                    href="../ini/especiais/gigante necromante.pdf"
+                    target="_blank"
+                >
+                    ☠️ Gigante Necromante
+                </a>
+
+
+                <a
+                    class="pdf-card"
+                    href="../ini/especiais/almagama_de_almas.pdf"
+                    target="_blank"
+                >
+                    👻 Amálgama de Almas
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+</body>
+
+</html>

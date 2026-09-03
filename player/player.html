@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Players - Nexalis</title>
+
+<link rel="stylesheet" href="../site.css">
+
+<style>
+    /* =========================================
+       PLAYERS - NEXALIS
+       TEMA DARK FANTASY
+       ========================================= */
+
+    body {
+        margin: 0;
+
+        background:
+            radial-gradient(
+                circle at top,
+                #241313 0%,
+                #100909 40%,
+                #050505 100%
+            );
+
+        color: #ddd;
+
+        font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+        min-height: 100vh;
+    }
+
+    /* =========================================
+       NAVBAR
+       ========================================= */
+
+    .navbar {
+        width: 100%;
+
+        background:
+            linear-gradient(
+                to bottom,
+                #1b1010,
+                #090707
+            );
+
+        border-bottom: 1px solid #593333;
+
+        box-shadow:
+            0 3px 15px rgba(0, 0, 0, 0.85),
+            inset 0 -1px 0 rgba(180, 70, 50, 0.12);
+    }
+
+    .container-nav {
+        max-width: 1200px;
+        margin: auto;
+
+        padding: 15px 20px;
+    }
+
+    .links {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+    }
+
+    .links a {
+        display: inline-block;
+
+        padding: 10px 18px;
+
+        color: #d4d4d4;
+
+        text-decoration: none;
+
+        font-size: 15px;
+        font-weight: bold;
+
+        letter-spacing: 1px;
+
+        background:
+            linear-gradient(
+                180deg,
+                #251616,
+                #0f0a0a
+            );
+
+        border: 1px solid #563333;
+
+        border-radius: 4px;
+
+        box-shadow:
+            inset 0 0 8px rgba(0, 0, 0, 0.8),
+            0 2px 6px rgba(0, 0, 0, 0.7);
+
+        transition:
+            color 0.2s ease,
+            border-color 0.2s ease,
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .links a:hover {
+        color: #e5b95d;
+
+        border-color: #963d35;
+
+        background:
+            linear-gradient(
+                180deg,
+                #351818,
+                #140909
+            );
+
+        box-shadow:
+            0 0 12px rgba(150, 45, 30, 0.35),
+            inset 0 0 8px rgba(0, 0, 0, 0.8);
+
+        transform: translateY(-2px);
+    }
+
+    /* =========================================
+       CONTAINER
+       ========================================= */
+
+    .container {
+        max-width: 1200px;
+
+        margin: auto;
+
+        padding: 40px 20px 60px;
+    }
+
+    /* =========================================
+       HEADER
+       ========================================= */
+
+    header {
+        text-align: center;
+
+        margin-bottom: 45px;
+    }
+
+    header h1 {
+        margin: 0;
+
+        color: #d8aa52;
+
+        font-size: 42px;
+
+        letter-spacing: 4px;
+
+        text-transform: uppercase;
+
+        text-shadow:
+            0 0 5px #000,
+            0 0 15px rgba(140, 35, 20, 0.55);
+    }
+
+    header p {
+        margin-top: 12px;
+
+        color: #958484;
+
+        font-size: 16px;
+    }
+
+    /* =========================================
+       SEÇÃO
+       ========================================= */
+
+    .pdf-section {
+        width: 100%;
+    }
+
+    /* =========================================
+       TÍTULOS DOS GRUPOS
+       ========================================= */
+
+    .pdf-section h2 {
+        margin: 0 0 25px;
+
+        padding: 15px 20px;
+
+        color: #d5a74f;
+
+        font-size: 26px;
+
+        letter-spacing: 2px;
+
+        border-left: 4px solid #873229;
+
+        border-bottom: 1px solid #442424;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(90, 25, 20, 0.35),
+                transparent
+            );
+
+        text-shadow:
+            0 0 7px #000;
+    }
+
+    /* =========================================
+       ESPAÇAMENTO ENTRE GRUPOS
+       ========================================= */
+
+    .pdf-section h2:not(:first-child) {
+        margin-top: 45px;
+    }
+
+    /* =========================================
+       GRID
+       ========================================= */
+
+    .grid-container {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+
+        margin-bottom: 30px;
+    }
+
+    /* =========================================
+       CARDS DOS PLAYERS
+       ========================================= */
+
+    .pdf-card {
+        position: relative;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        min-height: 90px;
+
+        padding: 20px;
+
+        box-sizing: border-box;
+
+        color: #d8c69e;
+
+        text-decoration: none;
+
+        font-size: 17px;
+
+        font-weight: bold;
+
+        letter-spacing: 1px;
+
+        text-align: center;
+
+        background:
+            linear-gradient(
+                145deg,
+                #211313,
+                #0d0a0a
+            );
+
+        border: 1px solid #573131;
+
+        border-radius: 5px;
+
+        box-shadow:
+            0 7px 16px rgba(0, 0, 0, 0.75),
+            inset 0 0 18px rgba(0, 0, 0, 0.7);
+
+        transition:
+            transform 0.25s ease,
+            border-color 0.25s ease,
+            color 0.25s ease,
+            box-shadow 0.25s ease,
+            background 0.25s ease;
+    }
+
+    /* =========================================
+       DETALHE SUPERIOR
+       ========================================= */
+
+    .pdf-card::before {
+        content: "";
+
+        position: absolute;
+
+        top: 0;
+        left: 12%;
+
+        width: 76%;
+
+        height: 1px;
+
+        background:
+            linear-gradient(
+                90deg,
+                transparent,
+                rgba(190, 140, 65, 0.45),
+                transparent
+            );
+    }
+
+    /* =========================================
+       HOVER
+       ========================================= */
+
+    .pdf-card:hover {
+        color: #ffe29a;
+
+        border-color: #a76c32;
+
+        background:
+            linear-gradient(
+                145deg,
+                #321c18,
+                #130b0a
+            );
+
+        box-shadow:
+            0 10px 22px rgba(0, 0, 0, 0.85),
+            0 0 14px rgba(170, 90, 35, 0.25),
+            inset 0 0 18px rgba(0, 0, 0, 0.7);
+
+        transform: translateY(-4px);
+    }
+
+    /* =========================================
+       PRIMEIRO GRUPO
+       ========================================= */
+
+    #player {
+        color: #d8aa52;
+
+        border-left-color: #8c342a;
+    }
+
+    /* =========================================
+       GRUPO DIOGO & CLEBER
+       ========================================= */
+
+    #player3 {
+        color: #c99f5c;
+
+        border-left-color: #75402c;
+    }
+
+    /* =========================================
+       GRUPO LI & DOUGLAS
+       ========================================= */
+
+    #player2 {
+        color: #c4a875;
+
+        border-left-color: #684a31;
+    }
+
+    /* =========================================
+       ANIMAÇÃO
+       ========================================= */
+
+    .pdf-card {
+        animation:
+            fadeIn 0.6s ease both;
+    }
+
+    .grid-container:nth-of-type(1) .pdf-card:nth-child(2) {
+        animation-delay: 0.08s;
+    }
+
+    .grid-container:nth-of-type(2) .pdf-card:nth-child(1) {
+        animation-delay: 0.12s;
+    }
+
+    .grid-container:nth-of-type(2) .pdf-card:nth-child(2) {
+        animation-delay: 0.18s;
+    }
+
+    .grid-container:nth-of-type(3) .pdf-card:nth-child(1) {
+        animation-delay: 0.24s;
+    }
+
+    .grid-container:nth-of-type(3) .pdf-card:nth-child(2) {
+        animation-delay: 0.30s;
+    }
+
+    @keyframes fadeIn {
+
+        from {
+            opacity: 0;
+
+            transform:
+                translateY(15px);
+        }
+
+        to {
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+    }
+
+    /* =========================================
+       RESPONSIVO
+       ========================================= */
+
+    @media (max-width: 800px) {
+
+        .grid-container {
+            grid-template-columns: 1fr;
+        }
+
+        header h1 {
+            font-size: 32px;
+        }
+
+        .links {
+            flex-direction: column;
+        }
+
+        .links a {
+            width: 100%;
+
+            box-sizing: border-box;
+
+            text-align: center;
+        }
+    }
+
+    /* =========================================
+       CELULAR
+       ========================================= */
+
+    @media (max-width: 500px) {
+
+        .container {
+            padding:
+                25px 12px 45px;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 26px;
+
+            letter-spacing: 2px;
+        }
+
+        header p {
+            font-size: 14px;
+        }
+
+        .pdf-section h2 {
+            font-size: 21px;
+
+            padding: 13px 15px;
+        }
+
+        .pdf-card {
+            min-height: 75px;
+
+            padding: 15px;
+
+            font-size: 15px;
+        }
+    }
+
+    /* =========================================
+       SCROLLBAR
+       ========================================= */
+
+    ::-webkit-scrollbar {
+        width: 9px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #070707;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #492525;
+
+        border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #70352f;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container-nav">
+            <div class="links">
+                <a href="../funcoes/inicio.html">historia </a>
+                <a href="racaeclasses.html">Raças e Classes</a>
+                <a href="/armas/armas.html">Armas</a>
+                <a href="../funcoes/sistema.html">sistema</a>
+                <a href="../funcoes/inimigo.html">inimigos</a>
+                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
+                <a href="..//funcoes/magia.html">magias</a>
+                <a href="..//funcoes/porção.html">porção</a>
+                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
+                <a href="/funcoes/mapas.html">mapas</a>
+                <a href="/funcoes/clan.html">Criação de Ficha</a>
+            </div>
+        </div>
+    </nav>
+
+<!-- =========================================
+     NAVEGAÇÃO
+     ========================================= -->
+
+<nav class="navbar">
+
+        <div class="container-nav">
+
+            <div class="links">
+
+                <a href="../player/player.html">
+                    Player
+                </a>
+
+                <a href="../npc/npc.html">
+                    NPC
+                </a>
+
+                <a href="../animais/animais.html">
+                    Animais
+                </a>
+
+                <a href="../inispeciais.html/epeciais.html">
+                    Especiais
+                </a>
+                
+                
+                <a href="../funcoes/inimigo.html">
+                    inimigos
+                </a>
+                
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+<!-- =========================================
+     CONTEÚDO
+     ========================================= -->
+
+<div class="container">
+
+    <header>
+
+        <h1>Players de Nexalis</h1>
+
+        <p>
+            Personagens e fichas dos aventureiros de Nexalis.
+        </p>
+
+    </header>
+
+
+    <!-- =========================================
+         PLAYERS
+         ========================================= -->
+
+    <section class="pdf-section">
+
+
+        <!-- =====================================
+             DIOGO & IGOR
+             ===================================== -->
+
+        <h2 id="player">
+            Players: Diogo &amp; Igor
+        </h2>
+
+        <div class="grid-container">
+
+            <a
+                class="pdf-card"
+                href="../ini/grupo 3/diogo npc.pdf"
+                target="_blank"
+            >
+                🎭 Diogo NPC
+            </a>
+
+            <a
+                class="pdf-card"
+                href="../ini/grupo 3/vesh igor.pdf"
+                target="_blank"
+            >
+                ⚔️ Igor Vesh
+            </a>
+
+        </div>
+
+
+        <!-- =====================================
+             DIOGO & CLEBER
+             ===================================== -->
+
+        <h2 id="player3">
+            Players: Diogo &amp; Cleber
+        </h2>
+
+        <div class="grid-container">
+
+            <a
+                class="pdf-card"
+                href="../ini/grupo2/FICHA DO HURRAS FANTASY cleber.pdf"
+                target="_blank"
+            >
+                ⚔️ Cleber
+            </a>
+
+            <a
+                class="pdf-card"
+                href="../ini/grupo2/FICHA DO HURRAS FANTASY diogo.pdf"
+                target="_blank"
+            >
+                ⚔️ Diogo
+            </a>
+
+        </div>
+
+
+        <!-- =====================================
+             LI & DOUGLAS
+             ===================================== -->
+
+        <h2 id="player2">
+            Players: Li &amp; Douglas
+        </h2>
+
+        <div class="grid-container">
+
+            <a
+                class="pdf-card"
+                href="../ini/grupo1/2.DRAKIAN -  PÃO.pdf"
+                target="_blank"
+            >
+                🐉 Douglas
+            </a>
+
+            <a
+                class="pdf-card"
+                href="../ini/grupo1/4.RAYZER - ELICIANO.pdf"
+                target="_blank"
+            >
+                ⚔️ Li
+            </a>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+</body>
+
+</html>

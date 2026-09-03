@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Especiais - Nexalis</title>
+
+    <style>
+        /* =========================================================
+           NEXALIS — DARK FANTASY
+           ========================================================= */
+
+        :root {
+            --dark-bg: #070707;
+            --dark-bg-2: #0d0d0d;
+            --dark-panel: #141414;
+            --dark-panel-2: #1b1b1b;
+
+            --red-dark: #3a1111;
+            --red: #721c1c;
+            --red-light: #a73535;
+
+            --gold-dark: #765c25;
+            --gold: #c09a4b;
+            --gold-light: #e0bd6b;
+
+            --text: #d2d2d2;
+            --text-dark: #888;
+            --border: #302525;
+        }
+
+
+        /* =========================================================
+           BODY
+           ========================================================= */
+
+        body {
+            margin: 0;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    #211111 0%,
+                    #0e0e0e 35%,
+                    #050505 100%
+                );
+
+            background-attachment: fixed;
+
+            color: var(--text);
+
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
+
+            min-height: 100vh;
+        }
+
+
+        /* =========================================================
+           NAVBAR
+           ========================================================= */
+
+        .navbar {
+            width: 100%;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #171717,
+                    #080808
+                );
+
+            border-bottom: 1px solid #3d2929;
+
+            box-shadow:
+                0 4px 20px rgba(0, 0, 0, 0.9);
+        }
+
+
+        .container-nav {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 14px 20px;
+        }
+
+
+        .links {
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .links a {
+            display: inline-block;
+
+            padding: 10px 18px;
+
+            color: #bdbdbd;
+
+            text-decoration: none;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #202020,
+                    #0d0d0d
+                );
+
+            border: 1px solid #393939;
+
+            border-radius: 3px;
+
+            box-shadow:
+                inset 0 0 8px rgba(0, 0, 0, 0.8);
+
+            transition:
+                color 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease,
+                transform 0.25s ease;
+        }
+
+
+        .links a:hover {
+            color: var(--gold-light);
+
+            border-color: var(--gold-dark);
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #292929,
+                    #111111
+                );
+
+            box-shadow:
+                0 0 12px rgba(180, 140, 60, 0.15),
+                inset 0 0 8px rgba(0, 0, 0, 0.9);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================================
+           CONTEÚDO
+           ========================================================= */
+
+        .container {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 40px 20px 60px;
+        }
+
+
+        /* =========================================================
+           HEADER
+           ========================================================= */
+
+        header {
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+
+        header h1 {
+            margin: 0;
+
+            color: var(--gold);
+
+            font-size: 42px;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            text-shadow:
+                0 0 5px #000,
+                0 0 15px rgba(140, 35, 20, 0.55);
+        }
+
+
+        header p {
+            margin-top: 12px;
+
+            color: #958484;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================================================
+           SEÇÃO
+           ========================================================= */
+
+        .pdf-section {
+            width: 100%;
+        }
+
+
+        /* =========================================================
+           TÍTULOS
+           ========================================================= */
+
+        .pdf-section h2 {
+            margin: 35px 0 20px;
+
+            padding: 14px 20px;
+
+            color: #bfbfbf;
+
+            font-size: 26px;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.04),
+                    transparent
+                );
+
+            border-left: 4px solid #555;
+
+            border-bottom: 1px solid #292929;
+
+            text-shadow:
+                0 2px 4px #000;
+        }
+
+
+        /* =========================================================
+           NOVAS HISTÓRIAS
+           ========================================================= */
+
+        #historias {
+            color: var(--gold);
+
+            border-left-color: var(--gold-dark);
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(120, 90, 30, 0.12),
+                    transparent
+                );
+        }
+
+
+        /* =========================================================
+           ESPECIAIS
+           ========================================================= */
+
+        #especiais {
+            color: #a889c4;
+
+            border-left-color: #5d4470;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(90, 50, 110, 0.12),
+                    transparent
+                );
+        }
+
+
+        /* =========================================================
+           FORJA
+           ========================================================= */
+
+        #forja {
+            color: #c2934b;
+
+            border-left-color: #76501f;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(120, 75, 20, 0.14),
+                    transparent
+                );
+        }
+
+
+        /* =========================================================
+           NEMESES
+           ========================================================= */
+
+        #nemeses {
+            color: #a83232;
+
+            border-left-color: #731818;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(110, 15, 15, 0.18),
+                    transparent
+                );
+
+            text-shadow:
+                0 0 8px rgba(120, 20, 20, 0.3);
+        }
+
+
+        /* =========================================================
+           GRID
+           ========================================================= */
+
+        .grid-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(250px, 1fr));
+
+            gap: 18px;
+
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================================================
+           CARDS
+           ========================================================= */
+
+        .pdf-card {
+            position: relative;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 60px;
+
+            padding: 12px 18px;
+
+            box-sizing: border-box;
+
+            color: #bdbdbd;
+
+            text-decoration: none;
+
+            font-size: 16px;
+            font-weight: bold;
+
+            letter-spacing: 1px;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #1c1c1c,
+                    #0b0b0b
+                );
+
+            border: 1px solid #383838;
+
+            border-radius: 4px;
+
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.7),
+                inset 0 0 12px rgba(0, 0, 0, 0.8);
+
+            transition:
+                color 0.25s ease,
+                border-color 0.25s ease,
+                background 0.25s ease,
+                box-shadow 0.25s ease,
+                transform 0.25s ease;
+
+            animation:
+                darkFade 0.5s ease both;
+        }
+
+
+        .pdf-card::before {
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+
+            left: 12%;
+
+            width: 76%;
+
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    rgba(190, 140, 65, 0.35),
+                    transparent
+                );
+        }
+
+
+        .pdf-card:hover {
+            color: var(--gold-light);
+
+            border-color: #80652c;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #252525,
+                    #101010
+                );
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.9),
+                0 0 12px rgba(180, 140, 50, 0.15),
+                inset 0 0 12px rgba(0, 0, 0, 0.8);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+           NEMESES — CARDS ESPECIAIS
+           ========================================================= */
+
+        #nemeses + .grid-container .pdf-card {
+            border-color: #452121;
+        }
+
+
+        #nemeses + .grid-container .pdf-card:hover {
+            color: #df7770;
+
+            border-color: #8d2929;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #241313,
+                    #0c0808
+                );
+
+            box-shadow:
+                0 0 15px rgba(150, 25, 25, 0.25),
+                inset 0 0 12px rgba(0, 0, 0, 0.9);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+           FORJA — CARDS
+           ========================================================= */
+
+        #forja + .grid-container .pdf-card:hover {
+            color: #e1b866;
+
+            border-color: #80602c;
+
+            box-shadow:
+                0 0 15px rgba(180, 120, 35, 0.2),
+                inset 0 0 12px rgba(0, 0, 0, 0.9);
+
+            transform: translateY(-3px);
+        }
+
+
+        /* =========================================================
+           ANIMAÇÃO
+           ========================================================= */
+
+        @keyframes darkFade {
+
+            from {
+                opacity: 0;
+
+                transform:
+                    translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        /* =========================================================
+           SCROLLBAR
+           ========================================================= */
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+
+        ::-webkit-scrollbar-track {
+            background: #070707;
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+
+            border-radius: 5px;
+
+            border: 2px solid #070707;
+        }
+
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5b4520;
+        }
+
+
+        /* =========================================================
+           RESPONSIVO
+           ========================================================= */
+
+        @media (max-width: 750px) {
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+
+            .links {
+                flex-direction: column;
+            }
+
+
+            .links a {
+                width: 100%;
+
+                box-sizing: border-box;
+
+                text-align: center;
+            }
+
+
+            .container {
+                padding: 25px 12px 45px;
+            }
+
+
+            .pdf-section h2 {
+                font-size: 21px;
+
+                padding: 13px 15px;
+            }
+
+
+            header h1 {
+                font-size: 30px;
+
+                letter-spacing: 2px;
+            }
+
+
+            header p {
+                font-size: 14px;
+            }
+        }
+
+
+        /* =========================================================
+           CELULAR PEQUENO
+           ========================================================= */
+
+        @media (max-width: 500px) {
+
+            header h1 {
+                font-size: 25px;
+            }
+
+
+            .pdf-section h2 {
+                font-size: 19px;
+            }
+
+
+            .pdf-card {
+                min-height: 55px;
+
+                font-size: 15px;
+
+                padding: 12px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <nav class="navbar">
+        <div class="container-nav">
+            <div class="links">
+                <a href="../funcoes/inicio.html">historia </a>
+                <a href="racaeclasses.html">Raças e Classes</a>
+                <a href="/armas/armas.html">Armas</a>
+                <a href="../funcoes/sistema.html">sistema</a>
+                <a href="../funcoes/inimigo.html">inimigos</a>
+                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
+                <a href="..//funcoes/magia.html">magias</a>
+                <a href="..//funcoes/porção.html">porção</a>
+                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
+                <a href="/funcoes/mapas.html">mapas</a>
+                <a href="/funcoes/clan.html">Criação de Ficha</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- =========================================
+         MENU
+         ========================================= -->
+
+    <nav class="navbar">
+
+        <div class="container-nav">
+
+            <div class="links">
+
+                <a href="../player/player.html">
+                    Player
+                </a>
+
+                <a href="../npc/npc.html">
+                    NPC
+                </a>
+
+                <a href="../animais/animais.html">
+                    Animais
+                </a>
+
+                <a href="../inispeciais.html/epeciais.html">
+                    Especiais
+                </a>
+                
+                
+                <a href="../funcoes/inimigo.html">
+                    inimigos
+                </a>
+                
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================================
+         CONTEÚDO
+         ========================================= -->
+
+    <div class="container">
+
+        <header>
+
+            <h1>Especiais de Nexalis</h1>
+
+            <p>
+                Histórias, personagens especiais, mestres da forja
+                e grandes ameaças do mundo de Nexalis.
+            </p>
+
+        </header>
+
+
+        <section class="pdf-section">
+
+
+            <!-- =========================================
+                 NOVAS HISTÓRIAS
+                 ========================================= -->
+
+            <h2 id="historias">
+                Novas Histórias
+            </h2>
+
+            <div class="grid-container">
+
+                <a
+                    class="pdf-card"
+                    href="../ini/outros personagem/borin tahlor talian.pdf"
+                    target="_blank"
+                >
+                    📖 Borin, Tahlor, Talian e Draven
+                </a>
+
+                <a
+                    class="pdf-card"
+                    href="../ini/outros personagem/irmãos do véu.pdf"
+                    target="_blank"
+                >
+                    📖 Loctus, Caelen e Mophos
+                </a>
+
+            </div>
+
+
+            <!-- =========================================
+                 ESPECIAIS & GRUPOS
+                 ========================================= -->
+
+            <h2 id="especiais">
+                Especiais &amp; Grupos
+            </h2>
+
+            <div class="grid-container">
+
+
+               
+
+                <a
+                    class="pdf-card"
+                    href="../ini/especiais/almagama_de_almas.pdf"
+                    target="_blank"
+                >
+                    👻 Amálgama de Almas
+                </a>
+
+                
+
+            </div>
+
+
+            <!-- =========================================
+                 MESTRES DA FORJA
+                 ========================================= -->
+
+            <h2 id="forja">
+                Mestres da Forja
+            </h2>
+
+            <div class="grid-container">
+
+                <a
+                    class="pdf-card"
+                    href="../ini/forja/Kaelen.pdf"
+                    target="_blank"
+                >
+                    🔨 Kaelen
+                </a>
+
+                <a
+                    class="pdf-card"
+                    href="../ini/forja/Lyara.pdf"
+                    target="_blank"
+                >
+                    🔨 Lyara
+                </a>
+
+                <a
+                    class="pdf-card"
+                    href="../ini/forja/Tharok.pdf"
+                    target="_blank"
+                >
+                    🔨 Tharok
+                </a>
+
+                <a
+                    class="pdf-card"
+                    href="../ini/forja/Brugor.pdf"
+                    target="_blank"
+                >
+                    🔨 Brugor
+                </a>
+
+                <a
+                    class="pdf-card"
+                    href="../ini/forja/Selene.pdf"
+                    target="_blank"
+                >
+                    🔨 Selene
+                </a>
+
+            </div>
+
+
+            <!-- =========================================
+                 NEMESES
+                 ========================================= -->
+
+            <h2 id="nemeses">
+                Nemeses — Chefões
+            </h2>
+
+            <div class="grid-container">
+
+                <a
+                    class="pdf-card"
+                    href="../ini/nemeses/1.gYRO - WILLIAM.pdf"
+                    target="_blank"
+                >
+                    ☠️ GYRO
+                </a>
+
+                <a
+                    class="pdf-card"
+                    href="../ini/nemeses/3.GRONTHAR - CLEBER.pdf"
+                    target="_blank"
+                >
+                    ☠️ GRONTHAR
+                </a>
+
+                <a
+                    class="pdf-card"
+                    href="../ini/nemeses/DAEMON - NEMESIS.pdf"
+                    target="_blank"
+                >
+                    ☠️ Daemon
+                </a>
+
+                <a
+                    class="pdf-card"
+                    href="../ini/nemeses/PYROMANCE - NEMESIS.pdf"
+                    target="_blank"
+                >
+                    🔥 Pyromance
+                </a>
+
+                <a
+                    class="pdf-card"
+                    href="../ini/nemeses/SIGRID - NEMESIS.pdf"
+                    target="_blank"
+                >
+                    ☠️ Sigrid
+                </a>
+
+                <a
+                    class="pdf-card"
+                    href="../ini/nemeses/THORFIN - NEMESIS.pdf"
+                    target="_blank"
+                >
+                    ☠️ Thorfin
+                </a>
+
+                <a
+                    class="pdf-card"
+                    href="../ini/nemeses/YMIR - NEMESIS.pdf"
+                    target="_blank"
+                >
+                    ❄️ Ymir
+                </a>
+
+                <a
+                    class="pdf-card"
+                    href="../ini/nemeses/vesh igor nemeses.pdf"
+                    target="_blank"
+                >
+                    ☠️ Vesh — Nemesis
+                </a>
+
+                <a href="../ini/outros_hurras/netero.pdf" class="pdf-card" target="_blank">
+                    🕊️ Netero
+                </a>
+                <a href="../ini/outros_hurras/Paladino Escanor.pdf" class="pdf-card" target="_blank">
+                    🕊️ Paladino Escanor
+                </a>
+                <a href="../ini/outros_hurras/senhor_silva.pdf" class="pdf-card" target="_blank">
+                    🕊️ Senhor Silva
+                </a>
+
+
+            </div>
+
+        </section>
+
+    </div>
+
+</body>
+
+</html>
