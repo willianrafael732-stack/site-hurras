@@ -1,1240 +1,2171 @@
 <!DOCTYPE html>
-
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <link href="../site.css" rel="stylesheet" />
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Grimório de Alquimia - Inferno</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Minérios de Arma — Nexalis</title>
+
     <style>
         :root {
-
             --bg: #050205;
-
-            --panel: #0c0a10;
+            --bg2: #0b0709;
+            --panel: #100b0d;
+            --panel2: #171013;
 
             --gold: #c5a059;
+            --gold-light: #f0cf7a;
 
-            --gold2: #ffdf80;
+            --blood: #720b0b;
+            --blood-light: #b51b1b;
 
-            --blood: #8b0000;
+            --text: #e7e0d5;
+            --muted: #9a9187;
 
-            --blood2: #ff1a1a;
+            --border: #332326;
+            --shadow: rgba(0, 0, 0, .75);
 
-            --text: #e6e0d6;
-
-            --border: #2a1a1a;
-
+            --common: #8f8f8f;
+            --uncommon: #4fa36b;
+            --rare: #4b8dcc;
+            --veryrare: #9c61d8;
+            --epic: #d15b8a;
+            --legendary: #d19a32;
+            --mythic: #e5e5e5;
         }
-
-
-
-        /* ===== BASE ===== */
 
         * {
-
-            margin: 0;
-
-            padding: 0;
-
             box-sizing: border-box;
-
         }
 
-
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
-
-            font-family: Georgia, serif;
+            margin: 0;
+            min-height: 100vh;
 
             background:
+                radial-gradient(
+                    circle at 50% -10%,
+                    #351010 0%,
+                    #17090b 25%,
+                    #090608 55%,
+                    #030303 100%
+                );
 
-                radial-gradient(circle at top, #2a0000 0%, #050205 55%, #000 100%);
+            background-attachment: fixed;
 
             color: var(--text);
 
-            padding: 0;
-
-            overflow-x: hidden;
-
+            font-family:
+                Georgia,
+                "Times New Roman",
+                serif;
         }
 
-
-
-        /* leve fumaça animada */
-
         body::before {
-
             content: "";
-
             position: fixed;
-
             inset: 0;
-
-            background:
-
-                radial-gradient(circle at 20% 20%, rgba(255, 0, 0, 0.08), transparent 40%),
-
-                radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.05), transparent 45%);
-
-            animation: mist 12s infinite alternate;
 
             pointer-events: none;
 
+            background:
+                linear-gradient(
+                    rgba(255,255,255,.015) 1px,
+                    transparent 1px
+                );
+
+            background-size: 100% 4px;
+
+            opacity: .08;
+
+            z-index: 999;
         }
 
+        /* =========================
+           NAVBAR
+        ========================= */
 
-
-        @keyframes mist {
-
-            from {
-                transform: scale(1);
-            }
-
-            to {
-                transform: scale(1.05);
-            }
-
-        }
-
-
-
-        /* ===== NAVBAR ===== */
-
-        .navbar {
-
-            background: linear-gradient(180deg, #0a0000, #000);
-
-            border-bottom: 1px solid var(--blood2);
-
-            padding: 15px;
-
+        nav {
             position: sticky;
-
             top: 0;
 
-            z-index: 1000;
+            z-index: 100;
 
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
+            gap: 20px;
+
+            padding: 14px 30px;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    #160b0d,
+                    #090507
+                );
+
+            border-bottom: 1px solid var(--gold);
+
+            box-shadow:
+                0 5px 25px rgba(0,0,0,.8),
+                0 1px 8px rgba(160,20,20,.2);
         }
 
+        .nav-logo {
+            color: var(--gold-light);
 
+            font-size: 22px;
+            font-weight: bold;
 
-        .navbar a {
+            letter-spacing: 2px;
 
-            color: var(--gold);
+            text-shadow:
+                0 0 8px rgba(197,160,89,.35);
+        }
+
+        .nav-links {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+            gap: 18px;
+        }
+
+        .nav-links a {
+            color: #cfc4b3;
 
             text-decoration: none;
 
-            margin: 0 10px;
+            font-size: 14px;
 
-            font-weight: bold;
-
-            text-transform: uppercase;
-
-            letter-spacing: 1px;
-
-            transition: 0.3s;
-
+            transition: .25s;
         }
 
+        .nav-links a:hover {
+            color: var(--gold-light);
 
-
-        .navbar a:hover {
-
-            color: var(--gold2);
-
-            text-shadow: 0 0 10px var(--blood2);
-
+            text-shadow:
+                0 0 8px rgba(240,207,122,.5);
         }
 
+        /* =========================
+           CONTAINER
+        ========================= */
 
+        .container {
+            width: min(1400px, 94%);
 
-        /* ===== HEADER ===== */
+            margin: auto;
 
-        header {
+            padding: 45px 0 80px;
+        }
 
+        /* =========================
+           HEADER
+        ========================= */
+
+        .page-header {
             text-align: center;
 
-            padding: 50px 20px 20px;
-
+            margin-bottom: 40px;
         }
 
+        .page-header .symbol {
+            color: var(--gold);
 
+            font-size: 46px;
 
-        h1 {
+            margin-bottom: 5px;
 
-            font-size: 3em;
+            text-shadow:
+                0 0 15px rgba(197,160,89,.3);
+        }
 
-            color: var(--gold2);
+        .page-header h1 {
+            margin: 0;
+
+            color: var(--gold-light);
+
+            font-size: clamp(34px, 5vw, 58px);
 
             letter-spacing: 4px;
 
             text-transform: uppercase;
 
             text-shadow:
-
-                0 0 10px rgba(255, 0, 0, 0.3),
-
-                0 0 20px rgba(0, 0, 0, 0.8);
-
+                0 0 12px rgba(0,0,0,.9),
+                0 0 25px rgba(130,0,0,.35);
         }
 
+        .page-header h2 {
+            margin: 10px 0 0;
 
+            color: #8d8174;
 
-        header p {
+            font-size: 16px;
 
-            color: #aaa;
+            font-weight: normal;
 
-            margin-top: 10px;
-
-            font-style: italic;
-
-        }
-
-
-
-        /* ===== FILTROS ===== */
-
-        .filters {
-
-            display: flex;
-
-            justify-content: center;
-
-            flex-wrap: wrap;
-
-            gap: 10px;
-
-            padding: 20px;
-
-        }
-
-
-
-        .filter-btn {
-
-            background: linear-gradient(145deg, #120000, #0a0a10);
-
-            border: 1px solid var(--border);
-
-            color: var(--gold);
-
-            padding: 10px 15px;
-
-            cursor: pointer;
-
-            transition: 0.3s;
+            letter-spacing: 3px;
 
             text-transform: uppercase;
-
-            font-size: 0.8em;
-
         }
 
+        .ornament {
+            width: min(500px, 80%);
 
+            height: 1px;
 
-        .filter-btn:hover,
+            margin: 25px auto;
 
-        .filter-btn.active {
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--gold),
+                    transparent
+                );
 
-            background: var(--blood);
-
-            color: white;
-
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
-
-            border-color: var(--blood2);
-
+            box-shadow:
+                0 0 8px rgba(197,160,89,.25);
         }
 
-
-
-        /* ===== GRID ===== */
-
-        .potion-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-
-            gap: 15px;
-
-            padding: 20px;
-
-            max-width: 1200px;
+        .intro {
+            width: min(900px, 100%);
 
             margin: auto;
 
-        }
+            color: #bcb2a6;
 
+            font-size: 16px;
 
-
-        /* ===== CARDS ===== */
-
-        .potion-card {
-
-            background: linear-gradient(180deg, #120000, #0a0a10);
-
-            border: 1px solid var(--border);
-
-            padding: 20px;
-
-            border-radius: 8px;
-
-            position: relative;
-
-            transition: 0.3s;
-
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-
-        }
-
-
-
-        .potion-card:hover {
-
-            transform: translateY(-6px);
-
-            border-color: var(--blood2);
-
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.25);
-
-        }
-
-
-
-        /* glow lateral */
-
-        .potion-card::before {
-
-            content: "";
-
-            position: absolute;
-
-            left: 0;
-
-            top: 0;
-
-            width: 4px;
-
-            height: 100%;
-
-            background: var(--gold);
-
-        }
-
-
-
-        /* cores por categoria */
-
-        .cat-social::before {
-            background: #ff4d8d;
-        }
-
-        .cat-combate::before {
-            background: var(--blood2);
-        }
-
-        .cat-utilidade::before {
-            background: #4da3ff;
-        }
-
-        .cat-sombria::before {
-            background: #6b21a8;
-        }
-
-
-
-        .potion-name {
-
-            color: var(--gold2);
-
-            font-size: 1.2em;
-
-            margin-bottom: 8px;
-
-            text-transform: uppercase;
-
-            letter-spacing: 1px;
-
-        }
-
-
-
-        .potion-desc {
-
-            font-size: 0.9em;
-
-            color: #bbb;
-
-            font-style: italic;
-
-            margin-bottom: 10px;
-
-        }
-
-
-
-        .potion-effect {
-
-            background: rgba(0, 255, 0, 0.05);
-
-            border-left: 3px solid #22c55e;
-
-            padding: 8px;
-
-            margin-top: 8px;
-
-            font-size: 0.85em;
-
-        }
-
-
-
-        .potion-debuff {
-
-            background: rgba(255, 0, 0, 0.08);
-
-            border-left: 3px solid var(--blood2);
-
-            padding: 8px;
-
-            margin-top: 8px;
-
-            font-size: 0.8em;
-
-            color: #ffb3b3;
-
-        }
-
-
-
-        /* ===== SEARCH ===== */
-
-        .search-container {
+            line-height: 1.8;
 
             text-align: center;
-
-            padding: 10px;
-
         }
 
+        /* =========================
+           SEARCH
+        ========================= */
 
+        .search-container {
+            margin: 35px auto 25px;
+
+            max-width: 650px;
+        }
 
         #searchInput {
+            width: 100%;
 
-            width: 80%;
+            padding: 15px 20px;
 
-            max-width: 500px;
-
-            padding: 10px;
-
-            border: 1px solid var(--gold);
-
-            background: #0a0a10;
-
-            color: white;
-
-            outline: none;
-
-        }
-
-
-
-        #searchInput:focus {
-
-            box-shadow: 0 0 10px var(--blood2);
-
-        }
-    </style>
-    <style>
-        :root {
-
-            --bg: #050205;
-
-            --panel: #0c0a10;
-
-            --gold: #c5a059;
-
-            --gold2: #ffdf80;
-
-            --blood: #8b0000;
-
-            --blood2: #ff1a1a;
-
-            --text: #e6e0d6;
-
-            --border: #2a1a1a;
-
-        }
-
-
-
-        /* ===== BASE ===== */
-
-        * {
-
-            margin: 0;
-
-            padding: 0;
-
-            box-sizing: border-box;
-
-        }
-
-
-
-        body {
-
-            font-family: Georgia, serif;
-
-            background:
-
-                radial-gradient(circle at top, #2a0000 0%, #050205 55%, #000 100%);
+            background: #090709;
 
             color: var(--text);
 
-            padding: 0;
+            border: 1px solid var(--border);
 
-            overflow-x: hidden;
+            border-bottom: 2px solid var(--gold);
 
+            outline: none;
+
+            font-family: Georgia, serif;
+
+            font-size: 16px;
+
+            box-shadow:
+                inset 0 0 15px rgba(0,0,0,.7);
+
+            transition: .25s;
         }
 
+        #searchInput:focus {
+            border-color: var(--gold-light);
 
-
-        /* leve fumaça animada */
-
-        body::before {
-
-            content: "";
-
-            position: fixed;
-
-            inset: 0;
-
-            background:
-
-                radial-gradient(circle at 20% 20%, rgba(255, 0, 0, 0.08), transparent 40%),
-
-                radial-gradient(circle at 80% 60%, rgba(255, 215, 0, 0.05), transparent 45%);
-
-            animation: mist 12s infinite alternate;
-
-            pointer-events: none;
-
+            box-shadow:
+                0 0 15px rgba(197,160,89,.12),
+                inset 0 0 15px rgba(0,0,0,.7);
         }
 
-
-
-        @keyframes mist {
-
-            from {
-                transform: scale(1);
-            }
-
-            to {
-                transform: scale(1.05);
-            }
-
-        }
-
-
-
-        /* ===== NAVBAR ===== */
-
-        .navbar {
-
-            background: linear-gradient(180deg, #0a0000, #000);
-
-            border-bottom: 1px solid var(--blood2);
-
-            padding: 15px;
-
-            position: sticky;
-
-            top: 0;
-
-            z-index: 1000;
-
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
-
-        }
-
-
-
-        .navbar a {
-
-            color: var(--gold);
-
-            text-decoration: none;
-
-            margin: 0 10px;
-
-            font-weight: bold;
-
-            text-transform: uppercase;
-
-            letter-spacing: 1px;
-
-            transition: 0.3s;
-
-        }
-
-
-
-        .navbar a:hover {
-
-            color: var(--gold2);
-
-            text-shadow: 0 0 10px var(--blood2);
-
-        }
-
-
-
-        /* ===== HEADER ===== */
-
-        header {
-
-            text-align: center;
-
-            padding: 50px 20px 20px;
-
-        }
-
-
-
-        h1 {
-
-            font-size: 3em;
-
-            color: var(--gold2);
-
-            letter-spacing: 4px;
-
-            text-transform: uppercase;
-
-            text-shadow:
-
-                0 0 10px rgba(255, 0, 0, 0.3),
-
-                0 0 20px rgba(0, 0, 0, 0.8);
-
-        }
-
-
-
-        header p {
-
-            color: #aaa;
-
-            margin-top: 10px;
-
-            font-style: italic;
-
-        }
-
-
-
-        /* ===== FILTROS ===== */
+        /* =========================
+           FILTERS
+        ========================= */
 
         .filters {
-
             display: flex;
-
-            justify-content: center;
 
             flex-wrap: wrap;
 
-            gap: 10px;
+            justify-content: center;
 
-            padding: 20px;
+            gap: 8px;
 
+            margin: 25px 0 40px;
         }
 
-
-
         .filter-btn {
+            padding: 9px 15px;
 
-            background: linear-gradient(145deg, #120000, #0a0a10);
+            background:
+                linear-gradient(
+                    180deg,
+                    #1b1113,
+                    #0b0809
+                );
 
-            border: 1px solid var(--border);
+            color: #a99d8d;
 
-            color: var(--gold);
-
-            padding: 10px 15px;
+            border: 1px solid #38272a;
 
             cursor: pointer;
 
-            transition: 0.3s;
+            font-family: Georgia, serif;
 
-            text-transform: uppercase;
-
-            font-size: 0.8em;
-
+            transition: .25s;
         }
-
-
 
         .filter-btn:hover,
-
         .filter-btn.active {
+            color: var(--gold-light);
 
-            background: var(--blood);
+            border-color: var(--gold);
 
-            color: white;
+            background:
+                linear-gradient(
+                    180deg,
+                    #301414,
+                    #120809
+                );
 
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
-
-            border-color: var(--blood2);
-
+            box-shadow:
+                0 0 12px rgba(150,20,20,.25);
         }
 
+        /* =========================
+           SECTION TITLE
+        ========================= */
 
+        .section-title {
+            display: flex;
 
-        /* ===== GRID ===== */
-
-        .potion-grid {
-
-            display: grid;
-
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            align-items: center;
 
             gap: 15px;
 
-            padding: 20px;
+            margin: 40px 0 25px;
 
-            max-width: 1200px;
+            color: var(--gold-light);
 
-            margin: auto;
+            font-size: 25px;
 
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
         }
 
+        .section-title::before,
+        .section-title::after {
+            content: "";
 
+            height: 1px;
 
-        /* ===== CARDS ===== */
+            flex: 1;
 
-        .potion-card {
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--border)
+                );
+        }
 
-            background: linear-gradient(180deg, #120000, #0a0a10);
+        .section-title::after {
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--border),
+                    transparent
+                );
+        }
+
+        /* =========================
+           ORE GRID
+        ========================= */
+
+        .ore-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 22px;
+        }
+
+        /* =========================
+           ORE CARD
+        ========================= */
+
+        .ore-card {
+            position: relative;
+
+            display: flex;
+
+            flex-direction: column;
+
+            min-height: 480px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(35,18,20,.95),
+                    rgba(10,8,10,.98)
+                );
 
             border: 1px solid var(--border);
 
-            padding: 20px;
+            box-shadow:
+                0 12px 25px var(--shadow),
+                inset 0 0 35px rgba(0,0,0,.35);
 
-            border-radius: 8px;
+            overflow: hidden;
 
-            position: relative;
-
-            transition: 0.3s;
-
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
-
+            transition:
+                transform .3s,
+                border-color .3s,
+                box-shadow .3s;
         }
 
+        .ore-card:hover {
+            transform: translateY(-5px);
 
+            border-color: var(--gold);
 
-        .potion-card:hover {
-
-            transform: translateY(-6px);
-
-            border-color: var(--blood2);
-
-            box-shadow: 0 0 25px rgba(255, 0, 0, 0.25);
-
+            box-shadow:
+                0 18px 35px rgba(0,0,0,.9),
+                0 0 18px rgba(197,160,89,.12);
         }
 
-
-
-        /* glow lateral */
-
-        .potion-card::before {
-
+        .ore-card::before {
             content: "";
 
             position: absolute;
 
             left: 0;
-
             top: 0;
 
-            width: 4px;
+            width: 100%;
+            height: 3px;
 
-            height: 100%;
-
-            background: var(--gold);
-
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--ore-color),
+                    transparent
+                );
         }
 
+        .ore-image {
+            height: 145px;
 
+            display: flex;
 
-        /* cores por categoria */
+            align-items: center;
 
-        .cat-social::before {
-            background: #ff4d8d;
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,.05),
+                    transparent 65%
+                );
+
+            border-bottom: 1px solid var(--border);
         }
 
-        .cat-combate::before {
-            background: var(--blood2);
+        .ore-symbol {
+            width: 78px;
+            height: 78px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border: 2px solid var(--ore-color);
+
+            transform: rotate(45deg);
+
+            box-shadow:
+                0 0 25px var(--ore-glow);
+
+            background:
+                radial-gradient(
+                    circle,
+                    var(--ore-glow),
+                    rgba(0,0,0,.6)
+                );
         }
 
-        .cat-utilidade::before {
-            background: #4da3ff;
+        .ore-symbol span {
+            transform: rotate(-45deg);
+
+            font-size: 34px;
+
+            color: var(--ore-color);
+
+            text-shadow:
+                0 0 12px var(--ore-glow);
         }
 
-        .cat-sombria::before {
-            background: #6b21a8;
+        .ore-content {
+            display: flex;
+
+            flex-direction: column;
+
+            flex: 1;
+
+            padding: 20px;
         }
 
+        .ore-name {
+            margin: 0 0 8px;
 
+            color: var(--gold-light);
 
-        .potion-name {
+            font-size: 24px;
 
-            color: var(--gold2);
+            letter-spacing: 1px;
+        }
 
-            font-size: 1.2em;
+        .rarity {
+            display: inline-block;
 
-            margin-bottom: 8px;
+            width: fit-content;
+
+            padding: 5px 10px;
+
+            margin-bottom: 14px;
+
+            color: var(--ore-color);
+
+            border: 1px solid var(--ore-color);
+
+            background: rgba(0,0,0,.35);
+
+            font-size: 11px;
+
+            letter-spacing: 1.5px;
 
             text-transform: uppercase;
 
+            font-weight: bold;
+        }
+
+        .description {
+            color: #b9afa4;
+
+            line-height: 1.65;
+
+            font-size: 14px;
+
+            margin-bottom: 15px;
+        }
+
+        .info-box {
+            margin-top: auto;
+
+            border-top: 1px solid var(--border);
+
+            padding-top: 15px;
+        }
+
+        .info-row {
+            display: grid;
+
+            grid-template-columns: 125px 1fr;
+
+            gap: 10px;
+
+            padding: 7px 0;
+
+            border-bottom: 1px solid rgba(255,255,255,.035);
+
+            font-size: 13px;
+        }
+
+        .info-label {
+            color: var(--gold);
+
+            font-weight: bold;
+        }
+
+        .info-value {
+            color: #d0c7bb;
+
+            line-height: 1.4;
+        }
+
+        .effect {
+            padding: 12px;
+
+            margin-top: 12px;
+
+            border-left: 3px solid var(--ore-color);
+
+            background:
+                rgba(255,255,255,.025);
+        }
+
+        .effect strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: var(--ore-color);
+
+            text-transform: uppercase;
+
+            font-size: 11px;
+
             letter-spacing: 1px;
-
         }
 
+        /* =========================
+           RARITIES
+        ========================= */
 
-
-        .potion-desc {
-
-            font-size: 0.9em;
-
-            color: #bbb;
-
-            font-style: italic;
-
-            margin-bottom: 10px;
-
+        .common {
+            --ore-color: var(--common);
+            --ore-glow: rgba(143,143,143,.2);
         }
 
-
-
-        .potion-effect {
-
-            background: rgba(0, 255, 0, 0.05);
-
-            border-left: 3px solid #22c55e;
-
-            padding: 8px;
-
-            margin-top: 8px;
-
-            font-size: 0.85em;
-
+        .uncommon {
+            --ore-color: var(--uncommon);
+            --ore-glow: rgba(79,163,107,.25);
         }
 
-
-
-        .potion-debuff {
-
-            background: rgba(255, 0, 0, 0.08);
-
-            border-left: 3px solid var(--blood2);
-
-            padding: 8px;
-
-            margin-top: 8px;
-
-            font-size: 0.8em;
-
-            color: #ffb3b3;
-
+        .rare {
+            --ore-color: var(--rare);
+            --ore-glow: rgba(75,141,204,.25);
         }
 
+        .very-rare {
+            --ore-color: var(--veryrare);
+            --ore-glow: rgba(156,97,216,.3);
+        }
 
+        .epic {
+            --ore-color: var(--epic);
+            --ore-glow: rgba(209,91,138,.3);
+        }
 
-        /* ===== SEARCH ===== */
+        .legendary {
+            --ore-color: var(--legendary);
+            --ore-glow: rgba(209,154,50,.35);
+        }
 
-        .search-container {
+        .mythic {
+            --ore-color: var(--mythic);
+            --ore-glow: rgba(229,229,229,.35);
+        }
+
+        /* =========================
+           FORGE RULES
+        ========================= */
+
+        .forge-section {
+            margin-top: 65px;
+
+            padding: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #160b0d,
+                    #090608
+                );
+
+            border: 1px solid var(--border);
+
+            box-shadow:
+                inset 0 0 30px rgba(0,0,0,.5);
+        }
+
+        .forge-title {
+            margin: 0 0 25px;
+
+            color: var(--gold-light);
+
+            font-size: 28px;
 
             text-align: center;
 
-            padding: 10px;
+            letter-spacing: 2px;
 
+            text-transform: uppercase;
         }
 
+        .forge-grid {
+            display: grid;
 
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
 
-        #searchInput {
-
-            width: 80%;
-
-            max-width: 500px;
-
-            padding: 10px;
-
-            border: 1px solid var(--gold);
-
-            background: #0a0a10;
-
-            color: white;
-
-            outline: none;
-
+            gap: 12px;
         }
 
+        .forge-tier {
+            padding: 18px;
 
+            text-align: center;
 
-        #searchInput:focus {
+            background: rgba(0,0,0,.35);
 
-            box-shadow: 0 0 10px var(--blood2);
+            border: 1px solid var(--border);
 
+            transition: .25s;
+        }
+
+        .forge-tier:hover {
+            border-color: var(--gold);
+        }
+
+        .forge-tier h3 {
+            margin: 0 0 10px;
+
+            color: var(--gold);
+        }
+
+        .forge-tier p {
+            margin: 0;
+
+            color: #aaa095;
+
+            font-size: 13px;
+
+            line-height: 1.5;
+        }
+
+        /* =========================
+           SPECIAL ORE
+        ========================= */
+
+        .moon-section {
+            margin-top: 60px;
+
+            padding: 35px;
+
+            border: 1px solid #625027;
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(100,80,160,.16),
+                    transparent 55%
+                ),
+                linear-gradient(
+                    145deg,
+                    #15101c,
+                    #07060a
+                );
+
+            box-shadow:
+                0 0 35px rgba(80,50,120,.12);
+        }
+
+        .moon-title {
+            margin: 0 0 10px;
+
+            color: #e3d5ff;
+
+            text-align: center;
+
+            font-size: 32px;
+
+            letter-spacing: 3px;
+        }
+
+        .moon-subtitle {
+            margin: 0 auto 25px;
+
+            max-width: 750px;
+
+            text-align: center;
+
+            color: #a99db5;
+
+            line-height: 1.7;
+        }
+
+        .moon-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 15px;
+        }
+
+        .moon-item {
+            padding: 18px;
+
+            border: 1px solid #3d304e;
+
+            background: rgba(0,0,0,.3);
+        }
+
+        .moon-item strong {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #d8c4ff;
+        }
+
+        .moon-item span {
+            color: #a79dac;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: 70px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-top: 1px solid var(--border);
+
+            color: #70685e;
+
+            font-size: 13px;
+        }
+
+        footer strong {
+            color: var(--gold);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                flex-direction: column;
+
+                padding: 15px;
+            }
+
+            .nav-links {
+                gap: 10px;
+            }
+
+            .ore-grid {
+                grid-template-columns:
+                    repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 92%;
+
+                padding-top: 30px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+
+                letter-spacing: 2px;
+            }
+
+            .ore-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .forge-section,
+            .moon-section {
+                padding: 20px;
+            }
+
+            .info-row {
+                grid-template-columns: 1fr;
+                gap: 3px;
+            }
+
+            .info-label {
+                margin-top: 5px;
+            }
         }
     </style>
-    <meta content="strict-origin-when-cross-origin" name="referrer" />
 </head>
 
 <body>
-   <nav class="navbar">
-        <div class="container-nav">
-            <div class="links">
-                <a href="../funcoes/inicio.html">historia </a>
-                <a href="racaeclasses.html">Raças e Classes</a>
-                <a href="/armas/armas.html">Armas</a>
-                <a href="../funcoes/sistema.html">sistema</a>
-                <a href="../funcoes/inimigo.html">inimigos</a>
-                <a href="../funcoes/criaçãodeficha.html">Fução elemntal</a>
-                <a href="..//funcoes/magia.html">magias</a>
-                <a href="..//funcoes/porção.html">porção</a>
-                <a href="..//funcoes/INGREDIENTES.HTML">ingredinte</a>
-                <a href="/funcoes/mapas.html">mapas</a>
-                <a href="/funcoes/clan.html">Criação de Ficha</a>
-            </div>
-        </div>
-    </nav>
-    <script>
-        function searchPotions() {
-            const input = document.getElementById("searchInput");
-            const filter = input.value.toLowerCase();
-            const cards = document.querySelectorAll(".potion-card");
 
-            cards.forEach(card => {
-                const name = card.querySelector(".potion-name").textContent.toLowerCase();
+<!-- =========================
+     NAVBAR
+========================= -->
 
-                if (name.includes(filter)) {
-                    card.style.display = "flex";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        }
-    </script>
+<nav>
+
+    <div class="nav-logo">
+        NEXALIS
+    </div>
+
+    <div class="nav-links">
+     <a href="../funcoes/inicio.html">Início</a>
+                    <a href="../funcoes/racaeclasses.html">Raças & Classes</a>
+                    <a href="../armas/armas.html">Armas</a>
+                    <a href="../funcoes/sistema.html">Sistema</a>
+                    <a href="../funcoes/inimigo.html">Inimigos</a>
+                    <a href="../funcoes/criaçãodeficha.html">Ficha</a>
+                    <a href="../funcoes/magia.html">Magia</a>
+                    <a href="../funcoes/porção.html">Alquimia</a>
+                    <a href="../funcoes/INGREDIENTES.HTML">Ingredientes</a>
+                    <a href="../funcoes/mapas.html">Mapas</a>
+                    <a href="../funcoes/clan.html">Criação de Ficha</a>
+                    <a href="../funcoes/porç╞o.html">Mineiro</a>
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="container">
+
+    <header class="page-header">
+
+        <div class="symbol">⛏</div>
+
+        <h1>Minérios de Arma</h1>
+
+        <h2>Materiais de Forja de Nexalis</h2>
+
+        <div class="ornament"></div>
+
+        <p class="intro">
+            Nas profundezas de Nexalis existem metais que não pertencem
+            apenas à terra. Alguns nasceram do fogo, outros foram tocados
+            pela magia, pelas sombras, pelas estrelas ou pela própria Lua.
+            Ferreiros capazes de trabalhar esses materiais podem transformar
+            armas comuns em relíquias capazes de desafiar monstros,
+            feiticeiros e entidades ancestrais.
+        </p>
+
+    </header>
+
+
+    <!-- =========================
+         SEARCH
+    ========================= -->
+
     <div class="search-container">
-        <input id="searchInput" onkeyup="searchPotions()" placeholder="🔍 Pesquisar poção..." type="text" />
-    </div>
-    <div class="container">
-        <header>
-            <h1>Alquimia de hurras</h1>
-            <p>Grimório de Misturas, Elixires e Toxinas Elementais</p>
-        </header>
-        <div class="filters">
-            <button class="filter-btn active" onclick="filterPotions('all', this)">Todas</button>
-            <button class="filter-btn active" onclick="filterPotions('social', this)">Sociais</button>
-            <button class="filter-btn active" onclick="filterPotions('combate', this)">Combate</button>
-            <button class="filter-btn active" onclick="filterPotions('utilidade', this)">Utilidade</button>
-            <button class="filter-btn active" onclick="filterPotions('fogo', this)">🔥 Fogo</button>
-            <button class="filter-btn active" onclick="filterPotions('agua', this)">💧 Água</button>
-            <button class="filter-btn active" onclick="filterPotions('vento', this)">🌪️ Vento</button>
-            <button class="filter-btn active" onclick="filterPotions('terra', this)">🌿 Terra</button>
-            <button class="filter-btn active" onclick="filterPotions('raio', this)">⚡ Raio</button>
-            <button class="filter-btn active" onclick="filterPotions('veneno', this)">☠️ Veneno</button>
-            <button class="filter-btn active" onclick="filterPotions('mental', this)">🧠 Mental</button>
-            <button class="filter-btn active" onclick="filterPotions('sombra', this)">🌑 Sombra</button>
-            <button class="filter-btn active" onclick="filterPotions('sagrado', this)">✨ Sagrado</button>
-        </div>
-    </div>
-    <div class="potion-grid" id="potionGrid">
-        <div class="potion-card cat-social" data-element="mental" data-type="social">
-            <h3 class="potion-name">Poção do Vínculo</h3>
-            <p class="potion-desc">Um líquido rosa suave que emite um calor leve. O ar fica mais acolhedor.</p>
-            <div class="potion-effect">
-                <strong>Efeito (1h):</strong> +2 em Carisma e Vantagem em interações de honestidade/empatia.
-            </div>
-        </div>
-        <div class="potion-card cat-utilidade" data-element="vento" data-type="utilidade">
-            <h3 class="potion-name">Vento Cortante</h3>
-            <p class="potion-desc">Névoa branca em movimento perpétuo.</p>
-            <div class="potion-effect">
-                <strong>Efeito (15m):</strong> +3 Esquiva e Proteção contra Projéteis.
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> Instabilidade (Fácil de ser empurrado/derrubado).
-            </div>
-        </div>
-        <div class="potion-card cat-combate" data-element="veneno" data-type="combate">
-            <h3 class="potion-name">Corrosão Púrpura</h3>
-            <p class="potion-desc">Líquido violeta que borbulha violentamente.</p>
-            <div class="potion-effect">
-                <strong>Efeito (10m):</strong> Ignora 2 de Resistência e causa dano contínuo.
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> Vapores Tóxicos (Risco de náusea e fadiga).
-            </div>
-        </div>
-        <div class="potion-card cat-combate" data-element="sagrado" data-type="combate">
-            <h3 class="potion-name">Brilho Estelar</h3>
-            <p class="potion-desc">Líquido branco radiante e sagrado.</p>
-            <div class="potion-effect">
-                <strong>Efeito (30m):</strong> Revela invisíveis e +4 Dano contra Sombras.
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> Exposição Total (Impossível se esconder).
-            </div>
-        </div>
-        <div class="potion-card cat-utilidade" data-element="terra" data-type="utilidade">
-            <h3 class="potion-name">Seiva Ancestral</h3>
-            <p class="potion-desc">Xarope verde com cheiro de floresta viva.</p>
-            <div class="potion-effect">
-                <strong>Efeito (1h):</strong> Vantagem em Percepção e Regeneração na água.
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> Enraizamento (Lentidão ao ficar parado).
-            </div>
-        </div>
-        <div class="potion-card cat-social" data-element="mental" data-type="social">
-            <h3 class="potion-name">Poção do Mal Entendido</h3>
-            <p class="potion-desc">Líquido acinzentado que ondula sozinho. Sons ficam distorcidos.</p>
-            <div class="potion-effect">
-                <strong>Efeito (1h):</strong> Todas as ações sociais soam ofensivas para você.
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> Penalidade em testes sociais e agressividade.
-            </div>
-        </div>
-        <div class="potion-card cat-social" data-element="mental" data-type="social">
-            <h3 class="potion-name">Língua Solta</h3>
-            <p class="potion-desc">Verde efervescente. A respiração fica leve e embriagada.</p>
-            <div class="potion-effect">
-                <strong>Efeito (1h):</strong> Interpreta ações sociais com total honestidade.
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> Tendência a falar apenas a verdade absoluta.
-            </div>
-        </div>
-        <div class="potion-card cat-combate" data-element="fogo" data-type="combate">
-            <h3 class="potion-name">Sangue Fervente</h3>
-            <p class="potion-desc">Carmesim espesso que pulsa como um coração.</p>
-            <div class="potion-effect">
-                <strong>Efeito (30m):</strong> +2 em Força. Ignores cansaço e ferimentos leves.
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> -2 em Inteligência. Proibido ações de calma.
-            </div>
-        </div>
-        <div class="potion-card cat-sombria" data-element="sombra" data-type="sombria">
-            <h3 class="potion-name">Essência da Sombra</h3>
-            <p class="potion-desc">Óleo negro que absorve a luz. Frio como gelo.</p>
-            <div class="potion-effect">
-                <strong>Efeito (1h):</strong> Translúcido. Vantagem em Furtividade e Ocultação.
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> Percepção reduzida pela metade sob luz solar.
-            </div>
-        </div>
-        <div class="potion-card cat-utilidade" data-element="mental" data-type="utilidade">
-            <h3 class="potion-name">Lágrima de Afrodite (Andakah)</h3>
-            <p class="potion-desc">Um líquido furta-cor que parece pesado como mercúrio. Encontrado apenas nas
-                Terras de
-                Andakah.</p>
-            <div class="potion-effect">
-                <strong>Efeito (30m):</strong> O usuário emana uma aura de tragédia. +3 em testes de Intimidação ou
-                Persuasão baseada em pena.
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> Maldição de Andakah: Impossibilidade de receber curas mágicas de
-                aliados.
-            </div>
-        </div>
-        <div class="potion-card cat-sombria" data-element="sombra" data-type="sombria">
-            <h3 class="potion-name">Essência de Shadowfen</h3>
-            <p class="potion-desc">Criada pelos alquimistas sombrios do vilarejo de Shadowfen. É um gás denso
-                engarrafado.
-            </p>
-            <div class="potion-effect">
-                <strong>Efeito (1h):</strong> Fusão parcial a sombras. +4 em Furtividade e atravessa frestas
-                pequenas.
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> Apatia de Andakah: Perda de 1 ponto temporário de Força de Vontade ao
-                fim.
-            </div>
-        </div>
-        <div class="potion-card cat-combate" data-element="agua" data-type="combate">
-            <h3 class="potion-name">Elixir do Sangue de Ymir</h3>
-            <p class="potion-desc">Um licor azul gélido que nunca congela, vindo das montanhas de Skallgard.</p>
-            <div class="potion-effect">
-                <strong>Efeito (30m):</strong> +2 em Vigor e imunidade a frio. Ataques causam lentidão.
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> Calor Insuportável: -2 em ações se estiver em climas quentes.
-            </div>
-        </div>
-        <div class="potion-card cat-social" data-element="mental" data-type="social">
-            <h3 class="potion-name">Néctar de Athenopolis</h3>
-            <p class="potion-desc">Um mel dourado filtrado nas academias de Helios. Cheira a pergaminho novo.</p>
-            <div class="potion-effect">
-                <strong>Efeito (1h):</strong> +3 em Conhecimentos Acadêmicos e poliglota (Nexalis).
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> Arrogância de Filósofo: Risco de corrigir aliados rudemente.
-            </div>
-        </div>
-        <div class="potion-card cat-utilidade" data-element="raio" data-type="utilidade">
-            <h3 class="potion-name">Sopro de Vidro</h3>
-            <p class="potion-desc">Azul cristalino. Revela padrões geométricos ao agitar.</p>
-            <div class="potion-effect">
-                <strong>Efeito (15m):</strong> +3 em Percepção e Reação. Ouve batimentos e vê fios.
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> Atordoamento fácil com excesso de sons ou luzes.
-            </div>
-        </div>
-        <div class="potion-card cat-social" data-element="mental" data-type="social">
-            <h3 class="potion-name">Elixir do Falso Testemunho</h3>
-            <p class="potion-desc">Dourado brilhante com cheiro de mel.</p>
-            <div class="potion-effect">
-                <strong>Efeito (1h):</strong> +2 em Manipulação e Lábia. Mentiras indetectáveis.
-            </div>
-            <div class="potion-debuff">
-                <strong>Desvantagem:</strong> Ressaca da Verdade: Após o efeito, impossibilidade de falar a verdade
-                por 1h.
-            </div>
-        </div>
-        <div class="potion-card cat-combate" data-element="terra" data-type="combate">
-            <h3 class="potion-name">Couraça de Pedra</h3>
-            <p class="potion-desc">Cinza denso com gosto de terra úmida.</p>
-            <div class="potion-effect"><strong>Efeito (1h):</strong> +2 Resistência Física e +1 Vigor.</div>
-            <div class="potion-debuff"><strong>Desvantagem:</strong> -2 em Destreza e Esquiva. Movimentos pesados.
-            </div>
-        </div>
-        <div class="potion-card cat-utilidade" data-element="mental" data-type="utilidade">
-            <h3 class="potion-name">Visão de Éter</h3>
-            <p class="potion-desc">Roxo cintilante com cheiro de ozônio.</p>
-            <div class="potion-effect"><strong>Efeito (30m):</strong> Vê fluxos de Mana e magias. +2 Percepção p/
-                invisíveis.</div>
-            <div class="potion-debuff"><strong>Desvantagem:</strong> Olhos brilham (Impossível usar Furtividade).
-            </div>
-        </div>
-        <div class="potion-card cat-utilidade" data-element="raio" data-type="utilidade">
-            <h3 class="potion-name">Orvalho do Pensamento</h3>
-            <p class="potion-desc">Amarelo elétrico que vibra constantemente.</p>
-            <div class="potion-effect"><strong>Efeito (15m):</strong> +2 Reação e +1 Ação Mental por turno.</div>
-            <div class="potion-debuff"><strong>Desvantagem:</strong> Inteligência cai para o mínimo por 1h após o
-                fim.</div>
-        </div>
-        <div class="potion-card cat-combate" data-element="fogo" data-type="combate">
-            <h3 class="potion-name">Fúria Elemental</h3>
-            <p class="potion-desc">Alterna entre o calor do fogo e o frio do gelo.</p>
-            <div class="potion-effect"><strong>Efeito (1h):</strong> Ataques de Briga/Magia causam dano Fogo/Raio
-                extra.
-            </div>
-            <div class="potion-debuff"><strong>Desvantagem:</strong> Se levar Crítico, a poção explode (-1
-                Vitalidade).
-            </div>
-        </div>
-        <div class="potion-card cat-sombria" data-element="sombra" data-type="sombria">
-            <h3 class="potion-name">Pele de Ébano</h3>
-            <p class="potion-desc">Negro absoluto, textura similar às sombras dos rituais.</p>
-            <div class="potion-effect"><strong>Efeito (1h):</strong> +2 Resistência Física. Vantagem em Ocultação no
-                escuro.
-            </div>
-            <div class="potion-debuff"><strong>Desvantagem:</strong> Dano dobrado contra magias do elemento Sagrado.
-            </div>
-        </div>
-        <div class="potion-card cat-utilidade" data-element="sombra" data-type="utilidade">
-            <h3 class="potion-name">Silêncio Mortal</h3>
-            <p class="potion-desc">Líquido mudo, não faz som no frasco.</p>
-            <div class="potion-effect"><strong>Efeito (1h):</strong> +4 em Furtividade. Movimentos totalmente mudos.
-            </div>
-            <div class="potion-debuff"><strong>Desvantagem:</strong> O usuário fica surdo enquanto durar o efeito.
-            </div>
-        </div>
-        <div class="potion-card cat-social" data-element="mental" data-type="social">
-            <h3 class="potion-name">Toque da Morte</h3>
-            <p class="potion-desc">Transparente com reflexos dourados. Desfoca o redor.</p>
-            <div class="potion-effect"><strong>Efeito:</strong> Apaga a memória (última 1h) de uma interação
-                emocional.
-            </div>
-        </div>
-        <div class="potion-card cat-utilidade" data-element="mental" data-type="utilidade">
-            <h3 class="potion-name">Tônico da Mente Blindada</h3>
-            <p class="potion-desc">Rosa neon que brilha como um pulso cerebral.</p>
-            <div class="potion-effect"><strong>Efeito (1h):</strong> +3 Resistência Mágica: Mental. Barreira contra
-                controle.</div>
-            <div class="potion-debuff"><strong>Desvantagem:</strong> Apatia total. -2 em Carisma e Persuasão.</div>
-        </div>
-        <div class="potion-card cat-utilidade" data-element="veneno" data-type="utilidade">
-            <h3 class="potion-name">Olhar de Basilisco</h3>
-            <p class="potion-desc">Verde-esmeralda denso com cheiro mineral.</p>
-            <div class="potion-effect"><strong>Efeito (15m):</strong> +3 em Intimidação. Chance de paralisar
-                inimigos.</div>
-            <div class="potion-debuff"><strong>Desvantagem:</strong> -3 em Percepção (Perda de visão periférica).
-            </div>
-        </div>
-        <div class="potion-card cat-combate" data-element="vento" data-type="combate">
-            <h3 class="potion-name">Agilidade de Mercúrio</h3>
-            <p class="potion-desc">Prateado brilhante que flui como metal vivo.</p>
-            <div class="potion-effect"><strong>Efeito (30m):</strong> +3 em Destreza e +2 em Esquiva. Saltos
-                duplicados.
-            </div>
-            <div class="potion-debuff"><strong>Desvantagem:</strong> Recebe +2 de dano extra de ataques de impacto.
-            </div>
-        </div>
-        <div class="potion-card cat-combate" data-element="fogo" data-type="combate">
-            <h3 class="potion-name">Núcleo Ígneo</h3>
-            <p class="potion-desc">Líquido laranja fervente. O frasco queima a mão.</p>
-            <div class="potion-effect"><strong>Efeito (15m):</strong> +3 Dano de Fogo e Resistência a Calor.</div>
-            <div class="potion-debuff"><strong>Desvantagem:</strong> Desidratação extrema (-2 Vigor após o uso).
-            </div>
-        </div>
-        <div class="potion-card cat-utilidade" data-element="raio" data-type="utilidade">
-            <h3 class="potion-name">Sopro de Tempestade</h3>
-            <p class="potion-desc">Amarelo faíscante com cheiro a ozono.</p>
-            <div class="potion-effect"><strong>Efeito (10m):</strong> +3 em Reação e Movimento Adicional.</div>
-            <div class="potion-debuff"><strong>Desvantagem:</strong> Sobrecarga Nervosa (-3 em Atributos Físicos).
-            </div>
-        </div>
-        <div class="potion-card cat-combate" data-element="terra" data-type="combate">
-            <h3 class="potion-name">Rocha Viva</h3>
-            <p class="potion-desc">Castanho denso e pesado como chumbo.</p>
-            <div class="potion-effect"><strong>Efeito (30m):</strong> +3 Resistência Física. Imune a empurrões.
-            </div>
-            <div class="potion-debuff"><strong>Desvantagem:</strong> Inércia (Impossível correr, -2 em Esquiva).
-            </div>
-        </div>
-    </div>
-    <script>
-        function filterPotions(category, btn) {
-            const cards = document.querySelectorAll('.potion-card');
-            const buttons = document.querySelectorAll('.filter-btn');
 
-            buttons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Pesquisar minério, efeito, raridade ou local..."
+            onkeyup="searchOres()"
+        >
 
-            cards.forEach(card => {
-                const type = card.getAttribute('data-type');
-                const element = card.getAttribute('data-element');
+    </div>
 
-                if (category === 'all' || type === category || element === category) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-    </script>
+
+    <!-- =========================
+         FILTERS
+    ========================= -->
+
+    <div class="filters">
+
+        <button
+            class="filter-btn active"
+            data-filter="all"
+            onclick="filterOres('all', this)"
+        >
+            Todos
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="common"
+            onclick="filterOres('common', this)"
+        >
+            Comum
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="uncommon"
+            onclick="filterOres('uncommon', this)"
+        >
+            Incomum
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="rare"
+            onclick="filterOres('rare', this)"
+        >
+            Raro
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="very-rare"
+            onclick="filterOres('very-rare', this)"
+        >
+            Muito Raro
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="epic"
+            onclick="filterOres('epic', this)"
+        >
+            Épico
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="legendary"
+            onclick="filterOres('legendary', this)"
+        >
+            Lendário
+        </button>
+
+        <button
+            class="filter-btn"
+            data-filter="mythic"
+            onclick="filterOres('mythic', this)"
+        >
+            Mítico
+        </button>
+
+    </div>
+
+
+    <div class="section-title">
+        Minérios de Forja
+    </div>
+
+
+    <!-- =========================
+         ORE GRID
+    ========================= -->
+
+    <section class="ore-grid" id="oreGrid">
+
+
+        <!-- FERRO NEGRO -->
+
+        <article class="ore-card common" data-rarity="common">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>◆</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Ferro Negro</h2>
+
+                <span class="rarity">
+                    Comum
+                </span>
+
+                <p class="description">
+                    Um metal cinza-escuro quase negro, marcado por pequenas
+                    veias avermelhadas. É conhecido por sua resistência e
+                    facilidade de ser trabalhado por ferreiros experientes.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">10 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">+1 Durabilidade da arma.</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Minas profundas, fortalezas abandonadas
+                            e regiões montanhosas.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade da Forja</strong>
+                        Aumenta a resistência estrutural da arma.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- AÇO RUBRO -->
+
+        <article class="ore-card uncommon" data-rarity="uncommon">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>◆</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Aço Rubro</h2>
+
+                <span class="rarity">
+                    Incomum
+                </span>
+
+                <p class="description">
+                    Metal vermelho intenso que permanece quente mesmo depois
+                    de retirado das regiões vulcânicas. Seu interior parece
+                    conter brasas vivas.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">8 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            +1 dano de Fogo.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Vulcões, cavernas de magma e regiões
+                            próximas ao Inferno.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade da Forja</strong>
+                        A lâmina transmite calor elemental ao atingir o alvo.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- MINÉRIO GÉLIDO -->
+
+        <article class="ore-card uncommon" data-rarity="uncommon">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>◆</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Minério Gélido</h2>
+
+                <span class="rarity">
+                    Incomum
+                </span>
+
+                <p class="description">
+                    Cristal azul-claro coberto por uma camada de gelo que
+                    jamais desaparece. Seu frio permanece mesmo dentro das
+                    forjas mais quentes.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">8 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            Ataques aplicam Lentidão por 1 turno.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Cavernas congeladas e montanhas de Skallgard.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade da Forja</strong>
+                        O impacto da arma rouba calor e reduz os movimentos do alvo.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- TEMPESTUOSO -->
+
+        <article class="ore-card rare" data-rarity="rare">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>⚡</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Minério Tempestuoso</h2>
+
+                <span class="rarity">
+                    Raro
+                </span>
+
+                <p class="description">
+                    Metal azul-amarelado que produz pequenas faíscas quando
+                    entra em contato com outros metais.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">6 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            +1 Reação em ataques realizados com a arma.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Montanhas durante tempestades e ruínas
+                            atingidas por raios.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade da Forja</strong>
+                        A arma responde quase instantaneamente aos movimentos do portador.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- SOMBRIO -->
+
+        <article class="ore-card rare" data-rarity="rare">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>◆</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Minério Sombrio</h2>
+
+                <span class="rarity">
+                    Raro
+                </span>
+
+                <p class="description">
+                    Uma pedra negra que parece absorver a luz ao seu redor.
+                    Mesmo polida, sua superfície permanece completamente opaca.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">6 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            +2 para detectar criaturas ocultas ou invisíveis.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Shadowfen, cavernas profundas e ruínas corrompidas.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade da Forja</strong>
+                        A arma reage à presença de criaturas escondidas.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- SOLAR -->
+
+        <article class="ore-card rare" data-rarity="rare">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>☀</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Minério Solar</h2>
+
+                <span class="rarity">
+                    Raro
+                </span>
+
+                <p class="description">
+                    Cristal dourado que emite uma luz quente e constante.
+                    É especialmente valorizado por guerreiros que enfrentam
+                    criaturas das sombras.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">6 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            +2 dano contra criaturas das Sombras.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Templos solares, desertos e regiões de grande luminosidade.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade da Forja</strong>
+                        A arma manifesta energia luminosa contra criaturas sombrias.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- ASTRAL -->
+
+        <article class="ore-card very-rare" data-rarity="very-rare">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>✦</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Minério Astral</h2>
+
+                <span class="rarity">
+                    Muito Raro
+                </span>
+
+                <p class="description">
+                    Cristal violeta-azulado onde pequenas partículas parecem
+                    estrelas presas dentro da pedra.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">4 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            Permite atingir criaturas etéreas e parcialmente incorpóreas.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Crateras celestes, meteoritos e regiões próximas a portais.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade da Forja</strong>
+                        A matéria da arma pode interagir com criaturas fora do plano físico.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- INFERNAL -->
+
+        <article class="ore-card epic" data-rarity="epic">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>🔥</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Minério Infernal</h2>
+
+                <span class="rarity">
+                    Épico
+                </span>
+
+                <p class="description">
+                    Rocha negra rachada por linhas de magma vermelho.
+                    O minério pulsa lentamente como se possuísse um coração.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">4 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            +2 dano de Fogo e pode incendiar o alvo.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Regiões infernais, vulcões e fortalezas demoníacas.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade da Forja</strong>
+                        A arma mantém uma temperatura sobrenatural e pode produzir chamas.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PROFANO -->
+
+        <article class="ore-card epic" data-rarity="epic">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>☠</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Minério Profano</h2>
+
+                <span class="rarity">
+                    Épico
+                </span>
+
+                <p class="description">
+                    Metal púrpura escuro coberto por marcas naturais que
+                    lembram antigas runas proibidas.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">3 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            +2 dano contra criaturas Sagradas.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Templos corrompidos, cemitérios amaldiçoados
+                            e territórios profanados.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade da Forja</strong>
+                        A arma enfraquece criaturas protegidas por energia sagrada.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- CRISTAL DE MANA -->
+
+        <article class="ore-card epic" data-rarity="epic">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>✧</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Cristal de Mana</h2>
+
+                <span class="rarity">
+                    Épico
+                </span>
+
+                <p class="description">
+                    Cristal translúcido que muda de cor conforme a magia
+                    presente ao seu redor.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">3 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            +1 Poder Mágico para armas mágicas.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Veios de Mana, torres arcanas e cavernas mágicas.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade da Forja</strong>
+                        Amplifica a energia mágica canalizada através da arma.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- SANGUE -->
+
+        <article class="ore-card epic" data-rarity="epic">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>◆</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Minério de Sangue</h2>
+
+                <span class="rarity">
+                    Épico
+                </span>
+
+                <p class="description">
+                    Metal vermelho-escuro que pulsa como um coração quando
+                    exposto ao calor.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">3 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            Ao causar um crítico, recupera 1 Vitalidade.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Campos de batalha antigos e covis de monstros.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade da Forja</strong>
+                        A arma transforma parte da força de um golpe crítico em energia vital.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- VAZIO -->
+
+        <article class="ore-card legendary" data-rarity="legendary">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>◈</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Minério do Vazio</h2>
+
+                <span class="rarity">
+                    Lendário
+                </span>
+
+                <p class="description">
+                    Uma rocha completamente negra. Não reflete luz e parece
+                    possuir um espaço vazio em seu interior.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">2 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            Ignora 2 pontos de Resistência Física ou Mágica.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Fendas do Vazio e regiões onde a realidade está instável.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade da Forja</strong>
+                        O golpe atravessa parte das defesas naturais do alvo.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- CELESTIAL -->
+
+        <article class="ore-card legendary" data-rarity="legendary">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>✦</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Minério Celestial</h2>
+
+                <span class="rarity">
+                    Lendário
+                </span>
+
+                <p class="description">
+                    Cristal branco-dourado cercado por pequenas partículas
+                    que flutuam constantemente ao seu redor.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">2 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            +2 dano contra criaturas Profanas e resistência à corrupção.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Santuários celestiais, locais sagrados e eventos celestes.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade da Forja</strong>
+                        A arma manifesta uma energia purificadora.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- MINÉRIO DA LUA -->
+
+        <article class="ore-card legendary" data-rarity="legendary">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>☾</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Minério da Lua</h2>
+
+                <span class="rarity">
+                    Lendário
+                </span>
+
+                <p class="description">
+                    Prata escura atravessada por veios azul-prateados que
+                    brilham sob a luz da Lua. Durante o dia parece apenas
+                    um metal frio e opaco. À noite, sua verdadeira natureza
+                    desperta.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">2 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            +3 dano durante a noite.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Crateras lunares, montanhas de alta altitude,
+                            cavernas expostas à Lua e durante eclipses.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade Lunar</strong>
+                        A arma desenvolve uma aura azul-prateada durante a noite
+                        e pode interagir com criaturas parcialmente etéreas.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- PRIMORDIAL -->
+
+        <article class="ore-card mythic" data-rarity="mythic">
+
+            <div class="ore-image">
+                <div class="ore-symbol">
+                    <span>✹</span>
+                </div>
+            </div>
+
+            <div class="ore-content">
+
+                <h2 class="ore-name">Minério Primordial</h2>
+
+                <span class="rarity">
+                    Mítico
+                </span>
+
+                <p class="description">
+                    Um metal impossível de classificar. Sua superfície muda
+                    continuamente entre vermelho, azul, branco, violeta e
+                    negro, como se vários elementos disputassem o mesmo espaço.
+                </p>
+
+                <div class="info-box">
+
+                    <div class="info-row">
+                        <span class="info-label">Quantidade</span>
+                        <span class="info-value">1 kg</span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Efeito</span>
+                        <span class="info-value">
+                            Escolha um elemento para a arma.
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span class="info-label">Encontrado em</span>
+                        <span class="info-value">
+                            Ruínas dos Hurras, núcleos de monstros ancestrais
+                            e regiões onde os elementos se encontram.
+                        </span>
+                    </div>
+
+                    <div class="effect">
+                        <strong>Propriedade Primordial</strong>
+                        Durante um ritual de forja, o ferreiro pode escolher
+                        o elemento que será incorporado à arma.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+    <!-- =========================
+         FORJA
+    ========================= -->
+
+    <section class="forge-section">
+
+        <h2 class="forge-title">
+            Hierarquia da Forja
+        </h2>
+
+        <div class="forge-grid">
+
+            <div class="forge-tier">
+                <h3>Arma Comum</h3>
+                <p>
+                    Pode receber 1 minério.
+                </p>
+            </div>
+
+            <div class="forge-tier">
+                <h3>Arma Aprimorada</h3>
+                <p>
+                    Pode receber 2 minérios.
+                    O segundo deve ser Incomum ou superior.
+                </p>
+            </div>
+
+            <div class="forge-tier">
+                <h3>Arma Rara</h3>
+                <p>
+                    Pode receber até 3 minérios.
+                </p>
+            </div>
+
+            <div class="forge-tier">
+                <h3>Arma Épica</h3>
+                <p>
+                    3 minérios + 1 minério especial.
+                </p>
+            </div>
+
+            <div class="forge-tier">
+                <h3>Arma Lendária</h3>
+                <p>
+                    Até 4 minérios,
+                    incluindo pelo menos 1 Lendário.
+                </p>
+            </div>
+
+            <div class="forge-tier">
+                <h3>Arma Mítica</h3>
+                <p>
+                    Até 5 minérios,
+                    incluindo 1 Mítico.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MINÉRIO DA LUA
+    ========================= -->
+
+    <section class="moon-section">
+
+        <h2 class="moon-title">
+            ☾ Minério da Lua ☽
+        </h2>
+
+        <p class="moon-subtitle">
+            Entre todos os materiais conhecidos pelos ferreiros de Nexalis,
+            poucos possuem uma ligação tão forte com os ciclos celestes.
+            O Minério da Lua reage à luz lunar e desperta propriedades
+            diferentes conforme a fase da Lua.
+        </p>
+
+        <div class="moon-grid">
+
+            <div class="moon-item">
+                <strong>Quantidade necessária</strong>
+                <span>
+                    2 kg para incorporar o Minério da Lua a uma arma.
+                </span>
+            </div>
+
+            <div class="moon-item">
+                <strong>Efeito básico</strong>
+                <span>
+                    +3 dano durante a noite.
+                </span>
+            </div>
+
+            <div class="moon-item">
+                <strong>Aparência</strong>
+                <span>
+                    Prata escura com veios azul-prateados luminosos.
+                </span>
+            </div>
+
+            <div class="moon-item">
+                <strong>Lua Cheia</strong>
+                <span>
+                    A aura lunar da arma se torna muito mais intensa.
+                </span>
+            </div>
+
+            <div class="moon-item">
+                <strong>Lua Nova</strong>
+                <span>
+                    A arma perde seu brilho, tornando-se extremamente discreta.
+                </span>
+            </div>
+
+            <div class="moon-item">
+                <strong>Localização</strong>
+                <span>
+                    Crateras, montanhas de alta altitude, cavernas lunares
+                    e locais atingidos diretamente pela luz da Lua.
+                </span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <strong>NEXALIS</strong>
+
+    <br><br>
+
+    Sistema de Minérios de Arma
+
+    <br>
+
+    Forjados pelo fogo, moldados pela magia.
+
+</footer>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+    let currentFilter = "all";
+
+
+    function filterOres(filter, button) {
+
+        currentFilter = filter;
+
+        const buttons =
+            document.querySelectorAll(".filter-btn");
+
+        buttons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        applyFilters();
+    }
+
+
+    function searchOres() {
+
+        applyFilters();
+    }
+
+
+    function applyFilters() {
+
+        const search =
+            document
+                .getElementById("searchInput")
+                .value
+                .toLowerCase()
+                .trim();
+
+        const cards =
+            document.querySelectorAll(".ore-card");
+
+
+        cards.forEach(card => {
+
+            const rarity =
+                card.dataset.rarity;
+
+            const text =
+                card.innerText.toLowerCase();
+
+
+            const matchesSearch =
+                text.includes(search);
+
+
+            const matchesFilter =
+                currentFilter === "all" ||
+                rarity === currentFilter;
+
+
+            if (
+                matchesSearch &&
+                matchesFilter
+            ) {
+
+                card.style.display = "flex";
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    }
+
+</script>
+
 </body>
-
 </html>
