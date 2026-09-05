@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Poções de Nexalis — Manual do Alquimista</title>
+    <link rel="stylesheet" href="pocoes.css">
 
-    <style>
-        :root {
+</head>
+
+<body>
+    <style>:root {
             --bg: #050505;
             --bg-2: #0a0a0a;
             --panel: #111111;
@@ -731,10 +734,84 @@
                 grid-template-columns: 1fr;
             }
         }
-    </style>
-</head>
 
-<body>
+/* ========================================
+   SISTEMA DE MOEDAS — POÇÕES
+   10 Cobre = 1 Prata
+   10 Prata = 1 Ouro
+   ======================================== */
+
+.potion-price {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 0 0 20px;
+}
+
+.price-box {
+    padding: 10px 12px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid #3a3030;
+}
+
+.price-box.sale {
+    border-color: var(--border-gold);
+}
+
+.price-label {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--text-muted);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price-value {
+    display: block;
+    color: var(--gold-light);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.price-box.sale .price-value {
+    color: #e2c275;
+}
+
+.coin.copper {
+    color: #b87333;
+}
+
+.coin.silver {
+    color: #c0c0c0;
+}
+
+.coin.gold {
+    color: #e2c275;
+}
+
+.tag.cost {
+    white-space: nowrap;
+}
+
+.td-cost {
+    color: #d7b968;
+    white-space: nowrap;
+}
+
+.td-sale {
+    color: #e2c275;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+@media (max-width: 500px) {
+    .potion-price {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 
     <!-- =========================
          NAVBAR PRINCIPAL
@@ -851,8 +928,8 @@
                 </div>
 
                 <div class="info-box">
-                    <strong>Po</strong>
-                    <span>Moeda</span>
+                    <strong>C / P / O</strong>
+                    <span>Cobre • Prata • Ouro</span>
                 </div>
 
             </div>
@@ -1065,10 +1142,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 1</span>
                             <span class="tag cd">CD 10</span>
-                            <span class="tag cost">40 Po</span>
+                            <span class="tag cost"><span class="coin copper">2 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">2 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">3 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1112,10 +1200,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 1</span>
                             <span class="tag cd">CD 14</span>
-                            <span class="tag cost">60 Po</span>
+                            <span class="tag cost"><span class="coin copper">3 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">3 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">4 P 5 C</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1161,10 +1260,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 14</span>
-                            <span class="tag cost">75 Po</span>
+                            <span class="tag cost"><span class="coin copper">3 P 5 C</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">3 P 5 C</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">5 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1210,10 +1320,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 15</span>
-                            <span class="tag cost">100 Po</span>
+                            <span class="tag cost"><span class="coin copper">5 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">5 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">7 P 5 C</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1259,10 +1380,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 13</span>
-                            <span class="tag cost">70 Po</span>
+                            <span class="tag cost"><span class="coin copper">3 P 5 C</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">3 P 5 C</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">5 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1309,10 +1441,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 1</span>
                             <span class="tag cd">CD 11</span>
-                            <span class="tag cost">45 Po</span>
+                            <span class="tag cost"><span class="coin copper">2 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">2 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">3 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1358,10 +1501,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 1</span>
                             <span class="tag cd">CD 10</span>
-                            <span class="tag cost">35 Po</span>
+                            <span class="tag cost"><span class="coin copper">1 P 5 C</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">1 P 5 C</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">2 P 5 C</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1407,10 +1561,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 13</span>
-                            <span class="tag cost">65 Po</span>
+                            <span class="tag cost"><span class="coin copper">3 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">3 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">4 P 5 C</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1456,10 +1621,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 14</span>
-                            <span class="tag cost">85 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1506,10 +1682,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 3</span>
                             <span class="tag cd">CD 17</span>
-                            <span class="tag cost">250 Po</span>
+                            <span class="tag cost"><span class="coin copper">8 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">8 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">1 O 2 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1555,10 +1742,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 3</span>
                             <span class="tag cd">CD 17</span>
-                            <span class="tag cost">220 Po</span>
+                            <span class="tag cost"><span class="coin copper">7 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">7 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">1 O 5 C</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1604,10 +1802,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 15</span>
-                            <span class="tag cost">100 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P 5 C</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P 5 C</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">7 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1653,10 +1862,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 14</span>
-                            <span class="tag cost">90 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1702,10 +1922,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 14</span>
-                            <span class="tag cost">80 Po</span>
+                            <span class="tag cost"><span class="coin copper">3 P 5 C</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">3 P 5 C</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">5 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1751,10 +1982,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 13</span>
-                            <span class="tag cost">75 Po</span>
+                            <span class="tag cost"><span class="coin copper">3 P 5 C</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">3 P 5 C</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">5 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1800,10 +2042,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 13</span>
-                            <span class="tag cost">70 Po</span>
+                            <span class="tag cost"><span class="coin copper">3 P 5 C</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">3 P 5 C</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">5 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1849,10 +2102,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 15</span>
-                            <span class="tag cost">95 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1898,10 +2162,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 15</span>
-                            <span class="tag cost">85 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1947,10 +2222,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 3</span>
                             <span class="tag cd">CD 17</span>
-                            <span class="tag cost">130 Po</span>
+                            <span class="tag cost"><span class="coin copper">6 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">9 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -1996,10 +2282,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 14</span>
-                            <span class="tag cost">90 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2045,10 +2342,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 14</span>
-                            <span class="tag cost">80 Po</span>
+                            <span class="tag cost"><span class="coin copper">3 P 5 C</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">3 P 5 C</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">5 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2094,10 +2402,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 3</span>
                             <span class="tag cd">CD 18</span>
-                            <span class="tag cost">180 Po</span>
+                            <span class="tag cost"><span class="coin copper">7 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">7 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">1 O 5 C</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2138,10 +2457,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 15</span>
-                            <span class="tag cost">110 Po</span>
+                            <span class="tag cost"><span class="coin copper">5 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">5 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">7 P 5 C</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2187,10 +2517,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 3</span>
                             <span class="tag cd">CD 16</span>
-                            <span class="tag cost">120 Po</span>
+                            <span class="tag cost"><span class="coin copper">6 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">9 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2236,10 +2577,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 15</span>
-                            <span class="tag cost">100 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P 5 C</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P 5 C</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">7 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2285,10 +2637,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 15</span>
-                            <span class="tag cost">100 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P 5 C</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P 5 C</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">7 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2334,10 +2697,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 15</span>
-                            <span class="tag cost">95 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2383,10 +2757,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 15</span>
-                            <span class="tag cost">90 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2438,10 +2823,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 14</span>
-                            <span class="tag cost">85 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2496,10 +2892,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 3</span>
                             <span class="tag cd">CD 17</span>
-                            <span class="tag cost">160 Po</span>
+                            <span class="tag cost"><span class="coin copper">6 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">9 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2553,10 +2960,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 3</span>
                             <span class="tag cd">CD 18</span>
-                            <span class="tag cost">150 Po</span>
+                            <span class="tag cost"><span class="coin copper">6 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">9 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2612,10 +3030,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 15</span>
-                            <span class="tag cost">105 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P 5 C</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P 5 C</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">7 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2668,10 +3097,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 15</span>
-                            <span class="tag cost">100 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P 5 C</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P 5 C</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">7 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2725,10 +3165,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 3</span>
                             <span class="tag cd">CD 18</span>
-                            <span class="tag cost">175 Po</span>
+                            <span class="tag cost"><span class="coin copper">7 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">7 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">1 O 5 C</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2785,10 +3236,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 3</span>
                             <span class="tag cd">CD 17</span>
-                            <span class="tag cost">140 Po</span>
+                            <span class="tag cost"><span class="coin copper">6 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">9 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2843,10 +3305,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 2</span>
                             <span class="tag cd">CD 15</span>
-                            <span class="tag cost">95 Po</span>
+                            <span class="tag cost"><span class="coin copper">4 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">4 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2880,7 +3353,7 @@
                         </div>
 
                     </div>
-                </article>
+                <!-- </article> -->
 
 
                 <article class="potion" data-search="fênix fogo renascimento cura fogo resistência">
@@ -2899,10 +3372,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 3</span>
                             <span class="tag cd">CD 19</span>
-                            <span class="tag cost">200 Po</span>
+                            <span class="tag cost"><span class="coin copper">8 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">8 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">1 O 2 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -2956,10 +3440,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 3</span>
                             <span class="tag cd">CD 18</span>
-                            <span class="tag cost">170 Po</span>
+                            <span class="tag cost"><span class="coin copper">7 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">7 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">1 O 5 C</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -3013,10 +3508,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 3</span>
                             <span class="tag cd">CD 17</span>
-                            <span class="tag cost">150 Po</span>
+                            <span class="tag cost"><span class="coin copper">6 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">6 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">9 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -3073,10 +3579,21 @@
                         <div class="tags">
                             <span class="tag level">Nível 3</span>
                             <span class="tag cd">CD 20</span>
-                            <span class="tag cost">250 Po</span>
+                            <span class="tag cost"><span class="coin copper">8 P</span></span>
                         </div>
 
-                        <div class="potion-data">
+                        
+                        <div class="potion-price">
+                            <div class="price-box">
+                                <span class="price-label">Compra</span>
+                                <span class="price-value">8 P</span>
+                            </div>
+                            <div class="price-box sale">
+                                <span class="price-label">Venda</span>
+                                <span class="price-value">1 O 2 P</span>
+                            </div>
+                        </div>
+<div class="potion-data">
                             <div class="data-item">
                                 <small>Quantidade</small>
                                 <strong>50 ml</strong>
@@ -3152,7 +3669,8 @@
                             <th>Nível</th>
                             <th>Componentes</th>
                             <th>CD</th>
-                            <th>Custo</th>
+                            <th>Compra</th>
+                            <th>Venda</th>
                         </tr>
 
                     </thead>
@@ -3164,7 +3682,8 @@
                             <td class="td-level">1</td>
                             <td>20 ml E.V. + 10 ml E. + 5 ml M.</td>
                             <td class="td-cd">10</td>
-                            <td class="td-cost">40 Po</td>
+                            <td class="td-cost">2 P</td>
+                            <td class="td-sale">3 P</td>
                         </tr>
 
                         <tr>
@@ -3172,7 +3691,8 @@
                             <td class="td-level">1</td>
                             <td>20 ml M. + 15 ml F. + 5 ml S.Gelo</td>
                             <td class="td-cd">14</td>
-                            <td class="td-cost">60 Po</td>
+                            <td class="td-cost">3 P</td>
+                            <td class="td-sale">4 P 5 C</td>
                         </tr>
 
                         <tr>
@@ -3180,7 +3700,8 @@
                             <td class="td-level">2</td>
                             <td>15 ml F. + 15 ml S.M. + 5 ml C.M. + 5 ml C.Ácido</td>
                             <td class="td-cd">14</td>
-                            <td class="td-cost">75 Po</td>
+                            <td class="td-cost">3 P 5 C</td>
+                            <td class="td-sale">5 P</td>
                         </tr>
 
                         <tr>
@@ -3188,7 +3709,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml M. + 10 ml E. + 5 ml Essência Sagrada</td>
                             <td class="td-cd">15</td>
-                            <td class="td-cost">100 Po</td>
+                            <td class="td-cost">5 P</td>
+                            <td class="td-sale">7 P 5 C</td>
                         </tr>
 
                         <tr>
@@ -3196,7 +3718,8 @@
                             <td class="td-level">2</td>
                             <td>25 ml E.V. Ancestral + 10 ml F. + 5 ml M.</td>
                             <td class="td-cd">13</td>
-                            <td class="td-cost">70 Po</td>
+                            <td class="td-cost">3 P 5 C</td>
+                            <td class="td-sale">5 P</td>
                         </tr>
 
                         <tr>
@@ -3204,7 +3727,8 @@
                             <td class="td-level">1</td>
                             <td>15 ml E. + 15 ml F. + 5 ml C.M.</td>
                             <td class="td-cd">11</td>
-                            <td class="td-cost">45 Po</td>
+                            <td class="td-cost">2 P</td>
+                            <td class="td-sale">3 P</td>
                         </tr>
 
                         <tr>
@@ -3212,7 +3736,8 @@
                             <td class="td-level">1</td>
                             <td>20 ml E. + 10 ml E.V. + 5 ml F.</td>
                             <td class="td-cd">10</td>
-                            <td class="td-cost">35 Po</td>
+                            <td class="td-cost">1 P 5 C</td>
+                            <td class="td-sale">2 P 5 C</td>
                         </tr>
 
                         <tr>
@@ -3220,7 +3745,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml C.M. + 10 ml S.M. + 5 ml S.Fogo</td>
                             <td class="td-cd">13</td>
-                            <td class="td-cost">65 Po</td>
+                            <td class="td-cost">3 P</td>
+                            <td class="td-sale">4 P 5 C</td>
                         </tr>
 
                         <tr>
@@ -3228,7 +3754,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml E. + 15 ml S.M. + 5 ml F.</td>
                             <td class="td-cd">14</td>
-                            <td class="td-cost">85 Po</td>
+                            <td class="td-cost">4 P</td>
+                            <td class="td-sale">6 P</td>
                         </tr>
 
                         <tr>
@@ -3236,7 +3763,8 @@
                             <td class="td-level">3</td>
                             <td>20 ml E. + 10 ml M.Astral + 5 ml E.V. Ancestral</td>
                             <td class="td-cd">17</td>
-                            <td class="td-cost">250 Po</td>
+                            <td class="td-cost">8 P</td>
+                            <td class="td-sale">1 O 2 P</td>
                         </tr>
 
                         <tr>
@@ -3244,7 +3772,8 @@
                             <td class="td-level">3</td>
                             <td>20 ml E. + 15 ml F. Subterrâneo + 5 ml S.M. Profano</td>
                             <td class="td-cd">17</td>
-                            <td class="td-cost">220 Po</td>
+                            <td class="td-cost">7 P</td>
+                            <td class="td-sale">1 O 5 C</td>
                         </tr>
 
                         <tr>
@@ -3252,7 +3781,8 @@
                             <td class="td-level">2</td>
                             <td>15 ml C.M. + 15 ml M. + 5 ml S.Gelo</td>
                             <td class="td-cd">15</td>
-                            <td class="td-cost">100 Po</td>
+                            <td class="td-cost">4 P 5 C</td>
+                            <td class="td-sale">7 P</td>
                         </tr>
 
                         <tr>
@@ -3260,7 +3790,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml E.V. Ancestral + 10 ml E. + 5 ml M.Astral</td>
                             <td class="td-cd">14</td>
-                            <td class="td-cost">90 Po</td>
+                            <td class="td-cost">4 P</td>
+                            <td class="td-sale">6 P</td>
                         </tr>
 
                         <tr>
@@ -3268,7 +3799,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml M. + 10 ml F. + 5 ml E.</td>
                             <td class="td-cd">14</td>
-                            <td class="td-cost">80 Po</td>
+                            <td class="td-cost">3 P 5 C</td>
+                            <td class="td-sale">5 P</td>
                         </tr>
 
                         <tr>
@@ -3276,7 +3808,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml E. + 15 ml E.V. + 5 ml F.</td>
                             <td class="td-cd">13</td>
-                            <td class="td-cost">75 Po</td>
+                            <td class="td-cost">3 P 5 C</td>
+                            <td class="td-sale">5 P</td>
                         </tr>
 
                         <tr>
@@ -3284,7 +3817,8 @@
                             <td class="td-level">2</td>
                             <td>25 ml M. + 10 ml S.M. + 5 ml C.M.</td>
                             <td class="td-cd">13</td>
-                            <td class="td-cost">70 Po</td>
+                            <td class="td-cost">3 P 5 C</td>
+                            <td class="td-sale">5 P</td>
                         </tr>
 
                         <tr>
@@ -3292,7 +3826,8 @@
                             <td class="td-level">2</td>
                             <td>15 ml E. + 15 ml M. + 5 ml E.Elétrica</td>
                             <td class="td-cd">15</td>
-                            <td class="td-cost">95 Po</td>
+                            <td class="td-cost">4 P</td>
+                            <td class="td-sale">6 P</td>
                         </tr>
 
                         <tr>
@@ -3300,7 +3835,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml M. + 10 ml E. + 5 ml E.Elétrica</td>
                             <td class="td-cd">15</td>
-                            <td class="td-cost">85 Po</td>
+                            <td class="td-cost">4 P</td>
+                            <td class="td-sale">6 P</td>
                         </tr>
 
                         <tr>
@@ -3308,7 +3844,8 @@
                             <td class="td-level">3</td>
                             <td>15 ml S.Fogo + 15 ml E.Elétrica + 10 ml M.</td>
                             <td class="td-cd">17</td>
-                            <td class="td-cost">130 Po</td>
+                            <td class="td-cost">6 P</td>
+                            <td class="td-sale">9 P</td>
                         </tr>
 
                         <tr>
@@ -3316,7 +3853,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml S.M. Profano + 15 ml E. + 5 ml C.M.</td>
                             <td class="td-cd">14</td>
-                            <td class="td-cost">90 Po</td>
+                            <td class="td-cost">4 P</td>
+                            <td class="td-sale">6 P</td>
                         </tr>
 
                         <tr>
@@ -3324,7 +3862,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml E. + 15 ml F. + 5 ml S.M.</td>
                             <td class="td-cd">14</td>
-                            <td class="td-cost">80 Po</td>
+                            <td class="td-cost">3 P 5 C</td>
+                            <td class="td-sale">5 P</td>
                         </tr>
 
                         <tr>
@@ -3332,7 +3871,8 @@
                             <td class="td-level">3</td>
                             <td>20 ml E. + 10 ml C.M. + 5 ml M.Astral</td>
                             <td class="td-cd">18</td>
-                            <td class="td-cost">180 Po</td>
+                            <td class="td-cost">7 P</td>
+                            <td class="td-sale">1 O 5 C</td>
                         </tr>
 
                         <tr>
@@ -3340,7 +3880,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml E. + 10 ml M. + 5 ml F.</td>
                             <td class="td-cd">15</td>
-                            <td class="td-cost">110 Po</td>
+                            <td class="td-cost">5 P</td>
+                            <td class="td-sale">7 P 5 C</td>
                         </tr>
 
                         <tr>
@@ -3348,7 +3889,8 @@
                             <td class="td-level">3</td>
                             <td>15 ml M. + 10 ml C.M. + 5 ml E.</td>
                             <td class="td-cd">16</td>
-                            <td class="td-cost">120 Po</td>
+                            <td class="td-cost">6 P</td>
+                            <td class="td-sale">9 P</td>
                         </tr>
 
                         <tr>
@@ -3356,7 +3898,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml M. + 10 ml F. + 5 ml E.Elétrica</td>
                             <td class="td-cd">15</td>
-                            <td class="td-cost">100 Po</td>
+                            <td class="td-cost">4 P 5 C</td>
+                            <td class="td-sale">7 P</td>
                         </tr>
 
                         <tr>
@@ -3364,7 +3907,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml M. + 10 ml S.M. + 5 ml S.Fogo</td>
                             <td class="td-cd">15</td>
-                            <td class="td-cost">100 Po</td>
+                            <td class="td-cost">4 P 5 C</td>
+                            <td class="td-sale">7 P</td>
                         </tr>
 
                         <tr>
@@ -3372,7 +3916,8 @@
                             <td class="td-level">2</td>
                             <td>15 ml M. + 10 ml F. + 5 ml E.Elétrica</td>
                             <td class="td-cd">15</td>
-                            <td class="td-cost">95 Po</td>
+                            <td class="td-cost">4 P</td>
+                            <td class="td-sale">6 P</td>
                         </tr>
 
                         <tr>
@@ -3380,7 +3925,8 @@
                             <td class="td-level">2</td>
                             <td>25 ml M. + 10 ml C.M. + 5 ml S.M.</td>
                             <td class="td-cd">15</td>
-                            <td class="td-cost">90 Po</td>
+                            <td class="td-cost">4 P</td>
+                            <td class="td-sale">6 P</td>
                         </tr>
 
                         <tr>
@@ -3388,7 +3934,8 @@
                             <td class="td-level">2</td>
                             <td>25 ml E.V. + 10 ml F. + 5 ml E.</td>
                             <td class="td-cd">14</td>
-                            <td class="td-cost">85 Po</td>
+                            <td class="td-cost">4 P</td>
+                            <td class="td-sale">6 P</td>
                         </tr>
 
                         <tr>
@@ -3396,7 +3943,8 @@
                             <td class="td-level">3</td>
                             <td>15 ml C.M. + 15 ml S.Fogo + 10 ml S.M.</td>
                             <td class="td-cd">17</td>
-                            <td class="td-cost">160 Po</td>
+                            <td class="td-cost">6 P</td>
+                            <td class="td-sale">9 P</td>
                         </tr>
 
                         <tr>
@@ -3404,7 +3952,8 @@
                             <td class="td-level">3</td>
                             <td>25 ml E. + 10 ml F. + 5 ml S.M. Profano</td>
                             <td class="td-cd">18</td>
-                            <td class="td-cost">150 Po</td>
+                            <td class="td-cost">6 P</td>
+                            <td class="td-sale">9 P</td>
                         </tr>
 
                         <tr>
@@ -3412,7 +3961,8 @@
                             <td class="td-level">2</td>
                             <td>25 ml M. + 10 ml C.M. + 5 ml S.M.</td>
                             <td class="td-cd">15</td>
-                            <td class="td-cost">105 Po</td>
+                            <td class="td-cost">4 P 5 C</td>
+                            <td class="td-sale">7 P</td>
                         </tr>
 
                         <tr>
@@ -3420,7 +3970,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml M.Astral + 10 ml E. + 5 ml F.</td>
                             <td class="td-cd">15</td>
-                            <td class="td-cost">100 Po</td>
+                            <td class="td-cost">4 P 5 C</td>
+                            <td class="td-sale">7 P</td>
                         </tr>
 
                         <tr>
@@ -3428,7 +3979,8 @@
                             <td class="td-level">3</td>
                             <td>15 ml S.M. Profano + 10 ml C.Ácido + 10 ml C.M.</td>
                             <td class="td-cd">18</td>
-                            <td class="td-cost">175 Po</td>
+                            <td class="td-cost">7 P</td>
+                            <td class="td-sale">1 O 5 C</td>
                         </tr>
 
                         <tr>
@@ -3436,7 +3988,8 @@
                             <td class="td-level">3</td>
                             <td>20 ml E. + 10 ml S.M. Profano + 5 ml E.Elétrica</td>
                             <td class="td-cd">17</td>
-                            <td class="td-cost">140 Po</td>
+                            <td class="td-cost">6 P</td>
+                            <td class="td-sale">9 P</td>
                         </tr>
 
                         <tr>
@@ -3444,7 +3997,8 @@
                             <td class="td-level">2</td>
                             <td>20 ml M. + 10 ml S.Gelo + 5 ml S.M.</td>
                             <td class="td-cd">15</td>
-                            <td class="td-cost">95 Po</td>
+                            <td class="td-cost">4 P</td>
+                            <td class="td-sale">6 P</td>
                         </tr>
 
                         <tr>
@@ -3452,7 +4006,8 @@
                             <td class="td-level">3</td>
                             <td>15 ml S.Fogo + 15 ml E.V. Ancestral + 5 ml E.</td>
                             <td class="td-cd">19</td>
-                            <td class="td-cost">200 Po</td>
+                            <td class="td-cost">8 P</td>
+                            <td class="td-sale">1 O 2 P</td>
                         </tr>
 
                         <tr>
@@ -3460,7 +4015,8 @@
                             <td class="td-level">3</td>
                             <td>20 ml E. + 10 ml M.Astral + 5 ml F.</td>
                             <td class="td-cd">18</td>
-                            <td class="td-cost">170 Po</td>
+                            <td class="td-cost">7 P</td>
+                            <td class="td-sale">1 O 5 C</td>
                         </tr>
 
                         <tr>
@@ -3468,7 +4024,8 @@
                             <td class="td-level">3</td>
                             <td>20 ml E.V. Ancestral + 15 ml M. + 5 ml C.M.</td>
                             <td class="td-cd">17</td>
-                            <td class="td-cost">150 Po</td>
+                            <td class="td-cost">6 P</td>
+                            <td class="td-sale">9 P</td>
                         </tr>
 
                         <tr>
@@ -3476,7 +4033,8 @@
                             <td class="td-level">3</td>
                             <td>20 ml E. + 10 ml M.Astral + 5 ml S.M. Profano</td>
                             <td class="td-cd">20</td>
-                            <td class="td-cost">250 Po</td>
+                            <td class="td-cost">8 P</td>
+                            <td class="td-sale">1 O 2 P</td>
                         </tr>
 
                     </tbody>
