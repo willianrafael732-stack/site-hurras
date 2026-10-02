@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Segundo criador de fichas Hurras Dark Fantasy. Formato inspirado na ficha de duas páginas com bolinhas, armas, resistências e magias.">
+<title>Ficha Dark Fantasy · Hurras</title>
+<link rel="icon" href="../hurras-icon.svg">
+<style>
+:root{color-scheme:dark;--bg:#09080a;--surface:#171319;--card:#221b22;--edge:#56404b;--gold:#e0ba73;--text:#f1e7da;--muted:#b4a4a4}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 55% -10%,#40251e,transparent 55%),var(--bg);color:var(--text);font:15px/1.55 system-ui,Arial,sans-serif}
+header{background:#100b0cf2;border-bottom:1px solid #7b543b;padding:14px max(18px,calc((100vw - 1200px)/2));display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+a{color:var(--gold)}nav{display:flex;gap:14px;flex-wrap:wrap}header a{text-decoration:none}.brand{font:bold 20px Georgia,serif;letter-spacing:2px}
+main{max-width:1200px;margin:auto;padding:22px 16px 60px}h1,h2,h3{font-family:Georgia,serif;font-weight:500;color:var(--gold)}h1{font-size:clamp(28px,5vw,44px);margin:0}h2{font-size:24px;margin:0 0 15px}
+.intro{color:var(--muted);margin:8px 0 24px;max-width:900px}.toolbox{display:flex;gap:9px;align-items:center;flex-wrap:wrap;background:#160f10;border:1px solid var(--edge);padding:13px;margin-bottom:20px}
+button,.btn,select,input,textarea{font:inherit}button,.btn{border:1px solid #a78350;background:#2a1b19;color:#f4ddb1;border-radius:5px;padding:9px 13px;cursor:pointer;text-decoration:none}
+button:hover,.btn:hover{background:#43302a}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #f6c67f;outline-offset:2px}
+input,select,textarea{background:#120f12;color:var(--text);border:1px solid #70545c;border-radius:5px;padding:9px;width:100%;min-width:0}
+.toolbar-select{max-width:220px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.panel{background:linear-gradient(135deg,#241a1d,#120f13);border:1px solid var(--edge);border-radius:8px;padding:19px;margin-bottom:18px;min-width:0}
+.full{grid-column:1/-1}.fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+label{display:block;color:#d2b5ae;font-weight:600;font-size:13px}label input,label textarea{margin-top:4px}
+.group{margin-top:16px;padding-top:12px;border-top:1px solid #594048}.group h3{margin:0 0 8px;font-size:18px}
+.attribute{display:grid;grid-template-columns:minmax(110px,1fr) auto 28px;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid #342832}
+.attribute>span:first-child{font-size:13px}.dots{display:flex;gap:3px;flex-wrap:nowrap}
+.dot{width:19px;height:19px;min-width:19px;border:2px solid var(--dot,#c69475);background:transparent;border-radius:50%;padding:0}
+.dot[aria-pressed="true"]{background:var(--dot,#c69475);box-shadow:inset 0 0 0 3px #24151b}.stat-count{color:var(--muted);font-size:12px;text-align:right;font-variant-numeric:tabular-nums}
+.p-physical{--dot:#d47865}.p-social{--dot:#daa963}.p-mental{--dot:#769fd3}.p-skill{--dot:#88ad9b}.p-virtue{--dot:#c1a2d9}.p-will{--dot:#e0c476}
+.meter{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin:12px 0}.meter .dot{width:100%;height:20px}.meter.mana{grid-template-columns:repeat(10,1fr)}
+.weapons{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.weapons .panel{padding:12px;margin:0}.rows{display:grid;gap:8px}
+.spell-row{display:grid;grid-template-columns:minmax(130px,1fr) auto;gap:10px;align-items:center;margin-bottom:5px}
+.note{font-size:12px;color:var(--muted)}.notice{min-height:24px;color:#aed1a4;font-size:13px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}.fields{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:500px){.fields,.weapons{grid-template-columns:1fr}.attribute{grid-template-columns:1fr 25px}.dots{grid-column:1/2;grid-row:2}.stat-count{grid-column:2;grid-row:2}.dot{width:17px;min-width:17px;height:17px}.spell-row{grid-template-columns:1fr}.toolbox{align-items:stretch}.toolbar-select{max-width:none}}
+@media print{*{color:#111!important;box-shadow:none!important}body{background:white!important;font-size:12px}header,.toolbox,.intro,.print-hide{display:none!important}main{max-width:none;padding:0}.panel{background:#fff!important;border:1px solid #777;break-inside:avoid}.grid{gap:8px}.dot{border-color:#555!important}.dot[aria-pressed="true"]{background:#555!important}.group{break-inside:avoid}h1,h2,h3{margin-top:0}}
+</style></head>
+<body><header><a class="brand" href="../index.html">HURRAS · DARK FANTASY</a><nav><a href="../index.html">Início</a><a href="criaçãodeficha.html">Fichário original</a><a href="bestiario.html">Bestiário</a><a href="mestre-npcs.html">Mestre</a></nav></header>
+<main><h1>Segundo fichário · Dark Fantasy</h1><p class="intro">Ficha separada do sistema primário, baseada na ficha colorida de duas páginas. Clique nas bolinhas para marcar os pontos. Cada ficha tem salvamento próprio neste navegador. Nenhum dado do fichário original será alterado.</p>
+<div class="toolbox print-hide"><label for="slot">Personagem salvo</label><select id="slot" class="toolbar-select"></select>
+<button id="novo" type="button">+ Novo</button><button id="save" type="button">Salvar</button><button id="remove" type="button">Excluir</button><button id="export" type="button">Exportar JSON</button><label class="btn" for="import">Importar JSON</label><input id="import" type="file" accept=".json,application/json" hidden>
+<button id="print" type="button">Imprimir / Salvar PDF</button><span class="notice" role="status" id="status"></span></div>
+<form id="ficha" autocomplete="off">
+<section class="panel"><h2>Identidade</h2><div class="fields" id="identity"></div></section>
+<div class="grid"><section class="panel"><h2>Atributos</h2><div id="stats"></div></section><section class="panel"><h2>Habilidades e virtudes</h2><div id="skills"></div></section></div>
+<section class="panel"><h2>Recursos · página 1</h2>
+<div class="group p-will"><h3>Força de Vontade · 10 bolinhas</h3><div id="willpower"></div><p class="note">A força de vontade mantém dez posições como no PDF original.</p></div>
+<div class="fields"><label>Experiência<input data-field="experiencia" type="number" min="0"></label><label>RPS<input data-field="rpsTexto" type="text" placeholder="Anotações de RPS"></label></div>
+<div class="group"><h3>Vitalidade · 100 marcadores</h3><p class="note">10 linhas de dez; marque ferimentos ou pontos utilizados. Penalidades do modelo: +0, +0, +1, +1, +2, +2, +2, +5, +5, +7.</p><div id="vitality" class="meter"></div></div>
+<div class="group"><h3>Mana · 50 marcadores</h3><div id="mana" class="meter mana"></div></div>
+<div class="group"><h3>RPS · 7 marcadores</h3><div id="rps" class="p-skill"></div></div>
+</section>
+<section class="panel"><h2>Resistências mágicas · página 2</h2><div class="fields" id="resistance"></div></section>
+<section class="panel"><h2>Armas, vantagens e desvantagens</h2><div class="weapons" id="weapons"></div></section>
+<section class="panel"><h2>Magias, técnicas e nível mágico</h2><div class="fields"><label>Nível mágico<input type="number" min="0" max="99" data-field="nivelMagico"></label></div><div id="spells" class="group"></div></section>
+<section class="panel"><h2>Passivas, armadura, itens e notas</h2><div class="fields"><label>Armadura / defesa<textarea rows="3" data-field="armaduraDesc"></textarea></label><label>Vantagem da armadura<textarea rows="3" data-field="armaduraVantagem"></textarea></label><label>Desvantagem da armadura<textarea rows="3" data-field="armaduraDesvantagem"></textarea></label></div><div class="fields" id="freeText"></div></section>
+</form>
+</main>
+<script>
+"use strict";
+const $=id=>document.getElementById(id), STORE="hurras:darkFantasy:characters:v1", LAST="hurras:darkFantasy:current:v1";
+const groups=[
+ {root:"stats",title:"Físicos",cls:"physical",names:["Força","Destreza","Vigor"]},
+ {root:"stats",title:"Sociais",cls:"social",names:["Empatia","Manipulação","Persuasão"]},
+ {root:"stats",title:"Mentais",cls:"mental",names:["Percepção","Inteligência","Reação"]},
+ {root:"skills",title:"Sociais e combate",cls:"social",names:["Intimidação","Liderança","Lábia","Bloqueio","Esquiva","Briga","Disparada","Crítico","Ocultismo"]},
+ {root:"skills",title:"Talentos",cls:"skill",names:["Adestramento","Ofício","Condução","Armas à Distância","Armas Brancas","Segurança","Furtividade","Armadura","Investigação"]},
+ {root:"skills",title:"Conhecimentos",cls:"mental",names:["Acadêmicos","Geografia","Encantamento","Selos","Medicina","Ciências","Tecnologia","Linguística","Sobrevivência"]},
+ {root:"skills",title:"Virtudes",cls:"virtue",names:["Consciência","Autocontrole","Coragem"]}];
+const fields=["Nome","Player","Crônica","Nível","Profissão","Dinheiro"];
+const esc=s=>String(s).replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll('"',"&quot;");
+$("identity").innerHTML=fields.map(n=>'<label>'+n+'<input data-field="'+n+'" '+(n==="Nível"?'type="number" min="0"':'maxlength="120"')+'></label>').join("");
+function groupHTML(g){return '<div class="group p-'+g.cls+'"><h3>'+g.title+'</h3>'+g.names.map(n=>'<div class="attribute" data-dotfield="'+esc(n)+'" data-max="12"><span>'+esc(n)+'</span><div class="dots"></div><span class="stat-count">0/12</span></div>').join("")+'</div>'}
+for(const g of groups)$(g.root).insertAdjacentHTML("beforeend",groupHTML(g));
+$("willpower").innerHTML='<div class="attribute p-will" data-dotfield="Força de Vontade" data-max="10"><span>Força de Vontade</span><div class="dots"></div><span class="stat-count">0/10</span></div>';
+const resist=["Fogo","Água","Vento","Terra","Veneno","Raio","Mental","Sagrado","Sombrio"];
+$("resistance").innerHTML=resist.map(n=>'<label>'+n+'<input data-field="res:'+n+'" type="number" min="0" max="99" value="0"></label>').join("");
+$("weapons").innerHTML=["Arma branca primária","Arma branca secundária","À distância primária","À distância secundária"].map(n=>'<div class="panel rows"><h3>'+n+'</h3>'+["Nome","Vantagem","Desvantagem"].map(f=>'<label>'+f+'<input data-field="'+n+":"+f+'" maxlength="250"></label>').join("")+'</div>').join("");
+$("spells").innerHTML=Array.from({length:18},(_,i)=>'<div class="spell-row"><label>Técnica '+(i+1)+'<input data-field="magia:'+i+'" placeholder="Nome / efeito / custo"></label><div class="attribute p-skill" data-dotfield="magia-pontos:'+i+'" data-max="12"><span>Nível</span><div class="dots"></div><span class="stat-count"></span></div></div>').join("");
+$("freeText").innerHTML=["Passivas","Itens","Notas e história"].map(n=>'<label>'+n+'<textarea rows="5" data-field="'+n+'"></textarea></label>').join("");
+for(const [id,count] of [["vitality",100],["mana",50]]){$(id).innerHTML='<div class="dots" style="display:contents" data-dotfield="'+id+'" data-max="'+count+'"></div>';}
+$("rps").innerHTML='<div class="attribute" data-dotfield="rps" data-max="7"><span>RPS</span><div class="dots"></div><span class="stat-count"></span></div>';
+const values={};
+for(const el of document.querySelectorAll("[data-dotfield]")){const max=Number(el.dataset.max),dots=el.matches(".dots")?el:el.querySelector(".dots");for(let i=1;i<=max;i++){const b=document.createElement("button");b.type="button";b.className="dot";b.dataset.dot=i;b.setAttribute("aria-pressed","false");b.setAttribute("aria-label",el.dataset.dotfield+" ponto "+i);b.addEventListener("click",()=>{setDots(el.dataset.dotfield,values[el.dataset.dotfield]===i?i-1:i);markDirty()});dots.appendChild(b)}}
+function setDots(key,n){const e=Array.from(document.querySelectorAll("[data-dotfield]")).find(x=>x.dataset.dotfield===key);if(!e)return;const limit=Number(e.dataset.max),num=Math.max(0,Math.min(limit,Number(n)||0));values[key]=num;e.querySelectorAll("button.dot").forEach((b,i)=>b.setAttribute("aria-pressed",i<num?"true":"false"));const count=e.querySelector(".stat-count");if(count)count.textContent=num+"/"+limit}
+function data(){const obj={format:"hurras-dark-fantasy-v1",fields:{},dots:{}};document.querySelectorAll("[data-field]").forEach(e=>obj.fields[e.dataset.field]=e.value);Object.assign(obj.dots,values);return obj}
+function apply(obj){$("ficha").reset();document.querySelectorAll("[data-field]").forEach(e=>e.value=String(obj?.fields?.[e.dataset.field]??""));for(const e of document.querySelectorAll("[data-dotfield]"))setDots(e.dataset.dotfield,obj?.dots?.[e.dataset.dotfield]??0);setStatus("")}
+function all(){try{return JSON.parse(localStorage.getItem(STORE)||"{}")}catch{return {}}}
+function setStatus(msg){$("status").textContent=msg}
+let current="",dirty=false;
+function markDirty(){dirty=true;setStatus("Alterações não salvas")}
+$("ficha").addEventListener("input",markDirty);
+function refresh(){const a=all();$("slot").replaceChildren(new Option("Nova ficha / não salva",""));for(const [id,x] of Object.entries(a))$("slot").add(new Option((x.fields?.Nome||"Sem nome")+" · "+id.slice(-6),id));$("slot").value=current}
+function load(id){if(dirty&&!confirm("Descartar alterações não salvas?")){refresh();return}current=id;apply(id?all()[id]:{});dirty=false;refresh();localStorage.setItem(LAST,current)}
+function save(){const a=all();if(!current)current=(crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+"-"+Math.random().toString(36).slice(2));a[current]=data();try{localStorage.setItem(STORE,JSON.stringify(a));localStorage.setItem(LAST,current);dirty=false;refresh();setStatus("Ficha salva neste navegador.")}catch{setStatus("Falha ao salvar: armazenamento indisponível.")}}
+$("slot").addEventListener("change",e=>load(e.target.value));
+$("novo").onclick=()=>load("");
+$("save").onclick=save;
+$("remove").onclick=()=>{if(!current)return;const a=all();if(!confirm("Excluir esta ficha Dark Fantasy?"))return;delete a[current];localStorage.setItem(STORE,JSON.stringify(a));current="";dirty=false;apply({});refresh();setStatus("Ficha excluída.")};
+$("export").onclick=()=>{const blob=new Blob([JSON.stringify(data(),null,2)],{type:"application/json"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="Hurras_Dark_Fantasy_"+String(data().fields.Nome||"ficha").replace(/[^\p{L}\p{N}_-]+/gu,"_")+".json";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
+$("import").onchange=async e=>{const f=e.target.files?.[0];if(!f)return;try{const j=JSON.parse(await f.text());if(j.format!=="hurras-dark-fantasy-v1"||typeof j.fields!=="object"||typeof j.dots!=="object")throw Error("Formato inválido");load("");apply(j);markDirty();setStatus("Importado; clique Salvar para guardar.")}catch(err){setStatus("Não foi possível importar o JSON.")}e.target.value=""};
+$("print").onclick=()=>window.print();
+try{const last=localStorage.getItem(LAST),a=all();current=last&&a[last]?last:"";apply(current?a[current]:{});refresh()}catch{apply({});refresh()}
+</script></body></html>
