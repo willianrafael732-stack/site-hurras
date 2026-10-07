@@ -10,19 +10,19 @@ const path=decodeURIComponent(location.pathname).toLowerCase();
 const groups=[
 {label:'Começar',icon:'⌂',items:[
 ['Início','index.html','Portal Player e Mestre'],
-['Minhas fichas','funcoes/criacao-de-ficha.html','Retomar personagens clássicos'],
+['Minhas fichas','funcoes/criaçãodeficha.html','Retomar personagens clássicos'],
 ['Nova ficha clássica','funcoes/clan.html?new=1','Forja original'],
 ['Fichário Dark Fantasy','funcoes/ficha-dark-fantasy.html','Segundo sistema de ficha'],['Cofre Dark Fantasy','funcoes/dark-personagens.html','Gerenciar fichas do novo modelo'],
-['Biblioteca','funcoes/biblioteca.html','Todas as opções do jogo']]},
+['Biblioteca','funcoes/biblioteca.html','Todas as opções do jogo'],['Catálogo completo','funcoes/catalogo.html','Todas as páginas do site']]},
 {label:'Personagem',icon:'◈',items:[
 ['Criar ficha clássica','funcoes/clan.html','Editor de personagem'],
-['Cofre de personagens','funcoes/criacao-de-ficha.html','Fichas salvas'],['Cofre Dark','funcoes/dark-personagens.html','Fichas Dark salvas'],
+['Cofre de personagens','funcoes/criaçãodeficha.html','Fichas salvas'],['Cofre Dark','funcoes/dark-personagens.html','Fichas Dark salvas'],
 ['Fichário Dark Fantasy','funcoes/ficha-dark-fantasy.html','Bolinha e evolução'],
 ['Ficha de animal','animais/ficha-animal.html','Companheiros e mascotes'],
 ['Raças e classes','funcoes/racaeclasses.html','Escolher raça e estilo'],
 ['Origens','funcoes/origem.html','Origens do personagem'],
 ['Novas origens','funcoes/novas-origens.html','Origens extras'],
-['Profissões','profissao/profissoes.html','Ocupações e talentos'],
+['Profissões','profissão/profissoes.html','Ocupações e talentos'],
 ['Clãs','funcoes/clan.html','Forja e características']]},
 {label:'Regras & magias',icon:'✧',items:[
 ['Sistema completo','funcoes/sistema-completo.html','Regras detalhadas da campanha'],
@@ -81,7 +81,7 @@ const groups=[
 ['Ninja','raca/ninja.html','Classe'],['Tecnomante','raca/tecnomancer.html','Classe'],
 ['Transmutador','raca/transmutador.html','Classe']]}
 ];
-const mainLinks=[['Início','index.html'],['Fichas','funcoes/criacao-de-ficha.html'],['Dark Fantasy','funcoes/ficha-dark-fantasy.html'],['Regras','funcoes/sistema-completo.html'],['Bestiário','funcoes/bestiario.html'],['NPCs','funcoes/arquivo-npcs.html'],['Mestre','funcoes/mestre.html']];
+const mainLinks=[['Início','index.html'],['Fichas','funcoes/criacao-de-ficha.html'],['Dark Fantasy','funcoes/ficha-dark-fantasy.html'],['Regras','funcoes/sistema-completo.html'],['Bestiário','funcoes/bestiario.html'],['NPCs','funcoes/arquivo-npcs.html'],['Mestre','funcoes/mestre.html'],['Catálogo','funcoes/catalogo.html']];
 const normalize=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 const unique=[...new Map(groups.flatMap(g=>g.items.map(i=>[i[1],{...{group:g.label},name:i[0],path:i[1],detail:i[2]}]))).values()];
 function E(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined&&txt!==null)e.textContent=txt;return e}
