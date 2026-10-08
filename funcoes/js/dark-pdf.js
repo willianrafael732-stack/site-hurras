@@ -25,8 +25,7 @@ let background='';
 function bgRestore(){try{background=localStorage.getItem(STORAGE_BG)||''}catch(e){background=''}if(background)document.documentElement.style.setProperty('--dark-bg-image','url("'+background+'")');else document.documentElement.style.removeProperty('--dark-bg-image')}
 bgRestore();
 function el(tag,cls,txt){let x=document.createElement(tag);if(cls)x.className=cls;if(txt!==undefined&&txt!==null)x.textContent=String(txt);return x}
-function setDots(box,num,total,c){box.className='dark-pdf-dotrow';box.style.setProperty('--print-dot',c);for(let i=1;i<=total;i++){box.append(el('i','dark-pdf-dot'+(i<=num?' on':'')))}}
-function dots(num,total,color){const wrap=el('div');setDots(wrap,Number(num)||0,total,color);return wrap}
+function dots(num,total,color){const wrap=el('div','dark-pdf-numeric');wrap.style.setProperty('--print-dot',color);const n=Math.max(0,Math.min(total,Math.trunc(Number(num)||0)));wrap.append(el('strong',null,String(n)),el('small',null,' / '+total));return wrap}
 function box(title){let b=el('section','dark-pdf-box'),h=el('h3',null,title);b.append(h);return b}
 function line(label,n,total,color){let row=el('div','dark-pdf-line');row.append(el('span',null,label),dots(n,total,color));return row}
 function detail(label,v){let col=el('div');col.append(el('b',null,label),el('span',null,String(v??'')));return col}
@@ -87,16 +86,14 @@ async function generatePdf(){
  {x:212,y:570,items:[groups[3],groups[4]]},
  {x:400,y:570,items:groups.slice(5)}
  ];
- // Three columns, attribute values are editable text fields;
- // colored circles print in the selected count, including unselected outlines.
+ // Three columns. Pontos são campos editáveis em números normais.
  blocks.forEach(b=>{let y=b.y;for(const [group,items,col] of b.items){const height=23+items.length*18;rect(pages[0],b.x,y-height,174,height);pText(pages[0],group.toUpperCase(),b.x+7,y-14,9,bold,gold);y-=24;
- for(const k of items){pText(pages[0],k,b.x+5,y-6,6,font,white);const n=Math.min(12,Number(state.stats[k]||0));const step=6.6;
- for(let i=0;i<12;i++)pages[0].drawCircle({x:b.x+78+i*step,y:y-3,size:3,borderColor:color(col),borderWidth:.65,color:i<n?color(col):panel});
- textField(pages[0],'stat_'+k,n,b.x+157,y-10,14,12);y-=18}y-=9}});
- // Willpower + health/mana as editable counters (dots visibly colored on the PDF)
+ for(const k of items){pText(pages[0],k,b.x+5,y-6,6,font,white);const n=Math.max(0,Math.min(12,Math.trunc(Number(state.stats[k])||0)));
+ textField(pages[0],'stat_'+k,n,b.x+134,y-10,31,14);y-=18}y-=9}});
+ // Vontade numérica. Vitalidade e Mana continuam com indicadores próprios.
  let y=151;rect(pages[0],24,40,550,112);pText(pages[0],'FORCA DE VONTADE',33,131,10,bold,gold);
- let n=Number(state.stats['Força de Vontade']||0);for(let i=0;i<10;i++)pages[0].drawCircle({x:43+i*14,y:111,size:5,borderColor:gold,color:i<n?gold:panel});
- textField(pages[0],'stat_Força de Vontade',n,192,102,30);
+ let n=Math.max(0,Math.min(10,Math.trunc(Number(state.stats['Força de Vontade'])||0)));
+ textField(pages[0],'stat_Força de Vontade',n,44,104,40);
  pText(pages[0],'VITALIDADE',256,132,10,bold,gold);
  const hval=(state.vitality||[]).length;pText(pages[0],hval+' / 100',258,110,9,bold,pdf.rgb(.9,.42,.36));
  textField(pages[0],'vitality_count',hval,317,100,35);
@@ -107,7 +104,7 @@ async function generatePdf(){
  for(let i=0;i<18;i++){const y=724-i*28;const x=26;pText(pages[1],String(i+1).padStart(2,'0'),x,y+4,8,bold,gold);
  textField(pages[1],'magic_'+i,(state.magic||[])[i]||'',x+21,y-1,345);
  const v=Number(state.magicLevels?.[i]||0);textField(pages[1],'magicLevel_'+i,v,402,y-1,26);
- for(let j=0;j<10;j++){pages[1].drawCircle({x:440+j*13,y:y+8,size:3.8,borderColor:gold,color:j<v?gold:panel})}
+ // Nível da magia registrado no campo numérico editável.
  }
  let yR=194;const elemWidth=59;pText(pages[1],'RESISTENCIAS',29,yR,12,bold,gold);yR-=19;
  resist.forEach((k,i)=>{const x=29+(i%3)*188,y=yR-Math.floor(i/3)*25;pText(pages[1],k,x,y,8,bold,gold);textField(pages[1],'resist_'+k,Number(state.resist[k]||0),x+90,y-5,32)});

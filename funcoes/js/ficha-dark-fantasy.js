@@ -9,11 +9,17 @@ var data={id:(()=>{try{return localStorage.getItem(CURRENT)||''}catch(e){return 
 function safeText(x){return String(x||'').replace(/[<>]/g,'').slice(0,120)}
 function status(s){$('status').textContent=s}
 function dots(host,key,total,collection){
-host.replaceChildren();host.style.setProperty('--accent',(host.closest('[data-color]')||{}).dataset?.color||'#ddb97a');
-var number=Number(data[collection][key])||0;
-for(var i=1;i<=total;i++){var b=document.createElement('button');b.type='button';b.className='dot'+(i<=number?' on':'');b.title=key+': '+i+' / '+total;b.setAttribute('aria-label',key+' '+i);b.setAttribute('aria-pressed',String(i<=number));b.dataset.value=i;
-b.addEventListener('click',function(){var val=Number(this.dataset.value);data[collection][key]=(data[collection][key]||0)===val?0:val;dots(host,key,total,collection);autoSave()});
-host.append(b)}
+host.replaceChildren();host.classList.add('numeric-stat-field');
+const input=document.createElement('input');input.type='number';input.inputMode='numeric';
+input.min='0';input.max=String(total);input.step='1';input.className='numeric-stat-input';
+input.setAttribute('aria-label',key+' (0 a '+total+')');
+input.setAttribute('title',key+' — valores de 0 a '+total);
+input.value=String(Math.max(0,Math.min(total,Math.trunc(Number(data[collection][key])||0))));
+function current(){if(input.value.trim()==='')return null;const n=Number(input.value);return Number.isInteger(n)&&n>=0&&n<=total?n:null}
+input.addEventListener('input',function(){const n=current();if(n===null){input.setAttribute('aria-invalid','true');return}data[collection][key]=n;input.removeAttribute('aria-invalid');autoSave()});
+input.addEventListener('change',function(){const n=current(),v=n===null?Math.max(0,Math.min(total,Math.trunc(Number(data[collection][key])||0))):n;data[collection][key]=v;input.value=String(v);input.removeAttribute('aria-invalid');autoSave()});
+host.append(input);
+const max=document.createElement('span');max.className='numeric-stat-max';max.textContent='/'+total;host.append(max);
 }
 function rows(el,col,count,cls){el.replaceChildren();for(var i=0;i<count;i++){var b=document.createElement('button');b.type='button';b.className='sq '+cls+((data[col]||[]).includes(i)?' on':'');b.setAttribute('aria-label',(cls==='mana'?'Mana':'Vitalidade')+' '+(i+1));b.dataset.i=i;b.addEventListener('click',function(){var n=Number(this.dataset.i);var a=data[col]||[];data[col]=a.includes(n)?a.filter(x=>x!==n):a.concat(n);rows(el,col,count,cls);autoSave()});el.append(b)}}
 function render(){

@@ -106,3 +106,15 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
  .dark-pdf-dot{width:11px;height:11px}
 }
 @media screen and (max-width:390px){.dark-pdf-id{grid-template-columns:1fr}}
+
+/* Pontuação numérica substitui bolinhas na ficha e na prévia do PDF */
+#darkEditor .numeric-stat-field{display:inline-flex;align-items:center;justify-content:flex-end;gap:5px;min-width:93px}
+#darkEditor .numeric-stat-input{appearance:textfield;-moz-appearance:textfield;width:60px;min-width:60px;height:39px;text-align:center;border:1px solid var(--accent,#dfbf8e);border-radius:7px;background:#14171a;color:#fff0d3;font:800 18px/1.2 system-ui,sans-serif;padding:4px}
+#darkEditor .numeric-stat-input::-webkit-inner-spin-button,#darkEditor .numeric-stat-input::-webkit-outer-spin-button{opacity:1}
+#darkEditor .numeric-stat-input[aria-invalid=true]{border-color:#ef897e}
+#darkEditor .numeric-stat-input:focus-visible{outline:2px solid #e9c885;outline-offset:2px}
+#darkEditor .numeric-stat-max{color:#c2b9a7;font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.dark-pdf-numeric{display:inline-flex;align-items:baseline;justify-content:flex-end;gap:2px;min-width:33px;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--print-dot,#d7bd84)}
+.dark-pdf-numeric strong{font-size:11px;font-weight:800}.dark-pdf-numeric small{font-size:8px;opacity:.85}
+@media(max-width:720px){#darkEditor .numeric-stat-field{justify-content:flex-start}}
+@media print{#darkEditor .numeric-stat-input{background:#fff;color:#111;border-color:#555}.dark-pdf-numeric{color:#111!important}}
