@@ -17,7 +17,7 @@ const groups=[
 {label:'Personagem',icon:'◈',items:[
 ['Criar ficha clássica','funcoes/clan.html','Editor de personagem'],
 ['Cofre de personagens','funcoes/criaçãodeficha.html','Fichas salvas'],['Cofre Dark','funcoes/dark-personagens.html','Fichas Dark salvas'],
-['Fichário Dark Fantasy','funcoes/ficha-dark-fantasy.html','Bolinha e evolução'],
+['Fichário Dark Fantasy','funcoes/ficha-dark-fantasy.html','Ficha comum de personagens'],
 ['Ficha de animal','animais/ficha-animal.html','Companheiros e mascotes'],
 ['Raças e classes','funcoes/racaeclasses.html','Escolher raça e estilo'],
 ['Origens','funcoes/origem.html','Origens do personagem'],
@@ -46,7 +46,7 @@ const groups=[
 ['Encantos','armas/encantos.html','Encantamentos'],
 ['Armas instrumentais','armas/Instrumentais.html','Ferramentas especiais']]},
 {label:'Mundo & seres',icon:'♜',items:[
-['Fichas nórdicas','funcoes/compendio-nordico.html','63 fichas de deuses, herdeiros e Ragnarök'],
+['Fichas dos deuses','funcoes/compendio-nordico.html','Deuses, semideuses e histórico de batalha'],
 ['Bestiário • 95 criaturas','funcoes/bestiario.html','Monstros, níveis e ataques'],
 ['Animais','animais/animais.html','Criaturas e companheiros'],
 ['NPCs conhecidos','funcoes/npcs.html','Revelados aos jogadores'],

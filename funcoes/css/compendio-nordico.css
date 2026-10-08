@@ -9,3 +9,49 @@ main{max-width:1290px;margin:0 auto;padding:27px 22px 65px}.north-hero{border:1p
 @media(max-width:720px){main{padding:16px 12px 44px}.north-head{padding:14px}.norse-columns{grid-template-columns:1fr;padding:10px}.north-tools{padding:13px}.norse-side{padding:13px}.norse-stats{grid-template-columns:1fr 1fr}.north-card summary{padding:14px;gap:10px}.norse-pill{padding:5px 7px;font-size:.76rem}.norse-title{font-size:1.17rem}.north-toolbar-actions button{flex:1}}
 @media(max-width:410px){.norse-stats{grid-template-columns:1fr}.north-tools{grid-template-columns:1fr}.north-tools label[for=north-group],.north-tools label[for=north-order],.north-tools #north-group,.north-tools #north-order{grid-column:1;grid-row:auto}}
 @media print{body{background:#fff;color:#111;font-size:11px}.north-head,.north-tools,.hero-actions,footer{display:none!important}main{max-width:none;padding:0}.north-hero{background:none;color:#111;padding:5px;border:0;margin-bottom:10px}.north-hero h1{font-size:25px}.source-note{color:#555}.north-results{display:block}.north-card{display:block!important;border:1px solid #888;margin:0 0 15px;break-inside:avoid;page-break-inside:avoid}.north-card summary{background:#eee!important;padding:8px;color:#111}.north-card summary::after{display:none}.norse-columns{grid-template-columns:1fr 1fr;padding:8px}.norse-side{background:#fff;color:#111;padding:8px}.norse-side h3,.norse-block h4,.norse-item strong,.norse-stat dd,.north-events h2{color:#333}.norse-stat{background:#f5f5f5}.norse-stat dt,.norse-item span,.norse-muted,.norse-plain,.norse-alert,.norse-sub{color:#111}.north-events{break-before:page}.north-event-card{break-inside:avoid}.norse-block{break-inside:avoid}}
+
+/* Histórico exclusivo das fichas de deuses e seres nórdicos */
+.north-save-note{grid-column:1/-1;color:var(--dim);font-size:.84rem;margin:0}
+.north-backup-button{grid-column:1/-1;justify-self:start;border:1px solid #9d824b;padding:9px 14px;border-radius:8px;background:#29352d;color:#f6e2b8;font-weight:800;cursor:pointer}
+.north-battle{margin:0 17px 17px;padding:17px;background:#11191b;border:1px solid #847149;border-radius:10px}
+.north-battle-header{border-bottom:1px solid #4e594e;margin-bottom:14px;padding-bottom:10px}
+.north-battle-title{font:700 1.35rem Georgia,serif;color:var(--gold)}
+.north-battle-header p{margin:5px 0 0;color:var(--dim);font-size:.87rem}
+.north-battle-columns{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:16px}
+.north-battle-attributes,.north-battle-history{min-width:0;border:1px solid #3c4b46;background:#1b2425;border-radius:9px;padding:14px}
+.north-battle-attributes>h4,.north-battle-history>h4{margin:0 0 12px;color:var(--gold);font-size:.96rem}
+.north-skill-groups{display:grid;grid-template-columns:minmax(0,1fr);gap:7px}
+.north-skill-group{border:1px solid #475750;border-radius:7px;overflow:hidden}
+.north-skill-group>summary{display:list-item;cursor:pointer;padding:9px 13px;background:#263132;color:#f7dc9f;font-weight:700;font-size:.91rem}
+.north-point-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));padding:10px;gap:8px}
+.north-point-row{display:flex;justify-content:space-between;align-items:center;gap:5px;font-size:.85rem;background:#151d1f;padding:7px 8px;border-radius:6px;min-width:0}
+.north-point-row>span:first-child{overflow-wrap:anywhere}
+.north-number-wrap{display:inline-flex;gap:3px;align-items:center;flex-shrink:0}
+.north-number-field{width:52px;min-height:36px;text-align:center;background:#0d1517;color:#f3ddb2;border:1px solid #9a804a;border-radius:6px;font-size:1rem;font-weight:750;padding:3px}
+.north-number-wrap small{color:var(--dim)}
+.north-current-resources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 15px}
+.north-resource-label{display:flex;flex-direction:column;gap:6px;font-size:.89rem;color:#f4dfb4}
+.north-resource-number{width:100%;min-height:40px;padding:8px;color:var(--text);background:#11191b;border:1px solid #80724f;border-radius:7px;font-size:1rem}
+.north-history-label{display:block;margin-bottom:6px;color:var(--gold);font-weight:700;font-size:.9rem}
+.north-history-note{width:100%;min-height:74px;resize:vertical;background:#10181a;border:1px solid #6f775e;color:var(--text);border-radius:8px;padding:10px;font:inherit}
+.north-history-actions{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0}
+.north-history-actions button,.north-log-button{padding:8px 10px;border-radius:7px;cursor:pointer;font-weight:700;font-size:.82rem}
+.north-action-primary{background:#c6a866;border:1px solid #c6a866;color:#171717}
+.north-action-secondary,.north-log-button{background:#253433;border:1px solid #889677;color:#f3e1c3}
+.north-history-status{min-height:18px;margin:6px 0;color:#b6e1c2;font-size:.81rem}
+.north-log-list{max-height:480px;overflow:auto;margin:0;padding:0;list-style:none;display:grid;gap:7px}
+.north-log-entry{background:#11191b;border-left:3px solid #bd9d5b;padding:9px 11px;border-radius:4px;overflow-wrap:anywhere}
+.north-log-entry small{color:var(--dim)}.north-log-entry p{margin:5px 0 0;color:var(--text);font-size:.88rem;white-space:pre-wrap}
+.north-log-empty{color:var(--dim);font-size:.87rem;padding:12px}
+.north-entry-with-action{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px;border-bottom:1px solid #3c4743}
+.north-entry-with-action .norse-item{border:0}
+.north-attack-card{border:1px solid #58645a;background:#162021;border-radius:8px;padding:12px;margin:9px 0}
+.north-attack-card h5{font-size:1.04rem;margin:0 0 9px;color:#efd092}
+.north-attack-dice{display:flex;flex-wrap:wrap;gap:5px;font-size:.88rem}
+.north-attack-dice strong{color:#d0b885}
+.north-dice-range{margin:4px 0 9px;color:var(--dim);font-size:.82rem}
+.north-bonus-hint{border-left:3px solid #c1a461;padding-left:9px;color:var(--dim);font-size:.86rem}
+.north-roll-output{display:block;overflow-wrap:anywhere;color:#d1e6dc;font-size:.87rem;margin-top:5px}
+@media(max-width:950px){.north-battle-columns{grid-template-columns:1fr}}
+@media(max-width:540px){.north-battle{margin:0 10px 11px;padding:10px}.north-point-list{grid-template-columns:1fr}.north-battle-attributes,.north-battle-history{padding:9px}.north-entry-with-action{grid-template-columns:1fr}.north-log-button{justify-self:start}.north-save-note{line-height:1.45}}
+@media print{.north-battle{background:#fff!important;color:#111!important;border:1px solid #888;margin:0 7px 7px}.north-battle-attributes,.north-battle-history{background:#fff!important;color:#111!important}.north-skill-group{break-inside:avoid}.north-skill-group>summary{background:#eee;color:#111}.north-point-list{grid-template-columns:repeat(2,minmax(0,1fr))}.north-point-row{background:#fafafa;color:#111}.north-number-field,.north-resource-number{color:#111!important;background:#fff!important;border-color:#555!important}.north-history-note,.north-history-actions,.north-history-status,.north-log-button,.north-backup-button{display:none!important}.north-log-list{max-height:none}.north-log-entry,.north-attack-card{background:#fff!important;color:#111!important}.north-attack-dice,.north-roll-output{color:#111!important}}
