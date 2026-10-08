@@ -48,7 +48,7 @@ document.getElementById("north-toggle").textContent="Expandir todas";
 input.addEventListener("input",filter);group.addEventListener("change",filter);order.addEventListener("change",filter);
 document.getElementById("north-toggle").addEventListener("click",function(){var ds=Array.from(root.querySelectorAll("details"));var open=ds.length&&ds.every(function(d){return d.open;});ds.forEach(function(d){d.open=!open;});this.textContent=open?"Expandir todas":"Recolher todas";});
 var saved=null;
-function openAll(){saved=Array.from(root.querySelectorAll("details")).map(function(d){return [d,d.open];});saved.forEach(function(x){x[0].open=true;});}
+function openAll(){if(saved)return;saved=Array.from(root.querySelectorAll("details")).map(function(d){return [d,d.open];});saved.forEach(function(x){x[0].open=true;});}
 function restore(){if(saved){saved.forEach(function(x){x[0].open=x[1];});saved=null;}}
 window.addEventListener("beforeprint",openAll);window.addEventListener("afterprint",restore);
 document.getElementById("north-print").addEventListener("click",function(){openAll();window.print();});
