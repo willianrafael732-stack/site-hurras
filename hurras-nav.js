@@ -13,7 +13,7 @@ const groups=[
 ['Minhas fichas','funcoes/criaçãodeficha.html','Retomar personagens clássicos'],
 ['Nova ficha clássica','funcoes/clan.html?new=1','Forja original'],
 ['Fichário Dark Fantasy','funcoes/ficha-dark-fantasy.html','Segundo sistema de ficha'],['Cofre Dark Fantasy','funcoes/dark-personagens.html','Gerenciar fichas do novo modelo'],
-['Biblioteca','funcoes/biblioteca.html','Todas as opções do jogo'],['Catálogo completo','funcoes/catalogo.html','Todas as páginas do site']]},
+['Biblioteca','funcoes/biblioteca.html','Todas as opções do jogo']]},
 {label:'Personagem',icon:'◈',items:[
 ['Criar ficha clássica','funcoes/clan.html','Editor de personagem'],
 ['Cofre de personagens','funcoes/criaçãodeficha.html','Fichas salvas'],['Cofre Dark','funcoes/dark-personagens.html','Fichas Dark salvas'],
@@ -46,6 +46,7 @@ const groups=[
 ['Encantos','armas/encantos.html','Encantamentos'],
 ['Armas instrumentais','armas/Instrumentais.html','Ferramentas especiais']]},
 {label:'Mundo & seres',icon:'♜',items:[
+['Fichas nórdicas','funcoes/compendio-nordico.html','63 fichas de deuses, herdeiros e Ragnarök'],
 ['Bestiário • 95 criaturas','funcoes/bestiario.html','Monstros, níveis e ataques'],
 ['Animais','animais/animais.html','Criaturas e companheiros'],
 ['NPCs conhecidos','funcoes/npcs.html','Revelados aos jogadores'],
@@ -81,7 +82,7 @@ const groups=[
 ['Ninja','raca/ninja.html','Classe'],['Tecnomante','raca/tecnomancer.html','Classe'],
 ['Transmutador','raca/transmutador.html','Classe']]}
 ];
-const mainLinks=[['Início','index.html'],['Fichas','funcoes/criacao-de-ficha.html'],['Dark Fantasy','funcoes/ficha-dark-fantasy.html'],['Regras','funcoes/sistema-completo.html'],['Bestiário','funcoes/bestiario.html'],['NPCs','funcoes/arquivo-npcs.html'],['Mestre','funcoes/mestre.html'],['Catálogo','funcoes/catalogo.html']];
+const mainLinks=[['Início','index.html'],['Fichas','funcoes/criacao-de-ficha.html'],['Dark Fantasy','funcoes/ficha-dark-fantasy.html'],['Regras','funcoes/sistema-completo.html'],['Bestiário','funcoes/bestiario.html'],['Nórdicos','funcoes/compendio-nordico.html'],['NPCs','funcoes/arquivo-npcs.html'],['Mestre','funcoes/mestre.html']];
 const normalize=s=>String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
 const unique=[...new Map(groups.flatMap(g=>g.items.map(i=>[i[1],{...{group:g.label},name:i[0],path:i[1],detail:i[2]}]))).values()];
 function E(tag,cls,txt){const e=document.createElement(tag);if(cls)e.className=cls;if(txt!==undefined&&txt!==null)e.textContent=txt;return e}
